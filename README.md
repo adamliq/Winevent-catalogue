@@ -20,7 +20,15 @@ shutdown/restart events.
   - `description` — what the event means
   - `sample` — a real or representative sample of the event's rendered text, where available
   - `reference` — pointer to related configuration notes or docs
+  - `how_to_collect` — which auditing subcategory/subcategories (from
+    `data/reference/audit_configuration.csv`) must be enabled to generate
+    this event
 
+- `data/reference/audit_configuration.csv` / `.json` — how to configure
+  auditing to collect events, one row per audit subcategory (or
+  product-specific setting): the Group Policy / registry path, the steps to
+  enable it, the event IDs it produces, and a reference URL where available.
+  See `docs/audit-configuration-guide.md` for the readable version.
 - `data/reference/audit_policy_matrix.csv` — the raw Group Policy audit
   category → Event ID mapping (Account Logon, Account Management, Detailed
   Tracking, DS Access, Logon/Logoff, Object Access, Policy Change, Privilege
@@ -38,6 +46,10 @@ shutdown/restart events.
   querying, exporting, and clearing event logs, including a working example
   for auditing user account creation (Event ID 4720) across all domain
   controllers.
+- `docs/audit-configuration-guide.md` — how to configure Windows/AD to
+  actually collect each event: the Advanced Audit Policy Configuration (or
+  registry) path to enable, step-by-step instructions, and the event IDs
+  each setting produces.
 
 ## Source
 

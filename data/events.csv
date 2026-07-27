@@ -1,62 +1,62 @@
-event_id,log,source,category,subcategory,description,sample,reference
-4205,Applications and Servers->Microsoft->Windows->NLAsvc,Nlasvc,Network Location Awareness,Gateway Resolution,Gateway resolution failed on interface for xx with error ...,,
-4343,Applications and Servers->Microsoft->Windows->NLAsvc,Nlasvc,Network Location Awareness,LDAP Authentication,LDAP Authentication on interface failed,,
-70,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is configured by xxx,,Configure
-72,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is deleted by xxx,,Configure
-73,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is activated by xxx,,Configure
-74,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is deactivated by xxx,,Configure
-75,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is updated with lease duration xxx seconds by xxx,,Configure
-76,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is updated with option setting xx by xxx,,Configure
-89,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope ... for ipv4 is updated with support type...by....The previous configuration state was : ...,,
-106,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Reservation xxx for ipv4 is configured under scope xxx by xxx,,Configure
-107,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Reservation xxx for ipv4 is deleted under scope xxx by xxx,,Configure
-108,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Reservation xxx for ipv4 under scope xxx is enabled for dns dynamic updates by xxx,,Configure
-119,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Added exclusion ip address range xxx in the address pool for ipv4 under scope xxx by xxx,,Configure
-20221,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Description of Scope ....policy...was set to ... for ...,,
-20223,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,The conditions for scope...policy...have been set to.....The conditions are grouped by logical operator OR,,
-20227,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Policy default ... was deleted from scope,,
-20237,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Description of scope...policy...was set to....,,
-20239,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Processing order of scope...policy was changed to..from..,,
-20243,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP Failover,Scope xxx has been added to the failover relationship,,Configure
-20244,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP Failover,Scope xxx has been removed from the failover relationship,,Configure
-20287,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,DHCP client request from xxx was dropped since the last applicable ip ranges in scope xxx are out of available addresses,,Configure
-20291,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP-Failover,A Binding-ACK message with transaction..was sent for IP address...with reject reason...to partner server...for failover relationship,,
-20292,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP-Failover,A Binding-ACK message with transaction..was received for IP address...with reject reason...from partner server...for failover relationship,,
-20315,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,DNSSuffix of scope...policy...was set to,,
-2003,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Failure read or write to removeable media,,
-2004,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,The UMDF Host is loading Driver,,
-2005,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,The UMDF Host Process..has loaded module,,
-2010,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Failure read or write to removeable media,,
-2100,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Received a PNP or Power Operation,,
-2105,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Forwarded a PNP or Power Operation,,
-2106,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Received a PNP or Power Operation,,
+event_id,log,source,category,subcategory,description,sample,reference,how_to_collect
+4205,Applications and Servers->Microsoft->Windows->NLAsvc,Nlasvc,Network Location Awareness,Gateway Resolution,Gateway resolution failed on interface for xx with error ...,,,
+4343,Applications and Servers->Microsoft->Windows->NLAsvc,Nlasvc,Network Location Awareness,LDAP Authentication,LDAP Authentication on interface failed,,,
+70,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is configured by xxx,,Configure,
+72,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is deleted by xxx,,Configure,
+73,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is activated by xxx,,Configure,
+74,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is deactivated by xxx,,Configure,
+75,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is updated with lease duration xxx seconds by xxx,,Configure,
+76,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope xxx for ipv4 is updated with option setting xx by xxx,,Configure,
+89,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Scope ... for ipv4 is updated with support type...by....The previous configuration state was : ...,,,
+106,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Reservation xxx for ipv4 is configured under scope xxx by xxx,,Configure,
+107,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Reservation xxx for ipv4 is deleted under scope xxx by xxx,,Configure,
+108,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Reservation xxx for ipv4 under scope xxx is enabled for dns dynamic updates by xxx,,Configure,
+119,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,Added exclusion ip address range xxx in the address pool for ipv4 under scope xxx by xxx,,Configure,
+20221,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Description of Scope ....policy...was set to ... for ...,,,
+20223,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,The conditions for scope...policy...have been set to.....The conditions are grouped by logical operator OR,,,
+20227,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Policy default ... was deleted from scope,,,
+20237,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Description of scope...policy...was set to....,,,
+20239,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,Processing order of scope...policy was changed to..from..,,,
+20243,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP Failover,Scope xxx has been added to the failover relationship,,Configure,
+20244,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP Failover,Scope xxx has been removed from the failover relationship,,Configure,
+20287,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,,DHCP client request from xxx was dropped since the last applicable ip ranges in scope xxx are out of available addresses,,Configure,
+20291,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP-Failover,A Binding-ACK message with transaction..was sent for IP address...with reject reason...to partner server...for failover relationship,,,
+20292,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,DHCP-Failover,A Binding-ACK message with transaction..was received for IP address...with reject reason...from partner server...for failover relationship,,,
+20315,Microsoft-Windows-DHCP-Server,DHCP-Server,DHCP,Policy,DNSSuffix of scope...policy...was set to,,,
+2003,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Failure read or write to removeable media,,,Audit Removable Storage
+2004,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,The UMDF Host is loading Driver,,,Audit Removable Storage
+2005,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,The UMDF Host Process..has loaded module,,,Audit Removable Storage
+2010,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Failure read or write to removeable media,,,Audit Removable Storage
+2100,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Received a PNP or Power Operation,,,Audit Removable Storage
+2105,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Forwarded a PNP or Power Operation,,,Audit Removable Storage
+2106,Microsoft-Windows-DriverFrameworks-UserMode/Operational,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Received a PNP or Power Operation,,,Audit Removable Storage
 21,Microsoft-Windows-TerminalServices-LocalSessionManager/Operational,Microsoft-Windows-TerminalServices-LocalSessionManager,Remote Desktop Services / Terminal Services Session,,Session logon succeeded,"```
 Remote Desktop Services: Session logon succeeded:
 
 User: domain\fred.burgmann
 Session ID: 10
 Source Network Address: 192.168.10.1
-```",
+```",,
 23,Microsoft-Windows-TerminalServices-LocalSessionManager/Operational,Microsoft-Windows-TerminalServices-LocalSessionManager,Remote Desktop Services / Terminal Services Session,,Session logoff succeeded,"```
 Remote Desktop Services: Session logoff succeeded:
 
 User: domain\fred.burgmann
 Session ID: 10
-```",
+```",,
 24,Microsoft-Windows-TerminalServices-LocalSessionManager/Operational,Microsoft-Windows-TerminalServices-LocalSessionManager,Remote Desktop Services / Terminal Services Session,,Session has been disconnected,"```
 Remote Desktop Services: Session has been disconnected:
 
 User: domain\fred.burgmann
 Session ID: 10
 Source Network Address: 192.168.10.1
-```",
+```",,
 25,Microsoft-Windows-TerminalServices-LocalSessionManager/Operational,Microsoft-Windows-TerminalServices-LocalSessionManager,Remote Desktop Services / Terminal Services Session,,Session reconnection succeeded,"```
 Remote Desktop Services: Session reconnection succeeded:
 
 User: domain\fred.burgmann
 Session ID: 10
 Source Network Address: 192.168.10.1
-```",
+```",,
 40,Microsoft-Windows-TerminalServices-LocalSessionManager/Operational,Microsoft-Windows-TerminalServices-LocalSessionManager,Remote Desktop Services / Terminal Services Session,,"Session has been disconnected, with a disconnect reason code (see data/reference/disconnect_reason_codes_event40.csv)","```
 Log Name:      Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
 Source:        Microsoft-Windows-TerminalServices-LocalSessionManager
@@ -69,142 +69,142 @@ User:          SYSTEM
 Computer:      server-machine
 Description:
 Session 12 has been disconnected, reason code 5
-```",
-4608,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,
-4609,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,
-4610,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,
-4611,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,
-4612,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-4614,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,
-4615,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-4616,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,
-4618,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-4621,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,
-4622,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,
-4624,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,An account was successfully logged on.,,
-4625,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Account Lockout,,,
-4625,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,,,
-4634,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logoff,,,
-4646,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-4647,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logoff,,,
-4648,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,,,
-4649,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-4649,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-4650,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-4651,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-4652,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-4653,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-4655,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-4656,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,,,
-4656,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Failure read or write to removeable media,,
-4657,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Registry,,,
-4658,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,,,
-4659,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,
-4659,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,
-4660,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,
-4660,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,
-4661,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,
-4661,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,
-4662,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Access,,,
-4663,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,
-4663,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,
-4663,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Success read or write to removeable media,,
-4664,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File System,,,
-4665,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,
-4666,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,
-4667,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,
-4668,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,
-4670,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-4671,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-4672,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,,,
-4672,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,,,
-4673,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,,,
-4673,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,,,
-4674,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,,,
-4674,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,,,
-4675,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,,,
-4688,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit Process Creation,,,
-4689,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit Process Termination,,,
-4690,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,,,
-4691,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-4692,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,
-4693,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,
-4694,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,
-4695,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,
-4696,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit Process Creation,,,
-4697,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,
-4698,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-4699,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-4700,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-4701,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-4702,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-4704,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,
-4705,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,
-4706,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,
-4707,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,
-4709,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-4710,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-4711,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-4712,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-4713,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4714,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,
-4715,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4716,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4717,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4718,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4719,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4720,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,A user account was created.,,
-4722,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4723,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4724,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4725,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4726,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4727,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4728,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4729,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4730,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4731,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4732,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4733,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4734,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4735,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4737,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4738,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4739,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4740,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4741,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Computer Account Management,,,
-4742,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Computer Account Management,,,
-4743,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Computer Account Management,,,
-4744,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4745,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4746,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4747,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4748,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4749,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4750,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4751,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4752,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4753,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4754,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4755,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4756,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4757,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4758,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4759,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4760,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4761,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4762,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,
-4764,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,
-4765,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4766,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4767,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4768,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,,,
-4769,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,,,
-4770,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,,,
-4771,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,,,
-4772,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,,,
-4774,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,,,
-4775,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,,,
+```",,
+4608,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,,
+4609,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,,
+4610,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,,
+4611,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,,
+4612,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+4614,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,,
+4615,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+4616,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,,
+4618,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+4621,Security,Microsoft-Windows-Security-Auditing,System,Audit Security State Change,,,,
+4622,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,,
+4624,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,An account was successfully logged on.,,,Audit Logon
+4625,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Account Lockout,,,,Audit Account Lockout; Audit Logon
+4625,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,,,,Audit Account Lockout; Audit Logon
+4634,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logoff,,,,Audit Logoff
+4646,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+4647,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logoff,,,,Audit Logoff
+4648,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,,,,Audit Logon
+4649,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4649,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4650,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+4651,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+4652,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+4653,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+4655,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+4656,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,,,,Audit Removable Storage
+4656,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Failure read or write to removeable media,,,Audit Removable Storage
+4657,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Registry,,,,
+4658,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,,,,
+4659,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,,
+4659,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,,
+4660,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,,
+4660,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,,
+4661,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,,
+4661,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,,
+4662,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Access,,,,
+4663,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,,,,Audit Removable Storage
+4663,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,,,,Audit Removable Storage
+4663,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Success read or write to removeable media,,,Audit Removable Storage
+4664,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File System,,,,
+4665,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,,
+4666,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,,
+4667,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,,
+4668,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Application Generated,,,,
+4670,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+4671,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+4672,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,,,,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use
+4672,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,,,,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use
+4673,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,,,,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use
+4673,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,,,,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use
+4674,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,,,,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use
+4674,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,,,,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use
+4675,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,,,,Audit Logon
+4688,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit Process Creation,,,,Audit Process Creation
+4689,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit Process Termination,,,,Audit Process Termination
+4690,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,,,,
+4691,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+4692,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,,
+4693,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,,
+4694,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,,
+4695,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit DPAPI Activity,,,,
+4696,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit Process Creation,,,,Audit Process Creation
+4697,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,,,,
+4698,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+4699,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+4700,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+4701,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+4702,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+4704,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,,
+4705,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,,
+4706,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,,
+4707,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,,
+4709,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+4710,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+4711,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+4712,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+4713,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4714,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,,,,
+4715,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4716,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4717,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4718,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4719,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,System Audit Policy was changed.,,,
+4720,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,A user account was created.,,,Audit User Account Management
+4722,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,Audit User Account Management
+4723,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,Audit User Account Management
+4724,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,Audit User Account Management
+4725,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,Audit User Account Management
+4726,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,Audit User Account Management
+4727,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,Audit Security Group Management
+4728,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,Audit Security Group Management
+4729,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,Audit Security Group Management
+4730,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,Audit Security Group Management
+4731,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4732,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4733,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4734,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4735,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,Audit Security Group Management
+4737,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,Audit Security Group Management
+4738,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,Audit User Account Management
+4739,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4740,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,Audit User Account Management
+4741,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Computer Account Management,,,,Audit Computer Account Management
+4742,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Computer Account Management,,,,Audit Computer Account Management
+4743,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Computer Account Management,,,,Audit Computer Account Management
+4744,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4745,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4746,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4747,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4748,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4749,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4750,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4751,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4752,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4753,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4754,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4755,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4756,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4757,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4758,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4759,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4760,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4761,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4762,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,,,,
+4764,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Security Group Management,,,,
+4765,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+4766,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+4767,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+4768,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,,,,Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service
+4769,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,,,,Audit Kerberos (verbose / debug logging)
+4770,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,,,,Audit Kerberos (verbose / debug logging)
+4771,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,,,,Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service
+4772,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,,,,Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service
+4774,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,,,,Audit Credential Validation; Audit Kerberos (verbose / debug logging)
+4775,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,,,,Audit Credential Validation; Audit Kerberos (verbose / debug logging)
 4776,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,The domain controller attempted to validate the credentials for an account.,"```
 The domain controller attempted to validate the credentials for an account.
 
@@ -212,8 +212,8 @@ Authentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0
 Logon Account: administrator
 Source Workstation: WIN-R9H529RIO4Y
 Error Code: 0xc0000064
-```",
-4777,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,,,
+```",,Audit Credential Validation; Audit Kerberos (verbose / debug logging); NTLM auditing
+4777,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,,,,Audit Credential Validation; Audit Kerberos (verbose / debug logging)
 4778,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,A session was reconnected to a Window Station (RDP reconnect / Fast User Switching).,"```
 A session was reconnected to a Window Station.
 
@@ -233,7 +233,7 @@ Additional Information:
    Client Address:  10.42.42.211
 
 This event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.
-```",
+```",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
 4778,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,A session was reconnected to a Window Station (RDP reconnect / Fast User Switching).,"```
 A session was reconnected to a Window Station.
 
@@ -253,20 +253,20 @@ Additional Information:
    Client Address:  10.42.42.211
 
 This event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.
-```",
-4779,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-4779,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-4780,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4781,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4782,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Other Account Management Events,,,
-4783,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
-4784,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
-4785,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
-4786,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
-4787,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
-4788,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
-4789,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
-4790,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,
+```",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4779,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4779,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4780,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+4781,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+4782,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Other Account Management Events,,,,
+4783,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
+4784,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
+4785,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
+4786,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
+4787,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
+4788,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
+4789,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
+4790,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Application Group Management,,,,
 4793,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Other Account Management Events,The Password Policy Checking API was called.,"```
 01/29/2018 10:33:34 PM
 LogName=Security
@@ -291,246 +291,246 @@ Additional Information:
 	Caller Workstation:	SQL01
 	Provided Account Name (unauthenticated):	-
 	Status Code:	0x0
-```",
-4794,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-4800,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-4800,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-4801,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-4801,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-4802,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-4802,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-4803,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-4803,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-4816,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-4817,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4864,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4865,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4866,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4867,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,
-4868,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4869,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4870,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4871,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4872,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4873,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4874,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4875,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4876,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4877,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4878,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4879,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4880,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4881,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4882,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4883,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4884,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4885,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4886,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4887,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4888,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4889,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4890,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4891,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4892,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4893,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4894,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4895,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4896,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4897,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4898,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,
-4902,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4904,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4905,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4906,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4907,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4908,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4909,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-4910,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-4912,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,
-4928,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4929,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4930,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4931,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4932,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Replication,,,
-4933,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Replication,,,
-4934,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4935,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4936,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4937,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,
-4944,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4945,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4946,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4947,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4948,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4949,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4950,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4951,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4952,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4953,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4954,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4956,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4957,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4958,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,
-4960,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-4961,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-4962,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-4963,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-4964,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Special Logon,,,
-4965,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-4976,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-4977,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Quick Mode,,,
-4978,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,
-4979,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,
-4980,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,
-4981,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,
-4982,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,
-4983,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,
-4984,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,
-4985,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File System,,,
-5024,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5025,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5027,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5028,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5029,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5030,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5031,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5032,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5033,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5034,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5035,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5037,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5038,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-5039,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Registry,,,
-5040,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5041,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5042,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5043,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5044,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5045,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5046,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5047,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5048,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5049,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-5051,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File System,,,
-5056,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-5057,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-5058,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5059,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-5060,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-5061,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-5062,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-5063,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5064,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5065,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5066,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5067,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5068,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5069,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5070,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5136,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,
-5137,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,
-5138,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,
-5139,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,
-5140,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,
-5140,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5141,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,
-5142,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,
-5143,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,
-5144,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,
-5145,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Detailed File Share,,,
-5148,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-5149,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-5150,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5151,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5152,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Packet Drop,,,
-5153,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Packet Drop,,,
-5154,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5155,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5156,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5157,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5158,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5159,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,
-5168,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,
-5376,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-5377,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,
-5378,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-5378,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-5440,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5441,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5442,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5443,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5444,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5446,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5447,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-5448,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5449,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5450,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5451,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Quick Mode,,,
-5452,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Quick Mode,,,
-5453,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,
-5456,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5457,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5458,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5459,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5460,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5461,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5462,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5463,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5464,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5465,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5466,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5467,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5468,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5471,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5472,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5473,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5474,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5477,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,
-5478,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-5479,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-5480,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-5483,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-5484,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-5485,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,
-5632,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-5632,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-5633,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,
-5633,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,
-5712,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit RPC Events,,,
-5888,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-5889,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-5890,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,
-6144,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-6145,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,
-6272,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6273,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6274,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6275,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6276,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6277,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6278,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6279,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6280,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,
-6281,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,
-6400,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6401,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6402,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6403,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6404,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6405,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6406,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6407,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6408,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,
-6416,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A new external device was recognized by the System,,PNP Activity auditing
-6419,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A request was made to disable a device,,PNP Activity auditing
-6420,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A device was disabled.,,PNP Activity auditing
-6421,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A request was made to enable a device.,,PNP Activity auditing
-6422,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A device was enabled.,,PNP Activity auditing
-6423,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,The installation of this device is forbidden by system policy.,,PNP Activity auditing
-6424,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,"The installation of this device was allowed, after having previously been forbidden by policy.",,PNP Activity auditing
-41,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The system has rebooted without cleanly shutting down first (kernel-power / unexpected shutdown).,,docs/event-log-operations.md
-1074,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The process X has initiated the restart/shutdown of computer on behalf of user Y for reason Z.,,docs/event-log-operations.md
-1076,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The reason supplied by user Y for the last unexpected shutdown of this computer.,,docs/event-log-operations.md
-6006,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The Event log service was stopped (clean shutdown marker).,,docs/event-log-operations.md
-20001,System,UserPnp,Removable Media / Device (PNP),7005,Driver management concluded the process to install driver,,
-20005,System,UserPnp,Removable Media / Device (PNP),7005,Driver management has restricted the installation of device instance ID,,
+```",,
+4794,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+4800,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4800,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4801,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4801,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4802,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4802,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4803,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4803,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+4816,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+4817,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4864,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4865,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4866,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4867,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,,,,
+4868,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4869,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4870,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4871,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4872,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4873,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4874,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4875,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4876,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4877,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4878,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4879,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4880,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4881,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4882,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4883,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4884,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4885,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4886,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4887,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4888,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4889,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4890,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4891,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4892,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4893,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4894,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4895,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4896,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4897,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4898,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,,,,Audit Certification Services
+4902,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4904,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4905,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4906,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4907,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4908,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4909,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+4910,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+4912,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,,,,
+4928,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4929,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4930,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4931,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4932,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Replication,,,,
+4933,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Replication,,,,
+4934,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4935,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4936,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4937,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Detailed Directory Service Replication,,,,
+4944,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4945,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4946,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4947,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4948,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4949,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4950,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4951,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4952,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4953,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4954,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4956,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4957,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4958,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,,,,
+4960,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+4961,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+4962,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+4963,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+4964,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Special Logon,,,,Audit Special Logon
+4965,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+4976,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+4977,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Quick Mode,,,,
+4978,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,,
+4979,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,,
+4980,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,,
+4981,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,,
+4982,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,,
+4983,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,,
+4984,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Extended Mode,,,,
+4985,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File System,,,,
+5024,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5025,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5027,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5028,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5029,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5030,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5031,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5032,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5033,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5034,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5035,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5037,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5038,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+5039,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Registry,,,,
+5040,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5041,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5042,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5043,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5044,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5045,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5046,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5047,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5048,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5049,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+5051,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File System,,,,
+5056,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+5057,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+5058,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5059,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+5060,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+5061,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+5062,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+5063,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5064,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5065,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5066,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5067,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5068,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5069,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5070,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5136,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,,Audit Directory Service Changes
+5137,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,,Audit Directory Service Changes
+5138,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,,
+5139,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,,
+5140,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,,
+5140,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5141,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,,,,Audit Directory Service Changes
+5142,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,,
+5143,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,,
+5144,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,,
+5145,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Detailed File Share,,,,
+5148,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+5149,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+5150,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5151,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5152,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Packet Drop,,,,
+5153,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Packet Drop,,,,
+5154,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5155,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5156,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5157,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5158,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5159,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,,,,
+5168,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,,,,
+5376,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+5377,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,,,,
+5378,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+5378,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+5440,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5441,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5442,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5443,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5444,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5446,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5447,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+5448,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5449,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5450,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5451,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Quick Mode,,,,
+5452,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Quick Mode,,,,
+5453,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,,,,
+5456,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5457,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5458,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5459,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5460,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5461,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5462,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5463,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5464,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5465,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5466,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5467,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5468,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5471,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5472,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5473,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5474,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5477,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,,,,
+5478,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+5479,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+5480,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+5483,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+5484,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+5485,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,,,,
+5632,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+5632,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+5633,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+5633,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,,,,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events
+5712,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit RPC Events,,,,
+5888,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+5889,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+5890,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,,,,
+6144,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+6145,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Other Policy Change Events,,,,
+6272,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6273,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6274,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6275,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6276,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6277,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6278,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6279,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6280,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Network Policy Server,,,,Audit Network Policy Server
+6281,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,,,,
+6400,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6401,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6402,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6403,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6404,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6405,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6406,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6407,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6408,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,,,,
+6416,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A new external device was recognized by the System,,PNP Activity auditing,Audit PNP Activity
+6419,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A request was made to disable a device,,PNP Activity auditing,Audit PNP Activity
+6420,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A device was disabled.,,PNP Activity auditing,Audit PNP Activity
+6421,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A request was made to enable a device.,,PNP Activity auditing,Audit PNP Activity
+6422,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,A device was enabled.,,PNP Activity auditing,Audit PNP Activity
+6423,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,The installation of this device is forbidden by system policy.,,PNP Activity auditing,Audit PNP Activity
+6424,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),,"The installation of this device was allowed, after having previously been forbidden by policy.",,PNP Activity auditing,Audit PNP Activity
+41,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The system has rebooted without cleanly shutting down first (kernel-power / unexpected shutdown).,,docs/event-log-operations.md,
+1074,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The process X has initiated the restart/shutdown of computer on behalf of user Y for reason Z.,,docs/event-log-operations.md,
+1076,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The reason supplied by user Y for the last unexpected shutdown of this computer.,,docs/event-log-operations.md,
+6006,System,EventLog / Kernel-Power / USER32,Shutdown / Restart,,The Event log service was stopped (clean shutdown marker).,,docs/event-log-operations.md,
+20001,System,UserPnp,Removable Media / Device (PNP),7005,Driver management concluded the process to install driver,,,
+20005,System,UserPnp,Removable Media / Device (PNP),7005,Driver management has restricted the installation of device instance ID,,,
