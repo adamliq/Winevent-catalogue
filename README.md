@@ -18,11 +18,17 @@ shutdown/restart events.
     or the Group Policy "Audit ..." category for Security events)
   - `subcategory` — the specific Group Policy audit subcategory, where applicable
   - `description` — what the event means
-  - `sample` — a real or representative sample of the event's rendered text, where available
+  - `sample` — every event has one: a real sample where the source notebook
+    captured one, otherwise a generated representative example (Event
+    Viewer-style text) using a consistent fictional environment
+    (`CORP.LOCAL` domain, `DC01.corp.local`, etc.)
   - `reference` — pointer to related configuration notes or docs
   - `how_to_collect` — which auditing subcategory/subcategories (from
     `data/reference/audit_configuration.csv`) must be enabled to generate
     this event
+  - `sample_type` — `original` (captured from the source notebook) or
+    `illustrative` (generated); the web lookup page tags illustrative
+    samples so they're never mistaken for a real capture
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
