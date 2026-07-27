@@ -51,6 +51,14 @@ shutdown/restart events.
   registry) path to enable, step-by-step instructions, and the event IDs
   each setting produces.
 
+## Web lookup
+
+`site/index.html` is a self-contained (no build step, no external requests)
+lookup page: search all 431 events by ID or keyword, filter by log/category,
+and view full detail — description, sample log text, and how-to-collect
+configuration steps — plus a reference-tables tab for the NTLM/disconnect
+code lookups and the raw audit policy matrix. Open it directly in a browser.
+
 ## Source
 
 Extracted from a TiddlyWiki 5 export ("MSServer" notebook) covering Windows

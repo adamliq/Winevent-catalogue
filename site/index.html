@@ -1,0 +1,805 @@
+<title>Windows Event Code Lookup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --bg: #faf7f1;
+    --surface: #ffffff;
+    --surface-2: #f3efe6;
+    --ink: #201c15;
+    --muted: #746b57;
+    --faint: #a89d84;
+    --line: rgba(28,24,16,0.12);
+    --line-strong: rgba(28,24,16,0.22);
+    --accent: #b3791f;
+    --accent-ink: #fffdf8;
+    --shadow: 0 8px 24px rgba(28,24,16,0.08);
+
+    --log-security: #a03d52;
+    --log-security-bg: #a03d521a;
+    --log-system: #3a6690;
+    --log-system-bg: #3a66901a;
+    --log-dhcp: #226a5c;
+    --log-dhcp-bg: #226a5c1a;
+    --log-pnp: #6650a0;
+    --log-pnp-bg: #6650a01a;
+    --log-ts: #5c7a2e;
+    --log-ts-bg: #5c7a2e1a;
+    --log-nla: #3a6f80;
+    --log-nla-bg: #3a6f801a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15120c;
+      --surface: #1e1a12;
+      --surface-2: #262017;
+      --ink: #f2e9d8;
+      --muted: #b0a488;
+      --faint: #776c54;
+      --line: rgba(242,233,216,0.1);
+      --line-strong: rgba(242,233,216,0.18);
+      --accent: #e2a53c;
+      --accent-ink: #1a1509;
+      --shadow: 0 8px 28px rgba(0,0,0,0.4);
+
+      --log-security: #e08a9a;
+      --log-security-bg: #e08a9a22;
+      --log-system: #8fb4d9;
+      --log-system-bg: #8fb4d922;
+      --log-dhcp: #6fc9b8;
+      --log-dhcp-bg: #6fc9b822;
+      --log-pnp: #ab9bdb;
+      --log-pnp-bg: #ab9bdb22;
+      --log-ts: #a3cf82;
+      --log-ts-bg: #a3cf8222;
+      --log-nla: #83c2d6;
+      --log-nla-bg: #83c2d622;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15120c;
+    --surface: #1e1a12;
+    --surface-2: #262017;
+    --ink: #f2e9d8;
+    --muted: #b0a488;
+    --faint: #776c54;
+    --line: rgba(242,233,216,0.1);
+    --line-strong: rgba(242,233,216,0.18);
+    --accent: #e2a53c;
+    --accent-ink: #1a1509;
+    --shadow: 0 8px 28px rgba(0,0,0,0.4);
+    --log-security: #e08a9a; --log-security-bg: #e08a9a22;
+    --log-system: #8fb4d9; --log-system-bg: #8fb4d922;
+    --log-dhcp: #6fc9b8; --log-dhcp-bg: #6fc9b822;
+    --log-pnp: #ab9bdb; --log-pnp-bg: #ab9bdb22;
+    --log-ts: #a3cf82; --log-ts-bg: #a3cf8222;
+    --log-nla: #83c2d6; --log-nla-bg: #83c2d622;
+  }
+  :root[data-theme="light"] {
+    --bg: #faf7f1;
+    --surface: #ffffff;
+    --surface-2: #f3efe6;
+    --ink: #201c15;
+    --muted: #746b57;
+    --faint: #a89d84;
+    --line: rgba(28,24,16,0.12);
+    --line-strong: rgba(28,24,16,0.22);
+    --accent: #b3791f;
+    --accent-ink: #fffdf8;
+    --shadow: 0 8px 24px rgba(28,24,16,0.08);
+    --log-security: #a03d52; --log-security-bg: #a03d521a;
+    --log-system: #3a6690; --log-system-bg: #3a66901a;
+    --log-dhcp: #226a5c; --log-dhcp-bg: #226a5c1a;
+    --log-pnp: #6650a0; --log-pnp-bg: #6650a01a;
+    --log-ts: #5c7a2e; --log-ts-bg: #5c7a2e1a;
+    --log-nla: #3a6f80; --log-nla-bg: #3a6f801a;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.5 ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono {
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+
+  a { color: var(--accent); }
+
+  .app {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 100%;
+  }
+
+  header.top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+  }
+  header.top .title-group h1 {
+    font-size: 1.5rem;
+    margin: 0 0 2px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  header.top .title-group p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+  .stat {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .stat b { color: var(--ink); font-weight: 600; }
+
+  nav.tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 3px;
+    width: fit-content;
+  }
+  nav.tabs button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  nav.tabs button.active {
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  nav.tabs button:not(.active):hover { color: var(--ink); }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ---- search / filters ---- */
+  .search-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .search-box {
+    position: relative;
+    flex: 1 1 320px;
+  }
+  .search-box input {
+    width: 100%;
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 11px 14px 11px 38px;
+    border-radius: 9px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+    outline: none;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  .search-box svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    stroke: var(--muted);
+    pointer-events: none;
+  }
+  select#category-filter {
+    font: inherit;
+    font-size: 0.84rem;
+    padding: 10px 12px;
+    border-radius: 9px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .chip-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .log-chip {
+    appearance: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--muted);
+    padding: 6px 11px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  }
+  .log-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: 0.55; }
+  .log-chip.on {
+    color: var(--ink);
+    border-color: var(--line-strong);
+  }
+  .log-chip.on .dot { opacity: 1; }
+
+  /* ---- main split ---- */
+  .split {
+    display: grid;
+    grid-template-columns: minmax(280px, 380px) 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .split { grid-template-columns: 1fr; }
+  }
+
+  .list-wrap {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .list-count {
+    padding: 10px 14px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    font-family: ui-monospace, monospace;
+  }
+  .list {
+    max-height: 68vh;
+    overflow-y: auto;
+  }
+  .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    cursor: pointer;
+  }
+  .row:last-child { border-bottom: none; }
+  .row:hover { background: var(--surface-2); }
+  .row.selected { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--accent); }
+  .row .rid {
+    font-family: ui-monospace, monospace;
+    font-weight: 700;
+    font-size: 0.92rem;
+    min-width: 3.6em;
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+  }
+  .row .rbody { flex: 1; min-width: 0; }
+  .row .rdesc {
+    font-size: 0.83rem;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .row .rmeta { display: flex; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: ui-monospace, monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 2px 7px;
+    border-radius: 5px;
+  }
+  .empty-list {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  /* ---- detail pane ---- */
+  .detail {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 24px 26px 28px;
+    min-height: 68vh;
+  }
+  .detail-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 68vh;
+    color: var(--faint);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+  }
+  .detail-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .detail-id {
+    font-family: ui-monospace, monospace;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .detail-id-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .detail-desc {
+    font-size: 1.02rem;
+    text-wrap: balance;
+    padding-top: 2px;
+    flex: 1 1 260px;
+  }
+
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px 20px;
+    margin-bottom: 20px;
+  }
+  .field dt {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .field dd {
+    margin: 0;
+    font-family: ui-monospace, monospace;
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+
+  section.block { margin-top: 22px; }
+  section.block h3 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  section.block h3::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  pre.sample {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: ui-monospace, monospace;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+  }
+
+  .config-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: var(--surface-2);
+  }
+  .config-card:last-child { margin-bottom: 0; }
+  .config-card h4 {
+    margin: 0 0 6px;
+    font-size: 0.86rem;
+  }
+  .config-card .path {
+    font-family: ui-monospace, monospace;
+    font-size: 0.76rem;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 6px 9px;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .config-card .steps { font-size: 0.85rem; color: var(--ink); }
+  .config-card .ref { font-size: 0.78rem; margin-top: 8px; word-break: break-all; }
+
+  table.ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+  }
+  table.ref-table th, table.ref-table td {
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.ref-table th {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  table.ref-table td:first-child, table.ref-table th:first-child {
+    font-family: ui-monospace, monospace;
+    white-space: nowrap;
+  }
+  .table-scroll { overflow-x: auto; }
+
+  .reflink-btn {
+    appearance: none;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--accent);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 11px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  .reflink-btn:hover { background: var(--surface-2); }
+
+  /* ---- reference tables tab ---- */
+  .ref-section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 20px 22px 24px;
+    margin-bottom: 18px;
+  }
+  .ref-section h2 {
+    font-size: 1.02rem;
+    margin: 0 0 4px;
+  }
+  .ref-section p.sub {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 0.83rem;
+  }
+
+  footer.foot {
+    color: var(--faint);
+    font-size: 0.76rem;
+    text-align: center;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="app">
+  <header class="top">
+    <div class="title-group">
+      <h1>Windows Event Code Lookup</h1>
+      <p>Search Windows Event IDs by number, keyword, log, or audit category — with how‑to‑collect steps.</p>
+    </div>
+    <div class="stat" id="header-stat"></div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="active" data-panel="events">Events</button>
+    <button data-panel="reference">Reference tables</button>
+  </nav>
+
+  <div class="panel active" id="panel-events">
+    <div class="search-row" style="margin-bottom:12px;">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search" type="text" placeholder="e.g. 4624, logon, DHCP scope, removable media…" autocomplete="off" />
+      </div>
+      <select id="category-filter"><option value="">All categories</option></select>
+    </div>
+    <div class="chip-row" id="log-chips" style="margin-bottom:16px;"></div>
+
+    <div class="split">
+      <div class="list-wrap">
+        <div class="list-count" id="list-count"></div>
+        <div class="list" id="list"></div>
+      </div>
+      <div class="detail" id="detail">
+        <div class="detail-empty">Select an event on the left, or search by ID or keyword, to see full details — description, sample log text, and how to configure auditing to collect it.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-reference">
+    <div class="ref-section">
+      <h2>NTLM / Kerberos logon validation error codes</h2>
+      <p class="sub">Seen in the <span class="mono">Error Code</span> field of Event ID 4776.</p>
+      <div class="table-scroll" id="ref-ntlm"></div>
+    </div>
+    <div class="ref-section">
+      <h2>RDS client disconnect reason codes</h2>
+      <p class="sub">Seen in Event ID 40 (TerminalServices‑LocalSessionManager).</p>
+      <div class="table-scroll" id="ref-disconnect"></div>
+    </div>
+    <div class="ref-section">
+      <h2>SharePoint audit event types</h2>
+      <p class="sub">Separate numbering scheme from Windows Event Log IDs — not cross‑referenced with the main catalogue.</p>
+      <div class="table-scroll" id="ref-sharepoint"></div>
+    </div>
+    <div class="ref-section">
+      <h2>Full audit policy → Event ID matrix</h2>
+      <p class="sub">Raw Group Policy audit category mapping, before expansion into individual events.</p>
+      <div class="table-scroll" id="ref-matrix"></div>
+    </div>
+  </div>
+
+  <footer class="foot">Built from a Windows Server administration notebook · 431 events indexed · <a href="https://github.com/adamliq/Winevent-catalogue" target="_blank" rel="noopener">Winevent-catalogue</a> data files</footer>
+</div>
+
+<script>
+const DATA = {"events":[{"event_id":"4205","log":"Applications and Servers->Microsoft->Windows->NLAsvc","source":"Nlasvc","category":"Network Location Awareness","subcategory":"Gateway Resolution","description":"Gateway resolution failed on interface for xx with error ...","sample":"","reference":"","how_to_collect":""},{"event_id":"4343","log":"Applications and Servers->Microsoft->Windows->NLAsvc","source":"Nlasvc","category":"Network Location Awareness","subcategory":"LDAP Authentication","description":"LDAP Authentication on interface failed","sample":"","reference":"","how_to_collect":""},{"event_id":"70","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Scope xxx for ipv4 is configured by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"72","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Scope xxx for ipv4 is deleted by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"73","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Scope xxx for ipv4 is activated by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"74","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Scope xxx for ipv4 is deactivated by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"75","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Scope xxx for ipv4 is updated with lease duration xxx seconds by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"76","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Scope xxx for ipv4 is updated with option setting xx by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"89","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Scope ... for ipv4 is updated with support type...by....The previous configuration state was : ...","sample":"","reference":"","how_to_collect":""},{"event_id":"106","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Reservation xxx for ipv4 is configured under scope xxx by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"107","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Reservation xxx for ipv4 is deleted under scope xxx by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"108","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Reservation xxx for ipv4 under scope xxx is enabled for dns dynamic updates by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"119","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"Added exclusion ip address range xxx in the address pool for ipv4 under scope xxx by xxx","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"20221","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"Policy","description":"Description of Scope ....policy...was set to ... for ...","sample":"","reference":"","how_to_collect":""},{"event_id":"20223","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"Policy","description":"The conditions for scope...policy...have been set to.....The conditions are grouped by logical operator OR","sample":"","reference":"","how_to_collect":""},{"event_id":"20227","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"Policy","description":"Policy default ... was deleted from scope","sample":"","reference":"","how_to_collect":""},{"event_id":"20237","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"Policy","description":"Description of scope...policy...was set to....","sample":"","reference":"","how_to_collect":""},{"event_id":"20239","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"Policy","description":"Processing order of scope...policy was changed to..from..","sample":"","reference":"","how_to_collect":""},{"event_id":"20243","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"DHCP Failover","description":"Scope xxx has been added to the failover relationship","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"20244","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"DHCP Failover","description":"Scope xxx has been removed from the failover relationship","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"20287","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"","description":"DHCP client request from xxx was dropped since the last applicable ip ranges in scope xxx are out of available addresses","sample":"","reference":"Configure","how_to_collect":""},{"event_id":"20291","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"DHCP-Failover","description":"A Binding-ACK message with transaction..was sent for IP address...with reject reason...to partner server...for failover relationship","sample":"","reference":"","how_to_collect":""},{"event_id":"20292","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"DHCP-Failover","description":"A Binding-ACK message with transaction..was received for IP address...with reject reason...from partner server...for failover relationship","sample":"","reference":"","how_to_collect":""},{"event_id":"20315","log":"Microsoft-Windows-DHCP-Server","source":"DHCP-Server","category":"DHCP","subcategory":"Policy","description":"DNSSuffix of scope...policy...was set to","sample":"","reference":"","how_to_collect":""},{"event_id":"2003","log":"Microsoft-Windows-DriverFrameworks-UserMode/Operational","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"Failure read or write to removeable media","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"2004","log":"Microsoft-Windows-DriverFrameworks-UserMode/Operational","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"The UMDF Host is loading Driver","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"2005","log":"Microsoft-Windows-DriverFrameworks-UserMode/Operational","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"The UMDF Host Process..has loaded module","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"2010","log":"Microsoft-Windows-DriverFrameworks-UserMode/Operational","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"Failure read or write to removeable media","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"2100","log":"Microsoft-Windows-DriverFrameworks-UserMode/Operational","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"Received a PNP or Power Operation","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"2105","log":"Microsoft-Windows-DriverFrameworks-UserMode/Operational","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"Forwarded a PNP or Power Operation","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"2106","log":"Microsoft-Windows-DriverFrameworks-UserMode/Operational","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"Received a PNP or Power Operation","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"21","log":"Microsoft-Windows-TerminalServices-LocalSessionManager/Operational","source":"Microsoft-Windows-TerminalServices-LocalSessionManager","category":"Remote Desktop Services / Terminal Services Session","subcategory":"","description":"Session logon succeeded","sample":"```\nRemote Desktop Services: Session logon succeeded:\n\nUser: domain\\fred.burgmann\nSession ID: 10\nSource Network Address: 192.168.10.1\n```","reference":"","how_to_collect":""},{"event_id":"23","log":"Microsoft-Windows-TerminalServices-LocalSessionManager/Operational","source":"Microsoft-Windows-TerminalServices-LocalSessionManager","category":"Remote Desktop Services / Terminal Services Session","subcategory":"","description":"Session logoff succeeded","sample":"```\nRemote Desktop Services: Session logoff succeeded:\n\nUser: domain\\fred.burgmann\nSession ID: 10\n```","reference":"","how_to_collect":""},{"event_id":"24","log":"Microsoft-Windows-TerminalServices-LocalSessionManager/Operational","source":"Microsoft-Windows-TerminalServices-LocalSessionManager","category":"Remote Desktop Services / Terminal Services Session","subcategory":"","description":"Session has been disconnected","sample":"```\nRemote Desktop Services: Session has been disconnected:\n\nUser: domain\\fred.burgmann\nSession ID: 10\nSource Network Address: 192.168.10.1\n```","reference":"","how_to_collect":""},{"event_id":"25","log":"Microsoft-Windows-TerminalServices-LocalSessionManager/Operational","source":"Microsoft-Windows-TerminalServices-LocalSessionManager","category":"Remote Desktop Services / Terminal Services Session","subcategory":"","description":"Session reconnection succeeded","sample":"```\nRemote Desktop Services: Session reconnection succeeded:\n\nUser: domain\\fred.burgmann\nSession ID: 10\nSource Network Address: 192.168.10.1\n```","reference":"","how_to_collect":""},{"event_id":"40","log":"Microsoft-Windows-TerminalServices-LocalSessionManager/Operational","source":"Microsoft-Windows-TerminalServices-LocalSessionManager","category":"Remote Desktop Services / Terminal Services Session","subcategory":"","description":"Session has been disconnected, with a disconnect reason code (see data/reference/disconnect_reason_codes_event40.csv)","sample":"```\nLog Name:      Microsoft-Windows-TerminalServices-LocalSessionManager/Operational\nSource:        Microsoft-Windows-TerminalServices-LocalSessionManager\nDate:          5/4/2017 10:49:19 AM\nEvent ID:      40\nTask Category: None\nLevel:         Information\nKeywords:     \nUser:          SYSTEM\nComputer:      server-machine\nDescription:\nSession 12 has been disconnected, reason code 5\n```","reference":"","how_to_collect":""},{"event_id":"4608","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security State Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4609","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security State Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4610","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security System Extension","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4611","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security System Extension","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4612","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4614","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security System Extension","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4615","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4616","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security State Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4618","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4621","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security State Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4622","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security System Extension","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4624","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Logon","description":"An account was successfully logged on.","sample":"","reference":"","how_to_collect":"Audit Logon"},{"event_id":"4625","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Account Lockout","description":"","sample":"","reference":"","how_to_collect":"Audit Account Lockout; Audit Logon"},{"event_id":"4625","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Logon","description":"","sample":"","reference":"","how_to_collect":"Audit Account Lockout; Audit Logon"},{"event_id":"4634","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Logoff","description":"","sample":"","reference":"","how_to_collect":"Audit Logoff"},{"event_id":"4646","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4647","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Logoff","description":"","sample":"","reference":"","how_to_collect":"Audit Logoff"},{"event_id":"4648","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Logon","description":"","sample":"","reference":"","how_to_collect":"Audit Logon"},{"event_id":"4649","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4649","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4650","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4651","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4652","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4653","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4655","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4656","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Handle Manipulation","description":"","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"4656","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"Failure read or write to removeable media","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"4657","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Registry","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4658","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Handle Manipulation","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4659","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Kernel Object","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4659","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit SAM","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4660","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Kernel Object","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4660","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit SAM","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4661","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Kernel Object","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4661","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit SAM","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4662","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Access","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4663","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Kernel Object","description":"","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"4663","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit SAM","description":"","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"4663","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"Removable Storage device.","description":"Success read or write to removeable media","sample":"","reference":"","how_to_collect":"Audit Removable Storage"},{"event_id":"4664","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File System","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4665","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Application Generated","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4666","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Application Generated","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4667","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Application Generated","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4668","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Application Generated","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4670","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4671","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4672","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Privilege Use","subcategory":"Audit Non-Sensitive Privilege Use","description":"","sample":"","reference":"","how_to_collect":"Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use"},{"event_id":"4672","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Privilege Use","subcategory":"Audit Sensitive Privilege Use","description":"","sample":"","reference":"","how_to_collect":"Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use"},{"event_id":"4673","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Privilege Use","subcategory":"Audit Non-Sensitive Privilege Use","description":"","sample":"","reference":"","how_to_collect":"Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use"},{"event_id":"4673","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Privilege Use","subcategory":"Audit Sensitive Privilege Use","description":"","sample":"","reference":"","how_to_collect":"Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use"},{"event_id":"4674","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Privilege Use","subcategory":"Audit Non-Sensitive Privilege Use","description":"","sample":"","reference":"","how_to_collect":"Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use"},{"event_id":"4674","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Privilege Use","subcategory":"Audit Sensitive Privilege Use","description":"","sample":"","reference":"","how_to_collect":"Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use"},{"event_id":"4675","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Logon","description":"","sample":"","reference":"","how_to_collect":"Audit Logon"},{"event_id":"4688","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit Process Creation","description":"","sample":"","reference":"","how_to_collect":"Audit Process Creation"},{"event_id":"4689","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit Process Termination","description":"","sample":"","reference":"","how_to_collect":"Audit Process Termination"},{"event_id":"4690","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Handle Manipulation","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4691","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4692","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit DPAPI Activity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4693","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit DPAPI Activity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4694","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit DPAPI Activity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4695","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit DPAPI Activity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4696","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit Process Creation","description":"","sample":"","reference":"","how_to_collect":"Audit Process Creation"},{"event_id":"4697","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Security System Extension","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4698","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4699","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4700","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4701","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4702","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4704","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authorization Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4705","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authorization Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4706","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authorization Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4707","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authorization Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4709","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4710","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4711","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4712","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4713","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4714","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authorization Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4715","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4716","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4717","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4718","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4719","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"System Audit Policy was changed.","sample":"","reference":"","how_to_collect":""},{"event_id":"4720","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"A user account was created.","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4722","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4723","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4724","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4725","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4726","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4727","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":"Audit Security Group Management"},{"event_id":"4728","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":"Audit Security Group Management"},{"event_id":"4729","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":"Audit Security Group Management"},{"event_id":"4730","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":"Audit Security Group Management"},{"event_id":"4731","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4732","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4733","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4734","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4735","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":"Audit Security Group Management"},{"event_id":"4737","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":"Audit Security Group Management"},{"event_id":"4738","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4739","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4740","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit User Account Management"},{"event_id":"4741","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Computer Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit Computer Account Management"},{"event_id":"4742","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Computer Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit Computer Account Management"},{"event_id":"4743","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Computer Account Management","description":"","sample":"","reference":"","how_to_collect":"Audit Computer Account Management"},{"event_id":"4744","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4745","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4746","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4747","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4748","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4749","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4750","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4751","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4752","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4753","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4754","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4755","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4756","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4757","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4758","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4759","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4760","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4761","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4762","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Distribution Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4764","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Security Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4765","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4766","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4767","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4768","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Kerberos Authentication Service","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service"},{"event_id":"4769","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Kerberos Service Ticket Operations","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging)"},{"event_id":"4770","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Kerberos Service Ticket Operations","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging)"},{"event_id":"4771","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Kerberos Authentication Service","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service"},{"event_id":"4772","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Kerberos Authentication Service","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service"},{"event_id":"4774","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Credential Validation","description":"","sample":"","reference":"","how_to_collect":"Audit Credential Validation; Audit Kerberos (verbose / debug logging)"},{"event_id":"4775","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Credential Validation","description":"","sample":"","reference":"","how_to_collect":"Audit Credential Validation; Audit Kerberos (verbose / debug logging)"},{"event_id":"4776","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Credential Validation","description":"The domain controller attempted to validate the credentials for an account.","sample":"```\nThe domain controller attempted to validate the credentials for an account.\n\nAuthentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0\nLogon Account: administrator\nSource Workstation: WIN-R9H529RIO4Y\nError Code: 0xc0000064\n```","reference":"","how_to_collect":"Audit Credential Validation; Audit Kerberos (verbose / debug logging); NTLM auditing"},{"event_id":"4777","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Credential Validation","description":"","sample":"","reference":"","how_to_collect":"Audit Credential Validation; Audit Kerberos (verbose / debug logging)"},{"event_id":"4778","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"A session was reconnected to a Window Station (RDP reconnect / Fast User Switching).","sample":"```\nA session was reconnected to a Window Station.\n\nSubject:\n\n   Account Name:  Administrator\n   Account Domain:  WIN-R9H529RIO4Y\n   Logon ID:  0x169e9\n\nSession:\n\n   Session Name:  RDP-Tcp#0\n\nAdditional Information:\n\n   Client Name:  XPEDIT\n   Client Address:  10.42.42.211\n\nThis event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.\n```","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4778","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"A session was reconnected to a Window Station (RDP reconnect / Fast User Switching).","sample":"```\nA session was reconnected to a Window Station.\n\nSubject:\n\n   Account Name:  Administrator\n   Account Domain:  WIN-R9H529RIO4Y\n   Logon ID:  0x169e9\n\nSession:\n\n   Session Name:  RDP-Tcp#0\n\nAdditional Information:\n\n   Client Name:  XPEDIT\n   Client Address:  10.42.42.211\n\nThis event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.\n```","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4779","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4779","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4780","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4781","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4782","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Other Account Management Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4783","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4784","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4785","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4786","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4787","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4788","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4789","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4790","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Application Group Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4793","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit Other Account Management Events","description":"The Password Policy Checking API was called.","sample":"```\n01/29/2018 10:33:34 PM\nLogName=Security\nSourceName=Microsoft Windows security auditing.\nEventCode=4793\nEventType=0\nType=Information\nComputerName=SQL01.domain.com\nTaskCategory=Other Account Management Events\nOpCode=Info\nRecordNumber=18046406\nKeywords=Audit Success\nMessage=The Password Policy Checking API was called.\n\nSubject:\n\tSecurity ID:\t\tS-1-5-21-xxxxxxxxxx\n\tAccount Name:\t\tMSSQLDB\n\tAccount Domain:\t\tDOMAIN.COM\n\tLogon ID:\t\t0x264d5\n\nAdditional Information:\n\tCaller Workstation:\tSQL01\n\tProvided Account Name (unauthenticated):\t-\n\tStatus Code:\t0x0\n```","reference":"","how_to_collect":""},{"event_id":"4794","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4800","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4800","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4801","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4801","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4802","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4802","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4803","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4803","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"4816","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4817","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4864","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4865","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4866","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4867","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Authentication Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4868","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4869","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4870","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4871","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4872","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4873","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4874","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4875","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4876","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4877","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4878","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4879","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4880","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4881","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4882","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4883","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4884","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4885","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4886","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4887","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4888","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4889","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4890","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4891","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4892","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4893","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4894","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4895","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4896","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4897","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4898","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Certification Services","description":"","sample":"","reference":"","how_to_collect":"Audit Certification Services"},{"event_id":"4902","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4904","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4905","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4906","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4907","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4908","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4909","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4910","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4912","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Audit Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4928","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4929","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4930","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4931","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4932","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4933","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4934","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4935","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4936","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4937","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Detailed Directory Service Replication","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4944","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4945","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4946","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4947","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4948","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4949","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4950","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4951","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4952","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4953","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4954","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4956","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4957","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4958","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit MPSSVC Rule-Level Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4960","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4961","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4962","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4963","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4964","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Special Logon","description":"","sample":"","reference":"","how_to_collect":"Audit Special Logon"},{"event_id":"4965","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4976","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4977","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Quick Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4978","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Extended Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4979","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Extended Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4980","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Extended Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4981","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Extended Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4982","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Extended Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4983","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Extended Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4984","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Extended Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"4985","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File System","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5024","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5025","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5027","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5028","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5029","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5030","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5031","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5032","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5033","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5034","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5035","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5037","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5038","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5039","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Registry","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5040","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5041","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5042","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5043","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5044","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5045","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5046","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5047","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5048","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5049","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5051","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File System","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5056","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5057","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5058","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5059","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5060","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5061","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5062","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5063","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5064","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5065","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5066","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5067","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5068","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5069","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5070","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5136","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Changes","description":"","sample":"","reference":"","how_to_collect":"Audit Directory Service Changes"},{"event_id":"5137","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Changes","description":"","sample":"","reference":"","how_to_collect":"Audit Directory Service Changes"},{"event_id":"5138","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Changes","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5139","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Changes","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5140","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File Share","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5140","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5141","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"DS Access","subcategory":"Audit Directory Service Changes","description":"","sample":"","reference":"","how_to_collect":"Audit Directory Service Changes"},{"event_id":"5142","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File Share","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5143","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File Share","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5144","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File Share","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5145","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Detailed File Share","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5148","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5149","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5150","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5151","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5152","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Packet Drop","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5153","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Packet Drop","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5154","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5155","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5156","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5157","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5158","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5159","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Filtering Platform Connection","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5168","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit File Share","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5376","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5377","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Management","subcategory":"Audit User Account Management","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5378","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"5378","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"5440","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5441","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5442","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5443","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5444","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5446","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5447","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5448","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5449","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5450","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5451","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Quick Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5452","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Quick Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5453","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit IPsec Main Mode","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5456","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5457","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5458","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5459","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5460","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5461","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5462","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5463","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5464","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5465","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5466","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5467","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5468","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5471","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5472","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5473","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5474","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5477","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Filtering Platform Policy Change","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5478","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5479","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5480","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5483","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5484","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5485","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit IPsec Driver","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5632","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"5632","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"5633","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Account Logon","subcategory":"Audit Other Account Logon Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"5633","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Other Logon/Logoff Events","description":"","sample":"","reference":"","how_to_collect":"Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events"},{"event_id":"5712","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Detailed Tracking","subcategory":"Audit RPC Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5888","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5889","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"5890","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Object Access","subcategory":"Audit Other Object Access Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6144","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6145","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Policy Change","subcategory":"Audit Other Policy Change Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6272","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6273","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6274","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6275","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6276","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6277","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6278","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6279","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6280","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"Logon/Logoff","subcategory":"Audit Network Policy Server","description":"","sample":"","reference":"","how_to_collect":"Audit Network Policy Server"},{"event_id":"6281","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit System Integrity","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6400","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6401","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6402","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6403","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6404","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6405","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6406","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6407","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6408","log":"Security","source":"Microsoft-Windows-Security-Auditing","category":"System","subcategory":"Audit Other System Events","description":"","sample":"","reference":"","how_to_collect":""},{"event_id":"6416","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"","description":"A new external device was recognized by the System","sample":"","reference":"PNP Activity auditing","how_to_collect":"Audit PNP Activity"},{"event_id":"6419","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"","description":"A request was made to disable a device","sample":"","reference":"PNP Activity auditing","how_to_collect":"Audit PNP Activity"},{"event_id":"6420","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"","description":"A device was disabled.","sample":"","reference":"PNP Activity auditing","how_to_collect":"Audit PNP Activity"},{"event_id":"6421","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"","description":"A request was made to enable a device.","sample":"","reference":"PNP Activity auditing","how_to_collect":"Audit PNP Activity"},{"event_id":"6422","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"","description":"A device was enabled.","sample":"","reference":"PNP Activity auditing","how_to_collect":"Audit PNP Activity"},{"event_id":"6423","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"","description":"The installation of this device is forbidden by system policy.","sample":"","reference":"PNP Activity auditing","how_to_collect":"Audit PNP Activity"},{"event_id":"6424","log":"Security","source":"Microsoft Windows Security Auditing","category":"Removable Media / Device (PNP)","subcategory":"","description":"The installation of this device was allowed, after having previously been forbidden by policy.","sample":"","reference":"PNP Activity auditing","how_to_collect":"Audit PNP Activity"},{"event_id":"41","log":"System","source":"EventLog / Kernel-Power / USER32","category":"Shutdown / Restart","subcategory":"","description":"The system has rebooted without cleanly shutting down first (kernel-power / unexpected shutdown).","sample":"","reference":"docs/event-log-operations.md","how_to_collect":""},{"event_id":"1074","log":"System","source":"EventLog / Kernel-Power / USER32","category":"Shutdown / Restart","subcategory":"","description":"The process X has initiated the restart/shutdown of computer on behalf of user Y for reason Z.","sample":"","reference":"docs/event-log-operations.md","how_to_collect":""},{"event_id":"1076","log":"System","source":"EventLog / Kernel-Power / USER32","category":"Shutdown / Restart","subcategory":"","description":"The reason supplied by user Y for the last unexpected shutdown of this computer.","sample":"","reference":"docs/event-log-operations.md","how_to_collect":""},{"event_id":"6006","log":"System","source":"EventLog / Kernel-Power / USER32","category":"Shutdown / Restart","subcategory":"","description":"The Event log service was stopped (clean shutdown marker).","sample":"","reference":"docs/event-log-operations.md","how_to_collect":""},{"event_id":"20001","log":"System","source":"UserPnp","category":"Removable Media / Device (PNP)","subcategory":"7005","description":"Driver management concluded the process to install driver","sample":"","reference":"","how_to_collect":""},{"event_id":"20005","log":"System","source":"UserPnp","category":"Removable Media / Device (PNP)","subcategory":"7005","description":"Driver management has restricted the installation of device instance ID","sample":"","reference":"","how_to_collect":""}],"audit_configuration":[{"subcategory":"Audit Credential Validation","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Account Logon\\Audit Credential Validation","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit events': Success and Failure.","event_ids":"4774, 4775, 4776, 4777","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-credential-validation"},{"subcategory":"Audit Kerberos Authentication Service","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Account Logon\\Audit Kerberos Authentication Service","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit events': Success and Failure.","event_ids":"4768, 4771, 4772","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-kerberos-authentication-service"},{"subcategory":"Audit Kerberos (verbose / debug logging)","gpo_path":"Computer Configuration\\Policies\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Audit Policies\\Account Logon (Audit Credential Validation, Audit Kerberos Authentication Service, Audit Kerberos Service Ticket Operations, Audit Other Account Logon Events)","steps":"GPO: enable the four Account Logon subcategories above. Single machine verbose logging: run regedit.exe, expand HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Lsa\\Kerberos\\Parameters, create a DWORD value named LogLevel if it doesn't exist, set it to 1, click OK.","event_ids":"4768, 4769, 4770, 4771, 4772, 4774, 4775, 4776, 4777, 4649, 4778, 4779, 4800, 4801, 4802, 4803, 5378, 5632, 5633","reference_url":""},{"subcategory":"Audit User Account Management","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Account Management\\Audit User Account Management","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4720, 4722, 4723, 4724, 4725, 4726, 4738, 4740","reference_url":""},{"subcategory":"Audit Computer Account Management","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Account Management\\Audit Computer Account Management","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4741, 4742, 4743","reference_url":""},{"subcategory":"Audit Security Group Management","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Account Management\\Audit Security Group Management","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4727, 4728, 4729, 4730, 4735, 4737","reference_url":""},{"subcategory":"Audit Directory Service Changes","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\DS Access\\Audit Directory Service Changes","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"5136, 5137, 5141","reference_url":""},{"subcategory":"Audit Account Lockout","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Logon/Logoff\\Audit account lockout events","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4625","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-account-lockout"},{"subcategory":"Audit Logoff","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Logon/Logoff\\Audit logoff events","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4634, 4647","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-logoff"},{"subcategory":"Audit Logon","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Logon/Logoff\\Audit logon events","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4624, 4625, 4648, 4675","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-logon"},{"subcategory":"Audit Network Policy Server","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Logon/Logoff\\Audit Network Policy Server","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"6272, 6273, 6274, 6275, 6276, 6277, 6278, 6279, 6280","reference_url":""},{"subcategory":"Audit Other Logon/Logoff Events","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Logon/Logoff\\Audit other logon/logoff events","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4649, 4778, 4779, 4800, 4801, 4802, 4803, 5378, 5632, 5633","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-other-logonlogoff-events"},{"subcategory":"Audit Special Logon","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Logon/Logoff\\Audit Special Logon","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4964","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-special-logon"},{"subcategory":"Audit Non-Sensitive Privilege Use","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Privilege Use\\Audit Non-Sensitive Privilege Use","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4672, 4673, 4674","reference_url":""},{"subcategory":"Audit Sensitive Privilege Use","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Privilege Use\\Audit Sensitive Privilege Use","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"4672, 4673, 4674","reference_url":""},{"subcategory":"Audit PNP Activity","gpo_path":"Computer Configuration\\Windows Settings\\Security Settings\\Advanced Audit Policy Configuration\\Detailed Tracking\\Audit PNP Activity","steps":"Event Viewer > navigate to the GPO path > select 'Configure the following audit event': Success and Failure.","event_ids":"6416, 6419, 6420, 6421, 6422, 6423, 6424","reference_url":"https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-pnp-activity"},{"subcategory":"Audit Process Creation","gpo_path":"Advanced Security Audit Policy Settings\\Detailed Tracking\\Audit Process Creation","steps":"Enable the subcategory at the GPO path (Success).","event_ids":"4688, 4696","reference_url":""},{"subcategory":"Audit Process Termination","gpo_path":"Advanced Security Audit Policy Settings\\Detailed Tracking\\Audit Process Termination","steps":"Enable the subcategory at the GPO path (Success).","event_ids":"4689","reference_url":""},{"subcategory":"Audit Certification Services","gpo_path":"Advanced Security Audit Policy Settings\\Object Access\\Audit Certification Services","steps":"Enable the subcategory at the GPO path (Success and Failure).","event_ids":"4868, 4869, 4870, 4871, 4872, 4873, 4874, 4875, 4876, 4877, 4878, 4879, 4880, 4881, 4882, 4883, 4884, 4885, 4886, 4887, 4888, 4889, 4890, 4891, 4892, 4893, 4894, 4895, 4896, 4897, 4898","reference_url":""},{"subcategory":"Audit Removable Storage","gpo_path":"Computer Configuration\\Security Settings\\Advanced Audit Policy Configuration\\Object Access\\Audit Removable Storage","steps":"Sign in to the domain controller as a domain administrator. In Server Manager, go to Tools > Group Policy Management. In the console tree, right-click the relevant GPO and click Edit. Navigate to Computer Configuration > Security Settings > Advanced Audit Policy Configuration > Object Access > Audit Removable Storage. Check 'Configure the following audit events', check Success (and Failure if desired), click OK. If Failure was selected, also double-click Audit Handle Manipulation, check 'Configure the following audit events', and select Failure. Click OK and close the Group Policy Management Editor.","event_ids":"2003, 2004, 2005, 2010, 2100, 2105, 2106, 4656, 4663","reference_url":""},{"subcategory":"Printer auditing","gpo_path":"Printer Properties > Security tab > Advanced > Auditing tab (per-printer object ACL auditing) + Microsoft-Windows-PrinterService/Operational log","steps":"For print job names in the log, download and install KB2919355. Per-printer object auditing: open Printer Properties > Security tab > Advanced > Auditing tab > Add > select Principal > select Group > select Type and permissions > OK. Enable the log channel: Event Viewer > Applications and Services Logs > Microsoft > Windows > PrintService > Operational > right-click > Enable Log.","event_ids":"307, 800, 802, 805","reference_url":""},{"subcategory":"NTLM auditing","gpo_path":"Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options > Network security: Restrict NTLM (audit/block settings)","steps":"See vendor references for enabling NTLM auditing events (event IDs 8001-8004, 4776) via the 'Network security: Restrict NTLM' group policy settings.","event_ids":"4776","reference_url":"https://technet.microsoft.com/en-au/library/jj865682%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396; https://blogs.technet.microsoft.com/askds/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7/"},{"subcategory":"Netlogon debug logging","gpo_path":"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetLogon\\Parameters (DBFlag, MaximumLogFileSize) - not a Windows Event Log, writes to %windir%\\debug\\netlogon.log","steps":"Enable: open an administrative Command Prompt. Set the debug mask: 'Nltest /DBFlag:2080FFFF' (or 'reg add \"\\\\$computerName\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetLogon\\Parameters\" /v DBFlag /t REG_DWORD /d 0x2080ffdf /f'). Optionally set max log size: 'reg add \"...\\Parameters\" /v MaximumLogFileSize /t REG_DWORD /d 100000000 /f'. Restart the service: 'net stop netlogon' then 'net start netlogon' (or 'sc.exe \\\\$computerName stop/start netlogon'). Disable: 'Nltest /DBFlag:0x0' (restart not usually required to stop new logging).","event_ids":"","reference_url":"https://support.microsoft.com/en-us/help/109626/enabling-debug-logging-for-the-netlogon-service"}],"ntlm_error_codes":[{"error_code":"C0000064","reason":"user name does not exist","related_event_id":"4776"},{"error_code":"C000006A","reason":"user name is correct but the password is wrong","related_event_id":"4776"},{"error_code":"C0000234","reason":"user is currently locked out","related_event_id":"4776"},{"error_code":"C0000072","reason":"account is currently disabled","related_event_id":"4776"},{"error_code":"C000006F","reason":"user tried to logon outside his day of week or time of day restrictions","related_event_id":"4776"},{"error_code":"C0000070","reason":"workstation restriction","related_event_id":"4776"},{"error_code":"C0000193","reason":"account expiration","related_event_id":"4776"},{"error_code":"C0000071","reason":"expired password","related_event_id":"4776"},{"error_code":"C0000224","reason":"user is required to change password at next logon","related_event_id":"4776"},{"error_code":"C0000225","reason":"evidently a bug in Windows and not a risk","related_event_id":"4776"}],"disconnect_reason_codes":[{"reason_code":"0x00000001","reason":"The disconnection was initiated by an administrative tool on the server in another session.","related_event_id":"40"},{"reason_code":"0x00000002","reason":"The disconnection was due to a forced logoff initiated by an administrative tool on the server in another session.","related_event_id":"40"},{"reason_code":"0x00000003","reason":"The idle session limit timer on the server has elapsed.","related_event_id":"40"},{"reason_code":"0x00000004","reason":"The active session limit timer on the server has elapsed.","related_event_id":"40"},{"reason_code":"0x00000005","reason":"Another user connected to the server, forcing the disconnection of the current connection.","related_event_id":"40"},{"reason_code":"0x00000006","reason":"The server ran out of available memory resources.","related_event_id":"40"},{"reason_code":"0x00000007","reason":"The server denied the connection.","related_event_id":"40"},{"reason_code":"0x00000009","reason":"The user cannot connect to the server due to insufficient access privileges.","related_event_id":"40"},{"reason_code":"0x0000000A (10)","reason":"The server does not accept saved user credentials and requires that the user enter their credentials for each connection.","related_event_id":"40"},{"reason_code":"0x0000000B (11)","reason":"The disconnection was initiated by the user disconnecting his or her session on the server or by an administrative tool on the server.","related_event_id":"40"},{"reason_code":"0x0000000C (12)","reason":"The disconnection was initiated by the user logging off his or her session on the server.","related_event_id":"40"}],"sharepoint_audit_types":[{"audit_event_type_id":"Event ID","description":"Event Description"},{"audit_event_type_id":"1","description":"CheckOut"},{"audit_event_type_id":"2","description":"Checkin"},{"audit_event_type_id":"3","description":"View"},{"audit_event_type_id":"4","description":"Delete"},{"audit_event_type_id":"5","description":"Update"},{"audit_event_type_id":"6","description":"Profile Change"},{"audit_event_type_id":"7","description":"ChildDelete"},{"audit_event_type_id":"8","description":"Schema Change"},{"audit_event_type_id":"10","description":"Undelete"},{"audit_event_type_id":"0x10","description":"ChildMove"},{"audit_event_type_id":"0x11","description":"File Fragment Write"},{"audit_event_type_id":"11","description":"Workflow"},{"audit_event_type_id":"12","description":"Copy"},{"audit_event_type_id":"13","description":"Move"},{"audit_event_type_id":"14","description":"AuditMask Change"},{"audit_event_type_id":"15","description":"Search"},{"audit_event_type_id":"16","description":"Child object was removed"},{"audit_event_type_id":"0x20","description":"SecGroupMemberAdd"},{"audit_event_type_id":"0x21","description":"SecGroupMemberDel"},{"audit_event_type_id":"0x22","description":"SecRoleDefCreate"},{"audit_event_type_id":"0x23","description":"SecRoleDefDelete"},{"audit_event_type_id":"0x24","description":"SecRoleDefModify"},{"audit_event_type_id":"0x25","description":"SecRoleDefBreakInherit"},{"audit_event_type_id":"0x26","description":"SecRoleBindUpdate"},{"audit_event_type_id":"0x27","description":"SecRoleBindInherit"},{"audit_event_type_id":"30","description":"SecGroupCreate"},{"audit_event_type_id":"31","description":"Security Group Deleted"},{"audit_event_type_id":"32","description":"Security Principal Added to a security group"},{"audit_event_type_id":"33","description":"Security principal removed from a security group"},{"audit_event_type_id":"34","description":"Security role was created"},{"audit_event_type_id":"35","description":"Security role was deleted"},{"audit_event_type_id":"36","description":"Security Role was updated"},{"audit_event_type_id":"37","description":"Security Role break inheritance"},{"audit_event_type_id":"38","description":"Security scope was updated"},{"audit_event_type_id":"39","description":"Security Scope restores inheritance"},{"audit_event_type_id":"40","description":"SecRoleBindBreakInherit"},{"audit_event_type_id":"50","description":"Events Deleted"},{"audit_event_type_id":"100","description":"Custom"},{"audit_event_type_id":"0x1f","description":"SecGroupDelete"}],"policy_matrix":[{"group_policy_group":"Account Logon","group_policy_option":"Audit Credential Validation","event_ids":"4774, 4775, 4776, 4777"},{"group_policy_group":"Account Logon","group_policy_option":"Audit Kerberos Authentication Service","event_ids":"4768, 4771, 4772"},{"group_policy_group":"Account Logon","group_policy_option":"Audit Kerberos Service Ticket Operations","event_ids":"4769, 4770"},{"group_policy_group":"Account Logon","group_policy_option":"Audit Other Account Logon Events","event_ids":"4649, 4778, 4779, 4800, 4801, 4802, 4803, 5378, 5632, 5633"},{"group_policy_group":"Account Management","group_policy_option":"Audit Application Group Management","event_ids":"4783, 4784, 4785, 4786, 4787, 4788, 4789, 4790"},{"group_policy_group":"Account Management","group_policy_option":"Audit Computer Account Management","event_ids":"4741, 4742, 4743"},{"group_policy_group":"Account Management","group_policy_option":"Audit Distribution Group Management","event_ids":"4744, 4745, 4746, 4747, 4748, 4749, 4750, 4751, 4752, 4753, 4759, 4760, 4761, 4762"},{"group_policy_group":"Account Management","group_policy_option":"Audit Other Account Management Events","event_ids":"4782, 4793"},{"group_policy_group":"Account Management","group_policy_option":"Audit Security Group Management","event_ids":"4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4754, 4755, 4756, 4757, 4758, 4764"},{"group_policy_group":"Account Management","group_policy_option":"Audit User Account Management","event_ids":"4720, 4722, 4723, 4724, 4725, 4726, 4738, 4740, 4765, 4766, 4767, 4780, 4781, 4794, 5376, 5377"},{"group_policy_group":"Detailed Tracking","group_policy_option":"Audit DPAPI Activity","event_ids":"4692, 4693, 4694, 4695"},{"group_policy_group":"Detailed Tracking","group_policy_option":"Audit Process Creation","event_ids":"4688, 4696"},{"group_policy_group":"Detailed Tracking","group_policy_option":"Audit Process Termination","event_ids":"4689"},{"group_policy_group":"Detailed Tracking","group_policy_option":"Audit RPC Events","event_ids":"5712"},{"group_policy_group":"DS Access","group_policy_option":"Audit Detailed Directory Service Replication","event_ids":"4928, 4929, 4930, 4931, 4934, 4935, 4936, 4937"},{"group_policy_group":"DS Access","group_policy_option":"Audit Directory Service Access","event_ids":"4662"},{"group_policy_group":"DS Access","group_policy_option":"Audit Directory Service Changes","event_ids":"5136, 5137, 5138, 5139, 5141"},{"group_policy_group":"DS Access","group_policy_option":"Audit Directory Service Replication","event_ids":"4932, 4933"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit Account Lockout","event_ids":"4625"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit IPsec Extended Mode","event_ids":"4978, 4979, 4980, 4981, 4982, 4983, 4984"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit IPsec Main Mode","event_ids":"4646, 4650, 4651, 4652, 4653, 4655, 4976, 5049, 5453"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit IPsec Quick Mode","event_ids":"4977, 5451, 5452"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit Logoff","event_ids":"4634, 4647"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit Logon","event_ids":"4624, 4625, 4648, 4675"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit Network Policy Server","event_ids":"6272, 6273, 6274, 6275, 6276, 6277, 6278, 6279, 6280"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit Other Logon/Logoff Events","event_ids":"4649, 4778, 4779, 4800, 4801, 4802, 4803, 5378, 5632, 5633"},{"group_policy_group":"Logon/Logoff","group_policy_option":"Audit Special Logon","event_ids":"4964"},{"group_policy_group":"Object Access","group_policy_option":"Audit Application Generated","event_ids":"4665, 4666 ,4667, 4668"},{"group_policy_group":"Object Access","group_policy_option":"Audit Certification Services","event_ids":"4868, 4869, 4870, 4871, 4872, 4873, 4874, 4875, 4876, 4877, 4878, 4879, 4880, 4881, 4882, 4883, 4884, 4885, 4886 ,4887, 4888, 4889, 4890, 4891, 4892, 4893, 4894, 4895, 4896, 4897, 4898"},{"group_policy_group":"Object Access","group_policy_option":"Audit Detailed File Share","event_ids":"5145"},{"group_policy_group":"Object Access","group_policy_option":"Audit File Share","event_ids":"5140, 5142, 5143, 5144, 5168"},{"group_policy_group":"Object Access","group_policy_option":"Audit File System","event_ids":"4664, 4985, 5051"},{"group_policy_group":"Object Access","group_policy_option":"Audit Filtering Platform Connection","event_ids":"5031, 5140, 5150, 5151, 5154, 5155, 5156, 5157, 5158, 5159"},{"group_policy_group":"Object Access","group_policy_option":"Audit Filtering Platform Packet Drop","event_ids":"5152, 5153"},{"group_policy_group":"Object Access","group_policy_option":"Audit Handle Manipulation","event_ids":"4656, 4658, 4690"},{"group_policy_group":"Object Access","group_policy_option":"Audit Kernel Object","event_ids":"4659, 4660, 4661, 4663"},{"group_policy_group":"Object Access","group_policy_option":"Audit Other Object Access Events","event_ids":"4671, 4691, 4698, 4699, 4700, 4701, 4702 ,5148, 5149, 5888, 5889, 5890"},{"group_policy_group":"Object Access","group_policy_option":"Audit Registry","event_ids":"4657, 5039"},{"group_policy_group":"Object Access","group_policy_option":"Audit SAM","event_ids":"4659, 4660, 4661, 4663"},{"group_policy_group":"Policy Change","group_policy_option":"Audit Audit Policy Change","event_ids":"4715, 4719, 4817, 4902, 4904, 4905, 4906, 4907, 4908, 4912"},{"group_policy_group":"Policy Change","group_policy_option":"Audit Authentication Policy Change","event_ids":"4713, 4716, 4717, 4718, 4739, 4864, 4865, 4866, 4867"},{"group_policy_group":"Policy Change","group_policy_option":"Audit Authorization Policy Change","event_ids":"4704, 4705, 4706, 4707, 4714"},{"group_policy_group":"Policy Change","group_policy_option":"Audit Filtering Platform Policy Change","event_ids":"4709, 4710, 4711, 4712, 5040, 5041, 5042, 5043, 5044, 5045, 5046, 5047, 5048, 5440, 5441, 5442, 5443, 5444, 5446, 5448, 5449, 5450, 5456, 5457, 5458, 5459, 5460, 5461, 5462, 5463, 5464, 5465, 5466, 5467, 5468, 5471, 5472, 5473, 5474, 5477"},{"group_policy_group":"Policy Change","group_policy_option":"Audit MPSSVC Rule-Level Policy Change","event_ids":"4944, 4945, 4946, 4947, 4948, 4949, 4950, 4951, 4952, 4953, 4954, 4956, 4957, 4958"},{"group_policy_group":"Policy Change","group_policy_option":"Audit Other Policy Change Events","event_ids":"4670, 4909, 4910, 5063, 5064, 5065, 5066, 5067, 5068, 5069, 5070, 5447, 6144, 6145"},{"group_policy_group":"Privilege Use","group_policy_option":"Audit Non-Sensitive Privilege Use","event_ids":"4672, 4673, 4674"},{"group_policy_group":"Privilege Use","group_policy_option":"Audit Sensitive Privilege Use","event_ids":"4672, 4673, 4674"},{"group_policy_group":"Privilege Use","group_policy_option":"Audit Other Privilege Use Events","event_ids":"N/A"},{"group_policy_group":"System","group_policy_option":"Audit IPsec Driver","event_ids":"4960, 4961, 4962, 4963, 4965, 5478, 5479, 5480, 5483, 5484, 5485"},{"group_policy_group":"System","group_policy_option":"Audit Other System Events","event_ids":"5024, 5025, 5027, 5028, 5029, 5030, 5032, 5033, 5034, 5035, 5037, 5058, 5059, 6400, 6401, 6402, 6403 ,6404, 6405, 6406, 6407, 6408"},{"group_policy_group":"System","group_policy_option":"Audit Security State Change","event_ids":"4608, 4609 ,4616, 4621"},{"group_policy_group":"System","group_policy_option":"Audit Security System Extension","event_ids":"4610, 4611, 4614, 4622, 4697"},{"group_policy_group":"System","group_policy_option":"Audit System Integrity","event_ids":"4612, 4615, 4618, 4816, 5038, 5056, 5057, 5060, 5061, 5062, 6281"},{"group_policy_group":"Glbal Object Access Auditing","group_policy_option":"Registry (GOAA)","event_ids":"N/A"},{"group_policy_group":"Glbal Object Access Auditing","group_policy_option":"File System (GOAA)","event_ids":"N/A"}]};
+
+const events = DATA.events;
+const configBySubcat = {};
+DATA.audit_configuration.forEach(c => { configBySubcat[c.subcategory] = c; });
+
+const LOG_META = {
+  'Security':            { label: 'Security',            var: 'security' },
+  'System':               { label: 'System',               var: 'system' },
+  'Microsoft-Windows-DHCP-Server': { label: 'DHCP-Server', var: 'dhcp' },
+  'Microsoft-Windows-DriverFrameworks-UserMode/Operational': { label: 'DriverFrameworks-UM', var: 'pnp' },
+  'Microsoft-Windows-TerminalServices-LocalSessionManager/Operational': { label: 'TS-LocalSessionMgr', var: 'ts' },
+  'Applications and Servers->Microsoft->Windows->NLAsvc': { label: 'NLAsvc', var: 'nla' },
+};
+function logMeta(log) {
+  return LOG_META[log] || { label: log, var: 'system' };
+}
+
+// ---- populate category filter ----
+const catFilter = document.getElementById('category-filter');
+const cats = [...new Set(events.map(e => e.category).filter(Boolean))].sort();
+cats.forEach(c => {
+  const o = document.createElement('option');
+  o.value = c; o.textContent = c;
+  catFilter.appendChild(o);
+});
+
+// ---- log chips ----
+const logChipsEl = document.getElementById('log-chips');
+const allLogs = [...new Set(events.map(e => e.log))];
+const activeLogs = new Set(allLogs);
+allLogs.forEach(log => {
+  const meta = logMeta(log);
+  const btn = document.createElement('button');
+  btn.className = 'log-chip on';
+  btn.dataset.log = log;
+  btn.style.setProperty('color', `var(--log-${meta.var})`);
+  btn.innerHTML = `<span class="dot"></span>${meta.label}`;
+  btn.addEventListener('click', () => {
+    if (activeLogs.has(log)) { activeLogs.delete(log); btn.classList.remove('on'); }
+    else { activeLogs.add(log); btn.classList.add('on'); }
+    render();
+  });
+  logChipsEl.appendChild(btn);
+});
+
+document.getElementById('header-stat').innerHTML = `<b>${events.length}</b> events &middot; <b>${allLogs.length}</b> logs &middot; <b>${cats.length}</b> categories`;
+
+// ---- tabs ----
+document.getElementById('tabs').addEventListener('click', e => {
+  const btn = e.target.closest('button[data-panel]');
+  if (!btn) return;
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('active', b === btn));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+});
+
+// ---- search + list ----
+const searchEl = document.getElementById('search');
+const listEl = document.getElementById('list');
+const listCountEl = document.getElementById('list-count');
+let selected = null;
+
+function matches(e, q) {
+  if (!q) return true;
+  return (
+    e.event_id.toLowerCase().includes(q) ||
+    (e.description || '').toLowerCase().includes(q) ||
+    (e.category || '').toLowerCase().includes(q) ||
+    (e.subcategory || '').toLowerCase().includes(q) ||
+    (e.source || '').toLowerCase().includes(q) ||
+    (e.log || '').toLowerCase().includes(q)
+  );
+}
+
+function filtered() {
+  const q = searchEl.value.trim().toLowerCase();
+  const cat = catFilter.value;
+  return events.filter(e =>
+    activeLogs.has(e.log) &&
+    (!cat || e.category === cat) &&
+    matches(e, q)
+  );
+}
+
+function escapeHtml(s) {
+  return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function render() {
+  const rows = filtered();
+  listCountEl.textContent = rows.length + (rows.length === 1 ? ' match' : ' matches');
+  listEl.innerHTML = '';
+  if (!rows.length) {
+    listEl.innerHTML = '<div class="empty-list">No events match. Try a different ID or keyword, or clear a log/category filter.</div>';
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  rows.forEach(e => {
+    const meta = logMeta(e.log);
+    const row = document.createElement('button');
+    row.className = 'row' + (selected === e ? ' selected' : '');
+    row.innerHTML = `
+      <div class="rid">${escapeHtml(e.event_id)}</div>
+      <div class="rbody">
+        <div class="rdesc">${escapeHtml(e.description || e.subcategory || e.category || '—')}</div>
+        <div class="rmeta">
+          <span class="badge" style="color:var(--log-${meta.var});background:var(--log-${meta.var}-bg)">${escapeHtml(meta.label)}</span>
+          ${e.category ? `<span class="badge" style="color:var(--muted);background:var(--surface-2)">${escapeHtml(e.category)}</span>` : ''}
+        </div>
+      </div>`;
+    row.addEventListener('click', () => { selected = e; renderDetail(e); render(); });
+    frag.appendChild(row);
+  });
+  listEl.appendChild(frag);
+}
+
+function configCard(name) {
+  const c = configBySubcat[name];
+  if (!c) return '';
+  return `<div class="config-card">
+    <h4>${escapeHtml(c.subcategory)}</h4>
+    <div class="path">${escapeHtml(c.gpo_path)}</div>
+    <div class="steps">${escapeHtml(c.steps)}</div>
+    ${c.reference_url ? `<div class="ref"><a href="${escapeHtml(c.reference_url.split(';')[0].trim())}" target="_blank" rel="noopener">${escapeHtml(c.reference_url)}</a></div>` : ''}
+  </div>`;
+}
+
+function inlineRefTable(eventId, log) {
+  if (eventId === '4776' && log === 'Security') {
+    const rows = DATA.ntlm_error_codes.map(r => `<tr><td>${escapeHtml(r.error_code)}</td><td>${escapeHtml(r.reason)}</td></tr>`).join('');
+    return `<section class="block"><h3>NTLM error codes for this event</h3>
+      <div class="table-scroll"><table class="ref-table"><thead><tr><th>Code</th><th>Reason</th></tr></thead><tbody>${rows}</tbody></table></div>
+    </section>`;
+  }
+  if (eventId === '40' && log.includes('TerminalServices')) {
+    const rows = DATA.disconnect_reason_codes.map(r => `<tr><td>${escapeHtml(r.reason_code)}</td><td>${escapeHtml(r.reason)}</td></tr>`).join('');
+    return `<section class="block"><h3>Disconnect reason codes for this event</h3>
+      <div class="table-scroll"><table class="ref-table"><thead><tr><th>Code</th><th>Reason</th></tr></thead><tbody>${rows}</tbody></table></div>
+    </section>`;
+  }
+  return '';
+}
+
+function renderDetail(e) {
+  const detail = document.getElementById('detail');
+  const subcats = (e.how_to_collect || '').split(';').map(s => s.trim()).filter(Boolean);
+  const configHtml = subcats.map(configCard).join('');
+
+  detail.innerHTML = `
+    <div class="detail-head">
+      <div>
+        <div class="detail-id-label">Event ID</div>
+        <div class="detail-id">${escapeHtml(e.event_id)}</div>
+      </div>
+      <div class="detail-desc">${escapeHtml(e.description || e.subcategory || '(no description recorded)')}</div>
+    </div>
+    <dl class="field-grid">
+      <div class="field"><dt>Log</dt><dd>${escapeHtml(e.log)}</dd></div>
+      <div class="field"><dt>Source</dt><dd>${escapeHtml(e.source || '—')}</dd></div>
+      <div class="field"><dt>Category</dt><dd>${escapeHtml(e.category || '—')}</dd></div>
+      <div class="field"><dt>Subcategory</dt><dd>${escapeHtml(e.subcategory || '—')}</dd></div>
+    </dl>
+    ${e.sample ? `<section class="block"><h3>Sample</h3><pre class="sample">${escapeHtml(e.sample.replace(/^```|```$/g, '').trim())}</pre></section>` : ''}
+    ${inlineRefTable(e.event_id, e.log)}
+    ${configHtml ? `<section class="block"><h3>How to configure auditing to collect this</h3>${configHtml}</section>` : ''}
+    ${e.reference ? `<section class="block"><h3>Related</h3><div style="font-size:0.85rem">${escapeHtml(e.reference)}</div></section>` : ''}
+  `;
+}
+
+searchEl.addEventListener('input', render);
+catFilter.addEventListener('change', render);
+
+render();
+
+// ---- reference tables tab ----
+function buildTable(container, rows, columns) {
+  const thead = `<thead><tr>${columns.map(c => `<th>${escapeHtml(c.label)}</th>`).join('')}</tr></thead>`;
+  const tbody = `<tbody>${rows.map(r => `<tr>${columns.map(c => `<td>${escapeHtml(r[c.key])}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  container.innerHTML = `<table class="ref-table">${thead}${tbody}</table>`;
+}
+
+buildTable(document.getElementById('ref-ntlm'), DATA.ntlm_error_codes, [
+  { key: 'error_code', label: 'Code' }, { key: 'reason', label: 'Reason' },
+]);
+buildTable(document.getElementById('ref-disconnect'), DATA.disconnect_reason_codes, [
+  { key: 'reason_code', label: 'Code' }, { key: 'reason', label: 'Reason' },
+]);
+buildTable(document.getElementById('ref-sharepoint'), DATA.sharepoint_audit_types, [
+  { key: 'audit_event_type_id', label: 'Type ID' }, { key: 'description', label: 'Description' },
+]);
+buildTable(document.getElementById('ref-matrix'), DATA.policy_matrix, [
+  { key: 'group_policy_group', label: 'Group' },
+  { key: 'group_policy_option', label: 'Option' },
+  { key: 'event_ids', label: 'Event IDs' },
+]);
+
+// deep link support: #4624
+if (location.hash) {
+  const id = location.hash.replace('#', '');
+  const match = events.find(e => e.event_id === id);
+  if (match) { searchEl.value = id; selected = match; render(); renderDetail(match); }
+}
+</script>
