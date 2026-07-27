@@ -1,0 +1,4312 @@
+[
+  {
+    "event_id": "4205",
+    "log": "Applications and Servers->Microsoft->Windows->NLAsvc",
+    "source": "Nlasvc",
+    "category": "Network Location Awareness",
+    "subcategory": "Gateway Resolution",
+    "description": "Gateway resolution failed on interface for xx with error ...",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4343",
+    "log": "Applications and Servers->Microsoft->Windows->NLAsvc",
+    "source": "Nlasvc",
+    "category": "Network Location Awareness",
+    "subcategory": "LDAP Authentication",
+    "description": "LDAP Authentication on interface failed",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "70",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Scope xxx for ipv4 is configured by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "72",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Scope xxx for ipv4 is deleted by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "73",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Scope xxx for ipv4 is activated by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "74",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Scope xxx for ipv4 is deactivated by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "75",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Scope xxx for ipv4 is updated with lease duration xxx seconds by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "76",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Scope xxx for ipv4 is updated with option setting xx by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "89",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Scope ... for ipv4 is updated with support type...by....The previous configuration state was : ...",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "106",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Reservation xxx for ipv4 is configured under scope xxx by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "107",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Reservation xxx for ipv4 is deleted under scope xxx by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "108",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Reservation xxx for ipv4 under scope xxx is enabled for dns dynamic updates by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "119",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "Added exclusion ip address range xxx in the address pool for ipv4 under scope xxx by xxx",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "20221",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "Policy",
+    "description": "Description of Scope ....policy...was set to ... for ...",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20223",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "Policy",
+    "description": "The conditions for scope...policy...have been set to.....The conditions are grouped by logical operator OR",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20227",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "Policy",
+    "description": "Policy default ... was deleted from scope",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20237",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "Policy",
+    "description": "Description of scope...policy...was set to....",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20239",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "Policy",
+    "description": "Processing order of scope...policy was changed to..from..",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20243",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "DHCP Failover",
+    "description": "Scope xxx has been added to the failover relationship",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "20244",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "DHCP Failover",
+    "description": "Scope xxx has been removed from the failover relationship",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "20287",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "",
+    "description": "DHCP client request from xxx was dropped since the last applicable ip ranges in scope xxx are out of available addresses",
+    "sample": "",
+    "reference": "Configure"
+  },
+  {
+    "event_id": "20291",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "DHCP-Failover",
+    "description": "A Binding-ACK message with transaction..was sent for IP address...with reject reason...to partner server...for failover relationship",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20292",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "DHCP-Failover",
+    "description": "A Binding-ACK message with transaction..was received for IP address...with reject reason...from partner server...for failover relationship",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20315",
+    "log": "Microsoft-Windows-DHCP-Server",
+    "source": "DHCP-Server",
+    "category": "DHCP",
+    "subcategory": "Policy",
+    "description": "DNSSuffix of scope...policy...was set to",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "2003",
+    "log": "Microsoft-Windows-DriverFrameworks-UserMode/Operational",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "Failure read or write to removeable media",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "2004",
+    "log": "Microsoft-Windows-DriverFrameworks-UserMode/Operational",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "The UMDF Host is loading Driver",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "2005",
+    "log": "Microsoft-Windows-DriverFrameworks-UserMode/Operational",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "The UMDF Host Process..has loaded module",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "2010",
+    "log": "Microsoft-Windows-DriverFrameworks-UserMode/Operational",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "Failure read or write to removeable media",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "2100",
+    "log": "Microsoft-Windows-DriverFrameworks-UserMode/Operational",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "Received a PNP or Power Operation",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "2105",
+    "log": "Microsoft-Windows-DriverFrameworks-UserMode/Operational",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "Forwarded a PNP or Power Operation",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "2106",
+    "log": "Microsoft-Windows-DriverFrameworks-UserMode/Operational",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "Received a PNP or Power Operation",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "21",
+    "log": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+    "source": "Microsoft-Windows-TerminalServices-LocalSessionManager",
+    "category": "Remote Desktop Services / Terminal Services Session",
+    "subcategory": "",
+    "description": "Session logon succeeded",
+    "sample": "```\nRemote Desktop Services: Session logon succeeded:\n\nUser: domain\\fred.burgmann\nSession ID: 10\nSource Network Address: 192.168.10.1\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "23",
+    "log": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+    "source": "Microsoft-Windows-TerminalServices-LocalSessionManager",
+    "category": "Remote Desktop Services / Terminal Services Session",
+    "subcategory": "",
+    "description": "Session logoff succeeded",
+    "sample": "```\nRemote Desktop Services: Session logoff succeeded:\n\nUser: domain\\fred.burgmann\nSession ID: 10\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "24",
+    "log": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+    "source": "Microsoft-Windows-TerminalServices-LocalSessionManager",
+    "category": "Remote Desktop Services / Terminal Services Session",
+    "subcategory": "",
+    "description": "Session has been disconnected",
+    "sample": "```\nRemote Desktop Services: Session has been disconnected:\n\nUser: domain\\fred.burgmann\nSession ID: 10\nSource Network Address: 192.168.10.1\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "25",
+    "log": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+    "source": "Microsoft-Windows-TerminalServices-LocalSessionManager",
+    "category": "Remote Desktop Services / Terminal Services Session",
+    "subcategory": "",
+    "description": "Session reconnection succeeded",
+    "sample": "```\nRemote Desktop Services: Session reconnection succeeded:\n\nUser: domain\\fred.burgmann\nSession ID: 10\nSource Network Address: 192.168.10.1\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "40",
+    "log": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+    "source": "Microsoft-Windows-TerminalServices-LocalSessionManager",
+    "category": "Remote Desktop Services / Terminal Services Session",
+    "subcategory": "",
+    "description": "Session has been disconnected, with a disconnect reason code (see data/reference/disconnect_reason_codes_event40.csv)",
+    "sample": "```\nLog Name:      Microsoft-Windows-TerminalServices-LocalSessionManager/Operational\nSource:        Microsoft-Windows-TerminalServices-LocalSessionManager\nDate:          5/4/2017 10:49:19 AM\nEvent ID:      40\nTask Category: None\nLevel:         Information\nKeywords:     \nUser:          SYSTEM\nComputer:      server-machine\nDescription:\nSession 12 has been disconnected, reason code 5\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "4608",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security State Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4609",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security State Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4610",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security System Extension",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4611",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security System Extension",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4612",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4614",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security System Extension",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4615",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4616",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security State Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4618",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4621",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security State Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4622",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security System Extension",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4624",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Logon",
+    "description": "An account was successfully logged on.",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4625",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Account Lockout",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4625",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Logon",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4634",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Logoff",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4646",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4647",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Logoff",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4648",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Logon",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4649",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4649",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4650",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4651",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4652",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4653",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4655",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4656",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Handle Manipulation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4656",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "Failure read or write to removeable media",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4657",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Registry",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4658",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Handle Manipulation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4659",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Kernel Object",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4659",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit SAM",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4660",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Kernel Object",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4660",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit SAM",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4661",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Kernel Object",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4661",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit SAM",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4662",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Access",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4663",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Kernel Object",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4663",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit SAM",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4663",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "Removable Storage device.",
+    "description": "Success read or write to removeable media",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4664",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File System",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4665",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Application Generated",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4666",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Application Generated",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4667",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Application Generated",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4668",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Application Generated",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4670",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4671",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4672",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Privilege Use",
+    "subcategory": "Audit Non-Sensitive Privilege Use",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4672",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Privilege Use",
+    "subcategory": "Audit Sensitive Privilege Use",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4673",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Privilege Use",
+    "subcategory": "Audit Non-Sensitive Privilege Use",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4673",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Privilege Use",
+    "subcategory": "Audit Sensitive Privilege Use",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4674",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Privilege Use",
+    "subcategory": "Audit Non-Sensitive Privilege Use",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4674",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Privilege Use",
+    "subcategory": "Audit Sensitive Privilege Use",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4675",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Logon",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4688",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit Process Creation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4689",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit Process Termination",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4690",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Handle Manipulation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4691",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4692",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit DPAPI Activity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4693",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit DPAPI Activity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4694",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit DPAPI Activity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4695",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit DPAPI Activity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4696",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit Process Creation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4697",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Security System Extension",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4698",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4699",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4700",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4701",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4702",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4704",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authorization Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4705",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authorization Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4706",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authorization Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4707",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authorization Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4709",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4710",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4711",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4712",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4713",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4714",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authorization Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4715",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4716",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4717",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4718",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4719",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4720",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "A user account was created.",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4722",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4723",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4724",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4725",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4726",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4727",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4728",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4729",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4730",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4731",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4732",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4733",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4734",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4735",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4737",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4738",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4739",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4740",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4741",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Computer Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4742",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Computer Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4743",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Computer Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4744",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4745",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4746",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4747",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4748",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4749",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4750",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4751",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4752",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4753",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4754",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4755",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4756",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4757",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4758",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4759",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4760",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4761",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4762",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Distribution Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4764",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Security Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4765",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4766",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4767",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4768",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Kerberos Authentication Service",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4769",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Kerberos Service Ticket Operations",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4770",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Kerberos Service Ticket Operations",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4771",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Kerberos Authentication Service",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4772",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Kerberos Authentication Service",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4774",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Credential Validation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4775",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Credential Validation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4776",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Credential Validation",
+    "description": "The domain controller attempted to validate the credentials for an account.",
+    "sample": "```\nThe domain controller attempted to validate the credentials for an account.\n\nAuthentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0\nLogon Account: administrator\nSource Workstation: WIN-R9H529RIO4Y\nError Code: 0xc0000064\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "4777",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Credential Validation",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4778",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "A session was reconnected to a Window Station (RDP reconnect / Fast User Switching).",
+    "sample": "```\nA session was reconnected to a Window Station.\n\nSubject:\n\n   Account Name:  Administrator\n   Account Domain:  WIN-R9H529RIO4Y\n   Logon ID:  0x169e9\n\nSession:\n\n   Session Name:  RDP-Tcp#0\n\nAdditional Information:\n\n   Client Name:  XPEDIT\n   Client Address:  10.42.42.211\n\nThis event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "4778",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "A session was reconnected to a Window Station (RDP reconnect / Fast User Switching).",
+    "sample": "```\nA session was reconnected to a Window Station.\n\nSubject:\n\n   Account Name:  Administrator\n   Account Domain:  WIN-R9H529RIO4Y\n   Logon ID:  0x169e9\n\nSession:\n\n   Session Name:  RDP-Tcp#0\n\nAdditional Information:\n\n   Client Name:  XPEDIT\n   Client Address:  10.42.42.211\n\nThis event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "4779",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4779",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4780",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4781",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4782",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Other Account Management Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4783",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4784",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4785",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4786",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4787",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4788",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4789",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4790",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Application Group Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4793",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit Other Account Management Events",
+    "description": "The Password Policy Checking API was called.",
+    "sample": "```\n01/29/2018 10:33:34 PM\nLogName=Security\nSourceName=Microsoft Windows security auditing.\nEventCode=4793\nEventType=0\nType=Information\nComputerName=SQL01.domain.com\nTaskCategory=Other Account Management Events\nOpCode=Info\nRecordNumber=18046406\nKeywords=Audit Success\nMessage=The Password Policy Checking API was called.\n\nSubject:\n\tSecurity ID:\t\tS-1-5-21-xxxxxxxxxx\n\tAccount Name:\t\tMSSQLDB\n\tAccount Domain:\t\tDOMAIN.COM\n\tLogon ID:\t\t0x264d5\n\nAdditional Information:\n\tCaller Workstation:\tSQL01\n\tProvided Account Name (unauthenticated):\t-\n\tStatus Code:\t0x0\n```",
+    "reference": ""
+  },
+  {
+    "event_id": "4794",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4800",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4800",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4801",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4801",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4802",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4802",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4803",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4803",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4816",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4817",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4864",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4865",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4866",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4867",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Authentication Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4868",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4869",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4870",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4871",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4872",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4873",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4874",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4875",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4876",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4877",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4878",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4879",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4880",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4881",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4882",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4883",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4884",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4885",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4886",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4887",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4888",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4889",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4890",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4891",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4892",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4893",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4894",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4895",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4896",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4897",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4898",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Certification Services",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4902",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4904",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4905",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4906",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4907",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4908",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4909",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4910",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4912",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Audit Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4928",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4929",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4930",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4931",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4932",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4933",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4934",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4935",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4936",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4937",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Detailed Directory Service Replication",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4944",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4945",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4946",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4947",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4948",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4949",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4950",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4951",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4952",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4953",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4954",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4956",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4957",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4958",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit MPSSVC Rule-Level Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4960",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4961",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4962",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4963",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4964",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Special Logon",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4965",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4976",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4977",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Quick Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4978",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Extended Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4979",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Extended Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4980",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Extended Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4981",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Extended Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4982",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Extended Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4983",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Extended Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4984",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Extended Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "4985",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File System",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5024",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5025",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5027",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5028",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5029",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5030",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5031",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5032",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5033",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5034",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5035",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5037",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5038",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5039",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Registry",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5040",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5041",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5042",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5043",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5044",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5045",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5046",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5047",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5048",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5049",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5051",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File System",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5056",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5057",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5058",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5059",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5060",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5061",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5062",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5063",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5064",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5065",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5066",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5067",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5068",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5069",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5070",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5136",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Changes",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5137",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Changes",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5138",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Changes",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5139",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Changes",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5140",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File Share",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5140",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5141",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "DS Access",
+    "subcategory": "Audit Directory Service Changes",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5142",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File Share",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5143",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File Share",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5144",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File Share",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5145",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Detailed File Share",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5148",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5149",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5150",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5151",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5152",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Packet Drop",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5153",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Packet Drop",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5154",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5155",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5156",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5157",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5158",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5159",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Filtering Platform Connection",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5168",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit File Share",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5376",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5377",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Management",
+    "subcategory": "Audit User Account Management",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5378",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5378",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5440",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5441",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5442",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5443",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5444",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5446",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5447",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5448",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5449",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5450",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5451",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Quick Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5452",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Quick Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5453",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit IPsec Main Mode",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5456",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5457",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5458",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5459",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5460",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5461",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5462",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5463",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5464",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5465",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5466",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5467",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5468",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5471",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5472",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5473",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5474",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5477",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Filtering Platform Policy Change",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5478",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5479",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5480",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5483",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5484",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5485",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit IPsec Driver",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5632",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5632",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5633",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Account Logon",
+    "subcategory": "Audit Other Account Logon Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5633",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Other Logon/Logoff Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5712",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Detailed Tracking",
+    "subcategory": "Audit RPC Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5888",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5889",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "5890",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Object Access",
+    "subcategory": "Audit Other Object Access Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6144",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6145",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Policy Change",
+    "subcategory": "Audit Other Policy Change Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6272",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6273",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6274",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6275",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6276",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6277",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6278",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6279",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6280",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "Logon/Logoff",
+    "subcategory": "Audit Network Policy Server",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6281",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit System Integrity",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6400",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6401",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6402",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6403",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6404",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6405",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6406",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6407",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6408",
+    "log": "Security",
+    "source": "Microsoft-Windows-Security-Auditing",
+    "category": "System",
+    "subcategory": "Audit Other System Events",
+    "description": "",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "6416",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "",
+    "description": "A new external device was recognized by the System",
+    "sample": "",
+    "reference": "PNP Activity auditing"
+  },
+  {
+    "event_id": "6419",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "",
+    "description": "A request was made to disable a device",
+    "sample": "",
+    "reference": "PNP Activity auditing"
+  },
+  {
+    "event_id": "6420",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "",
+    "description": "A device was disabled.",
+    "sample": "",
+    "reference": "PNP Activity auditing"
+  },
+  {
+    "event_id": "6421",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "",
+    "description": "A request was made to enable a device.",
+    "sample": "",
+    "reference": "PNP Activity auditing"
+  },
+  {
+    "event_id": "6422",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "",
+    "description": "A device was enabled.",
+    "sample": "",
+    "reference": "PNP Activity auditing"
+  },
+  {
+    "event_id": "6423",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "",
+    "description": "The installation of this device is forbidden by system policy.",
+    "sample": "",
+    "reference": "PNP Activity auditing"
+  },
+  {
+    "event_id": "6424",
+    "log": "Security",
+    "source": "Microsoft Windows Security Auditing",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "",
+    "description": "The installation of this device was allowed, after having previously been forbidden by policy.",
+    "sample": "",
+    "reference": "PNP Activity auditing"
+  },
+  {
+    "event_id": "41",
+    "log": "System",
+    "source": "EventLog / Kernel-Power / USER32",
+    "category": "Shutdown / Restart",
+    "subcategory": "",
+    "description": "The system has rebooted without cleanly shutting down first (kernel-power / unexpected shutdown).",
+    "sample": "",
+    "reference": "docs/event-log-operations.md"
+  },
+  {
+    "event_id": "1074",
+    "log": "System",
+    "source": "EventLog / Kernel-Power / USER32",
+    "category": "Shutdown / Restart",
+    "subcategory": "",
+    "description": "The process X has initiated the restart/shutdown of computer on behalf of user Y for reason Z.",
+    "sample": "",
+    "reference": "docs/event-log-operations.md"
+  },
+  {
+    "event_id": "1076",
+    "log": "System",
+    "source": "EventLog / Kernel-Power / USER32",
+    "category": "Shutdown / Restart",
+    "subcategory": "",
+    "description": "The reason supplied by user Y for the last unexpected shutdown of this computer.",
+    "sample": "",
+    "reference": "docs/event-log-operations.md"
+  },
+  {
+    "event_id": "6006",
+    "log": "System",
+    "source": "EventLog / Kernel-Power / USER32",
+    "category": "Shutdown / Restart",
+    "subcategory": "",
+    "description": "The Event log service was stopped (clean shutdown marker).",
+    "sample": "",
+    "reference": "docs/event-log-operations.md"
+  },
+  {
+    "event_id": "20001",
+    "log": "System",
+    "source": "UserPnp",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "7005",
+    "description": "Driver management concluded the process to install driver",
+    "sample": "",
+    "reference": ""
+  },
+  {
+    "event_id": "20005",
+    "log": "System",
+    "source": "UserPnp",
+    "category": "Removable Media / Device (PNP)",
+    "subcategory": "7005",
+    "description": "Driver management has restricted the installation of device instance ID",
+    "sample": "",
+    "reference": ""
+  }
+]
