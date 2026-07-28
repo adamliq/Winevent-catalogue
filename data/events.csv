@@ -496,7 +496,7 @@ Detailed Authentication Information:
 	Authentication Package:	Kerberos
 	Transited Services:	-
 	Package Name (NTLM only):	-
-	Key Length:		0",,Audit Logon,illustrative,T1078,Yes,
+	Key Length:		0",,Audit Logon,illustrative,T1021; T1070; T1078; T1110; T1114; T1185; T1199; T1207; T1213; T1538; T1550; T1552; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1552.005; T1552.007; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002,Yes,
 4625,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Account Lockout,An account failed to log on.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4625
@@ -542,7 +542,7 @@ Detailed Authentication Information:
 Failure Information:
 	Failure Reason:		Unknown user name or bad password.
 	Status:			0xC000006D
-	Sub Status:		0xC000006A",,Audit Account Lockout; Audit Logon,illustrative,T1110,Yes,
+	Sub Status:		0xC000006A",,Audit Account Lockout; Audit Logon,illustrative,T1070; T1078; T1110; T1207; T1538; T1550; T1552; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1550.002; T1550.003; T1552.005; T1552.007,Yes,
 4625,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,An account failed to log on.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4625
@@ -588,7 +588,7 @@ Detailed Authentication Information:
 Failure Information:
 	Failure Reason:		Unknown user name or bad password.
 	Status:			0xC000006D
-	Sub Status:		0xC000006A",,Audit Account Lockout; Audit Logon,illustrative,T1110,Yes,
+	Sub Status:		0xC000006A",,Audit Account Lockout; Audit Logon,illustrative,T1070; T1078; T1110; T1207; T1538; T1550; T1552; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1550.002; T1550.003; T1552.005; T1552.007,Yes,
 4634,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logoff,An account was logged off.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4634
@@ -691,7 +691,7 @@ Detailed Authentication Information:
 	Authentication Package:	Kerberos
 	Transited Services:	-
 	Package Name (NTLM only):	-
-	Key Length:		0",,Audit Logon,illustrative,T1078; T1550,Yes,
+	Key Length:		0",,Audit Logon,illustrative,T1070; T1078; T1110; T1207; T1538; T1550; T1552; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1550.002; T1550.003; T1552.005; T1552.007,Yes,
 4649,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,A replay attack was detected.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4649
@@ -910,7 +910,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,Audit Removable Storage,illustrative,T1052.001,Yes,
+				ReadData (or ListDirectory)",,Audit Removable Storage,illustrative,T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001,Yes,
 4656,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Failure read or write to removeable media,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4656
@@ -924,7 +924,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1231
 	Account Name:		j.doe
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,Audit Removable Storage,illustrative,T1052.001,Yes,
+	Logon ID:		0x3E7F21",,Audit Removable Storage,illustrative,T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001,Yes,
 4657,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Registry,A registry value was modified.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4657
@@ -948,7 +948,7 @@ Object:
 
 Process Information:
 	Process ID:		0x3d8
-	Process Name:		C:\Windows\regedit.exe",,,illustrative,T1112,,
+	Process Name:		C:\Windows\regedit.exe",,,illustrative,T1056; T1070; T1111; T1112; T1137; T1218; T1489; T1490; T1543; T1546; T1547; T1548; T1553; T1556; T1557; T1562; T1564; T1569; T1574; T1056.001; T1137.001; T1137.002; T1137.006; T1218.002; T1543.003; T1546.001; T1546.002; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.010; T1547.012; T1547.014; T1548.002; T1553.003; T1553.004; T1553.006; T1556.002; T1557.001; T1562.001; T1562.004; T1562.006; T1562.009; T1564.002; T1564.005; T1564.006; T1569.002; T1574.011; T1574.012,,
 4658,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,The handle to an object was closed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4658
@@ -1068,7 +1068,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,,,
+				ReadData (or ListDirectory)",,,illustrative,T1070; T1112; T1485; T1490; T1554; T1562; T1565; T1070.002; T1070.003; T1070.004; T1562.001; T1565.001; T1565.003,,
 4660,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,An object was deleted.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4660
@@ -1098,7 +1098,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,,,
+				ReadData (or ListDirectory)",,,illustrative,T1070; T1112; T1485; T1490; T1554; T1562; T1565; T1070.002; T1070.003; T1070.004; T1562.001; T1565.001; T1565.003,,
 4661,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,A handle to an object was requested.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4661
@@ -1128,7 +1128,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,,Yes,
+				ReadData (or ListDirectory)",,,illustrative,T1003; T1005; T1011; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1074; T1087; T1091; T1114; T1119; T1187; T1217; T1539; T1552; T1555; T1558; T1567; T1615; T1003.002; T1003.003; T1003.006; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.003; T1555.004; T1555.005; T1567.001; T1567.002,Yes,
 4661,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,A handle to an object was requested.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4661
@@ -1158,7 +1158,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,,Yes,
+				ReadData (or ListDirectory)",,,illustrative,T1003; T1005; T1011; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1074; T1087; T1091; T1114; T1119; T1187; T1217; T1539; T1552; T1555; T1558; T1567; T1615; T1003.002; T1003.003; T1003.006; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.003; T1555.004; T1555.005; T1567.001; T1567.002,Yes,
 4662,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Access,An operation was performed on an object.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4662
@@ -1191,7 +1191,7 @@ Attribute:
 	Value:			66048
 
 Operation:
-	Type:		Value Added",,,illustrative,,Yes,
+	Type:		Value Added",,,illustrative,T1003; T1615; T1003.006,Yes,
 4663,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Kernel Object,An attempt was made to access an object.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4663
@@ -1221,7 +1221,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,Audit Removable Storage,illustrative,T1052.001,Yes,
+				ReadData (or ListDirectory)",,Audit Removable Storage,illustrative,T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001,Yes,
 4663,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit SAM,An attempt was made to access an object.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4663
@@ -1251,7 +1251,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,Audit Removable Storage,illustrative,T1052.001,Yes,
+				ReadData (or ListDirectory)",,Audit Removable Storage,illustrative,T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001,Yes,
 4663,Security,Microsoft Windows Security Auditing,Removable Media / Device (PNP),Removable Storage device.,Success read or write to removeable media,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4663
@@ -1265,7 +1265,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1231
 	Account Name:		j.doe
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,Audit Removable Storage,illustrative,T1052.001,Yes,
+	Logon ID:		0x3E7F21",,Audit Removable Storage,illustrative,T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001,Yes,
 4664,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File System,An attempt was made to create a hard link.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4664
@@ -1431,7 +1431,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,
+	Logon ID:		0x3E7F21",,,illustrative,T1036; T1037; T1053; T1055; T1056; T1070; T1080; T1098; T1111; T1112; T1137; T1140; T1187; T1218; T1485; T1486; T1489; T1490; T1491; T1505; T1543; T1546; T1547; T1548; T1553; T1554; T1556; T1557; T1562; T1564; T1565; T1569; T1574; T1600; T1601; T1036.003; T1037.002; T1037.003; T1037.004; T1037.005; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1055.009; T1056.001; T1056.003; T1070.002; T1070.003; T1070.006; T1098.004; T1137.001; T1137.002; T1137.006; T1218.002; T1491.001; T1491.002; T1505.003; T1505.004; T1543.001; T1543.002; T1543.003; T1543.004; T1546.001; T1546.002; T1546.004; T1546.005; T1546.006; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.013; T1546.014; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.006; T1547.007; T1547.008; T1547.009; T1547.010; T1547.011; T1547.012; T1547.013; T1547.014; T1547.015; T1548.001; T1548.002; T1548.003; T1553.001; T1553.003; T1553.004; T1553.006; T1556.001; T1556.002; T1556.003; T1556.004; T1557.001; T1562.001; T1562.004; T1562.006; T1562.009; T1564.002; T1564.003; T1564.004; T1564.005; T1564.006; T1564.008; T1565.001; T1565.003; T1569.001; T1569.002; T1574.001; T1574.002; T1574.004; T1574.005; T1574.006; T1574.007; T1574.008; T1574.009; T1574.010; T1574.011; T1574.012; T1600.001; T1600.002; T1601.001; T1601.002,Yes,
 4671,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,An application attempted to access a blocked ordinal through the TBS.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4671
@@ -1647,7 +1647,7 @@ Process Information:
 	Mandatory Label:	Mandatory Label\System Mandatory Level
 	Creator Process ID:	0x2a4
 	Creator Process Name:	C:\Windows\System32\services.exe
-	Process Command Line:	dsamain.exe",,Audit Process Creation,illustrative,T1059,Yes,
+	Process Command Line:	dsamain.exe",,Audit Process Creation,illustrative,T1003; T1005; T1006; T1007; T1010; T1011; T1012; T1016; T1018; T1020; T1021; T1025; T1027; T1033; T1036; T1037; T1039; T1040; T1041; T1046; T1047; T1048; T1049; T1052; T1053; T1056; T1057; T1059; T1069; T1070; T1072; T1074; T1080; T1082; T1083; T1087; T1091; T1098; T1110; T1112; T1113; T1114; T1115; T1119; T1120; T1123; T1124; T1125; T1127; T1134; T1135; T1136; T1137; T1140; T1176; T1189; T1197; T1201; T1202; T1204; T1216; T1217; T1218; T1219; T1220; T1221; T1222; T1480; T1482; T1484; T1485; T1486; T1489; T1490; T1496; T1497; T1505; T1518; T1529; T1542; T1543; T1546; T1547; T1548; T1552; T1553; T1555; T1558; T1559; T1560; T1561; T1562; T1563; T1564; T1567; T1569; T1570; T1574; T1609; T1611; T1614; T1615; T1003.001; T1003.002; T1003.003; T1003.004; T1003.005; T1003.007; T1003.008; T1011.001; T1016.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1027.004; T1036.003; T1036.004; T1037.001; T1037.002; T1037.003; T1037.004; T1037.005; T1048.001; T1048.002; T1048.003; T1052.001; T1053.001; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1056.002; T1059.001; T1059.002; T1059.003; T1059.004; T1059.005; T1059.006; T1059.007; T1059.008; T1069.001; T1069.002; T1069.003; T1070.001; T1070.002; T1070.003; T1070.004; T1070.005; T1074.001; T1074.002; T1087.001; T1087.002; T1087.003; T1087.004; T1098.004; T1114.001; T1114.002; T1127.001; T1134.001; T1134.002; T1134.003; T1134.004; T1136.001; T1136.002; T1137.001; T1137.002; T1137.003; T1137.004; T1137.005; T1137.006; T1204.002; T1204.003; T1216.001; T1218.001; T1218.002; T1218.003; T1218.004; T1218.005; T1218.007; T1218.008; T1218.009; T1218.010; T1218.011; T1218.012; T1218.013; T1218.014; T1222.001; T1222.002; T1480.001; T1484.001; T1484.002; T1497.001; T1497.002; T1497.003; T1505.003; T1505.004; T1518.001; T1542.005; T1543.001; T1543.002; T1543.003; T1543.004; T1546.001; T1546.002; T1546.003; T1546.004; T1546.005; T1546.006; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.013; T1546.014; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.006; T1547.007; T1547.009; T1547.011; T1547.013; T1547.014; T1547.015; T1548.001; T1548.002; T1548.003; T1548.004; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1553.001; T1553.004; T1553.006; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1559.001; T1559.002; T1560.001; T1561.001; T1561.002; T1562.001; T1562.002; T1562.003; T1562.004; T1562.006; T1562.009; T1562.010; T1563.001; T1563.002; T1564.001; T1564.002; T1564.003; T1564.004; T1564.006; T1564.008; T1564.009; T1567.001; T1567.002; T1569.001; T1569.002; T1574.002; T1574.005; T1574.006; T1574.007; T1574.008; T1574.009; T1574.010; T1574.011; T1574.012; T1614.001,Yes,
 4689,Security,Microsoft-Windows-Security-Auditing,Detailed Tracking,Audit Process Termination,A process has exited.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4689
@@ -1668,7 +1668,7 @@ Subject:
 Process Information:
 	Process ID:		0x1f38
 	Process Name:		C:\Windows\System32\dsamain.exe
-	Exit Status:		0x0",,Audit Process Termination,illustrative,T1059,Yes,
+	Exit Status:		0x0",,Audit Process Termination,illustrative,T1489; T1562; T1562.001,Yes,
 4690,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Handle Manipulation,An attempt was made to duplicate a handle to an object.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4690
@@ -1841,7 +1841,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,T1543.003,Yes,
+	Logon ID:		0x3E7F21",,,illustrative,T1036; T1543; T1557; T1564; T1569; T1036.004; T1543.001; T1543.002; T1543.003; T1543.004; T1547.011; T1557.001; T1564.006; T1569.001; T1569.002,Yes,
 4698,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,A scheduled task was created.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4698
@@ -1871,7 +1871,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1053.005,Yes,
+				ReadData (or ListDirectory)",,,illustrative,T1053; T1053.001; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1053.007,Yes,
 4699,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,A scheduled task was deleted.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4699
@@ -1931,7 +1931,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1053.005,Yes,
+				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,
 4701,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,A scheduled task was disabled.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4701
@@ -1961,7 +1961,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1053.005,Yes,
+				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,
 4702,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,A scheduled task was updated.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4702
@@ -1991,7 +1991,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1053.005,Yes,
+				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,
 4704,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,A user right was assigned.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4704
@@ -2243,7 +2243,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,
+	Logon ID:		0x3E7F21",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4718,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,System security access was removed from an account.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4718
@@ -2259,7 +2259,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,
+	Logon ID:		0x3E7F21",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4719,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,System Audit Policy was changed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4719
@@ -2296,7 +2296,7 @@ Subject:
 New Account:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1442
 	Account Name:		svc-backup
-	Account Domain:		CORP",,Audit User Account Management,illustrative,T1136.001; T1136.002,Yes,
+	Account Domain:		CORP",,Audit User Account Management,illustrative,T1136; T1564; T1136.001; T1136.002; T1136.003; T1564.002,Yes,
 4722,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,A user account was enabled.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4722
@@ -2317,7 +2317,7 @@ Subject:
 Target Account:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1442
 	Account Name:		svc-backup
-	Account Domain:		CORP",,Audit User Account Management,illustrative,T1098,Yes,
+	Account Domain:		CORP",,Audit User Account Management,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4723,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,An attempt was made to change an account's password.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4723
@@ -2380,7 +2380,7 @@ Subject:
 Target Account:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1442
 	Account Name:		svc-backup
-	Account Domain:		CORP",,Audit User Account Management,illustrative,T1531,Yes,
+	Account Domain:		CORP",,Audit User Account Management,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4726,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit User Account Management,A user account was deleted.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4726
@@ -2672,7 +2672,7 @@ Subject:
 Target Account:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1442
 	Account Name:		svc-backup
-	Account Domain:		CORP",,Audit User Account Management,illustrative,T1098,Yes,
+	Account Domain:		CORP",,Audit User Account Management,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4739,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,Domain Policy was changed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4739
@@ -2709,7 +2709,7 @@ Subject:
 Target Account:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1442
 	Account Name:		svc-backup
-	Account Domain:		CORP",,Audit User Account Management,illustrative,T1110,Yes,
+	Account Domain:		CORP",,Audit User Account Management,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4741,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Computer Account Management,A computer account was created.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4741
@@ -3335,7 +3335,7 @@ Subject:
 Target Account:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1442
 	Account Name:		svc-backup
-	Account Domain:		CORP",,,illustrative,T1098,Yes,
+	Account Domain:		CORP",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4768,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,A Kerberos authentication ticket (TGT) was requested.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4768
@@ -3364,7 +3364,7 @@ Additional Information:
 	Ticket Options:		0x40810010
 	Result Code:		0x0
 	Ticket Encryption Type:	0x12
-	Pre-Authentication Type:	2",,Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service,illustrative,T1558,Yes,
+	Pre-Authentication Type:	2",,Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service,illustrative,T1550; T1558; T1550.002; T1550.003; T1558.001; T1558.003; T1558.004,Yes,
 4769,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,A Kerberos service ticket was requested.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4769
@@ -3393,7 +3393,7 @@ Additional Information:
 	Ticket Options:		0x40810010
 	Result Code:		0x0
 	Ticket Encryption Type:	0x12
-	Pre-Authentication Type:	2",,Audit Kerberos (verbose / debug logging),illustrative,T1558.003,Yes,
+	Pre-Authentication Type:	2",,Audit Kerberos (verbose / debug logging),illustrative,T1550; T1558; T1550.002; T1550.003; T1558.001; T1558.003; T1558.004,Yes,
 4770,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,A Kerberos service ticket was renewed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4770
@@ -3595,7 +3595,7 @@ Additional Information:
    Client Address:  10.42.42.211
 
 This event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.
-```",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,original,T1021.001; T1563,,
+```",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,original,T1021; T1078; T1114; T1185; T1199; T1213; T1538; T1550; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1078.001; T1078.002; T1078.003; T1078.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002,,
 4778,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,A session was reconnected to a Window Station (RDP reconnect / Fast User Switching).,"```
 A session was reconnected to a Window Station.
 
@@ -3615,7 +3615,7 @@ Additional Information:
    Client Address:  10.42.42.211
 
 This event is generated when a user reconnects to an existing Terminal Services session, or when a user switches to an existing desktop using Fast User Switching.
-```",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,original,T1021.001; T1563,,
+```",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,original,T1021; T1078; T1114; T1185; T1199; T1213; T1538; T1550; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1078.001; T1078.002; T1078.003; T1078.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002,,
 4779,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,A session was disconnected from a Window Station.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4779
@@ -3716,7 +3716,7 @@ Subject:
 Target Account:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1442
 	Account Name:		svc-backup
-	Account Domain:		CORP",,,illustrative,,Yes,
+	Account Domain:		CORP",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,
 4782,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Other Account Management Events,The password hash of an account was accessed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4782
@@ -5339,7 +5339,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1562; T1562.004; T1562.007,,
 4947,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,A change has been made to the Windows Firewall exception list; a rule was modified.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4947
@@ -5366,7 +5366,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1562; T1562.004; T1562.007,,
 4948,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,A change has been made to the Windows Firewall exception list; a rule was deleted.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4948
@@ -5393,7 +5393,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1562; T1562.004; T1562.007,,
 4949,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,Windows Firewall settings were restored to the default values.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4949
@@ -5781,7 +5781,7 @@ Detailed Authentication Information:
 	Authentication Package:	Kerberos
 	Transited Services:	-
 	Package Name (NTLM only):	-
-	Key Length:		0",,Audit Special Logon,illustrative,T1078.002,Yes,
+	Key Length:		0",,Audit Special Logon,illustrative,T1021; T1078; T1114; T1185; T1199; T1213; T1538; T1550; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1078.001; T1078.002; T1078.003; T1078.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002,Yes,
 4965,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,IPsec received a packet from a remote computer with an incorrect Security Parameter Index (SPI).,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4965
@@ -6103,7 +6103,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,,
+	Logon ID:		0x3E7F21",,,illustrative,T1562; T1562.004; T1562.007,,
 5027,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,The Windows Firewall Service was unable to retrieve the security policy from local storage.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5027
@@ -6187,7 +6187,7 @@ Network Information:
 	Direction:		Inbound
 	Source Address:		0.0.0.0
 	Source Port:		8443
-	Protocol:		6",,,illustrative,,,
+	Protocol:		6",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,
 5032,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,Windows Firewall was unable to notify the user that it blocked an application from accepting incoming connections.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5032
@@ -6879,7 +6879,7 @@ Attribute:
 	Value:			66048
 
 Operation:
-	Type:		Value Added",,Audit Directory Service Changes,illustrative,T1484.001,Yes,
+	Type:		Value Added",,Audit Directory Service Changes,illustrative,T1037; T1098; T1134; T1207; T1222; T1484; T1531; T1037.003; T1098.001; T1134.005; T1222.001; T1484.001; T1484.002,Yes,
 5137,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,A directory service object was created.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5137
@@ -6912,7 +6912,7 @@ Attribute:
 	Value:			66048
 
 Operation:
-	Type:		Value Added",,Audit Directory Service Changes,illustrative,T1484.001,Yes,
+	Type:		Value Added",,Audit Directory Service Changes,illustrative,T1207; T1484; T1484.001; T1484.002,Yes,
 5138,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,A directory service object was undeleted.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5138
@@ -6978,7 +6978,7 @@ Attribute:
 	Value:			66048
 
 Operation:
-	Type:		Value Added",,,illustrative,,Yes,
+	Type:		Value Added",,,illustrative,T1037; T1098; T1134; T1207; T1222; T1484; T1531; T1037.003; T1098.001; T1134.005; T1222.001; T1484.001; T1484.002,Yes,
 5140,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,A network share object was accessed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5140
@@ -7008,7 +7008,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,,,
+				ReadData (or ListDirectory)",,,illustrative,T1021; T1039; T1080; T1570; T1021.002,,
 5140,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,A network share object was accessed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5140
@@ -7035,7 +7035,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1021; T1039; T1080; T1570; T1021.002,,
 5141,Security,Microsoft-Windows-Security-Auditing,DS Access,Audit Directory Service Changes,A directory service object was deleted.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5141
@@ -7068,7 +7068,7 @@ Attribute:
 	Value:			66048
 
 Operation:
-	Type:		Value Added",,Audit Directory Service Changes,illustrative,T1484.001,Yes,
+	Type:		Value Added",,Audit Directory Service Changes,illustrative,T1484; T1484.001,Yes,
 5142,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,A network share object was added.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5142
@@ -7188,7 +7188,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,,,
+				ReadData (or ListDirectory)",,,illustrative,T1021; T1039; T1080; T1570; T1021.002,,
 5148,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,The Windows Filtering Platform detected a DoS attack and entered a defensive mode.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5148
@@ -7383,7 +7383,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,
 5155,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Filtering Platform blocked an application or service from listening on a port for incoming connections.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5155
@@ -7410,7 +7410,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,
 5156,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Filtering Platform allowed a connection.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5156
@@ -7437,7 +7437,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,
 5157,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Filtering Platform blocked a connection.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5157
@@ -7464,7 +7464,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,
 5158,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Filtering Platform permitted a bind to a local port.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5158
@@ -7491,7 +7491,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,
 5159,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Filtering Platform blocked a bind to a local port.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5159
@@ -7518,7 +7518,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,
 5168,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit File Share,SPN check for SMB/SMB2 failed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5168

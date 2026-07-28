@@ -715,7 +715,7 @@
     "reference": "",
     "how_to_collect": "Audit Logon",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1078",
+    "mitre_techniques": "T1021; T1070; T1078; T1110; T1114; T1185; T1199; T1207; T1213; T1538; T1550; T1552; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1552.005; T1552.007; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -730,7 +730,7 @@
     "reference": "",
     "how_to_collect": "Audit Account Lockout; Audit Logon",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1110",
+    "mitre_techniques": "T1070; T1078; T1110; T1207; T1538; T1550; T1552; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1550.002; T1550.003; T1552.005; T1552.007",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -745,7 +745,7 @@
     "reference": "",
     "how_to_collect": "Audit Account Lockout; Audit Logon",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1110",
+    "mitre_techniques": "T1070; T1078; T1110; T1207; T1538; T1550; T1552; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1550.002; T1550.003; T1552.005; T1552.007",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -805,7 +805,7 @@
     "reference": "",
     "how_to_collect": "Audit Logon",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1078; T1550",
+    "mitre_techniques": "T1070; T1078; T1110; T1207; T1538; T1550; T1552; T1070.005; T1078.001; T1078.002; T1078.003; T1078.004; T1110.001; T1110.002; T1110.003; T1110.004; T1550.002; T1550.003; T1552.005; T1552.007",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -925,7 +925,7 @@
     "reference": "",
     "how_to_collect": "Audit Removable Storage",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1052.001",
+    "mitre_techniques": "T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -940,7 +940,7 @@
     "reference": "",
     "how_to_collect": "Audit Removable Storage",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1052.001",
+    "mitre_techniques": "T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -955,7 +955,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1112",
+    "mitre_techniques": "T1056; T1070; T1111; T1112; T1137; T1218; T1489; T1490; T1543; T1546; T1547; T1548; T1553; T1556; T1557; T1562; T1564; T1569; T1574; T1056.001; T1137.001; T1137.002; T1137.006; T1218.002; T1543.003; T1546.001; T1546.002; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.010; T1547.012; T1547.014; T1548.002; T1553.003; T1553.004; T1553.006; T1556.002; T1557.001; T1562.001; T1562.004; T1562.006; T1562.009; T1564.002; T1564.005; T1564.006; T1569.002; T1574.011; T1574.012",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -1015,7 +1015,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1070; T1112; T1485; T1490; T1554; T1562; T1565; T1070.002; T1070.003; T1070.004; T1562.001; T1565.001; T1565.003",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -1030,7 +1030,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1070; T1112; T1485; T1490; T1554; T1562; T1565; T1070.002; T1070.003; T1070.004; T1562.001; T1565.001; T1565.003",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -1045,7 +1045,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1003; T1005; T1011; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1074; T1087; T1091; T1114; T1119; T1187; T1217; T1539; T1552; T1555; T1558; T1567; T1615; T1003.002; T1003.003; T1003.006; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.003; T1555.004; T1555.005; T1567.001; T1567.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1060,7 +1060,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1003; T1005; T1011; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1074; T1087; T1091; T1114; T1119; T1187; T1217; T1539; T1552; T1555; T1558; T1567; T1615; T1003.002; T1003.003; T1003.006; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.003; T1555.004; T1555.005; T1567.001; T1567.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1075,7 +1075,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1003; T1615; T1003.006",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1090,7 +1090,7 @@
     "reference": "",
     "how_to_collect": "Audit Removable Storage",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1052.001",
+    "mitre_techniques": "T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1105,7 +1105,7 @@
     "reference": "",
     "how_to_collect": "Audit Removable Storage",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1052.001",
+    "mitre_techniques": "T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1120,7 +1120,7 @@
     "reference": "",
     "how_to_collect": "Audit Removable Storage",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1052.001",
+    "mitre_techniques": "T1003; T1005; T1011; T1012; T1018; T1020; T1025; T1039; T1041; T1048; T1052; T1055; T1074; T1087; T1091; T1114; T1119; T1185; T1187; T1217; T1539; T1552; T1555; T1556; T1558; T1567; T1003.001; T1003.002; T1003.003; T1003.004; T1003.007; T1003.008; T1011.001; T1048.001; T1048.002; T1048.003; T1052.001; T1055.001; T1055.002; T1055.003; T1055.004; T1055.005; T1055.008; T1055.012; T1074.001; T1074.002; T1087.001; T1114.001; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1556.001; T1567.001; T1567.002; T1614.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1210,7 +1210,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1036; T1037; T1053; T1055; T1056; T1070; T1080; T1098; T1111; T1112; T1137; T1140; T1187; T1218; T1485; T1486; T1489; T1490; T1491; T1505; T1543; T1546; T1547; T1548; T1553; T1554; T1556; T1557; T1562; T1564; T1565; T1569; T1574; T1600; T1601; T1036.003; T1037.002; T1037.003; T1037.004; T1037.005; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1055.009; T1056.001; T1056.003; T1070.002; T1070.003; T1070.006; T1098.004; T1137.001; T1137.002; T1137.006; T1218.002; T1491.001; T1491.002; T1505.003; T1505.004; T1543.001; T1543.002; T1543.003; T1543.004; T1546.001; T1546.002; T1546.004; T1546.005; T1546.006; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.013; T1546.014; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.006; T1547.007; T1547.008; T1547.009; T1547.010; T1547.011; T1547.012; T1547.013; T1547.014; T1547.015; T1548.001; T1548.002; T1548.003; T1553.001; T1553.003; T1553.004; T1553.006; T1556.001; T1556.002; T1556.003; T1556.004; T1557.001; T1562.001; T1562.004; T1562.006; T1562.009; T1564.002; T1564.003; T1564.004; T1564.005; T1564.006; T1564.008; T1565.001; T1565.003; T1569.001; T1569.002; T1574.001; T1574.002; T1574.004; T1574.005; T1574.006; T1574.007; T1574.008; T1574.009; T1574.010; T1574.011; T1574.012; T1600.001; T1600.002; T1601.001; T1601.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1345,7 +1345,7 @@
     "reference": "",
     "how_to_collect": "Audit Process Creation",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1059",
+    "mitre_techniques": "T1003; T1005; T1006; T1007; T1010; T1011; T1012; T1016; T1018; T1020; T1021; T1025; T1027; T1033; T1036; T1037; T1039; T1040; T1041; T1046; T1047; T1048; T1049; T1052; T1053; T1056; T1057; T1059; T1069; T1070; T1072; T1074; T1080; T1082; T1083; T1087; T1091; T1098; T1110; T1112; T1113; T1114; T1115; T1119; T1120; T1123; T1124; T1125; T1127; T1134; T1135; T1136; T1137; T1140; T1176; T1189; T1197; T1201; T1202; T1204; T1216; T1217; T1218; T1219; T1220; T1221; T1222; T1480; T1482; T1484; T1485; T1486; T1489; T1490; T1496; T1497; T1505; T1518; T1529; T1542; T1543; T1546; T1547; T1548; T1552; T1553; T1555; T1558; T1559; T1560; T1561; T1562; T1563; T1564; T1567; T1569; T1570; T1574; T1609; T1611; T1614; T1615; T1003.001; T1003.002; T1003.003; T1003.004; T1003.005; T1003.007; T1003.008; T1011.001; T1016.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1027.004; T1036.003; T1036.004; T1037.001; T1037.002; T1037.003; T1037.004; T1037.005; T1048.001; T1048.002; T1048.003; T1052.001; T1053.001; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1056.002; T1059.001; T1059.002; T1059.003; T1059.004; T1059.005; T1059.006; T1059.007; T1059.008; T1069.001; T1069.002; T1069.003; T1070.001; T1070.002; T1070.003; T1070.004; T1070.005; T1074.001; T1074.002; T1087.001; T1087.002; T1087.003; T1087.004; T1098.004; T1114.001; T1114.002; T1127.001; T1134.001; T1134.002; T1134.003; T1134.004; T1136.001; T1136.002; T1137.001; T1137.002; T1137.003; T1137.004; T1137.005; T1137.006; T1204.002; T1204.003; T1216.001; T1218.001; T1218.002; T1218.003; T1218.004; T1218.005; T1218.007; T1218.008; T1218.009; T1218.010; T1218.011; T1218.012; T1218.013; T1218.014; T1222.001; T1222.002; T1480.001; T1484.001; T1484.002; T1497.001; T1497.002; T1497.003; T1505.003; T1505.004; T1518.001; T1542.005; T1543.001; T1543.002; T1543.003; T1543.004; T1546.001; T1546.002; T1546.003; T1546.004; T1546.005; T1546.006; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.013; T1546.014; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.006; T1547.007; T1547.009; T1547.011; T1547.013; T1547.014; T1547.015; T1548.001; T1548.002; T1548.003; T1548.004; T1552.001; T1552.002; T1552.003; T1552.004; T1552.006; T1552.007; T1553.001; T1553.004; T1553.006; T1555.001; T1555.002; T1555.003; T1555.004; T1555.005; T1559.001; T1559.002; T1560.001; T1561.001; T1561.002; T1562.001; T1562.002; T1562.003; T1562.004; T1562.006; T1562.009; T1562.010; T1563.001; T1563.002; T1564.001; T1564.002; T1564.003; T1564.004; T1564.006; T1564.008; T1564.009; T1567.001; T1567.002; T1569.001; T1569.002; T1574.002; T1574.005; T1574.006; T1574.007; T1574.008; T1574.009; T1574.010; T1574.011; T1574.012; T1614.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1360,7 +1360,7 @@
     "reference": "",
     "how_to_collect": "Audit Process Termination",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1059",
+    "mitre_techniques": "T1489; T1562; T1562.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1480,7 +1480,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1543.003",
+    "mitre_techniques": "T1036; T1543; T1557; T1564; T1569; T1036.004; T1543.001; T1543.002; T1543.003; T1543.004; T1547.011; T1557.001; T1564.006; T1569.001; T1569.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1495,7 +1495,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1053.005",
+    "mitre_techniques": "T1053; T1053.001; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1053.007",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1525,7 +1525,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1053.005",
+    "mitre_techniques": "T1036; T1036.004",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1540,7 +1540,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1053.005",
+    "mitre_techniques": "T1036; T1036.004",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1555,7 +1555,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1053.005",
+    "mitre_techniques": "T1036; T1036.004",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1750,7 +1750,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1765,7 +1765,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1795,7 +1795,7 @@
     "reference": "",
     "how_to_collect": "Audit User Account Management",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1136.001; T1136.002",
+    "mitre_techniques": "T1136; T1564; T1136.001; T1136.002; T1136.003; T1564.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1810,7 +1810,7 @@
     "reference": "",
     "how_to_collect": "Audit User Account Management",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1098",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -1855,7 +1855,7 @@
     "reference": "",
     "how_to_collect": "Audit User Account Management",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1531",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -2035,7 +2035,7 @@
     "reference": "",
     "how_to_collect": "Audit User Account Management",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1098",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -2065,7 +2065,7 @@
     "reference": "",
     "how_to_collect": "Audit User Account Management",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1110",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -2455,7 +2455,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1098",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -2470,7 +2470,7 @@
     "reference": "",
     "how_to_collect": "Audit Kerberos (verbose / debug logging); Audit Kerberos Authentication Service",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1558",
+    "mitre_techniques": "T1550; T1558; T1550.002; T1550.003; T1558.001; T1558.003; T1558.004",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -2485,7 +2485,7 @@
     "reference": "",
     "how_to_collect": "Audit Kerberos (verbose / debug logging)",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1558.003",
+    "mitre_techniques": "T1550; T1558; T1550.002; T1550.003; T1558.001; T1558.003; T1558.004",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -2605,7 +2605,7 @@
     "reference": "",
     "how_to_collect": "Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events",
     "sample_type": "original",
-    "mitre_techniques": "T1021.001; T1563",
+    "mitre_techniques": "T1021; T1078; T1114; T1185; T1199; T1213; T1538; T1550; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1078.001; T1078.002; T1078.003; T1078.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -2620,7 +2620,7 @@
     "reference": "",
     "how_to_collect": "Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events",
     "sample_type": "original",
-    "mitre_techniques": "T1021.001; T1563",
+    "mitre_techniques": "T1021; T1078; T1114; T1185; T1199; T1213; T1538; T1550; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1078.001; T1078.002; T1078.003; T1078.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -2680,7 +2680,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1098; T1528; T1531; T1098.001; T1098.002; T1098.003",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -3850,7 +3850,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1562; T1562.004; T1562.007",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -3865,7 +3865,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1562; T1562.004; T1562.007",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -3880,7 +3880,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1562; T1562.004; T1562.007",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -4090,7 +4090,7 @@
     "reference": "",
     "how_to_collect": "Audit Special Logon",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1078.002",
+    "mitre_techniques": "T1021; T1078; T1114; T1185; T1199; T1213; T1538; T1550; T1556; T1563; T1606; T1021.001; T1021.002; T1021.004; T1021.005; T1021.006; T1078.001; T1078.002; T1078.003; T1078.004; T1114.002; T1213.001; T1213.002; T1213.003; T1550.002; T1550.003; T1556.001; T1556.003; T1563.001; T1563.002; T1606.001; T1606.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -4285,7 +4285,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1562; T1562.004; T1562.007",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -4360,7 +4360,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -4870,7 +4870,7 @@
     "reference": "",
     "how_to_collect": "Audit Directory Service Changes",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1484.001",
+    "mitre_techniques": "T1037; T1098; T1134; T1207; T1222; T1484; T1531; T1037.003; T1098.001; T1134.005; T1222.001; T1484.001; T1484.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -4885,7 +4885,7 @@
     "reference": "",
     "how_to_collect": "Audit Directory Service Changes",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1484.001",
+    "mitre_techniques": "T1207; T1484; T1484.001; T1484.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -4915,7 +4915,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1037; T1098; T1134; T1207; T1222; T1484; T1531; T1037.003; T1098.001; T1134.005; T1222.001; T1484.001; T1484.002",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -4930,7 +4930,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1021; T1039; T1080; T1570; T1021.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -4945,7 +4945,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1021; T1039; T1080; T1570; T1021.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -4960,7 +4960,7 @@
     "reference": "",
     "how_to_collect": "Audit Directory Service Changes",
     "sample_type": "illustrative",
-    "mitre_techniques": "T1484.001",
+    "mitre_techniques": "T1484; T1484.001",
     "acsc_priority_log": "Yes",
     "nist_800_53_au": ""
   },
@@ -5020,7 +5020,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1021; T1039; T1080; T1570; T1021.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -5125,7 +5125,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -5140,7 +5140,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -5155,7 +5155,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -5170,7 +5170,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -5185,7 +5185,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },
@@ -5200,7 +5200,7 @@
     "reference": "",
     "how_to_collect": "",
     "sample_type": "illustrative",
-    "mitre_techniques": "",
+    "mitre_techniques": "T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002",
     "acsc_priority_log": "",
     "nist_800_53_au": ""
   },

@@ -38,9 +38,13 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     manifest import, see below). The web lookup page tags both generated
     types so they're never mistaken for a real capture.
   - `mitre_techniques` — MITRE ATT&CK technique ID(s) associated with the
-    event, where mapped (populated for Sysmon, AppLocker, Code Integrity,
-    Windows Defender, and related detection-relevant events; blank
-    elsewhere)
+    event, semicolon-separated, where mapped (populated for Sysmon,
+    AppLocker, Code Integrity, Windows Defender, and — via the full
+    technique↔event dataset in `data/reference/mitre_attack_mapping.csv` —
+    48 Security-log audit events; blank elsewhere). High-fan-out events
+    (e.g. 4688 Process Creation, which maps to 286 techniques) are shown
+    truncated to the first 10 in the web lookup page's detail view, with a
+    link through to the full reference table.
   - `acsc_priority_log` — `Yes` if this exact `(event_id, log)` appears in
     the ASD/ACSC "Priority logs for SIEM ingestion: Practitioner guidance"
     tables (Microsoft Domain Controller; AD & Domain Service Security Logs;
@@ -74,6 +78,16 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 - `data/reference/sharepoint_audit_event_types.csv` — SharePoint audit log
   event type codes. These use a separate numbering scheme from Windows
   Event Log IDs and are kept out of the main catalogue to avoid collisions.
+- `data/reference/mitre_attack_mapping.csv` / `.json` — the full MITRE
+  ATT&CK technique ↔ Security-log Event ID mapping, one row per
+  `(technique_id, audit_category, audit_sub_category, event_id)`
+  combination: 1,417 associations across 390 ATT&CK techniques, each with
+  its technique name, tactic(s), and the Windows audit category/subcategory
+  that generates the event. This is the source for `mitre_techniques` on
+  Security-log rows in the main catalogue, and is browsable in full
+  (searchable by technique ID, technique name, tactic, or event ID) on the
+  web lookup page's Reference tables tab — the main catalogue's detail view
+  truncates high-fan-out events and links here for the rest.
 - `docs/event-log-operations.md` — PowerShell / `wevtutil` snippets for
   querying, exporting, and clearing event logs, including a working example
   for auditing user account creation (Event ID 4720) across all domain
@@ -177,6 +191,19 @@ PowerShell script-block logging, Zerologon-hardening, log clearing, and
 several others) — left blank on purely diagnostic/operational events
 (transport-layer detail, database internals, DHCP/DNS configuration, and
 similar) where a technique mapping would be a stretch.
+
+Subsequently cross-checked against a **comprehensive MITRE ATT&CK ↔
+Windows Security Event ID mapping dataset** (390 techniques, 48 distinct
+Security-log events, 1,417 technique–event associations in total) — this
+superseded the earlier, narrower `mitre_techniques` values on the 48
+affected events with the full technique list per event, and the complete
+dataset was added as a new reference table,
+`data/reference/mitre_attack_mapping.csv` / `.json`, since several events
+(e.g. 4688 Process Creation → 286 techniques) map to far more techniques
+than fit usefully in a single catalogue field. The web lookup page's
+detail view shows the first 10 techniques for such events with a link
+through to the full, searchable reference table rather than truncating
+silently.
 
 ## Bulk ETW manifest import
 
