@@ -75,7 +75,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 746 events by ID or keyword, filter by log/category,
+lookup page: search all 829 events by ID or keyword, filter by log/category,
 toggle to show only ASD/ACSC priority logs, and view full detail —
 description, sample log text, MITRE ATT&CK mapping, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
@@ -115,3 +115,20 @@ PowerShell/Task Scheduler events, Windows Update and Service Control
 Manager System-log events, and a handful of same-numbered-but-different-
 channel events (e.g. Sysmon's own 21-25 vs. Terminal Services' 21-25) —
 were added, carrying that source's MITRE ATT&CK mappings where provided.
+
+Also cross-referenced against NSA's `Event-Forwarding-Guidance`
+(`Events/RecommendedEvents.csv` on GitHub, the companion dataset to NSA's
+"Spotting the Adversary with Windows Event Log Monitoring"). About 55% of
+its 205 individual event IDs were already covered; the rest opened up
+several new log channels not previously in the catalogue — WLAN-AutoConfig,
+CAPI2 (certificate chain building), NetworkProfile, TerminalServices-
+RDPClient, USB-USBHUB3-Analytic, Kernel-PnP device configuration, LSA/
+Operational, CertificationAuthority, RemoteAccess (RRAS/RADIUS), and
+Application-Experience/Program-Inventory — plus boot/shutdown Kernel-
+General events, Windows Firewall rule-change events, and further Windows
+Defender and Windows Update failure events. A few NSA rows that
+duplicated an event ID already covered by another source, but with a
+generic or mismatched label (e.g. "Exception Raised" for what are
+actually distinct PowerShell script-block-logging events already
+correctly described), were treated as a labeling artifact and skipped in
+favor of the existing, more specific entry.

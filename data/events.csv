@@ -12904,3 +12904,584 @@ Level:         Information
 Computer:      WKS-0142.corp.local
 Description:
 Rendering Job: Q3-Budget.xlsx, 4 page(s), owner CORP\j.doe, printer HP-Finance-01.","data/reference/audit_configuration.csv (""Printer auditing"")",Printer auditing,illustrative,,
+1518,Application,Microsoft-Windows-User Profiles Service,Account Usage,,Create Profile failed,"Log Name:      Application
+Source:        Microsoft-Windows-User Profiles Service
+Event ID:      1518
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Create Profile failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+300,Microsoft-Windows-LSA/Operational,LsaSrv,Account Usage,,Group Assigned to new Session,"Log Name:      Microsoft-Windows-LSA/Operational
+Source:        LsaSrv
+Event ID:      300
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Group Assigned to new Session","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1511,Application,Microsoft-Windows-User Profiles Service,Account Usage,,Temp Profile Logon,"Log Name:      Application
+Source:        Microsoft-Windows-User Profiles Service
+Event ID:      1511
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Temp Profile Logon","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1001,System,Microsoft-Windows-WER-SystemErrorReporting,Application Crashes,,BSOD,"Log Name:      System
+Source:        Microsoft-Windows-WER-SystemErrorReporting
+Event ID:      1001
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+BSOD","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+8023,Microsoft-Windows-AppLocker/Packaged app-Deployment,Microsoft-Windows-AppLocker,Application Whitelisting,,Application Installed,"Log Name:      Microsoft-Windows-AppLocker/Packaged app-Deployment
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8023
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Application Installed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+8020,Microsoft-Windows-AppLocker/Packaged app-Execution,Microsoft-Windows-AppLocker,Application Whitelisting,,Application Ran,"Log Name:      Microsoft-Windows-AppLocker/Packaged app-Execution
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8020
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Application Ran","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+865,Application,Microsoft-Windows-SoftwareRestrictionPolicies,Application Whitelisting,,SRP Block,"Log Name:      Application
+Source:        Microsoft-Windows-SoftwareRestrictionPolicies
+Event ID:      865
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+SRP Block","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+866,Application,Microsoft-Windows-SoftwareRestrictionPolicies,Application Whitelisting,,SRP Block,"Log Name:      Application
+Source:        Microsoft-Windows-SoftwareRestrictionPolicies
+Event ID:      866
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+SRP Block","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+867,Application,Microsoft-Windows-SoftwareRestrictionPolicies,Application Whitelisting,,SRP Block,"Log Name:      Application
+Source:        Microsoft-Windows-SoftwareRestrictionPolicies
+Event ID:      867
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+SRP Block","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+868,Application,Microsoft-Windows-SoftwareRestrictionPolicies,Application Whitelisting,,SRP Block,"Log Name:      Application
+Source:        Microsoft-Windows-SoftwareRestrictionPolicies
+Event ID:      868
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+SRP Block","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+882,Application,Microsoft-Windows-SoftwareRestrictionPolicies,Application Whitelisting,,SRP Block,"Log Name:      Application
+Source:        Microsoft-Windows-SoftwareRestrictionPolicies
+Event ID:      882
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+SRP Block","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1074,User32,User32,Boot Events,,Shutdown Initiate Failed,"Log Name:      User32
+Source:        User32
+Event ID:      1074
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Shutdown Initiate Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+13,System,Microsoft-Windows-Kernel-General,Boot Events,,Windows Shutdown,"Log Name:      System
+Source:        Microsoft-Windows-Kernel-General
+Event ID:      13
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows Shutdown","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+12,System,Microsoft-Windows-Kernel-General,Boot Events,,Windows Startup,"Log Name:      System
+Source:        Microsoft-Windows-Kernel-General
+Event ID:      12
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows Startup","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+90,Microsoft-Windows-CertificationAuthority,Microsoft-Windows-CertificationAuthority,Certificate Services,,CA Permissions Corrupted or Missing,"Log Name:      Microsoft-Windows-CertificationAuthority
+Source:        Microsoft-Windows-CertificationAuthority
+Event ID:      90
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+CA Permissions Corrupted or Missing","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+104,System,Microsoft-Windows-Eventlog,Clearing Event Logs,,Event Log was Cleared,"Log Name:      System
+Source:        Microsoft-Windows-Eventlog
+Event ID:      104
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Event Log was Cleared","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+256,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNSServer,DNS/Directory Services,,DNS Request/Response,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNSServer
+Event ID:      256
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+DNS Request/Response","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+43,Microsoft-Windows-USB-USBHUB3-Analytic,Microsoft-Windows-USB-USBHUB3,External Media Detection,,New Device Information,"Log Name:      Microsoft-Windows-USB-USBHUB3-Analytic
+Source:        Microsoft-Windows-USB-USBHUB3
+Event ID:      43
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New Device Information","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+400,Microsoft-Windows-Kernel-PnP/Device Configuration,Microsoft-Windows-Kernel-PnP,External Media Detection,,New Mass Storage Installation,"Log Name:      Microsoft-Windows-Kernel-PnP/Device Configuration
+Source:        Microsoft-Windows-Kernel-PnP
+Event ID:      400
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New Mass Storage Installation","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+410,Microsoft-Windows-Kernel-PnP/Device Configuration,Microsoft-Windows-Kernel-PnP,External Media Detection,,New Mass Storage Installation,"Log Name:      Microsoft-Windows-Kernel-PnP/Device Configuration
+Source:        Microsoft-Windows-Kernel-PnP
+Event ID:      410
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New Mass Storage Installation","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1126,System,Microsoft-Windows-GroupPolicy,Group Policy Errors,,Generic Internal Error,"Log Name:      System
+Source:        Microsoft-Windows-GroupPolicy
+Event ID:      1126
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Generic Internal Error","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1129,System,Microsoft-Windows-GroupPolicy,Group Policy Errors,,Group Policy Application Failed due to Connectivity,"Log Name:      System
+Source:        Microsoft-Windows-GroupPolicy
+Event ID:      1129
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Group Policy Application Failed due to Connectivity","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1125,System,Microsoft-Windows-GroupPolicy,Group Policy Errors,,Internal Error,"Log Name:      System
+Source:        Microsoft-Windows-GroupPolicy
+Event ID:      1125
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Internal Error","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+3003,Microsoft-Windows-CodeIntegrity/Operational,Microsoft-Windows-CodeIntegrity,Kernel Driver Signing,,Code Integrity Check,"Log Name:      Microsoft-Windows-CodeIntegrity/Operational
+Source:        Microsoft-Windows-CodeIntegrity
+Event ID:      3003
+Level:         Warning, Error
+Computer:      WKS-0142.corp.local
+Description:
+Code Integrity Check","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+3010,Microsoft-Windows-CodeIntegrity/Operational,Microsoft-Windows-CodeIntegrity,Kernel Driver Signing,,Code Integrity Check,"Log Name:      Microsoft-Windows-CodeIntegrity/Operational
+Source:        Microsoft-Windows-CodeIntegrity
+Event ID:      3010
+Level:         Warning, Error
+Computer:      WKS-0142.corp.local
+Description:
+Code Integrity Check","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+3023,Microsoft-Windows-CodeIntegrity/Operational,Microsoft-Windows-CodeIntegrity,Kernel Driver Signing,,Code Integrity Check,"Log Name:      Microsoft-Windows-CodeIntegrity/Operational
+Source:        Microsoft-Windows-CodeIntegrity
+Event ID:      3023
+Level:         Warning, Error
+Computer:      WKS-0142.corp.local
+Description:
+Code Integrity Check","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+219,System,Microsoft-Windows-Kernel-PnP,Kernel Driver Signing,,Failed Kernel Driver Loading,"Log Name:      System
+Source:        Microsoft-Windows-Kernel-PnP
+Event ID:      219
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Failed Kernel Driver Loading","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11,Microsoft-Windows-CAPI2/Operational,Microsoft-Windows-CAPI2,Microsoft Cryptography API,,Cert Trust Chain Build Failed,"Log Name:      Microsoft-Windows-CAPI2/Operational
+Source:        Microsoft-Windows-CAPI2
+Event ID:      11
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Cert Trust Chain Build Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+70,Microsoft-Windows-CAPI2/Operational,Microsoft-Windows-CAPI2,Microsoft Cryptography API,,Private Key Accessed,"Log Name:      Microsoft-Windows-CAPI2/Operational
+Source:        Microsoft-Windows-CAPI2
+Event ID:      70
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Private Key Accessed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+90,Microsoft-Windows-CAPI2/Operational,Microsoft-Windows-CAPI2,Microsoft Cryptography API,,X.509 Object,"Log Name:      Microsoft-Windows-CAPI2/Operational
+Source:        Microsoft-Windows-CAPI2
+Event ID:      90
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+X.509 Object","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+8003,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Disconnect from Wireless connection,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      8003
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Disconnect from Wireless connection","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+10000,Microsoft-Windows-NetworkProfile/Operational,Microsoft-Windows-NetworkProfile,Mobile Device Activities,,Network Connection and Disconnection Status (Wired and Wireless),"Log Name:      Microsoft-Windows-NetworkProfile/Operational
+Source:        Microsoft-Windows-NetworkProfile
+Event ID:      10000
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Network Connection and Disconnection Status (Wired and Wireless)","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+10001,Microsoft-Windows-NetworkProfile/Operational,Microsoft-Windows-NetworkProfile,Mobile Device Activities,,Network Connection and Disconnection Status (Wired and Wireless),"Log Name:      Microsoft-Windows-NetworkProfile/Operational
+Source:        Microsoft-Windows-NetworkProfile
+Event ID:      10001
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Network Connection and Disconnection Status (Wired and Wireless)","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+8000,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Starting a Wireless connection,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      8000
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Starting a Wireless connection","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+8011,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Starting a Wireless connection,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      8011
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Starting a Wireless connection","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+8001,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Successfully connected to a Wireless connection,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      8001
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Successfully connected to a Wireless connection","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11000,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Wireless Association Status,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      11000
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Association Status","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11001,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Wireless Association Status,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      11001
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Association Status","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11002,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Wireless Association Status,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      11002
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Association Status","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+12011,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Wireless Authentication Started and Failed,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      12011
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Authentication Started and Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+12012,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Wireless Authentication Started and Failed,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      12012
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Authentication Started and Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+12013,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Wireless Authentication Started and Failed,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      12013
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Authentication Started and Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+8002,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,Wireless Connection Failed,"Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      8002
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Connection Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11004,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,"Wireless Security Started, Stopped, Successful, or Failed","Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      11004
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Security Started, Stopped, Successful, or Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11005,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,"Wireless Security Started, Stopped, Successful, or Failed","Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      11005
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Security Started, Stopped, Successful, or Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11010,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,"Wireless Security Started, Stopped, Successful, or Failed","Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      11010
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Security Started, Stopped, Successful, or Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+11006,Microsoft-Windows-WLAN-AutoConfig/Operational,Microsoft-Windows-WLAN-AutoConfig,Mobile Device Activities,,"Wireless Security Started, Stopped, Successful, or Failed","Log Name:      Microsoft-Windows-WLAN-AutoConfig/Operational
+Source:        Microsoft-Windows-WLAN-AutoConfig
+Event ID:      11006
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Wireless Security Started, Stopped, Successful, or Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1024,Microsoft-Windows-TerminalServices-RDPClient/Operational,Microsoft-Windows-TerminalServices-ClientActiveXCore,Network Policy,,Outbound TS Connect Attempt,"Log Name:      Microsoft-Windows-TerminalServices-RDPClient/Operational
+Source:        Microsoft-Windows-TerminalServices-ClientActiveXCore
+Event ID:      1024
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Outbound TS Connect Attempt","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+20250,RemoteAccess,Microsoft-Windows-MPRMSG,Network Policy,,RADIUS User assigned IP,"Log Name:      RemoteAccess
+Source:        Microsoft-Windows-MPRMSG
+Event ID:      20250
+Level:         Success
+Computer:      WKS-0142.corp.local
+Description:
+RADIUS User assigned IP","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+20274,RemoteAccess,Microsoft-Windows-MPRMSG,Network Policy,,RADIUS User Authenticated,"Log Name:      RemoteAccess
+Source:        Microsoft-Windows-MPRMSG
+Event ID:      20274
+Level:         Success
+Computer:      WKS-0142.corp.local
+Description:
+RADIUS User Authenticated","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+20275,RemoteAccess,Microsoft-Windows-MPRMSG,Network Policy,,RADIUS User Disconnected,"Log Name:      RemoteAccess
+Source:        Microsoft-Windows-MPRMSG
+Event ID:      20275
+Level:         Success
+Computer:      WKS-0142.corp.local
+Description:
+RADIUS User Disconnected","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+169,Windows PowerShell,PowerShell,PowerShell Activities,,Remote Connection,"Log Name:      Powershell
+Source:        Microsoft-Windows-Powershell
+Event ID:      169
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Remote Connection","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+903,Microsoft-Windows-Application-Experience/Program-Inventory,Microsoft-Windows-Application-Experience,Software and Service Installation,,New Application Installation,"Log Name:      Microsoft-Windows-Application-Experience/Program-Inventory
+Source:        Microsoft-Windows-Application-Experience
+Event ID:      903
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New Application Installation","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+904,Microsoft-Windows-Application-Experience/Program-Inventory,Microsoft-Windows-Application-Experience,Software and Service Installation,,New Application Installation,"Log Name:      Microsoft-Windows-Application-Experience/Program-Inventory
+Source:        Microsoft-Windows-Application-Experience
+Event ID:      904
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New Application Installation","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+6,System,Microsoft-Windows-FilterManager,Software and Service Installation,,New Kernel Filter Driver,"Log Name:      System
+Source:        Microsoft-Windows-FilterManager
+Event ID:      6
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New Kernel Filter Driver","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1022,Application,MsiInstaller,Software and Service Installation,,New MSI File Installed,"Log Name:      Application
+Source:        MsiInstaller
+Event ID:      1022
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New MSI File Installed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1033,Application,MsiInstaller,Software and Service Installation,,New MSI File Installed,"Log Name:      Application
+Source:        MsiInstaller
+Event ID:      1033
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+New MSI File Installed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+907,Microsoft-Windows-Application-Experience/Program-Inventory,Microsoft-Windows-Application-Experience,Software and Service Installation,,Removed Application,"Log Name:      Microsoft-Windows-Application-Experience/Program-Inventory
+Source:        Microsoft-Windows-Application-Experience
+Event ID:      907
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Removed Application","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+908,Microsoft-Windows-Application-Experience/Program-Inventory,Microsoft-Windows-Application-Experience,Software and Service Installation,,Removed Application,"Log Name:      Microsoft-Windows-Application-Experience/Program-Inventory
+Source:        Microsoft-Windows-Application-Experience
+Event ID:      908
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Removed Application","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+800,Microsoft-Windows-Application-Experience/Program-Inventory,Microsoft-Windows-Application-Experience,Software and Service Installation,,Summary of Software Activities,"Log Name:      Microsoft-Windows-Application-Experience/Program-Inventory
+Source:        Microsoft-Windows-Application-Experience
+Event ID:      800
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Summary of Software Activities","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2,Setup,Microsoft-Windows-Servicing,Software and Service Installation,,Update Packages Installed,"Log Name:      Setup
+Source:        Microsoft-Windows-Servicing
+Event ID:      2
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Update Packages Installed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+905,Microsoft-Windows-Application-Experience/Program-Inventory,Microsoft-Windows-Application-Experience,Software and Service Installation,,Updated Application,"Log Name:      Microsoft-Windows-Application-Experience/Program-Inventory
+Source:        Microsoft-Windows-Application-Experience
+Event ID:      905
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Updated Application","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+906,Microsoft-Windows-Application-Experience/Program-Inventory,Microsoft-Windows-Application-Experience,Software and Service Installation,,Updated Application,"Log Name:      Microsoft-Windows-Application-Experience/Program-Inventory
+Source:        Microsoft-Windows-Application-Experience
+Event ID:      906
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Updated Application","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1,System,Microsoft-Windows-Kernel-General,System Integrity,,System Time Changed,"Log Name:      System
+Source:        Microsoft-Windows-Kernel-General
+Event ID:      1
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+System Time Changed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+7032,System,Service Control Manager,System or Service Failures,,Windows Service Fails or Crashes,"Log Name:      System
+Source:        Service Control Manager
+Event ID:      7032
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows Service Fails or Crashes","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1010,Microsoft-Windows-Windows Defender/Operational,Microsoft-Windows-Windows Defender,Windows Defender Activities,,Failed to remove item from quarantine,"Log Name:      Microsoft-Windows-Windows Defender/Operational
+Source:        Microsoft-Windows-Windows Defender
+Event ID:      1010
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Failed to remove item from quarantine","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2003,Microsoft-Windows-Windows Defender/Operational,Microsoft-Windows-Windows Defender,Windows Defender Activities,,Failed to update engine,"Log Name:      Microsoft-Windows-Windows Defender/Operational
+Source:        Microsoft-Windows-Windows Defender
+Event ID:      2003
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Failed to update engine","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2001,Microsoft-Windows-Windows Defender/Operational,Microsoft-Windows-Windows Defender,Windows Defender Activities,,Failed to update signatures,"Log Name:      Microsoft-Windows-Windows Defender/Operational
+Source:        Microsoft-Windows-Windows Defender
+Event ID:      2001
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Failed to update signatures","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1009,Microsoft-Windows-Windows Defender/Operational,Microsoft-Windows-Windows Defender,Windows Defender Activities,,File Restored from Quarantine,"Log Name:      Microsoft-Windows-Windows Defender/Operational
+Source:        Microsoft-Windows-Windows Defender
+Event ID:      1009
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+File Restored from Quarantine","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+3002,Microsoft-Windows-Windows Defender/Operational,Microsoft-Windows-Windows Defender,Windows Defender Activities,,Real-Time Protection failed,"Log Name:      Microsoft-Windows-Windows Defender/Operational
+Source:        Microsoft-Windows-Windows Defender
+Event ID:      3002
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Real-Time Protection failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2004,Microsoft-Windows-Windows Defender/Operational,Microsoft-Windows-Windows Defender,Windows Defender Activities,,Reverting to last known good set of signatures,"Log Name:      Microsoft-Windows-Windows Defender/Operational
+Source:        Microsoft-Windows-Windows Defender
+Event ID:      2004
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Reverting to last known good set of signatures","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2009,Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,Microsoft-Windows-Windows Firewall With Advanced Security,Windows Firewall,,Firewall Failed to load Group Policy,"Log Name:      Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
+Source:        Microsoft-Windows-Windows Firewall With Advanced Security
+Event ID:      2009
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Firewall Failed to load Group Policy","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2004,Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,Microsoft-Windows-Windows Firewall With Advanced Security,Windows Firewall,,Firewall Rule Add,"Log Name:      Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
+Source:        Microsoft-Windows-Windows Firewall With Advanced Security
+Event ID:      2004
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Firewall Rule Add","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2005,Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,Microsoft-Windows-Windows Firewall With Advanced Security,Windows Firewall,,Firewall Rule Change,"Log Name:      Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
+Source:        Microsoft-Windows-Windows Firewall With Advanced Security
+Event ID:      2005
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Firewall Rule Change","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2006,Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,Microsoft-Windows-Windows Firewall With Advanced Security,Windows Firewall,,Firewall Rules Deleted,"Log Name:      Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
+Source:        Microsoft-Windows-Windows Firewall With Advanced Security
+Event ID:      2006
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Firewall Rules Deleted","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+2033,Microsoft-Windows-Windows Firewall With Advanced Security/Firewall,Microsoft-Windows-Windows Firewall With Advanced Security,Windows Firewall,,Firewall Rules Deleted,"Log Name:      Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
+Source:        Microsoft-Windows-Windows Firewall With Advanced Security
+Event ID:      2033
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Firewall Rules Deleted","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+1009,Setup,Microsoft-Windows-Servicing,Windows Update Errors,,Hotpatching Failed,"Log Name:      Setup
+Source:        Microsoft-Windows-Servicing
+Event ID:      1009
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Hotpatching Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+20,Microsoft-Windows-WindowsUpdateClient/Operational,Microsoft-Windows-WindowsUpdateClient,Windows Update Errors,,Windows Update Failed,"Log Name:      Microsoft-Windows-WindowsUpdateClient/Operational
+Source:        Microsoft-Windows-WindowsUpdateClient
+Event ID:      20
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows Update Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+24,Microsoft-Windows-WindowsUpdateClient/Operational,Microsoft-Windows-WindowsUpdateClient,Windows Update Errors,,Windows Update Failed,"Log Name:      Microsoft-Windows-WindowsUpdateClient/Operational
+Source:        Microsoft-Windows-WindowsUpdateClient
+Event ID:      24
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows Update Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+25,Microsoft-Windows-WindowsUpdateClient/Operational,Microsoft-Windows-WindowsUpdateClient,Windows Update Errors,,Windows Update Failed,"Log Name:      Microsoft-Windows-WindowsUpdateClient/Operational
+Source:        Microsoft-Windows-WindowsUpdateClient
+Event ID:      25
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows Update Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+31,Microsoft-Windows-WindowsUpdateClient/Operational,Microsoft-Windows-WindowsUpdateClient,Windows Update Errors,,Windows Update Failed,"Log Name:      Microsoft-Windows-WindowsUpdateClient/Operational
+Source:        Microsoft-Windows-WindowsUpdateClient
+Event ID:      31
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows Update Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+34,Microsoft-Windows-WindowsUpdateClient/Operational,Microsoft-Windows-WindowsUpdateClient,Windows Update Errors,,Windows Update Failed,"Log Name:      Microsoft-Windows-WindowsUpdateClient/Operational
+Source:        Microsoft-Windows-WindowsUpdateClient
+Event ID:      34
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows Update Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
+35,Microsoft-Windows-WindowsUpdateClient/Operational,Microsoft-Windows-WindowsUpdateClient,Windows Update Errors,,Windows Update Failed,"Log Name:      Microsoft-Windows-WindowsUpdateClient/Operational
+Source:        Microsoft-Windows-WindowsUpdateClient
+Event ID:      35
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows Update Failed","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,,
