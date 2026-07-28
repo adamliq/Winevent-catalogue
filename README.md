@@ -65,7 +65,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 576 events by ID or keyword, filter by log/category,
+lookup page: search all 604 events by ID or keyword, filter by log/category,
 and view full detail — description, sample log text, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
 code lookups and the raw audit policy matrix. Open it directly in a browser.
@@ -83,3 +83,14 @@ ingestion guidance carry that document's exact category/event-ID pairings;
 a handful of low-confidence entries (exact log channel not independently
 corroborated — e.g. the two "Kerberos" events 4678/4679, and the log
 channel split for 3033/3063) say so explicitly in their `reference` field.
+
+Also cross-referenced against Microsoft's "Appendix L: Events to Monitor"
+(fetched from the public `MicrosoftDocs/windowsserverdocs` GitHub mirror)
+and Graylog's "Critical Windows Event IDs to Monitor" — both were almost
+entirely already covered (both draw on the same underlying "Monitoring
+Active Directory for Signs of Compromise" reference as the ASD guidance);
+the genuinely new additions were IPsec/OCSP Responder Service Security-log
+events, Netlogon secure-channel hardening events (Zerologon, CVE-2020-1472),
+the classic "previous shutdown was unexpected" event, BitLocker volume
+encryption/decryption/conversion events, and a Windows Time Service event
+relevant to detecting clock-manipulation attacks.

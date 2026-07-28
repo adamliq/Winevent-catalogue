@@ -11357,3 +11357,276 @@ Level:         Information
 Computer:      DC01.corp.local
 Description:
 The DNS server has completed a zone transfer for zone corp.local to secondary server DC02.corp.local.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4654,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Quick Mode,An IPsec Quick Mode negotiation failed.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4654
+Task Category: Audit IPsec Quick Mode
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+An IPsec Quick Mode negotiation failed.
+
+Local Endpoint:
+	Local Address:		10.20.10.5
+Remote Endpoint:
+	Remote Address:		10.20.40.142
+
+Failure Reason:	No policy configured","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5050,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,An attempt was made to programmatically disable the Windows Firewall using a call to INetFwProfile.FirewallEnabled(False).,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5050
+Task Category: Audit Other System Events
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+An attempt was made to programmatically disable the Windows Firewall using a call to INetFwProfile.FirewallEnabled(False).
+
+Process:
+	Process ID:		0x8f0
+	Process Name:	C:\Temp\disable-fw.exe","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5120,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,The OCSP Responder Service was started.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5120
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The OCSP Responder Service was started.
+
+OCSP Responder:
+	Server:		CORP-OCSP01","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5121,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,The OCSP Responder Service was stopped.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5121
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The OCSP Responder Service was stopped.
+
+OCSP Responder:
+	Server:		CORP-OCSP01","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5122,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,A configuration entry changed in the OCSP Responder Service.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5122
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A configuration entry changed in the OCSP Responder Service.
+
+OCSP Responder:
+	Server:		CORP-OCSP01","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5123,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,A configuration entry changed in the OCSP Responder Service.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5123
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A configuration entry changed in the OCSP Responder Service.
+
+OCSP Responder:
+	Server:		CORP-OCSP01","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5125,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,A request was submitted to the OCSP Responder Service.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5125
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A request was submitted to the OCSP Responder Service.
+
+OCSP Responder:
+	Server:		CORP-OCSP01","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5126,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,The signing certificate was automatically updated by the OCSP Responder Service.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5126
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The signing certificate was automatically updated by the OCSP Responder Service.
+
+OCSP Responder:
+	Server:		CORP-OCSP01","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5127,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,The OCSP Revocation Provider successfully updated the revocation information.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5127
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The OCSP Revocation Provider successfully updated the revocation information.
+
+OCSP Responder:
+	Server:		CORP-OCSP01","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5827,System,NETLOGON,Account Logon,Netlogon Secure Channel,"The Netlogon service denied a vulnerable Netlogon secure channel connection from a machine account (Zerologon-related hardening, CVE-2020-1472).","Log Name:      System
+Source:        NETLOGON
+Event ID:      5827
+Level:         Warning
+Computer:      DC01.corp.local
+Description:
+The Netlogon service denied a vulnerable Netlogon secure channel connection from a machine account (Zerologon-related hardening, CVE-2020-1472).
+
+Machine/Trust Account:	WKS-LEGACY01$
+Source Address:	10.20.41.20","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+5828,System,NETLOGON,Account Logon,Netlogon Secure Channel,"The Netlogon service denied a vulnerable Netlogon secure channel connection using a trust account (Zerologon-related hardening, CVE-2020-1472).","Log Name:      System
+Source:        NETLOGON
+Event ID:      5828
+Level:         Warning
+Computer:      DC01.corp.local
+Description:
+The Netlogon service denied a vulnerable Netlogon secure channel connection using a trust account (Zerologon-related hardening, CVE-2020-1472).
+
+Machine/Trust Account:	WKS-LEGACY01$
+Source Address:	10.20.41.20","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+6008,System,EventLog,Shutdown / Restart,,The previous system shutdown was unexpected.,"Log Name:      System
+Source:        EventLog
+Event ID:      6008
+Level:         Error
+Computer:      DC01.corp.local
+Description:
+The previous system shutdown at 3:14:02 AM on 7/28/2026 was unexpected.","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24577,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,Encryption of the volume started.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24577
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Encryption of the volume started.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24578,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,Encryption of the volume stopped.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24578
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Encryption of the volume stopped.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24579,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,Encryption of the volume completed.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24579
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Encryption of the volume completed.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24580,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,Decryption of the volume started.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24580
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Decryption of the volume started.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24581,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,Decryption of the volume stopped.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24581
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Decryption of the volume stopped.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24582,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,Decryption of the volume completed.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24582
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Decryption of the volume completed.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24583,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,The conversion (encryption/decryption) worker thread for the volume started.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24583
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The conversion (encryption/decryption) worker thread for the volume started.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24584,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,The conversion worker thread for the volume was temporarily stopped.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24584
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The conversion worker thread for the volume was temporarily stopped.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24586,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,An error was encountered while converting the volume.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24586
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+An error was encountered while converting the volume.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24588,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,The conversion operation on the volume encountered a bad sector error; validate the data on this volume.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24588
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The conversion operation on the volume encountered a bad sector error; validate the data on this volume.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24592,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,An attempt to automatically restart conversion on the volume failed.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24592
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+An attempt to automatically restart conversion on the volume failed.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24593,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,"Metadata write: the volume is returning errors while trying to modify metadata; if failures continue, decrypt the volume.","Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24593
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Metadata write: the volume is returning errors while trying to modify metadata; if failures continue, decrypt the volume.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24594,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,"Metadata rebuild: an attempt to write a copy of metadata on the volume failed and may appear as disk corruption; if failures continue, decrypt the volume.","Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24594
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Metadata rebuild: an attempt to write a copy of metadata on the volume failed and may appear as disk corruption; if failures continue, decrypt the volume.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24595,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,The volume contains bad clusters; these clusters will be skipped during conversion.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24595
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The volume contains bad clusters; these clusters will be skipped during conversion.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+24621,Microsoft-Windows-BitLocker/BitLocker Management,Microsoft-Windows-BitLocker-Driver,BitLocker Drive Encryption,,Initial state check: rolling volume conversion transaction on the volume.,"Log Name:      Microsoft-Windows-BitLocker/BitLocker Management
+Source:        Microsoft-Windows-BitLocker-Driver
+Event ID:      24621
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Initial state check: rolling volume conversion transaction on the volume.
+
+Volume:	C: (\\?\Volume{...}\)","Microsoft Learn, ""Appendix L: Events to Monitor"" (windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)",,illustrative
+141,System,Microsoft-Windows-Time-Service,Time Synchronization,,"The time service has stopped advertising as a time source because there are no providers running. System clock manipulation is a known technique for evading Kerberos ticket lifetime checks and confusing log timelines, which is why this is flagged for security monitoring.","Log Name:      System
+Source:        Microsoft-Windows-Time-Service
+Event ID:      141
+Level:         Warning
+Computer:      DC01.corp.local
+Description:
+The time service has stopped advertising as a time source because the local clock is not synchronized and there are no time providers running.","Graylog, ""Critical Windows Event IDs to Monitor"" (graylog.org) — event ID 141 is also independently used by Microsoft-Windows-TaskScheduler for an unrelated event; the Time-Service interpretation is used here as the security-monitoring-relevant one.",,illustrative
