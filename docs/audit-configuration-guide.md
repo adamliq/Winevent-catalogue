@@ -88,6 +88,26 @@ Most Security-log subcategories share the same base steps:
 - **Events:** 6416, 6419, 6420, 6421, 6422, 6423, 6424
 - **Reference:** https://docs.microsoft.com/en-us/windows/device-security/auditing/audit-pnp-activity
 
+## Audit Token Right Adjustment
+- **Path:** `...\Detailed Tracking\Audit Token Right Adjustment`
+- **Events:** 4703
+- **Notes:** Not audited by default; high event volume.
+
+## Audit User / Device Claims
+- **Path:** `...\DS Access\Audit User / Device Claims`
+- **Events:** 4626
+- **Notes:** Requires Audit Logon to also be enabled to get events from this subcategory.
+
+## Audit Group Membership
+- **Path:** `...\DS Access\Audit Group Membership`
+- **Events:** 4627
+- **Notes:** Requires Audit Logon to also be enabled to get events from this subcategory.
+
+## Audit Central Access Policy Staging
+- **Path:** `...\Object Access\Audit Central Access Policy Staging`
+- **Events:** 4818
+- **Notes:** Requires a proposed Central Access Policy to be staged; generates an event whenever the proposed and current policy would grant different access.
+
 ## Audit Process Creation / Audit Process Termination
 - **Path:** `Advanced Security Audit Policy Settings\Detailed Tracking\Audit Process Creation` /
   `...\Audit Process Termination`
