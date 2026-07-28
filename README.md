@@ -58,6 +58,21 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     audit and how to generate it" triad) applied at the audit-subcategory
     level via `data/reference/audit_configuration.csv` — not a substitute
     for a full compliance assessment.
+  - `field_schema` — populated only for the 212 `acsc_priority_log` events:
+    a structured map of the fields inside that event's `sample`, parsed out
+    of the Event Viewer-style text and grouped the way the real event does
+    (e.g. `subject`, `new_logon`, `process_information` for a logon event),
+    with each leaf giving that field's inferred type (`string`, `integer`,
+    `hex`, `sid`, `guid`, `ip`, `path`, `principal`, `enum`,
+    `list<string>`). In `events.json` this is a nested object; in
+    `events.csv` it's the same structure serialized as a JSON string (CSV
+    can't nest). It's derived automatically from each event's own
+    `sample` field by a generic parser (header block, free-text
+    description, then `Key: Value` / `Key = Value` fields either flat or
+    nested under a `GroupName:` block) — best-effort type inference from
+    example values, not a guarantee of the real Windows event schema. The
+    web lookup page renders it as a "Field Schema" section in the detail
+    view, below the raw sample.
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
@@ -204,6 +219,19 @@ than fit usefully in a single catalogue field. The web lookup page's
 detail view shows the first 10 techniques for such events with a link
 through to the full, searchable reference table rather than truncating
 silently.
+
+Finally, added a **`field_schema`** for every event flagged
+`acsc_priority_log` (212 events): a parser walks each event's own `sample`
+text (the header block, the free-text description, then the event's
+`Key: Value` / `Key = Value` fields — flat or nested under a `GroupName:`
+block, e.g. Security's `Subject:` / `New Logon:`) and infers a type per
+field from its example value (`sid`, `hex`, `guid`, `ip`, `path`,
+`principal`, `integer`, `enum`, `list<string>`, or `string`). This is
+best-effort structure extraction from the catalogue's own example data,
+not a reference to Microsoft's authoritative event schema — useful for
+seeing at a glance what a given event's `EventData` actually looks like
+without reading the full rendered sample, but not a substitute for the
+real schema when building a parser against live events.
 
 ## Bulk ETW manifest import
 
