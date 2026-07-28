@@ -31,9 +31,12 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   - `how_to_collect` — which auditing subcategory/subcategories (from
     `data/reference/audit_configuration.csv`) must be enabled to generate
     this event
-  - `sample_type` — `original` (captured from the source notebook) or
-    `illustrative` (generated); the web lookup page tags illustrative
-    samples so they're never mistaken for a real capture
+  - `sample_type` — `original` (captured from the source notebook),
+    `illustrative` (a representative example I built), or `template` (the
+    event's raw message string as published in the source ETW manifest,
+    with its `{Placeholder}` tokens left unfilled — used for the bulk ETW
+    manifest import, see below). The web lookup page tags both generated
+    types so they're never mistaken for a real capture.
   - `mitre_techniques` — MITRE ATT&CK technique ID(s) associated with the
     event, where mapped (populated for Sysmon, AppLocker, Code Integrity,
     Windows Defender, and related detection-relevant events; blank
@@ -83,7 +86,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 830 events by ID or keyword, filter by log/category,
+lookup page: search all 3,539 events by ID or keyword, filter by log/category,
 toggle to show only ASD/ACSC priority logs, and view full detail —
 description, sample log text, MITRE ATT&CK mapping, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
@@ -169,3 +172,32 @@ PowerShell script-block logging, Zerologon-hardening, log clearing, and
 several others) — left blank on purely diagnostic/operational events
 (transport-layer detail, database internals, DHCP/DNS configuration, and
 similar) where a technique mapping would be a stretch.
+
+## Bulk ETW manifest import
+
+A full Windows Server 2019 (1809, build 17763.1457) ETW event manifest
+export — 45,958 event definitions across 813 providers, covering every
+registered ETW provider on the system, not just security-relevant ones —
+was cross-referenced and partially ingested. Given the scale (roughly 55x
+the size of the curated catalogue at the time), the import was bounded to
+security/audit-relevant channels only, identified by provider/channel name
+(NTLM, Kerberos, Windows Hello for Business, Group Policy, WinRM, DHCP
+Client, LDAP Client, Winlogon, UAC, Credential/Device Guard, IPsec,
+Terminal Services variants, Smart Card, DPAPI, Hyper-V security-relevant
+channels, and more) — adding 2,709 new events across ~130 new log
+channels. Excluded: ~700 non-security providers (codecs, shell UI,
+hardware/driver diagnostics, etc.), ~600 pure-ETW-trace events with no
+Windows Event Log channel (not viewable in Event Viewer), and a handful
+of rows whose channel name in the export was a generic placeholder
+("Operational", "Admin", "Debug") rather than a real channel path.
+
+These rows use `sample_type: template` — the manifest's own message
+string, reformatted with the header fields and a best-effort line-break
+fix for a source data quality issue (the export had stripped the original
+message template's line breaks, causing segments to visually run
+together; fixed by inserting a break wherever a placeholder or
+punctuation mark was immediately followed by a capital letter). Unlike
+the curated entries, these have no `how_to_collect`, `mitre_techniques`,
+`nist_800_53_au`, or `acsc_priority_log` mapping — that enrichment was
+done deliberately for the smaller curated set and hasn't been extended to
+this bulk import.
