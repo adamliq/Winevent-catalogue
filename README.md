@@ -44,12 +44,20 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     Microsoft Windows endpoint logs; Windows DNS server analytic event
     logs), blank otherwise. The web lookup page has a toggle to show only
     these events.
+  - `nist_800_53_au` — NIST SP 800-53 Audit and Accountability (AU) control
+    ID(s) most relevant to the event: `AU-9` (Protection of Audit
+    Information) for log-clearing/log-service events, `AU-8` (Time Stamps)
+    for clock-change events, and `AU-2, AU-3, AU-12` (the standard "what to
+    audit and how to generate it" triad) applied at the audit-subcategory
+    level via `data/reference/audit_configuration.csv` — not a substitute
+    for a full compliance assessment.
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
-  enable it, the event IDs it produces, and a reference URL where available.
-  See `docs/audit-configuration-guide.md` for the readable version.
+  enable it, the event IDs it produces, a reference URL where available,
+  and its NIST 800-53 AU control mapping. See
+  `docs/audit-configuration-guide.md` for the readable version.
 - `data/reference/audit_policy_matrix.csv` — the raw Group Policy audit
   category → Event ID mapping (Account Logon, Account Management, Detailed
   Tracking, DS Access, Logon/Logoff, Object Access, Policy Change, Privilege
@@ -75,7 +83,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 829 events by ID or keyword, filter by log/category,
+lookup page: search all 830 events by ID or keyword, filter by log/category,
 toggle to show only ASD/ACSC priority logs, and view full detail —
 description, sample log text, MITRE ATT&CK mapping, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
@@ -132,3 +140,32 @@ generic or mismatched label (e.g. "Exception Raised" for what are
 actually distinct PowerShell script-block-logging events already
 correctly described), were treated as a labeling artifact and skipped in
 favor of the existing, more specific entry.
+
+Finally, cross-checked against a broader set of sources: **Microsoft's
+official Advanced Audit Policy Configuration reference** (used to bring
+`audit_policy_matrix.csv` to full coverage of all ~61 official
+subcategories — added the 6 that were missing: Audit PNP Activity, Audit
+Token Right Adjustment, Audit User / Device Claims, Audit Group
+Membership, Audit Removable Storage, and Audit Central Access Policy
+Staging, including two genuinely new events, 4626 and 4818, and
+correcting a miscategorized 4703); **DISA's Windows STIG** (confirmed it
+mandates Success/Failure settings for a subset of that same official
+subcategory list rather than introducing separate event IDs, so no
+additional events were needed); **community Sysmon configs**
+(SwiftOnSecurity, Olaf Hartong — confirmed full coverage of the fixed
+Sysmon 1-29 schema, no new IDs); and a bounded sample of **Splunk
+Security Content (ESCU)** detections (GitHub code search and
+research.splunk.com were both inaccessible in this environment without
+repository approval, so this was a representative sample rather than the
+full ~400-detection corpus — every EventCode found was already covered).
+
+**NIST SP 800-53 AU controls** and **MITRE ATT&CK** aren't event-ID lists,
+so instead of a gap-fill pass they were added as enrichment: the
+`nist_800_53_au` field (see above) and an expanded `mitre_techniques`
+pass covering ~85 additional clearly technique-relevant events (logon,
+account/group management, Kerberos ticket operations, process/service/
+scheduled-task creation, AppLocker/Code Integrity blocks, WMI activity,
+PowerShell script-block logging, Zerologon-hardening, log clearing, and
+several others) — left blank on purely diagnostic/operational events
+(transport-layer detail, database internals, DHCP/DNS configuration, and
+similar) where a technique mapping would be a stretch.
