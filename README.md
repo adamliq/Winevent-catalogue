@@ -38,6 +38,12 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     event, where mapped (populated for Sysmon, AppLocker, Code Integrity,
     Windows Defender, and related detection-relevant events; blank
     elsewhere)
+  - `acsc_priority_log` — `Yes` if this exact `(event_id, log)` appears in
+    the ASD/ACSC "Priority logs for SIEM ingestion: Practitioner guidance"
+    tables (Microsoft Domain Controller; AD & Domain Service Security Logs;
+    Microsoft Windows endpoint logs; Windows DNS server analytic event
+    logs), blank otherwise. The web lookup page has a toggle to show only
+    these events.
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
@@ -69,8 +75,9 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 742 events by ID or keyword, filter by log/category,
-and view full detail — description, sample log text, and how-to-collect
+lookup page: search all 746 events by ID or keyword, filter by log/category,
+toggle to show only ASD/ACSC priority logs, and view full detail —
+description, sample log text, MITRE ATT&CK mapping, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
 code lookups and the raw audit policy matrix. Open it directly in a browser.
 
