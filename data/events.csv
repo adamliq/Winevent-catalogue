@@ -9574,3 +9574,921 @@ Level:         Information
 Computer:      WKS-0142.corp.local
 Description:
 Driver management has restricted the installation of device instance ID USBSTOR\Disk&Ven_SanDisk&Prod_Cruzer&Rev_1.00\4C531001234567890123&0 by removable device installation restriction policy.",,,illustrative
+1000,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (CTAP security key),A WebAuthN MakeCredential operation (registering a new FIDO2 security-key credential) started.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1000
+Task Category: WebAuthNCtapMakeCredential
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A WebAuthN MakeCredential operation (registering a new FIDO2 security-key credential) started.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1001,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (CTAP security key),The WebAuthN CTAP MakeCredential operation completed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1001
+Task Category: WebAuthNCtapMakeCredential
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN CTAP MakeCredential operation completed.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1002,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (CTAP security key),The WebAuthN CTAP MakeCredential operation failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1002
+Task Category: WebAuthNCtapMakeCredential
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN CTAP MakeCredential operation failed.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	HResult:		0x80070490",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1003,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (CTAP security key),A WebAuthN GetAssertion operation (signing in with a FIDO2 security key) started.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1003
+Task Category: WebAuthNCtapGetAssertion
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A WebAuthN GetAssertion operation (signing in with a FIDO2 security key) started.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1004,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (CTAP security key),The WebAuthN CTAP GetAssertion operation completed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1004
+Task Category: WebAuthNCtapGetAssertion
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN CTAP GetAssertion operation completed.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1005,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (CTAP security key),The WebAuthN CTAP GetAssertion operation failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1005
+Task Category: WebAuthNCtapGetAssertion
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN CTAP GetAssertion operation failed.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	HResult:		0x80070490",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1006,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP command dispatch,Windows began sending a CTAP command to the authenticator.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1006
+Task Category: WebAuthNCtapSendCommand
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows began sending a CTAP command to the authenticator.
+
+	TransactionId:		0x4f2a19c3
+	Ticket:		0x00000012",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1007,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP command dispatch,The CTAP command sent to the authenticator completed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1007
+Task Category: WebAuthNCtapSendCommand
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP command sent to the authenticator completed.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1008,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP command dispatch,Sending the CTAP command to the authenticator failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1008
+Task Category: WebAuthNCtapSendCommand
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Sending the CTAP command to the authenticator failed.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	HResult:		0x80070490",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1020,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (Windows Hello / NGC),A WebAuthN MakeCredential operation using the platform authenticator (Windows Hello) started.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1020
+Task Category: WebAuthNNgcMakeCredential
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A WebAuthN MakeCredential operation using the platform authenticator (Windows Hello) started.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1021,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (Windows Hello / NGC),The WebAuthN Windows Hello MakeCredential operation completed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1021
+Task Category: WebAuthNNgcMakeCredential
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN Windows Hello MakeCredential operation completed.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1022,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (Windows Hello / NGC),The WebAuthN Windows Hello MakeCredential operation failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1022
+Task Category: WebAuthNNgcMakeCredential
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN Windows Hello MakeCredential operation failed.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	HResult:		0x80070490",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1023,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (Windows Hello / NGC),A WebAuthN GetAssertion operation using the platform authenticator (Windows Hello) started.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1023
+Task Category: WebAuthNNgcGetAssertion
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A WebAuthN GetAssertion operation using the platform authenticator (Windows Hello) started.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1024,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (Windows Hello / NGC),The WebAuthN Windows Hello GetAssertion operation completed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1024
+Task Category: WebAuthNNgcGetAssertion
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN Windows Hello GetAssertion operation completed.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1025,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (Windows Hello / NGC),The WebAuthN Windows Hello GetAssertion operation failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1025
+Task Category: WebAuthNNgcGetAssertion
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The WebAuthN Windows Hello GetAssertion operation failed.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	HResult:		0x80070490",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1040,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (Windows Hello / NGC),"Details of the Windows Hello MakeCredential request sent to the platform authenticator, including the relying party ID and account.","Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1040
+Task Category: NgcMakeCredentialRequest
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Details of the Windows Hello MakeCredential request sent to the platform authenticator, including the relying party ID and account.
+
+	TransactionId:		0x4f2a19c3
+	RpId:		sts.corp.local
+	AccountId:		j.doe@corp.local
+	ClientDataHashAlgId:		SHA-256
+	ClientDataHash:		3f2a9c...b71e (32 bytes)
+	CredentialCount:		1
+	CredentialParameterCount:		2 (ES256, RS256)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1041,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,MakeCredential (Windows Hello / NGC),"Details of the Windows Hello MakeCredential response from the platform authenticator: attestation format, AAGUID, new credential ID, and public key.","Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1041
+Task Category: NgcMakeCredentialResponse
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Details of the Windows Hello MakeCredential response from the platform authenticator: attestation format, AAGUID, new credential ID, and public key.
+
+	TransactionId:		0x4f2a19c3
+	AttestationFormatType:		packed
+	RpIdHash:		9e4b7f...2c8a (32 bytes)
+	Flags:		0x45 (UP|UV|AT)
+	SignCount:		17
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	CredentialId:		6f3a9c2e4b8d1f7a5e0c8b3d2a1f9e7c4d6b8a3f
+	PublicKey:		COSE_Key (EC2, alg=ES256)
+	Response:		CBOR response payload (see Response bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1042,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (Windows Hello / NGC),Details of the Windows Hello GetAssertion request sent to the platform authenticator.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1042
+Task Category: NgcGetAssertionRequest
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Details of the Windows Hello GetAssertion request sent to the platform authenticator.
+
+	TransactionId:		0x4f2a19c3
+	RpId:		sts.corp.local
+	ClientDataHashAlgId:		SHA-256
+	ClientDataHash:		3f2a9c...b71e (32 bytes)
+	CredentialCount:		1",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1043,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,GetAssertion (Windows Hello / NGC),Details of the Windows Hello GetAssertion response from the platform authenticator: signature counter and credential ID used.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1043
+Task Category: NgcGetAssertionResponse
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Details of the Windows Hello GetAssertion response from the platform authenticator: signature counter and credential ID used.
+
+	TransactionId:		0x4f2a19c3
+	RpIdHash:		9e4b7f...2c8a (32 bytes)
+	Flags:		0x45 (UP|UV|AT)
+	SignCount:		17
+	CredentialId:		6f3a9c2e4b8d1f7a5e0c8b3d2a1f9e7c4d6b8a3f",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1060,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Errors,A WebAuthN operation returned an error.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1060
+Task Category: WebAuthNError
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+A WebAuthN operation returned an error.
+
+	TransactionId:		0x4f2a19c3
+	Action:		Connect
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	HResult:		0x80070490",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1100,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CBOR encode/decode,Windows failed to CBOR-decode a CTAP authenticator response.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1100
+Task Category: CborDecodeError
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows failed to CBOR-decode a CTAP authenticator response.
+
+	TransactionId:		0x4f2a19c3
+	Function:		CborDecodeGetAssertionResponse
+	CborError:		4
+	CborErrorString:		CborErrorUnexpectedEOF
+	ErrorOffset:		212
+	LineNumber:		884
+	Encoded:		(raw CBOR bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1101,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CBOR encode/decode,Windows CBOR-encoded the CTAP authenticatorMakeCredential request sent to the security key.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1101
+Task Category: CborEncodeMakeCredentialRequest
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows CBOR-encoded the CTAP authenticatorMakeCredential request sent to the security key.
+
+	TransactionId:		0x4f2a19c3
+	RpId:		sts.corp.local
+	ClientDataHashAlgId:		SHA-256
+	ClientDataHash:		3f2a9c...b71e (32 bytes)
+	UserId:		a19f3c2b8e (opaque user handle)
+	RequireResidentKey:		FALSE
+	CredentialCount:		1
+	CredentialParameterCount:		2 (ES256, RS256)
+	Request:		CBOR request payload (see Request bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1102,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CBOR encode/decode,Windows CBOR-decoded the CTAP authenticatorMakeCredential response returned by the security key.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1102
+Task Category: CborDecodeMakeCredentialResponse
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows CBOR-decoded the CTAP authenticatorMakeCredential response returned by the security key.
+
+	TransactionId:		0x4f2a19c3
+	AttestationFormatType:		packed
+	RpIdHash:		9e4b7f...2c8a (32 bytes)
+	Flags:		0x45 (UP|UV|AT)
+	SignCount:		17
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	CredentialId:		6f3a9c2e4b8d1f7a5e0c8b3d2a1f9e7c4d6b8a3f
+	PublicKey:		COSE_Key (EC2, alg=ES256)
+	Response:		CBOR response payload (see Response bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1103,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CBOR encode/decode,Windows CBOR-encoded the CTAP authenticatorGetAssertion request sent to the security key.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1103
+Task Category: CborEncodeGetAssertionRequest
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows CBOR-encoded the CTAP authenticatorGetAssertion request sent to the security key.
+
+	TransactionId:		0x4f2a19c3
+	RpId:		sts.corp.local
+	ClientDataHashAlgId:		SHA-256
+	ClientDataHash:		3f2a9c...b71e (32 bytes)
+	CredentialCount:		1
+	Request:		CBOR request payload (see Request bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+1104,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CBOR encode/decode,Windows CBOR-decoded the CTAP authenticatorGetAssertion response returned by the security key.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      1104
+Task Category: CborDecodeGetAssertionResponse
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows CBOR-decoded the CTAP authenticatorGetAssertion response returned by the security key.
+
+	TransactionId:		0x4f2a19c3
+	RpIdHash:		9e4b7f...2c8a (32 bytes)
+	Flags:		0x45 (UP|UV|AT)
+	SignCount:		17
+	CredentialId:		6f3a9c2e4b8d1f7a5e0c8b3d2a1f9e7c4d6b8a3f
+	Response:		CBOR response payload (see Response bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2000,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Service lifecycle,The CTAP authenticator transport service started.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2000
+Task Category: CtapService
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP authenticator transport service started.
+",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2001,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Service lifecycle,The CTAP authenticator transport service stopped.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2001
+Task Category: CtapService
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP authenticator transport service stopped.
+",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2100,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP command dispatch,A CTAP command was dispatched to an authenticator.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2100
+Task Category: CtapCommand
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A CTAP command was dispatched to an authenticator.
+
+	TransactionId:		0x4f2a19c3
+	Flags:		0x45 (UP|UV|AT)
+	Command:		authenticatorGetAssertion
+	Ticket:		0x00000012
+	Request:		CBOR request payload (see Request bytes)
+	TimeoutMilliseconds:		30000",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2101,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP command dispatch,Windows failed to build the CTAP command request before sending it to an authenticator.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2101
+Task Category: CtapCommand
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows failed to build the CTAP command request before sending it to an authenticator.
+
+	Request:		CBOR request payload (see Request bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2102,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP command dispatch,A CTAP command to an authenticator completed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2102
+Task Category: CtapCommand
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A CTAP command to an authenticator completed.
+
+	TransactionId:		0x4f2a19c3
+	Command:		authenticatorGetAssertion
+	Response:		CBOR response payload (see Response bytes)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2103,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP command dispatch,A CTAP command to an authenticator failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2103
+Task Category: CtapCommand
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+A CTAP command to an authenticator failed.
+
+	TransactionId:		0x4f2a19c3
+	Command:		authenticatorGetAssertion
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2104,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Device enumeration,Windows enumerated a CTAP authenticator device.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2104
+Task Category: CtapDeviceInfo
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows enumerated a CTAP authenticator device.
+
+	TransactionId:		0x4f2a19c3
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	ProviderName:		CtapUsbProvider
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key
+	U2fProtocol:		FALSE",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2110,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Device enumeration,A Windows Notification Facility (WNF) state change was recorded for a CTAP transport.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2110
+Task Category: WNFCtapDeviceStateInfo
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A Windows Notification Facility (WNF) state change was recorded for a CTAP transport.
+
+	Transport:		USB
+	WnfState:		0x1
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2111,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Device enumeration,Windows received a device-change notification for a CTAP transport.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2111
+Task Category: WNFCtapDeviceChangeNotifyInfo
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows received a device-change notification for a CTAP transport.
+
+	Transport:		USB",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2200,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,The CTAP USB provider thread started (monitoring for USB FIDO2/U2F security keys).,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2200
+Task Category: CtapUsbProviderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP USB provider thread started (monitoring for USB FIDO2/U2F security keys).
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2201,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,The CTAP USB provider thread stopped.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2201
+Task Category: CtapUsbProviderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP USB provider thread stopped.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2202,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,The CTAP USB provider thread stopped because of an error.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2202
+Task Category: CtapUsbProviderThread
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP USB provider thread stopped because of an error.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2203,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,The CTAP USB provider thread stopped with a warning.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2203
+Task Category: CtapUsbProviderThread
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP USB provider thread stopped with a warning.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2210,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,A worker thread started for a connected USB security key.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2210
+Task Category: CtapUsbDeviceThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A worker thread started for a connected USB security key.
+
+	TransactionId:		0x4f2a19c3
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2211,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,The worker thread for a USB security key stopped normally.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2211
+Task Category: CtapUsbDeviceThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The worker thread for a USB security key stopped normally.
+
+	TransactionId:		0x4f2a19c3
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key
+	U2fProtocol:		FALSE",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2212,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,The worker thread for a USB security key stopped because of an error.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2212
+Task Category: CtapUsbDeviceThread
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The worker thread for a USB security key stopped because of an error.
+
+	TransactionId:		0x4f2a19c3
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key
+	U2fProtocol:		FALSE
+	State:		2 (Active)
+	Status:		0x0
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2213,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,The worker thread for a USB security key stopped with a warning.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2213
+Task Category: CtapUsbDeviceThread
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The worker thread for a USB security key stopped with a warning.
+
+	TransactionId:		0x4f2a19c3
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key
+	U2fProtocol:		FALSE
+	State:		2 (Active)
+	Status:		0x0
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2220,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,A USB FIDO2/U2F security key was connected.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2220
+Task Category: CtapUsbAdd
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A USB FIDO2/U2F security key was connected.
+
+	TransactionId:		0x4f2a19c3
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2221,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,A USB FIDO2/U2F security key was removed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2221
+Task Category: CtapUsbRemove
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A USB FIDO2/U2F security key was removed.
+
+	TransactionId:		0x4f2a19c3
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2222,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,Windows detected a change in the set of connected USB security keys.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2222
+Task Category: CtapUsbChanges
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows detected a change in the set of connected USB security keys.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2223,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,Windows fell back to the legacy U2F protocol for a USB security key that does not support CTAP2.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2223
+Task Category: CtapUsbSwitchToU2F
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows fell back to the legacy U2F protocol for a USB security key that does not support CTAP2.
+
+	TransactionId:		0x4f2a19c3
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2224,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,Windows failed to open a connection to a USB security key.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2224
+Task Category: CtapUsbConnect
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Windows failed to open a connection to a USB security key.
+
+	TransactionId:		0x4f2a19c3
+	DevicePath:		\\?\hid#vid_1234&pid_5678&mi_00#7&1a2b3c4d&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+	Manufacturer:		Contoso Security Devices
+	Product:		Contoso FIDO2 Key
+	DeviceErr:		0x0
+	Status:		0x0
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2225,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,Windows sent a CTAP HID request to a USB security key and received its response.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2225
+Task Category: CtapUsbSendReceive
+Level:         Verbose
+Computer:      WKS-0142.corp.local
+Description:
+Windows sent a CTAP HID request to a USB security key and received its response.
+
+	TransactionId:		0x4f2a19c3
+	Request:		CBOR request payload (see Request bytes)
+	Response:		CBOR response payload (see Response bytes)
+	RequestCommand:		CTAPHID_CBOR
+	ResponseCommand:		CTAPHID_CBOR",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2226,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP USB transport,A CTAP HID request/response exchange with a USB security key failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2226
+Task Category: CtapUsbSendReceive
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+A CTAP HID request/response exchange with a USB security key failed.
+
+	TransactionId:		0x4f2a19c3
+	Request:		CBOR request payload (see Request bytes)
+	Response:		CBOR response payload (see Response bytes)
+	RequestCommand:		CTAPHID_CBOR
+	ResponseCommand:		CTAPHID_CBOR
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2300,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The CTAP NFC provider thread started (monitoring for tap-to-authenticate NFC security keys).,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2300
+Task Category: CtapNfcProviderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP NFC provider thread started (monitoring for tap-to-authenticate NFC security keys).
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2301,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The CTAP NFC provider thread stopped.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2301
+Task Category: CtapNfcProviderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP NFC provider thread stopped.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2302,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The CTAP NFC provider thread stopped because of an error.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2302
+Task Category: CtapNfcProviderThread
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP NFC provider thread stopped because of an error.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2303,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The CTAP NFC provider thread stopped with a warning.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2303
+Task Category: CtapNfcProviderThread
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP NFC provider thread stopped with a warning.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2310,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,A worker thread started for an NFC reader.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2310
+Task Category: CtapNfcReaderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A worker thread started for an NFC reader.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2311,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The worker thread for an NFC reader stopped normally.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2311
+Task Category: CtapNfcReaderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The worker thread for an NFC reader stopped normally.
+
+	TransactionId:		0x4f2a19c3
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	U2fProtocol:		FALSE
+	Reader:		Contoso Contactless Reader 0",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2312,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The worker thread for an NFC reader stopped because of an error.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2312
+Task Category: CtapNfcReaderThread
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The worker thread for an NFC reader stopped because of an error.
+
+	TransactionId:		0x4f2a19c3
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	U2fProtocol:		FALSE
+	Reader:		Contoso Contactless Reader 0
+	State:		2 (Active)
+	Status:		0x0
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2313,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The worker thread for an NFC reader stopped with a warning.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2313
+Task Category: CtapNfcReaderThread
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The worker thread for an NFC reader stopped with a warning.
+
+	TransactionId:		0x4f2a19c3
+	AAGuid:		e6c9e5f6-7b3a-4a2e-9c47-2f3f8f6a90c1
+	U2fProtocol:		FALSE
+	Reader:		Contoso Contactless Reader 0
+	State:		2 (Active)
+	Status:		0x0
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2314,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The NFC reader manager thread started.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2314
+Task Category: CtapNfcReaderManagerThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The NFC reader manager thread started.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2315,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The NFC reader manager thread stopped.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2315
+Task Category: CtapNfcReaderManagerThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The NFC reader manager thread stopped.
+
+	TransactionId:		0x4f2a19c3
+	NumberOfTimesScardCancelCommandsSent:		0",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2316,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,The NFC reader manager cancelled an in-progress smart-card operation.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2316
+Task Category: CtapNfcReaderManagerThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The NFC reader manager cancelled an in-progress smart-card operation.
+
+	TransactionId:		0x4f2a19c3
+	CallCancelled:		TRUE",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2320,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,An NFC reader became available to WebAuthN.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2320
+Task Category: CtapNfcAddReader
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+An NFC reader became available to WebAuthN.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2321,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,WebAuthN skipped an NFC reader that is not eligible for CTAP/FIDO use.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2321
+Task Category: CtapNfcSkipReader
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+WebAuthN skipped an NFC reader that is not eligible for CTAP/FIDO use.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0
+	DeviceInstanceId:		SCM\CCID_USB\2&1a2b3c4&0&0000
+	Action:		Connect",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2322,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,"An NFC reader transitioned state, for example a card was presented or removed.","Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2322
+Task Category: CtapNfcTransitionReader
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+An NFC reader transitioned state, for example a card was presented or removed.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0
+	Action:		Connect",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2323,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,Sending a message to an NFC security key returned a non-success status.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2323
+Task Category: CtapNfcSendMessage
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Sending a message to an NFC security key returned a non-success status.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0
+	Action:		Connect
+	ApduStatus:		0x9000
+	DeviceStatus:		0x0
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2324,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,Sending a request to an NFC security key failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2324
+Task Category: CtapNfcSendRequest
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+Sending a request to an NFC security key failed.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0
+	Action:		Connect
+	ApduStatus:		0x9000
+	DeviceStatus:		0x0
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2325,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,Windows fell back to the legacy U2F protocol for an NFC security key that does not support CTAP2.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2325
+Task Category: CtapNfcSwitchToU2F
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows fell back to the legacy U2F protocol for an NFC security key that does not support CTAP2.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2326,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,Windows sent a message to an NFC security key.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2326
+Task Category: CtapNfcSendMessage
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Windows sent a message to an NFC security key.
+
+	TransactionId:		0x4f2a19c3
+	Reader:		Contoso Contactless Reader 0
+	Action:		Connect",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2327,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,Windows transmitted an APDU to an NFC security key over the smart-card interface and received its response.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2327
+Task Category: CtapNfcSCardTransmitRequest
+Level:         Verbose
+Computer:      WKS-0142.corp.local
+Description:
+Windows transmitted an APDU to an NFC security key over the smart-card interface and received its response.
+
+	TransactionId:		0x4f2a19c3
+	Request:		CBOR request payload (see Request bytes)
+	Response:		CBOR response payload (see Response bytes)
+	Reader:		Contoso Contactless Reader 0
+	ApduStatus:		0x9000",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2328,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,CTAP NFC transport,An APDU transmit/response exchange with an NFC security key failed.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2328
+Task Category: CtapNfcSCardTransmitRequest
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+An APDU transmit/response exchange with an NFC security key failed.
+
+	TransactionId:		0x4f2a19c3
+	Request:		CBOR request payload (see Request bytes)
+	Response:		CBOR response payload (see Response bytes)
+	Reader:		Contoso Contactless Reader 0
+	ApduStatus:		0x9000
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2400,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Test provider,The CTAP test provider thread started (used for authenticator simulation/testing).,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2400
+Task Category: CtapTestProviderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP test provider thread started (used for authenticator simulation/testing).
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2401,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Test provider,The CTAP test provider thread stopped.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2401
+Task Category: CtapTestProviderThread
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP test provider thread stopped.
+
+	TransactionId:		0x4f2a19c3",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+2402,Microsoft-Windows-WebAuthN/Operational,Microsoft-Windows-WebAuthN,WebAuthn,Test provider,The CTAP test provider thread stopped because of an error.,"Log Name:      Microsoft-Windows-WebAuthN/Operational
+Source:        Microsoft-Windows-WebAuthN
+Event ID:      2402
+Task Category: CtapTestProviderThread
+Level:         Error
+Computer:      WKS-0142.corp.local
+Description:
+The CTAP test provider thread stopped because of an error.
+
+	TransactionId:		0x4f2a19c3
+	Error:		0x80070490 (ERROR_NOT_FOUND)
+	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative

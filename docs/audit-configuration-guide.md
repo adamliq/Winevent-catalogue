@@ -146,3 +146,21 @@ Not a Windows Event Log — writes to `%windir%\debug\netlogon.log`.
   Nltest /DBFlag:0x0
   ```
 - **Reference:** https://support.microsoft.com/en-us/help/109626/enabling-debug-logging-for-the-netlogon-service
+
+## Enable Microsoft-Windows-WebAuthN/Operational log
+Not a GPO audit policy — a per-machine diagnostic channel, disabled by
+default. It records FIDO2/CTAP security-key and Windows Hello (NGC)
+`MakeCredential` (registration) and `GetAssertion` (sign-in) operations,
+down to USB/NFC transport-level detail.
+
+- **GUI:** launch `eventvwr.exe` → Applications and Services Logs →
+  Microsoft → Windows → WebAuthN → right-click **Operational** → **Enable Log**.
+- **Command line:**
+  ```
+  wevtutil sl Microsoft-Windows-WebAuthN/Operational /e:true
+  ```
+- **Events:** 1000–1008, 1020–1025, 1040–1043, 1060, 1100–1104 (MakeCredential/GetAssertion,
+  Windows Hello, CBOR encode/decode, errors); 2000–2001 (service lifecycle);
+  2100–2104, 2110–2111 (CTAP command dispatch, device enumeration);
+  2200–2226 (USB transport); 2300–2328 (NFC transport); 2400–2402 (test provider).
+- **Reference:** https://learn.microsoft.com/en-us/windows/win32/api/webauthn/

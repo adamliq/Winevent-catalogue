@@ -4,8 +4,9 @@ A structured catalogue of Windows Event Log IDs, built from a personal MS
 Server administration notebook (TiddlyWiki export). Covers Security auditing
 events (mapped to their Group Policy audit subcategories), DHCP Server
 events, Removable Media / Plug-and-Play device events, Network Location
-Awareness (NLA) events, Terminal Services / RDS session events, and System
-shutdown/restart events.
+Awareness (NLA) events, Terminal Services / RDS session events, System
+shutdown/restart events, and WebAuthn (FIDO2/Windows Hello) operational
+logs.
 
 ## Contents
 
@@ -60,7 +61,7 @@ shutdown/restart events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 431 events by ID or keyword, filter by log/category,
+lookup page: search all 503 events by ID or keyword, filter by log/category,
 and view full detail — description, sample log text, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
 code lookups and the raw audit policy matrix. Open it directly in a browser.
