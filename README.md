@@ -34,6 +34,10 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   - `sample_type` — `original` (captured from the source notebook) or
     `illustrative` (generated); the web lookup page tags illustrative
     samples so they're never mistaken for a real capture
+  - `mitre_techniques` — MITRE ATT&CK technique ID(s) associated with the
+    event, where mapped (populated for Sysmon, AppLocker, Code Integrity,
+    Windows Defender, and related detection-relevant events; blank
+    elsewhere)
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
@@ -65,7 +69,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 604 events by ID or keyword, filter by log/category,
+lookup page: search all 742 events by ID or keyword, filter by log/category,
 and view full detail — description, sample log text, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
 code lookups and the raw audit policy matrix. Open it directly in a browser.
@@ -94,3 +98,13 @@ events, Netlogon secure-channel hardening events (Zerologon, CVE-2020-1472),
 the classic "previous shutdown was unexpected" event, BitLocker volume
 encryption/decryption/conversion events, and a Windows Time Service event
 relevant to detecting clock-manipulation attacks.
+
+Also cross-referenced against an uploaded "Windows Event ID Catalogue"
+reference spreadsheet (provider/channel/event ID/description/level/MITRE
+ATT&CK technique/collection-priority schema). ~40% of its 339 rows were
+already covered; the rest — full Sysmon event ID coverage (1-29), Windows
+Defender/Operational events, further AppLocker/Code Integrity/DNS-Client/
+PowerShell/Task Scheduler events, Windows Update and Service Control
+Manager System-log events, and a handful of same-numbered-but-different-
+channel events (e.g. Sysmon's own 21-25 vs. Terminal Services' 21-25) —
+were added, carrying that source's MITRE ATT&CK mappings where provided.
