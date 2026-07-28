@@ -151,7 +151,8 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
   }
   .search-box {
     position: relative;
@@ -179,51 +180,92 @@
     stroke: var(--muted);
     pointer-events: none;
   }
-  select#category-filter {
-    font: inherit;
-    font-size: 0.84rem;
-    padding: 10px 12px;
-    border-radius: 9px;
-    border: 1px solid var(--line-strong);
-    background: var(--surface);
-    color: var(--ink);
-  }
 
-  .chip-row {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
+  /* ---- filter comboboxes (searchable multi-select) ---- */
+  .combo { position: relative; }
+  .combo-btn {
+    display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: 0.85rem;
+    font-weight: 600; padding: 10px 13px; border-radius: 9px; border: 1px solid var(--line-strong);
+    background: var(--surface); color: var(--ink); cursor: pointer; white-space: nowrap;
   }
-  .log-chip {
-    appearance: none;
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    border: 1px solid var(--line-strong);
-    background: var(--surface);
-    color: var(--muted);
-    padding: 6px 11px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  .combo-btn:hover { background: var(--surface-2); }
+  .combo-btn.has-selection { border-color: var(--accent); color: var(--accent); }
+  .combo-btn .count-pill {
+    font-family: ui-monospace, monospace; font-size: 0.72rem; font-weight: 700;
+    background: var(--accent); color: var(--accent-ink); border-radius: 999px;
+    padding: 1px 7px; min-width: 1.4em; text-align: center;
   }
-  .log-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: 0.55; }
-  .log-chip.on {
-    color: var(--ink);
-    border-color: var(--line-strong);
+  .combo-btn .chev { width: 12px; height: 12px; stroke: currentColor; opacity: 0.6; flex-shrink: 0; }
+
+  .combo-panel {
+    position: absolute; top: calc(100% + 6px); left: 0; width: 340px; max-width: 90vw;
+    background: var(--surface); border: 1px solid var(--line-strong); border-radius: 12px;
+    box-shadow: var(--shadow); z-index: 20; display: none; flex-direction: column;
+    max-height: 420px; overflow: hidden;
   }
-  .log-chip.on .dot { opacity: 1; }
-  #acsc-filter { margin-left: auto; color: var(--muted); }
-  #acsc-filter.on {
-    color: var(--accent);
-    border-color: var(--accent);
+  .combo-panel.open { display: flex; }
+  .combo-panel .panel-search { padding: 10px; border-bottom: 1px solid var(--line); flex-shrink: 0; }
+  .combo-panel .panel-search input {
+    width: 100%; font: inherit; font-size: 0.85rem; padding: 7px 10px; border-radius: 7px;
+    border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink); outline: none;
+  }
+  .combo-panel .panel-search input:focus { border-color: var(--accent); }
+  .combo-list { overflow-y: auto; flex: 1 1 auto; padding: 6px; }
+  .combo-group-header {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--faint);
+    padding: 8px 8px 4px; display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; background: var(--surface); z-index: 1;
+  }
+  .combo-option {
+    display: flex; align-items: center; gap: 9px; padding: 6px 8px; border-radius: 7px;
+    cursor: pointer; font-size: 0.85rem;
+  }
+  .combo-option:hover { background: var(--surface-2); }
+  .combo-option input[type="checkbox"] { accent-color: var(--accent); width: 15px; height: 15px; flex-shrink: 0; }
+  .combo-option .opt-label { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .combo-option .opt-count { font-family: ui-monospace, monospace; font-size: 0.74rem; color: var(--muted); flex-shrink: 0; }
+  .combo-panel .panel-footer {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    padding: 9px 12px; border-top: 1px solid var(--line); flex-shrink: 0; background: var(--surface-2);
+  }
+  .panel-footer button {
+    appearance: none; border: none; background: none; color: var(--accent); font: inherit;
+    font-size: 0.78rem; font-weight: 600; cursor: pointer; padding: 4px 6px;
+  }
+  .panel-footer .footer-note { font-size: 0.74rem; color: var(--muted); }
+
+  .acsc-toggle {
+    display: inline-flex; align-items: center; gap: 7px; font: inherit; font-size: 0.85rem;
+    font-weight: 600; padding: 10px 13px; border-radius: 9px; border: 1px solid var(--line-strong);
+    background: var(--surface); color: var(--muted); cursor: pointer; white-space: nowrap;
+    margin-left: auto;
+  }
+  .acsc-toggle .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: 0.5; }
+  .acsc-toggle.on {
+    color: var(--accent); border-color: var(--accent);
     background: color-mix(in srgb, var(--accent) 12%, var(--surface));
   }
-  #acsc-filter.on .dot { background: var(--accent); opacity: 1; }
+  .acsc-toggle.on .dot { opacity: 1; background: var(--accent); }
+
+  /* ---- active filter chips ---- */
+  .active-filters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .active-filters:empty { margin: 0; }
+  .af-chip {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 500;
+    background: var(--surface-2); border: 1px solid var(--line); color: var(--ink);
+    border-radius: 999px; padding: 4px 6px 4px 11px;
+  }
+  .af-chip .af-kind { color: var(--muted); }
+  .af-chip button {
+    appearance: none; border: none; background: var(--surface-3, var(--surface-2)); color: var(--muted);
+    width: 17px; height: 17px; border-radius: 50%; cursor: pointer; font-size: 0.7rem;
+    display: flex; align-items: center; justify-content: center; padding: 0;
+  }
+  .af-chip button:hover { color: var(--ink); }
+  .af-clear-all {
+    appearance: none; border: none; background: none; color: var(--accent); font: inherit;
+    font-size: 0.78rem; font-weight: 600; cursor: pointer; padding: 4px 4px;
+  }
 
   /* ---- main split ---- */
   .split {
@@ -523,17 +565,49 @@
   </nav>
 
   <div class="panel active" id="panel-events">
-    <div class="search-row" style="margin-bottom:12px;">
+    <div class="search-row" style="margin-bottom:10px;">
       <div class="search-box">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <input id="search" type="text" placeholder="e.g. 4624, logon, DHCP scope, removable media…" autocomplete="off" />
       </div>
-      <select id="category-filter"><option value="">All categories</option></select>
-      <button id="acsc-filter" class="log-chip" type="button" title="Show only events listed in the ASD/ACSC &quot;Priority logs for SIEM ingestion: Practitioner guidance&quot;">
+
+      <div class="combo" id="combo-log">
+        <button class="combo-btn" id="btn-log" type="button">
+          <span>Log</span><span class="count-pill" id="log-count-pill" style="display:none"></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="combo-panel" id="panel-log">
+          <div class="panel-search"><input type="text" id="log-search" placeholder="Filter logs… (e.g. hyper-v, applocker)" /></div>
+          <div class="combo-list" id="log-list"></div>
+          <div class="panel-footer">
+            <button type="button" id="log-clear">Clear</button>
+            <span class="footer-note" id="log-footer-note"></span>
+            <button type="button" id="log-done">Done</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo" id="combo-cat">
+        <button class="combo-btn" id="btn-cat" type="button">
+          <span>Category</span><span class="count-pill" id="cat-count-pill" style="display:none"></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="combo-panel" id="panel-cat">
+          <div class="panel-search"><input type="text" id="cat-search" placeholder="Filter categories…" /></div>
+          <div class="combo-list" id="cat-list"></div>
+          <div class="panel-footer">
+            <button type="button" id="cat-clear">Clear</button>
+            <span class="footer-note" id="cat-footer-note"></span>
+            <button type="button" id="cat-done">Done</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="acsc-filter" class="acsc-toggle" type="button" title="Show only events listed in the ASD/ACSC &quot;Priority logs for SIEM ingestion: Practitioner guidance&quot;">
         <span class="dot"></span>ACSC priority logs only
       </button>
     </div>
-    <div class="chip-row" id="log-chips" style="margin-bottom:16px;"></div>
+    <div class="active-filters" id="active-filters" style="margin-bottom:12px;"></div>
 
     <div class="split">
       <div class="list-wrap">
@@ -637,39 +711,189 @@ const acscFilterBtn = document.getElementById('acsc-filter');
 acscFilterBtn.addEventListener('click', () => {
   acscOnly = !acscOnly;
   acscFilterBtn.classList.toggle('on', acscOnly);
-  render();
+  syncFilterUI();
 });
 
-// ---- populate category filter ----
-const catFilter = document.getElementById('category-filter');
-const cats = [...new Set(events.map(e => e.category).filter(Boolean))].sort();
-cats.forEach(c => {
-  const o = document.createElement('option');
-  o.value = c; o.textContent = c;
-  catFilter.appendChild(o);
-});
-
-// ---- log chips ----
-const logChipsEl = document.getElementById('log-chips');
+// ---- data indexes for the Log / Category comboboxes ----
 const allLogs = [...new Set(events.map(e => e.log))];
 generateLogPalette(allLogs);
-const activeLogs = new Set(allLogs);
-allLogs.forEach(log => {
-  const meta = logMeta(log);
-  const btn = document.createElement('button');
-  btn.className = 'log-chip on';
-  btn.dataset.log = log;
-  btn.style.setProperty('color', `var(--log-${meta.var})`);
-  btn.innerHTML = `<span class="dot"></span>${meta.label}`;
-  btn.addEventListener('click', () => {
-    if (activeLogs.has(log)) { activeLogs.delete(log); btn.classList.remove('on'); }
-    else { activeLogs.add(log); btn.classList.add('on'); }
-    render();
-  });
-  logChipsEl.appendChild(btn);
-});
+const cats = [...new Set(events.map(e => e.category).filter(Boolean))].sort();
 
-document.getElementById('header-stat').innerHTML = `<b>${events.length}</b> events &middot; <b>${allLogs.length}</b> logs &middot; <b>${cats.length}</b> categories`;
+function familyOf(log) {
+  const slashIdx = log.indexOf('/');
+  return slashIdx > -1 ? log.slice(0, slashIdx) : log;
+}
+function shortLabel(log) {
+  const fam = familyOf(log);
+  return log.includes('/') ? log.slice(fam.length + 1) : log;
+}
+
+const logCounts = {};
+const catCounts = {};
+events.forEach(e => {
+  logCounts[e.log] = (logCounts[e.log] || 0) + 1;
+  if (e.category) catCounts[e.category] = (catCounts[e.category] || 0) + 1;
+});
+const familyMap = {};
+allLogs.forEach(log => {
+  const fam = familyOf(log);
+  (familyMap[fam] = familyMap[fam] || []).push({ log, count: logCounts[log] });
+});
+const families = Object.keys(familyMap).sort((a, b) => a.localeCompare(b));
+
+document.getElementById('header-stat').innerHTML = `<b>${events.length.toLocaleString()}</b> events &middot; <b>${allLogs.length}</b> logs &middot; <b>${cats.length}</b> categories`;
+
+// ---- filter state ----
+let selectedLogs = new Set();
+let selectedCats = new Set();
+
+// ---- Log combobox ----
+const logListEl = document.getElementById('log-list');
+function renderLogList(filterText) {
+  const q = (filterText || '').toLowerCase();
+  logListEl.innerHTML = '';
+  const frag = document.createDocumentFragment();
+  families.forEach(fam => {
+    const opts = familyMap[fam].filter(o => !q || o.log.toLowerCase().includes(q) || fam.toLowerCase().includes(q));
+    if (!opts.length) return;
+    opts.sort((a, b) => shortLabel(a.log).localeCompare(shortLabel(b.log)));
+    const famCount = opts.reduce((s, o) => s + o.count, 0);
+    const header = document.createElement('div');
+    header.className = 'combo-group-header';
+    header.innerHTML = `<span>${escapeHtml(fam)}</span><span>${famCount}</span>`;
+    frag.appendChild(header);
+    opts.forEach(o => {
+      const isSingle = familyMap[fam].length === 1;
+      const row = document.createElement('label');
+      row.className = 'combo-option';
+      row.innerHTML = `
+        <input type="checkbox" ${selectedLogs.has(o.log) ? 'checked' : ''}>
+        <span class="opt-label">${escapeHtml(isSingle ? fam : shortLabel(o.log))}</span>
+        <span class="opt-count">${o.count}</span>`;
+      row.querySelector('input').addEventListener('change', ev => {
+        if (ev.target.checked) selectedLogs.add(o.log); else selectedLogs.delete(o.log);
+        syncFilterUI();
+      });
+      frag.appendChild(row);
+    });
+  });
+  logListEl.appendChild(frag);
+  if (!logListEl.children.length) {
+    logListEl.innerHTML = '<div style="padding:16px;text-align:center;color:var(--muted);font-size:0.82rem">No logs match.</div>';
+  }
+}
+
+// ---- Category combobox ----
+const catListEl = document.getElementById('cat-list');
+function renderCatList(filterText) {
+  const q = (filterText || '').toLowerCase();
+  catListEl.innerHTML = '';
+  const frag = document.createDocumentFragment();
+  cats.filter(c => !q || c.toLowerCase().includes(q)).forEach(c => {
+    const row = document.createElement('label');
+    row.className = 'combo-option';
+    row.innerHTML = `
+      <input type="checkbox" ${selectedCats.has(c) ? 'checked' : ''}>
+      <span class="opt-label">${escapeHtml(c)}</span>
+      <span class="opt-count">${catCounts[c] || 0}</span>`;
+    row.querySelector('input').addEventListener('change', ev => {
+      if (ev.target.checked) selectedCats.add(c); else selectedCats.delete(c);
+      syncFilterUI();
+    });
+    frag.appendChild(row);
+  });
+  catListEl.appendChild(frag);
+  if (!catListEl.children.length) {
+    catListEl.innerHTML = '<div style="padding:16px;text-align:center;color:var(--muted);font-size:0.82rem">No categories match.</div>';
+  }
+}
+
+// ---- combobox panel open/close ----
+function togglePanel(panelId, otherPanelId) {
+  const panel = document.getElementById(panelId);
+  document.getElementById(otherPanelId).classList.remove('open');
+  panel.classList.toggle('open');
+}
+document.getElementById('btn-log').addEventListener('click', e => {
+  e.stopPropagation();
+  togglePanel('panel-log', 'panel-cat');
+  if (document.getElementById('panel-log').classList.contains('open')) document.getElementById('log-search').focus();
+});
+document.getElementById('btn-cat').addEventListener('click', e => {
+  e.stopPropagation();
+  togglePanel('panel-cat', 'panel-log');
+  if (document.getElementById('panel-cat').classList.contains('open')) document.getElementById('cat-search').focus();
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.combo')) {
+    document.getElementById('panel-log').classList.remove('open');
+    document.getElementById('panel-cat').classList.remove('open');
+  }
+});
+document.getElementById('log-done').addEventListener('click', () => document.getElementById('panel-log').classList.remove('open'));
+document.getElementById('cat-done').addEventListener('click', () => document.getElementById('panel-cat').classList.remove('open'));
+document.getElementById('log-clear').addEventListener('click', () => { selectedLogs.clear(); renderLogList(document.getElementById('log-search').value); syncFilterUI(); });
+document.getElementById('cat-clear').addEventListener('click', () => { selectedCats.clear(); renderCatList(document.getElementById('cat-search').value); syncFilterUI(); });
+document.getElementById('log-search').addEventListener('input', e => renderLogList(e.target.value));
+document.getElementById('cat-search').addEventListener('input', e => renderCatList(e.target.value));
+
+// ---- active filter chips + combo button state ----
+function renderActiveFilters() {
+  const el = document.getElementById('active-filters');
+  const chips = [];
+  selectedLogs.forEach(log => {
+    chips.push(`<span class="af-chip"><span class="af-kind">Log:</span> ${escapeHtml(shortLabel(log))} <button data-kind="log" data-val="${escapeHtml(log)}" title="Remove">&#10005;</button></span>`);
+  });
+  selectedCats.forEach(cat => {
+    chips.push(`<span class="af-chip"><span class="af-kind">Category:</span> ${escapeHtml(cat)} <button data-kind="cat" data-val="${escapeHtml(cat)}" title="Remove">&#10005;</button></span>`);
+  });
+  if (acscOnly) {
+    chips.push(`<span class="af-chip"><span class="af-kind">Filter:</span> ACSC priority logs only <button data-kind="acsc" data-val="1" title="Remove">&#10005;</button></span>`);
+  }
+  if (!chips.length) { el.innerHTML = ''; return; }
+  chips.push(`<button class="af-clear-all" id="clear-all">Clear all</button>`);
+  el.innerHTML = chips.join('');
+  el.querySelectorAll('button[data-kind]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const kind = btn.dataset.kind;
+      if (kind === 'log') selectedLogs.delete(btn.dataset.val);
+      if (kind === 'cat') selectedCats.delete(btn.dataset.val);
+      if (kind === 'acsc') { acscOnly = false; acscFilterBtn.classList.remove('on'); }
+      syncFilterUI();
+    });
+  });
+  const clearAll = document.getElementById('clear-all');
+  if (clearAll) clearAll.addEventListener('click', () => {
+    selectedLogs.clear(); selectedCats.clear(); acscOnly = false;
+    acscFilterBtn.classList.remove('on');
+    syncFilterUI();
+  });
+}
+
+function updateComboButtons() {
+  const logBtn = document.getElementById('btn-log');
+  const logPill = document.getElementById('log-count-pill');
+  if (selectedLogs.size) { logBtn.classList.add('has-selection'); logPill.style.display = 'inline-flex'; logPill.textContent = selectedLogs.size; }
+  else { logBtn.classList.remove('has-selection'); logPill.style.display = 'none'; }
+
+  const catBtn = document.getElementById('btn-cat');
+  const catPill = document.getElementById('cat-count-pill');
+  if (selectedCats.size) { catBtn.classList.add('has-selection'); catPill.style.display = 'inline-flex'; catPill.textContent = selectedCats.size; }
+  else { catBtn.classList.remove('has-selection'); catPill.style.display = 'none'; }
+
+  document.getElementById('log-footer-note').textContent = selectedLogs.size ? `${selectedLogs.size} selected` : 'None selected';
+  document.getElementById('cat-footer-note').textContent = selectedCats.size ? `${selectedCats.size} selected` : 'None selected';
+}
+
+function syncFilterUI() {
+  updateComboButtons();
+  renderActiveFilters();
+  render();
+}
+
+renderLogList('');
+renderCatList('');
+updateComboButtons();
 
 // ---- tabs ----
 document.getElementById('tabs').addEventListener('click', e => {
@@ -702,10 +926,9 @@ function matches(e, q) {
 
 function filtered() {
   const q = searchEl.value.trim().toLowerCase();
-  const cat = catFilter.value;
   return events.filter(e =>
-    activeLogs.has(e.log) &&
-    (!cat || e.category === cat) &&
+    (!selectedLogs.size || selectedLogs.has(e.log)) &&
+    (!selectedCats.size || selectedCats.has(e.category)) &&
     (!acscOnly || e.acsc_priority_log === 'Yes') &&
     matches(e, q)
   );
@@ -814,7 +1037,6 @@ function renderDetail(e) {
 }
 
 searchEl.addEventListener('input', render);
-catFilter.addEventListener('change', render);
 
 render();
 

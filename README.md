@@ -86,11 +86,16 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 4,737 events by ID or keyword, filter by log/category,
-toggle to show only ASD/ACSC priority logs, and view full detail —
-description, sample log text, MITRE ATT&CK mapping, and how-to-collect
-configuration steps — plus a reference-tables tab for the NTLM/disconnect
-code lookups and the raw audit policy matrix. Open it directly in a browser.
+lookup page: search all 4,737 events by ID or keyword; filter by Log or
+Category via searchable multi-select comboboxes (logs grouped by provider
+family, e.g. all `Microsoft-Windows-AppLocker/*` variants collapse under
+one header — this replaced a flat 188-button chip row and a 189-option
+dropdown, which stopped being usable once the catalogue grew past ~40
+logs); toggle to show only ASD/ACSC priority logs; active filters surface
+as removable chips above the results. View full detail — description,
+sample log text, MITRE ATT&CK mapping, and how-to-collect configuration
+steps — plus a reference-tables tab for the NTLM/disconnect code lookups
+and the raw audit policy matrix. Open it directly in a browser.
 
 ## Source
 
