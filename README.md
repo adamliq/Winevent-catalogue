@@ -58,21 +58,27 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     audit and how to generate it" triad) applied at the audit-subcategory
     level via `data/reference/audit_configuration.csv` — not a substitute
     for a full compliance assessment.
-  - `field_schema` — populated only for the 212 `acsc_priority_log` events:
-    a structured map of the fields inside that event's `sample`, parsed out
-    of the Event Viewer-style text and grouped the way the real event does
-    (e.g. `subject`, `new_logon`, `process_information` for a logon event),
-    with each leaf giving that field's inferred type (`string`, `integer`,
+  - `field_schema` — populated for every event: a structured map of the
+    fields inside that event's `sample`, parsed out of the Event
+    Viewer-style text and grouped the way the real event does (e.g.
+    `subject`, `new_logon`, `process_information` for a logon event), with
+    each leaf giving that field's inferred type (`string`, `integer`,
     `hex`, `sid`, `guid`, `ip`, `path`, `principal`, `enum`,
-    `list<string>`). In `events.json` this is a nested object; in
-    `events.csv` it's the same structure serialized as a JSON string (CSV
-    can't nest). It's derived automatically from each event's own
-    `sample` field by a generic parser (header block, free-text
-    description, then `Key: Value` / `Key = Value` fields either flat or
-    nested under a `GroupName:` block) — best-effort type inference from
-    example values, not a guarantee of the real Windows event schema. The
-    web lookup page renders it as a "Field Schema" section in the detail
-    view, below the raw sample.
+    `list<string>`). Every row gets at least a `header` block (`log_name`,
+    `source`, `event_id`, `level`, `computer`, `description`, etc.); most of
+    the 3,907 bulk-imported ETW `template` rows have nothing further since
+    their sample is just a single unfilled message string, while
+    `original`/`illustrative` rows (and any `template` row whose message
+    itself lists `Key: {Placeholder}` fields) get the fuller nested
+    breakdown. In `events.json` this is a nested object; in `events.csv`
+    it's the same structure serialized as a JSON string (CSV can't nest).
+    It's derived automatically from each event's own `sample` field by a
+    generic parser (header block, free-text description, then
+    `Key: Value` / `Key = Value` fields either flat or nested under a
+    `GroupName:` block) — best-effort type inference from example values,
+    not a guarantee of the real Windows event schema. The web lookup page
+    renders it as a "Field Schema" section in the detail view, below the
+    raw sample.
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
@@ -220,18 +226,29 @@ detail view shows the first 10 techniques for such events with a link
 through to the full, searchable reference table rather than truncating
 silently.
 
-Finally, added a **`field_schema`** for every event flagged
-`acsc_priority_log` (212 events): a parser walks each event's own `sample`
-text (the header block, the free-text description, then the event's
-`Key: Value` / `Key = Value` fields — flat or nested under a `GroupName:`
-block, e.g. Security's `Subject:` / `New Logon:`) and infers a type per
-field from its example value (`sid`, `hex`, `guid`, `ip`, `path`,
-`principal`, `integer`, `enum`, `list<string>`, or `string`). This is
-best-effort structure extraction from the catalogue's own example data,
-not a reference to Microsoft's authoritative event schema — useful for
-seeing at a glance what a given event's `EventData` actually looks like
-without reading the full rendered sample, but not a substitute for the
-real schema when building a parser against live events.
+Finally, added a **`field_schema`** for every event in the catalogue: a
+parser walks each event's own `sample` text (the header block, the
+free-text description, then the event's `Key: Value` / `Key = Value`
+fields — flat or nested under a `GroupName:` block, e.g. Security's
+`Subject:` / `New Logon:`) and infers a type per field from its example
+value (`sid`, `hex`, `guid`, `ip`, `path`, `principal`, `integer`, `enum`,
+`list<string>`, or `string`). Initially built for just the 212
+`acsc_priority_log` events, then extended to all 4,737: doing so surfaced
+one gap the narrower pass hadn't hit — several bulk ETW `template`
+messages state their fields as a run of `Label: {Placeholder}` lines
+straight after the description sentence, with no blank-line separator —
+so the parser's description/fields boundary detection was generalized to
+recognize that shape too (a description line is only treated as a real
+field once it looks like `Key: value`, isn't the line immediately after
+`Description:`, and its value isn't full prose), which is what lets
+events like `Microsoft-Windows-Security-Audit-Configuration-Client`'s 105
+correctly break out `display_name` / `gpo_id` / `sysvol_path` instead of
+folding them all into one description string. This is best-effort
+structure extraction from the catalogue's own example data, not a
+reference to Microsoft's authoritative event schema — useful for seeing
+at a glance what a given event's `EventData` actually looks like without
+reading the full rendered sample, but not a substitute for the real
+schema when building a parser against live events.
 
 ## Bulk ETW manifest import
 
