@@ -86,7 +86,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 3,539 events by ID or keyword, filter by log/category,
+lookup page: search all 4,737 events by ID or keyword, filter by log/category,
 toggle to show only ASD/ACSC priority logs, and view full detail —
 description, sample log text, MITRE ATT&CK mapping, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
@@ -190,6 +190,21 @@ hardware/driver diagnostics, etc.), ~600 pure-ETW-trace events with no
 Windows Event Log channel (not viewable in Event Viewer), and a handful
 of rows whose channel name in the export was a generic placeholder
 ("Operational", "Admin", "Debug") rather than a real channel path.
+
+The same treatment was applied to a second manifest export, this time
+from Windows 11 24H2 Pro (build 26100.1742) — 52,405 events across 870
+providers. The same security-adjacent channel filter added a further
+1,198 new events (deduplicated against everything already in the
+catalogue, including the Server 2019 import): full coverage of Windows
+11-era security surfaces like WebAuthN, Windows Hello for Business
+(including its Debug channel), BitLocker (encryption/decryption
+lifecycle events previously missing), WLAN-AutoConfig diagnostics,
+Privacy-Auditing, and Hyper-V VID admin/analytic channels. One channel
+name collision was caught and fixed: the export truncated
+`Microsoft-Windows-BitLocker-API`'s channel to the bare, ambiguous name
+"Management" — renamed to `Microsoft-Windows-BitLocker-API/Management`
+to avoid colliding with any other provider that might use the same
+generic channel label in a future import.
 
 These rows use `sample_type: template` — the manifest's own message
 string, reformatted with the header fields and a best-effort line-break
