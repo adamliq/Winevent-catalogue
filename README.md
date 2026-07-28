@@ -1,12 +1,16 @@
 # Winevent-catalogue
 
-A structured catalogue of Windows Event Log IDs, built from a personal MS
-Server administration notebook (TiddlyWiki export). Covers Security auditing
-events (mapped to their Group Policy audit subcategories), DHCP Server
-events, Removable Media / Plug-and-Play device events, Network Location
-Awareness (NLA) events, Terminal Services / RDS session events, System
-shutdown/restart events, and WebAuthn (FIDO2/Windows Hello) operational
-logs.
+A structured catalogue of Windows Event Log IDs. Built from a personal MS
+Server administration notebook (TiddlyWiki export) covering Security
+auditing events (mapped to their Group Policy audit subcategories), DHCP
+Server events, Removable Media / Plug-and-Play device events, Network
+Location Awareness (NLA) events, Terminal Services / RDS session events,
+and System shutdown/restart events — plus WebAuthn (FIDO2/Windows Hello)
+operational log events (sourced from the real Microsoft-Windows-WebAuthN
+ETW manifest) and event IDs cross-referenced from the ASD/ACSC "Priority
+logs for SIEM ingestion: Practitioner guidance" (2025), including AD FS,
+LDAP signing, Code Integrity/WDAC, AppLocker, Sysmon, PowerShell, WMI
+Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 
 ## Contents
 
@@ -61,7 +65,7 @@ logs.
 ## Web lookup
 
 `site/index.html` is a self-contained (no build step, no external requests)
-lookup page: search all 503 events by ID or keyword, filter by log/category,
+lookup page: search all 576 events by ID or keyword, filter by log/category,
 and view full detail — description, sample log text, and how-to-collect
 configuration steps — plus a reference-tables tab for the NTLM/disconnect
 code lookups and the raw audit policy matrix. Open it directly in a browser.
@@ -71,3 +75,11 @@ code lookups and the raw audit policy matrix. Open it directly in a browser.
 Extracted from a TiddlyWiki 5 export ("MSServer" notebook) covering Windows
 Server administration topics. Only the Event Log / Event ID related tiddlers
 were used to build this catalogue.
+
+WebAuthn events were cross-checked against the real
+`Microsoft-Windows-WebAuthN` ETW provider manifest (event IDs, symbols, and
+field names verified, not guessed). Events added from the ASD/ACSC SIEM
+ingestion guidance carry that document's exact category/event-ID pairings;
+a handful of low-confidence entries (exact log channel not independently
+corroborated — e.g. the two "Kerberos" events 4678/4679, and the log
+channel split for 3033/3063) say so explicitly in their `reference` field.

