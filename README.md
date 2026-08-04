@@ -93,6 +93,24 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   `events.csv`.
 - `data/reference/ntlm_error_codes_4776.csv` — NTLM/Kerberos status codes
   seen in the `Error Code` field of Event ID 4776.
+- `data/reference/kerberos_result_codes.csv` / `.json` — the 47 standard
+  Kerberos protocol result codes (RFC description plus notes on common
+  failure causes), seen in the `Result Code` field of the Kerberos ticket
+  events (4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, 4821,
+  4824). The web lookup page shows the matching table inline on each of
+  those events' detail views, and the full table on the Reference tables
+  tab.
+- `data/reference/ntstatus_codes.csv` / `.json` — the full official
+  Windows NTSTATUS reference: 1,795 codes with their symbolic name (e.g.
+  `STATUS_WRONG_PASSWORD`) and description, seen in `Status` / `Sub
+  Status` fields such as those on Event ID 4625 (An account failed to log
+  on). Sourced from Microsoft's MS-ERREF Open Specifications
+  documentation (redistributed, with attribution, by the Samba project —
+  `joyasystems.com`, the site originally requested, was unreachable from
+  this environment). The web lookup page shows a curated set of the most
+  common logon-failure codes inline on 4625's detail view, with a link
+  through to the full, searchable 1,795-row table on the Reference tables
+  tab.
 - `data/reference/disconnect_reason_codes_event40.csv` — RDS client
   disconnect reason codes seen in Event ID 40
   (`TerminalServices-LocalSessionManager`).
@@ -120,7 +138,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 
 ## Web lookup
 
-`site/index.html` is a self-contained (no build step, no external requests)
+`index.html` is a self-contained (no build step, no external requests)
 lookup page: search all 4,737 events by ID or keyword; filter by Log or
 Category via searchable multi-select comboboxes (logs grouped by provider
 family, e.g. all `Microsoft-Windows-AppLocker/*` variants collapse under
