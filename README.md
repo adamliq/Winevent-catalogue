@@ -111,6 +111,41 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   common logon-failure codes inline on 4625's detail view, with a link
   through to the full, searchable 1,795-row table on the Reference tables
   tab.
+- `data/reference/kerberos_encryption_types.csv` / `.json` — the 16
+  Kerberos ticket encryption types (e.g. `0x12` = `AES256-CTS-HMAC-SHA1-96`,
+  `0x17` = `ARCFOUR-HMAC` / RC4-HMAC), seen in the `Ticket Encryption Type`
+  field of Kerberos ticket events 4768, 4769, 4770, 4771, 4772, 4774, 4775,
+  and 4777. Sourced from MIT krb5's `ENCTYPE_*` constants.
+- `data/reference/kerberos_preauth_types.csv` / `.json` — the 42 Kerberos
+  pre-authentication data types (PA-DATA type registry), seen in the
+  `Pre-Authentication Type` field of Kerberos ticket events 4768, 4769,
+  4770, 4771, 4772, 4774, 4775, 4777, and 4824. Sourced from MIT krb5's
+  `KRB5_PADATA_*` constants.
+- `data/reference/kerberos_ticket_options_flags.csv` / `.json` — the 17
+  bit flags making up the `Ticket Options` (KDCOptions) field of Kerberos
+  ticket events 4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, and
+  4821 — a bitmask, not a simple enum, so the reference table lists each
+  bit's mask and meaning for OR-ing together to decode a value. Sourced
+  from MIT krb5's `KDC_OPT_*` constants and verified against the
+  catalogue's own 4768 sample (`0x40810010` decodes to forwardable +
+  renewable + canonicalize + renewable-ok).
+- `data/reference/logon_type_codes.csv` / `.json` — the 13 Windows Logon
+  Type values (2=Interactive, 3=Network, 4=Batch, 5=Service, 7=Unlock,
+  8=NetworkCleartext, 9=NewCredentials, 10=RemoteInteractive,
+  11=CachedInteractive, etc.), seen in the `Logon Type` field of 16
+  logon-related Security events (4624, 4625, 4634, 4647, 4648, 4649, 4675,
+  4779, 4800–4803, 4964, 5378, 5632, 5633).
+- `data/reference/ip_protocol_numbers.csv` / `.json` — the 150 assigned
+  IANA IP protocol numbers (1=ICMP, 6=TCP, 17=UDP, etc.), seen in the
+  `Protocol` field of 67 IPsec and Windows Firewall events (4709–4712,
+  4944–4958, 5031, 5040–5048, 5140, 5150–5159, and the 5440–5477 range).
+  Sourced from nmap's `nmap-protocols` data file (itself a redistribution
+  of the IANA protocol-numbers registry).
+- `data/reference/nps_reason_codes.csv` / `.json` — the 94 Network Policy
+  Server (RADIUS) reason codes, each with its `IAS_*` symbolic name where
+  documented and Microsoft's full description, seen in the `Reason Code`
+  field of NPS events 6272–6280. Sourced from a community PowerShell
+  script that transcribed Microsoft's NPS Reason Codes documentation.
 - `data/reference/disconnect_reason_codes_event40.csv` — RDS client
   disconnect reason codes seen in Event ID 40
   (`TerminalServices-LocalSessionManager`).
