@@ -186,18 +186,22 @@ steps — plus a Reference tables tab covering 13 code/lookup tables (NTLM
 and Kerberos error/result codes, Kerberos encryption/pre-auth/ticket-option
 codes, Logon Type, IP protocol numbers, NPS reason codes, RDS disconnect
 codes, SharePoint audit types, the raw audit policy matrix, the MITRE
-ATT&CK mapping, and the full NTSTATUS reference). Every reference table
-has its own search box, and a sticky jump-nav at the top of the tab lists
-all 13 with their row counts and scrolls straight to any one of them —
-added once the tab grew past a handful of tables and scrolling to find one
-stopped being practical. Every table (both on the Reference tab and
-inline on an event's detail view) is also height-capped with its own
-internal scroll and a sticky header row, so a single 1,795-row table can't
-push the rest of the page — or, on events like 4768 that pull in four
-Kerberos tables at once, the whole detail view — out to an unreasonable
-length. All 13 Reference tables also collapse into an accordion (collapsed
-by default, one click to expand, or typing in a still-collapsed table's
-search box auto-expands just that one) so the tab itself opens as a
+ATT&CK mapping, and the full NTSTATUS reference). A single search box at
+the top of the tab filters every one of the 13 tables at once — matching
+sections expand and show only their matching rows, non-matching sections
+disappear entirely (nav pills included), and clearing the box returns
+everything to its default collapsed state; a sticky jump-nav next to the
+search box lists all 13 with live row counts and scrolls straight to any
+one of them, switching back to plain browse mode (clearing the search) as
+it does — added once the tab grew past a handful of tables and scrolling
+to find one stopped being practical. Every table (both on the Reference
+tab and inline on an event's detail view) is also height-capped with its
+own internal scroll and a sticky header row, so a single 1,795-row table
+can't push the rest of the page — or, on events like 4768 that pull in
+four Kerberos tables at once, the whole detail view — out to an
+unreasonable length. All 13 Reference tables collapse into an accordion
+by default (one click to expand, or the global search auto-expands
+whichever sections actually match) so the tab itself opens as a
 single-screen list of headings instead of every table rendered open at
 once. Open it directly in a browser.
 
