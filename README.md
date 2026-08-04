@@ -195,7 +195,11 @@ inline on an event's detail view) is also height-capped with its own
 internal scroll and a sticky header row, so a single 1,795-row table can't
 push the rest of the page — or, on events like 4768 that pull in four
 Kerberos tables at once, the whole detail view — out to an unreasonable
-length. Open it directly in a browser.
+length. All 13 Reference tables also collapse into an accordion (collapsed
+by default, one click to expand, or typing in a still-collapsed table's
+search box auto-expands just that one) so the tab itself opens as a
+single-screen list of headings instead of every table rendered open at
+once. Open it directly in a browser.
 
 ## Source
 

@@ -567,12 +567,51 @@
   }
   .ref-section h2 {
     font-size: 1.02rem;
-    margin: 0 0 4px;
+    margin: 0;
   }
   .ref-section p.sub {
     margin: 0 0 14px;
     color: var(--muted);
     font-size: 0.83rem;
+  }
+  .ref-toggle {
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0 0 4px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font: inherit;
+    text-align: left;
+    color: inherit;
+    cursor: pointer;
+  }
+  .ref-toggle-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .ref-badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    background: var(--surface-2);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+  .ref-chev {
+    width: 14px;
+    height: 14px;
+    color: var(--muted);
+    flex-shrink: 0;
+    transform: rotate(-90deg);
+    transition: transform 0.15s ease;
+  }
+  .ref-section.expanded .ref-chev { transform: rotate(0deg); }
+  .ref-section:not(.expanded) .table-scroll { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .ref-chev { transition: none; }
   }
 
   .ref-nav {
@@ -702,34 +741,49 @@
   <div class="panel" id="panel-reference">
     <nav class="ref-nav" id="ref-nav"></nav>
     <div class="ref-section" id="sec-ntlm">
-      <h2>NTLM / Kerberos logon validation error codes</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="ntlm">
+        <h2>NTLM / Kerberos logon validation error codes</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-ntlm"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in the <span class="mono">Error Code</span> field of Event ID 4776.</p>
       <input type="text" id="ntlm-table-search" class="mono ref-search-input" placeholder="e.g. C000006A, locked out…" />
       <div class="table-scroll" id="ref-ntlm"></div>
     </div>
     <div class="ref-section" id="sec-kerberos">
-      <h2>Kerberos result codes</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="kerberos">
+        <h2>Kerberos result codes</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-kerberos"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in the <span class="mono">Result Code</span> field of Kerberos ticket events
         4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, 4821, and 4824.</p>
       <input type="text" id="kerberos-table-search" class="mono ref-search-input" placeholder="e.g. 0x25, clock skew…" />
       <div class="table-scroll" id="ref-kerberos"></div>
     </div>
     <div class="ref-section" id="sec-kerberos-enctype">
-      <h2>Kerberos encryption types</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="kerberos-enctype">
+        <h2>Kerberos encryption types</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-kerberos-enctype"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in the <span class="mono">Ticket Encryption Type</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, and 4777.</p>
       <input type="text" id="kerberos-enctype-table-search" class="mono ref-search-input" placeholder="e.g. 0x12, AES256, RC4…" />
       <div class="table-scroll" id="ref-kerberos-enctype"></div>
     </div>
     <div class="ref-section" id="sec-kerberos-preauth">
-      <h2>Kerberos pre-authentication types</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="kerberos-preauth">
+        <h2>Kerberos pre-authentication types</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-kerberos-preauth"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in the <span class="mono">Pre-Authentication Type</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, and 4824.</p>
       <input type="text" id="kerberos-preauth-table-search" class="mono ref-search-input" placeholder="e.g. 2, PKINIT, encrypted timestamp…" />
       <div class="table-scroll" id="ref-kerberos-preauth"></div>
     </div>
     <div class="ref-section" id="sec-kerberos-ticketopts">
-      <h2>Kerberos ticket options (KDC Options) flags</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="kerberos-ticketopts">
+        <h2>Kerberos ticket options (KDC Options) flags</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-kerberos-ticketopts"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Bit flags making up the <span class="mono">Ticket Options</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, and 4821 &mdash; OR the relevant bit masks
         together to decode a value (e.g. 0x40810010 = forwardable + renewable + canonicalize + renewable-ok).</p>
@@ -737,14 +791,20 @@
       <div class="table-scroll" id="ref-kerberos-ticketopts"></div>
     </div>
     <div class="ref-section" id="sec-logontype">
-      <h2>Logon Type codes</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="logontype">
+        <h2>Logon Type codes</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-logontype"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in the <span class="mono">Logon Type</span> field of logon-related Security events
         (4624, 4625, 4634, 4647, 4648, 4649, 4675, 4779, 4800&ndash;4803, 4964, 5378, 5632, 5633).</p>
       <input type="text" id="logontype-table-search" class="mono ref-search-input" placeholder="e.g. 10, RemoteInteractive, RDP…" />
       <div class="table-scroll" id="ref-logontype"></div>
     </div>
     <div class="ref-section" id="sec-protocol">
-      <h2>IP protocol numbers</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="protocol">
+        <h2>IP protocol numbers</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-protocol"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in the <span class="mono">Protocol</span> field of IPsec and Windows Firewall
         events (4709&ndash;4712, 4944&ndash;4958, 5031, 5040&ndash;5048, 5140, 5150&ndash;5159, and the
         5440&ndash;5477 range) &mdash; 67 events in total.</p>
@@ -752,32 +812,47 @@
       <div class="table-scroll" id="ref-protocol"></div>
     </div>
     <div class="ref-section" id="sec-nps">
-      <h2>NPS (RADIUS) reason codes</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="nps">
+        <h2>NPS (RADIUS) reason codes</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-nps"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in the <span class="mono">Reason Code</span> field of Network Policy Server events
         6272&ndash;6280.</p>
       <input type="text" id="nps-table-search" class="mono ref-search-input" placeholder="e.g. 36, locked out, EAP…" />
       <div class="table-scroll" id="ref-nps"></div>
     </div>
     <div class="ref-section" id="sec-disconnect">
-      <h2>RDS client disconnect reason codes</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="disconnect">
+        <h2>RDS client disconnect reason codes</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-disconnect"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Seen in Event ID 40 (TerminalServices‑LocalSessionManager).</p>
       <input type="text" id="disconnect-table-search" class="mono ref-search-input" placeholder="e.g. 0x00000001, administrative…" />
       <div class="table-scroll" id="ref-disconnect"></div>
     </div>
     <div class="ref-section" id="sec-sharepoint">
-      <h2>SharePoint audit event types</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="sharepoint">
+        <h2>SharePoint audit event types</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-sharepoint"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Separate numbering scheme from Windows Event Log IDs — not cross‑referenced with the main catalogue.</p>
       <input type="text" id="sharepoint-table-search" class="mono ref-search-input" placeholder="e.g. opened, deleted, checked out…" />
       <div class="table-scroll" id="ref-sharepoint"></div>
     </div>
     <div class="ref-section" id="sec-matrix">
-      <h2>Full audit policy → Event ID matrix</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="matrix">
+        <h2>Full audit policy → Event ID matrix</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-matrix"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">Raw Group Policy audit category mapping, before expansion into individual events.</p>
       <input type="text" id="matrix-table-search" class="mono ref-search-input" placeholder="e.g. Logon/Logoff, 4624…" />
       <div class="table-scroll" id="ref-matrix"></div>
     </div>
     <div class="ref-section" id="sec-mitre">
-      <h2>MITRE ATT&amp;CK ↔ Event ID mapping</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="mitre">
+        <h2>MITRE ATT&amp;CK ↔ Event ID mapping</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-mitre"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">1,417 technique&ndash;event associations across 390 ATT&amp;CK techniques and 48 Security-log
         events. High-fan-out events (e.g. 4688 Process Creation maps to 286 techniques) are truncated in the
         main catalogue's detail view — this is the full table. Search by technique ID, technique name, or
@@ -786,7 +861,10 @@
       <div class="table-scroll" id="ref-mitre"></div>
     </div>
     <div class="ref-section" id="sec-ntstatus">
-      <h2>NTSTATUS codes</h2>
+      <button type="button" class="ref-toggle" aria-expanded="false" data-target="ntstatus">
+        <h2>NTSTATUS codes</h2>
+        <span class="ref-toggle-right"><span class="ref-badge" id="badge-ntstatus"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
+      </button>
       <p class="sub">1,795 official Windows NTSTATUS values (code, symbolic name, and description) &mdash; the
         full range returned in fields like <span class="mono">Status</span> / <span class="mono">Sub Status</span>
         on events such as 4625 (An account failed to log on). Search by code or name.</p>
@@ -1358,6 +1436,14 @@ const REF_TABLES = [
     columns: [{ key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'description', label: 'Description' }] },
 ];
 
+function expandRefSection(id) {
+  const sec = document.getElementById(`sec-${id}`);
+  if (!sec || sec.classList.contains('expanded')) return;
+  sec.classList.add('expanded');
+  const btn = sec.querySelector('.ref-toggle');
+  if (btn) btn.setAttribute('aria-expanded', 'true');
+}
+
 function wireRefTable(def) {
   const tableEl = document.getElementById(`ref-${def.id}`);
   const searchEl = document.getElementById(`${def.id}-table-search`);
@@ -1369,15 +1455,31 @@ function wireRefTable(def) {
     );
     buildTable(tableEl, rows, def.columns);
   }
-  searchEl.addEventListener('input', e => renderFiltered(e.target.value));
+  searchEl.addEventListener('input', e => {
+    expandRefSection(def.id);
+    renderFiltered(e.target.value);
+  });
   renderFiltered('');
+  document.getElementById(`badge-${def.id}`).textContent = DATA[def.data].length;
 }
 
 REF_TABLES.forEach(wireRefTable);
 
 document.getElementById('ref-nav').innerHTML = REF_TABLES.map(def =>
-  `<a href="#sec-${def.id}">${escapeHtml(def.nav)} <span class="count">${DATA[def.data].length}</span></a>`
+  `<a href="#sec-${def.id}" data-target="${def.id}">${escapeHtml(def.nav)} <span class="count">${DATA[def.data].length}</span></a>`
 ).join('');
+document.getElementById('ref-nav').addEventListener('click', e => {
+  const a = e.target.closest('a[data-target]');
+  if (a) expandRefSection(a.dataset.target);
+});
+
+document.querySelectorAll('.ref-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sec = document.getElementById(`sec-${btn.dataset.target}`);
+    const expanded = sec.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', String(expanded));
+  });
+});
 
 function jumpToRefTable(refId, query) {
   return jumpToRefSearch(`${refId}-table-search`, query);
