@@ -507,13 +507,6 @@
     white-space: nowrap;
   }
   .table-scroll { overflow-x: auto; overflow-y: auto; max-height: 400px; }
-  .ref-search-input {
-    width: 100%; font: inherit; font-size: 0.84rem; padding: 8px 11px; border-radius: 8px;
-    border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink);
-    outline: none; margin-bottom: 12px; box-sizing: border-box;
-  }
-  .ref-search-input:focus { border-color: var(--accent); }
-  .ref-count { font-size: 0.72rem; color: var(--muted); font-family: ui-monospace, monospace; margin: -8px 0 12px; }
 
   .reflink-btn {
     appearance: none;
@@ -565,6 +558,13 @@
     margin-bottom: 18px;
     scroll-margin-top: 76px;
   }
+  .ref-section.no-match { display: none; }
+  .ref-empty-state {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.88rem;
+    padding: 40px 20px;
+  }
   .ref-section h2 {
     font-size: 1.02rem;
     margin: 0;
@@ -614,18 +614,22 @@
     .ref-chev { transition: none; }
   }
 
-  .ref-nav {
+  .ref-toolbar {
     position: sticky;
     top: 0;
     z-index: 5;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
     background: var(--bg);
     padding: 12px 0 14px;
     margin-bottom: 4px;
     border-bottom: 1px solid var(--line);
   }
+  .ref-toolbar .search-box { margin-bottom: 10px; }
+  .ref-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ref-nav a.no-match { display: none; }
   .ref-nav a {
     display: inline-flex;
     align-items: center;
@@ -739,14 +743,20 @@
   </div>
 
   <div class="panel" id="panel-reference">
-    <nav class="ref-nav" id="ref-nav"></nav>
+    <div class="ref-toolbar" id="ref-toolbar">
+      <div class="search-box" id="ref-search-box">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="ref-global-search" type="text" placeholder="Search all 13 reference tables — codes, names, descriptions…" autocomplete="off" />
+      </div>
+      <nav class="ref-nav" id="ref-nav"></nav>
+    </div>
+    <p class="ref-empty-state" id="ref-empty-state" hidden>No matches in any reference table.</p>
     <div class="ref-section" id="sec-ntlm">
       <button type="button" class="ref-toggle" aria-expanded="false" data-target="ntlm">
         <h2>NTLM / Kerberos logon validation error codes</h2>
         <span class="ref-toggle-right"><span class="ref-badge" id="badge-ntlm"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
       </button>
       <p class="sub">Seen in the <span class="mono">Error Code</span> field of Event ID 4776.</p>
-      <input type="text" id="ntlm-table-search" class="mono ref-search-input" placeholder="e.g. C000006A, locked out…" />
       <div class="table-scroll" id="ref-ntlm"></div>
     </div>
     <div class="ref-section" id="sec-kerberos">
@@ -756,7 +766,6 @@
       </button>
       <p class="sub">Seen in the <span class="mono">Result Code</span> field of Kerberos ticket events
         4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, 4821, and 4824.</p>
-      <input type="text" id="kerberos-table-search" class="mono ref-search-input" placeholder="e.g. 0x25, clock skew…" />
       <div class="table-scroll" id="ref-kerberos"></div>
     </div>
     <div class="ref-section" id="sec-kerberos-enctype">
@@ -766,7 +775,6 @@
       </button>
       <p class="sub">Seen in the <span class="mono">Ticket Encryption Type</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, and 4777.</p>
-      <input type="text" id="kerberos-enctype-table-search" class="mono ref-search-input" placeholder="e.g. 0x12, AES256, RC4…" />
       <div class="table-scroll" id="ref-kerberos-enctype"></div>
     </div>
     <div class="ref-section" id="sec-kerberos-preauth">
@@ -776,7 +784,6 @@
       </button>
       <p class="sub">Seen in the <span class="mono">Pre-Authentication Type</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, and 4824.</p>
-      <input type="text" id="kerberos-preauth-table-search" class="mono ref-search-input" placeholder="e.g. 2, PKINIT, encrypted timestamp…" />
       <div class="table-scroll" id="ref-kerberos-preauth"></div>
     </div>
     <div class="ref-section" id="sec-kerberos-ticketopts">
@@ -787,7 +794,6 @@
       <p class="sub">Bit flags making up the <span class="mono">Ticket Options</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, and 4821 &mdash; OR the relevant bit masks
         together to decode a value (e.g. 0x40810010 = forwardable + renewable + canonicalize + renewable-ok).</p>
-      <input type="text" id="kerberos-ticketopts-table-search" class="mono ref-search-input" placeholder="e.g. forwardable, 0x800000…" />
       <div class="table-scroll" id="ref-kerberos-ticketopts"></div>
     </div>
     <div class="ref-section" id="sec-logontype">
@@ -797,7 +803,6 @@
       </button>
       <p class="sub">Seen in the <span class="mono">Logon Type</span> field of logon-related Security events
         (4624, 4625, 4634, 4647, 4648, 4649, 4675, 4779, 4800&ndash;4803, 4964, 5378, 5632, 5633).</p>
-      <input type="text" id="logontype-table-search" class="mono ref-search-input" placeholder="e.g. 10, RemoteInteractive, RDP…" />
       <div class="table-scroll" id="ref-logontype"></div>
     </div>
     <div class="ref-section" id="sec-protocol">
@@ -808,7 +813,6 @@
       <p class="sub">Seen in the <span class="mono">Protocol</span> field of IPsec and Windows Firewall
         events (4709&ndash;4712, 4944&ndash;4958, 5031, 5040&ndash;5048, 5140, 5150&ndash;5159, and the
         5440&ndash;5477 range) &mdash; 67 events in total.</p>
-      <input type="text" id="protocol-table-search" class="mono ref-search-input" placeholder="e.g. 6, tcp, udp, icmp…" />
       <div class="table-scroll" id="ref-protocol"></div>
     </div>
     <div class="ref-section" id="sec-nps">
@@ -818,7 +822,6 @@
       </button>
       <p class="sub">Seen in the <span class="mono">Reason Code</span> field of Network Policy Server events
         6272&ndash;6280.</p>
-      <input type="text" id="nps-table-search" class="mono ref-search-input" placeholder="e.g. 36, locked out, EAP…" />
       <div class="table-scroll" id="ref-nps"></div>
     </div>
     <div class="ref-section" id="sec-disconnect">
@@ -827,7 +830,6 @@
         <span class="ref-toggle-right"><span class="ref-badge" id="badge-disconnect"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
       </button>
       <p class="sub">Seen in Event ID 40 (TerminalServices‑LocalSessionManager).</p>
-      <input type="text" id="disconnect-table-search" class="mono ref-search-input" placeholder="e.g. 0x00000001, administrative…" />
       <div class="table-scroll" id="ref-disconnect"></div>
     </div>
     <div class="ref-section" id="sec-sharepoint">
@@ -836,7 +838,6 @@
         <span class="ref-toggle-right"><span class="ref-badge" id="badge-sharepoint"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
       </button>
       <p class="sub">Separate numbering scheme from Windows Event Log IDs — not cross‑referenced with the main catalogue.</p>
-      <input type="text" id="sharepoint-table-search" class="mono ref-search-input" placeholder="e.g. opened, deleted, checked out…" />
       <div class="table-scroll" id="ref-sharepoint"></div>
     </div>
     <div class="ref-section" id="sec-matrix">
@@ -845,7 +846,6 @@
         <span class="ref-toggle-right"><span class="ref-badge" id="badge-matrix"></span><svg class="ref-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span>
       </button>
       <p class="sub">Raw Group Policy audit category mapping, before expansion into individual events.</p>
-      <input type="text" id="matrix-table-search" class="mono ref-search-input" placeholder="e.g. Logon/Logoff, 4624…" />
       <div class="table-scroll" id="ref-matrix"></div>
     </div>
     <div class="ref-section" id="sec-mitre">
@@ -857,7 +857,6 @@
         events. High-fan-out events (e.g. 4688 Process Creation maps to 286 techniques) are truncated in the
         main catalogue's detail view — this is the full table. Search by technique ID, technique name, or
         event ID.</p>
-      <input type="text" id="mitre-table-search" class="mono ref-search-input" placeholder="e.g. T1059, Kerberoasting, 4688…" />
       <div class="table-scroll" id="ref-mitre"></div>
     </div>
     <div class="ref-section" id="sec-ntstatus">
@@ -868,7 +867,6 @@
       <p class="sub">1,795 official Windows NTSTATUS values (code, symbolic name, and description) &mdash; the
         full range returned in fields like <span class="mono">Status</span> / <span class="mono">Sub Status</span>
         on events such as 4625 (An account failed to log on). Search by code or name.</p>
-      <input type="text" id="ntstatus-table-search" class="mono ref-search-input" placeholder="e.g. 0xC000006A, WRONG_PASSWORD, logon…" />
       <div class="table-scroll" id="ref-ntstatus"></div>
     </div>
   </div>
@@ -1168,9 +1166,9 @@ function escapeHtml(s) {
   return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
-function jumpToRefSearch(inputId, query) {
+function jumpToRefSearch(query) {
   document.querySelector('#tabs button[data-panel="reference"]').click();
-  const input = document.getElementById(inputId);
+  const input = document.getElementById('ref-global-search');
   input.value = query;
   input.dispatchEvent(new Event('input'));
   setTimeout(() => input.scrollIntoView({ block: 'center' }), 50);
@@ -1179,10 +1177,10 @@ function jumpToRefSearch(inputId, query) {
 
 const MITRE_DISPLAY_LIMIT = 10;
 function jumpToMitreTable(query) {
-  return jumpToRefSearch('mitre-table-search', query);
+  return jumpToRefSearch(query);
 }
 function jumpToNtstatusTable(query) {
-  return jumpToRefSearch('ntstatus-table-search', query);
+  return query ? jumpToRefSearch(query) : jumpToRefBrowse('ntstatus');
 }
 function mitreDisplay(raw, eventId) {
   const techs = raw.split(';').map(t => t.trim()).filter(Boolean);
@@ -1438,39 +1436,58 @@ const REF_TABLES = [
 
 function expandRefSection(id) {
   const sec = document.getElementById(`sec-${id}`);
-  if (!sec || sec.classList.contains('expanded')) return;
+  if (!sec) return;
   sec.classList.add('expanded');
+  sec.classList.remove('no-match');
   const btn = sec.querySelector('.ref-toggle');
   if (btn) btn.setAttribute('aria-expanded', 'true');
 }
 
-function wireRefTable(def) {
-  const tableEl = document.getElementById(`ref-${def.id}`);
-  const searchEl = document.getElementById(`${def.id}-table-search`);
-  const keys = def.columns.map(c => c.key);
-  function renderFiltered(q) {
-    q = (q || '').trim().toLowerCase();
-    const rows = !q ? DATA[def.data] : DATA[def.data].filter(r =>
-      keys.some(k => (r[k] || '').toLowerCase().includes(q))
-    );
-    buildTable(tableEl, rows, def.columns);
-  }
-  searchEl.addEventListener('input', e => {
-    expandRefSection(def.id);
-    renderFiltered(e.target.value);
-  });
-  renderFiltered('');
-  document.getElementById(`badge-${def.id}`).textContent = DATA[def.data].length;
-}
+// ---- single search across every reference table ----
+const refGlobalSearchEl = document.getElementById('ref-global-search');
+const refEmptyStateEl = document.getElementById('ref-empty-state');
 
-REF_TABLES.forEach(wireRefTable);
+function renderAllRefTables(q) {
+  q = (q || '').trim().toLowerCase();
+  let anyMatch = false;
+  REF_TABLES.forEach(def => {
+    const tableEl = document.getElementById(`ref-${def.id}`);
+    const sec = document.getElementById(`sec-${def.id}`);
+    const navLink = document.querySelector(`#ref-nav a[data-target="${def.id}"]`);
+    const keys = def.columns.map(c => c.key);
+    const all = DATA[def.data];
+    const rows = !q ? all : all.filter(r => keys.some(k => (r[k] || '').toLowerCase().includes(q)));
+    buildTable(tableEl, rows, def.columns);
+    document.getElementById(`badge-${def.id}`).textContent = rows.length;
+    if (navLink) navLink.querySelector('.count').textContent = rows.length;
+    if (q) {
+      const hasMatch = rows.length > 0;
+      sec.classList.toggle('no-match', !hasMatch);
+      sec.classList.toggle('expanded', hasMatch);
+      if (navLink) navLink.classList.toggle('no-match', !hasMatch);
+      if (hasMatch) anyMatch = true;
+    } else {
+      sec.classList.remove('no-match', 'expanded');
+      if (navLink) navLink.classList.remove('no-match');
+    }
+  });
+  refEmptyStateEl.hidden = !(q && !anyMatch);
+}
 
 document.getElementById('ref-nav').innerHTML = REF_TABLES.map(def =>
   `<a href="#sec-${def.id}" data-target="${def.id}">${escapeHtml(def.nav)} <span class="count">${DATA[def.data].length}</span></a>`
 ).join('');
+
+function browseToRefSection(id) {
+  // browse mode: clear any active global search, show every section again, expand just one
+  refGlobalSearchEl.value = '';
+  renderAllRefTables('');
+  expandRefSection(id);
+}
+
 document.getElementById('ref-nav').addEventListener('click', e => {
   const a = e.target.closest('a[data-target]');
-  if (a) expandRefSection(a.dataset.target);
+  if (a) browseToRefSection(a.dataset.target);
 });
 
 document.querySelectorAll('.ref-toggle').forEach(btn => {
@@ -1481,8 +1498,14 @@ document.querySelectorAll('.ref-toggle').forEach(btn => {
   });
 });
 
-function jumpToRefTable(refId, query) {
-  return jumpToRefSearch(`${refId}-table-search`, query);
+refGlobalSearchEl.addEventListener('input', e => renderAllRefTables(e.target.value));
+renderAllRefTables('');
+
+function jumpToRefBrowse(id) {
+  document.querySelector('#tabs button[data-panel="reference"]').click();
+  browseToRefSection(id);
+  setTimeout(() => document.getElementById(`sec-${id}`).scrollIntoView({ block: 'start' }), 50);
+  return false;
 }
 
 // deep link support: #4624
