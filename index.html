@@ -498,12 +498,22 @@
     letter-spacing: 0.06em;
     color: var(--muted);
     font-weight: 600;
+    position: sticky;
+    top: 0;
+    background: var(--surface);
   }
   table.ref-table td:first-child, table.ref-table th:first-child {
     font-family: ui-monospace, monospace;
     white-space: nowrap;
   }
-  .table-scroll { overflow-x: auto; }
+  .table-scroll { overflow-x: auto; overflow-y: auto; max-height: 400px; }
+  .ref-search-input {
+    width: 100%; font: inherit; font-size: 0.84rem; padding: 8px 11px; border-radius: 8px;
+    border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink);
+    outline: none; margin-bottom: 12px; box-sizing: border-box;
+  }
+  .ref-search-input:focus { border-color: var(--accent); }
+  .ref-count { font-size: 0.72rem; color: var(--muted); font-family: ui-monospace, monospace; margin: -8px 0 12px; }
 
   .reflink-btn {
     appearance: none;
@@ -553,6 +563,7 @@
     box-shadow: var(--shadow);
     padding: 20px 22px 24px;
     margin-bottom: 18px;
+    scroll-margin-top: 76px;
   }
   .ref-section h2 {
     font-size: 1.02rem;
@@ -562,6 +573,47 @@
     margin: 0 0 14px;
     color: var(--muted);
     font-size: 0.83rem;
+  }
+
+  .ref-nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: var(--bg);
+    padding: 12px 0 14px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .ref-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 5px 6px 5px 12px;
+    white-space: nowrap;
+  }
+  .ref-nav a:hover { border-color: var(--accent); color: var(--accent); }
+  .ref-nav a .count {
+    font-family: ui-monospace, monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--muted);
+    background: var(--surface-2);
+    border-radius: 999px;
+    padding: 1px 7px;
+  }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 
   footer.foot {
@@ -648,87 +700,97 @@
   </div>
 
   <div class="panel" id="panel-reference">
-    <div class="ref-section">
+    <nav class="ref-nav" id="ref-nav"></nav>
+    <div class="ref-section" id="sec-ntlm">
       <h2>NTLM / Kerberos logon validation error codes</h2>
       <p class="sub">Seen in the <span class="mono">Error Code</span> field of Event ID 4776.</p>
+      <input type="text" id="ntlm-table-search" class="mono ref-search-input" placeholder="e.g. C000006A, locked out…" />
       <div class="table-scroll" id="ref-ntlm"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-kerberos">
       <h2>Kerberos result codes</h2>
       <p class="sub">Seen in the <span class="mono">Result Code</span> field of Kerberos ticket events
         4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, 4821, and 4824.</p>
+      <input type="text" id="kerberos-table-search" class="mono ref-search-input" placeholder="e.g. 0x25, clock skew…" />
       <div class="table-scroll" id="ref-kerberos"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-kerberos-enctype">
       <h2>Kerberos encryption types</h2>
       <p class="sub">Seen in the <span class="mono">Ticket Encryption Type</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, and 4777.</p>
+      <input type="text" id="kerberos-enctype-table-search" class="mono ref-search-input" placeholder="e.g. 0x12, AES256, RC4…" />
       <div class="table-scroll" id="ref-kerberos-enctype"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-kerberos-preauth">
       <h2>Kerberos pre-authentication types</h2>
       <p class="sub">Seen in the <span class="mono">Pre-Authentication Type</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, and 4824.</p>
+      <input type="text" id="kerberos-preauth-table-search" class="mono ref-search-input" placeholder="e.g. 2, PKINIT, encrypted timestamp…" />
       <div class="table-scroll" id="ref-kerberos-preauth"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-kerberos-ticketopts">
       <h2>Kerberos ticket options (KDC Options) flags</h2>
       <p class="sub">Bit flags making up the <span class="mono">Ticket Options</span> field of Kerberos ticket
         events 4768, 4769, 4770, 4771, 4772, 4774, 4775, 4777, 4820, and 4821 &mdash; OR the relevant bit masks
         together to decode a value (e.g. 0x40810010 = forwardable + renewable + canonicalize + renewable-ok).</p>
+      <input type="text" id="kerberos-ticketopts-table-search" class="mono ref-search-input" placeholder="e.g. forwardable, 0x800000…" />
       <div class="table-scroll" id="ref-kerberos-ticketopts"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-logontype">
       <h2>Logon Type codes</h2>
       <p class="sub">Seen in the <span class="mono">Logon Type</span> field of logon-related Security events
         (4624, 4625, 4634, 4647, 4648, 4649, 4675, 4779, 4800&ndash;4803, 4964, 5378, 5632, 5633).</p>
+      <input type="text" id="logontype-table-search" class="mono ref-search-input" placeholder="e.g. 10, RemoteInteractive, RDP…" />
       <div class="table-scroll" id="ref-logontype"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-protocol">
       <h2>IP protocol numbers</h2>
       <p class="sub">Seen in the <span class="mono">Protocol</span> field of IPsec and Windows Firewall
         events (4709&ndash;4712, 4944&ndash;4958, 5031, 5040&ndash;5048, 5140, 5150&ndash;5159, and the
         5440&ndash;5477 range) &mdash; 67 events in total.</p>
+      <input type="text" id="protocol-table-search" class="mono ref-search-input" placeholder="e.g. 6, tcp, udp, icmp…" />
       <div class="table-scroll" id="ref-protocol"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-nps">
       <h2>NPS (RADIUS) reason codes</h2>
       <p class="sub">Seen in the <span class="mono">Reason Code</span> field of Network Policy Server events
         6272&ndash;6280.</p>
+      <input type="text" id="nps-table-search" class="mono ref-search-input" placeholder="e.g. 36, locked out, EAP…" />
       <div class="table-scroll" id="ref-nps"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-disconnect">
       <h2>RDS client disconnect reason codes</h2>
       <p class="sub">Seen in Event ID 40 (TerminalServices‑LocalSessionManager).</p>
+      <input type="text" id="disconnect-table-search" class="mono ref-search-input" placeholder="e.g. 0x00000001, administrative…" />
       <div class="table-scroll" id="ref-disconnect"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-sharepoint">
       <h2>SharePoint audit event types</h2>
       <p class="sub">Separate numbering scheme from Windows Event Log IDs — not cross‑referenced with the main catalogue.</p>
+      <input type="text" id="sharepoint-table-search" class="mono ref-search-input" placeholder="e.g. opened, deleted, checked out…" />
       <div class="table-scroll" id="ref-sharepoint"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-matrix">
       <h2>Full audit policy → Event ID matrix</h2>
       <p class="sub">Raw Group Policy audit category mapping, before expansion into individual events.</p>
+      <input type="text" id="matrix-table-search" class="mono ref-search-input" placeholder="e.g. Logon/Logoff, 4624…" />
       <div class="table-scroll" id="ref-matrix"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-mitre">
       <h2>MITRE ATT&amp;CK ↔ Event ID mapping</h2>
       <p class="sub">1,417 technique&ndash;event associations across 390 ATT&amp;CK techniques and 48 Security-log
         events. High-fan-out events (e.g. 4688 Process Creation maps to 286 techniques) are truncated in the
         main catalogue's detail view — this is the full table. Search by technique ID, technique name, or
         event ID.</p>
-      <input type="text" id="mitre-table-search" class="mono" placeholder="e.g. T1059, Kerberoasting, 4688…"
-        style="width:100%;font:inherit;font-size:0.84rem;padding:8px 11px;border-radius:8px;border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink);outline:none;margin-bottom:12px;box-sizing:border-box;" />
+      <input type="text" id="mitre-table-search" class="mono ref-search-input" placeholder="e.g. T1059, Kerberoasting, 4688…" />
       <div class="table-scroll" id="ref-mitre"></div>
     </div>
-    <div class="ref-section">
+    <div class="ref-section" id="sec-ntstatus">
       <h2>NTSTATUS codes</h2>
       <p class="sub">1,795 official Windows NTSTATUS values (code, symbolic name, and description) &mdash; the
         full range returned in fields like <span class="mono">Status</span> / <span class="mono">Sub Status</span>
         on events such as 4625 (An account failed to log on). Search by code or name.</p>
-      <input type="text" id="ntstatus-table-search" class="mono" placeholder="e.g. 0xC000006A, WRONG_PASSWORD, logon…"
-        style="width:100%;font:inherit;font-size:0.84rem;padding:8px 11px;border-radius:8px;border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink);outline:none;margin-bottom:12px;box-sizing:border-box;" />
+      <input type="text" id="ntstatus-table-search" class="mono ref-search-input" placeholder="e.g. 0xC000006A, WRONG_PASSWORD, logon…" />
       <div class="table-scroll" id="ref-ntstatus"></div>
     </div>
   </div>
@@ -1260,87 +1322,66 @@ function buildTable(container, rows, columns) {
   container.innerHTML = `<table class="ref-table">${thead}${tbody}</table>`;
 }
 
-buildTable(document.getElementById('ref-ntlm'), DATA.ntlm_error_codes, [
-  { key: 'error_code', label: 'Code' }, { key: 'reason', label: 'Reason' },
-]);
-buildTable(document.getElementById('ref-kerberos'), DATA.kerberos_result_codes, [
-  { key: 'result_code', label: 'Code' }, { key: 'description', label: 'Description' }, { key: 'notes', label: 'Notes' },
-]);
-buildTable(document.getElementById('ref-kerberos-enctype'), DATA.kerberos_encryption_types, [
-  { key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'note', label: 'Note' },
-]);
-buildTable(document.getElementById('ref-kerberos-preauth'), DATA.kerberos_preauth_types, [
-  { key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'note', label: 'Note' },
-]);
-buildTable(document.getElementById('ref-kerberos-ticketopts'), DATA.kerberos_ticket_options_flags, [
-  { key: 'bit_mask', label: 'Bit Mask' }, { key: 'flag_name', label: 'Flag' }, { key: 'description', label: 'Description' },
-]);
-buildTable(document.getElementById('ref-logontype'), DATA.logon_type_codes, [
-  { key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'description', label: 'Description' },
-]);
-buildTable(document.getElementById('ref-protocol'), DATA.ip_protocol_numbers, [
-  { key: 'number', label: 'Number' }, { key: 'keyword', label: 'Keyword' }, { key: 'description', label: 'Description' },
-]);
-buildTable(document.getElementById('ref-nps'), DATA.nps_reason_codes, [
-  { key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'description', label: 'Description' },
-]);
-buildTable(document.getElementById('ref-disconnect'), DATA.disconnect_reason_codes, [
-  { key: 'reason_code', label: 'Code' }, { key: 'reason', label: 'Reason' },
-]);
-buildTable(document.getElementById('ref-sharepoint'), DATA.sharepoint_audit_types, [
-  { key: 'audit_event_type_id', label: 'Type ID' }, { key: 'description', label: 'Description' },
-]);
-buildTable(document.getElementById('ref-matrix'), DATA.policy_matrix, [
-  { key: 'group_policy_group', label: 'Group' },
-  { key: 'group_policy_option', label: 'Option' },
-  { key: 'event_ids', label: 'Event IDs' },
-]);
-
-// ---- MITRE ATT&CK mapping table (filterable - 1,417 rows) ----
-const MITRE_COLUMNS = [
-  { key: 'event_id', label: 'Event ID' },
-  { key: 'technique_id', label: 'Technique ID' },
-  { key: 'technique', label: 'Technique' },
-  { key: 'tactics', label: 'Tactic(s)' },
-  { key: 'audit_category', label: 'Audit Category' },
-  { key: 'audit_sub_category', label: 'Audit Subcategory' },
+// Every reference table: id, data key, nav label, columns (key+label; all keys are
+// also the search keys — every visible column is searchable), and whether the table
+// starts out empty-search-shows-everything (all of them do).
+const REF_TABLES = [
+  { id: 'ntlm', nav: 'NTLM/Kerberos codes', data: 'ntlm_error_codes',
+    columns: [{ key: 'error_code', label: 'Code' }, { key: 'reason', label: 'Reason' }] },
+  { id: 'kerberos', nav: 'Kerberos result codes', data: 'kerberos_result_codes',
+    columns: [{ key: 'result_code', label: 'Code' }, { key: 'description', label: 'Description' }, { key: 'notes', label: 'Notes' }] },
+  { id: 'kerberos-enctype', nav: 'Kerberos encryption types', data: 'kerberos_encryption_types',
+    columns: [{ key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'note', label: 'Note' }] },
+  { id: 'kerberos-preauth', nav: 'Kerberos pre-auth types', data: 'kerberos_preauth_types',
+    columns: [{ key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'note', label: 'Note' }] },
+  { id: 'kerberos-ticketopts', nav: 'Kerberos ticket options', data: 'kerberos_ticket_options_flags',
+    columns: [{ key: 'bit_mask', label: 'Bit Mask' }, { key: 'flag_name', label: 'Flag' }, { key: 'description', label: 'Description' }] },
+  { id: 'logontype', nav: 'Logon Type codes', data: 'logon_type_codes',
+    columns: [{ key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'description', label: 'Description' }] },
+  { id: 'protocol', nav: 'IP protocol numbers', data: 'ip_protocol_numbers',
+    columns: [{ key: 'number', label: 'Number' }, { key: 'keyword', label: 'Keyword' }, { key: 'description', label: 'Description' }] },
+  { id: 'nps', nav: 'NPS reason codes', data: 'nps_reason_codes',
+    columns: [{ key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'description', label: 'Description' }] },
+  { id: 'disconnect', nav: 'RDS disconnect codes', data: 'disconnect_reason_codes',
+    columns: [{ key: 'reason_code', label: 'Code' }, { key: 'reason', label: 'Reason' }] },
+  { id: 'sharepoint', nav: 'SharePoint audit types', data: 'sharepoint_audit_types',
+    columns: [{ key: 'audit_event_type_id', label: 'Type ID' }, { key: 'description', label: 'Description' }] },
+  { id: 'matrix', nav: 'Audit policy matrix', data: 'policy_matrix',
+    columns: [{ key: 'group_policy_group', label: 'Group' }, { key: 'group_policy_option', label: 'Option' }, { key: 'event_ids', label: 'Event IDs' }] },
+  { id: 'mitre', nav: 'MITRE ATT&CK mapping', data: 'mitre_attack_mapping',
+    columns: [
+      { key: 'event_id', label: 'Event ID' }, { key: 'technique_id', label: 'Technique ID' },
+      { key: 'technique', label: 'Technique' }, { key: 'tactics', label: 'Tactic(s)' },
+      { key: 'audit_category', label: 'Audit Category' }, { key: 'audit_sub_category', label: 'Audit Subcategory' },
+    ] },
+  { id: 'ntstatus', nav: 'NTSTATUS codes', data: 'ntstatus_codes',
+    columns: [{ key: 'code', label: 'Code' }, { key: 'name', label: 'Name' }, { key: 'description', label: 'Description' }] },
 ];
-const mitreTableEl = document.getElementById('ref-mitre');
-const mitreSearchEl = document.getElementById('mitre-table-search');
-function renderMitreTable(q) {
-  q = (q || '').trim().toLowerCase();
-  const rows = !q ? DATA.mitre_attack_mapping : DATA.mitre_attack_mapping.filter(r =>
-    r.event_id.toLowerCase().includes(q) ||
-    r.technique_id.toLowerCase().includes(q) ||
-    r.technique.toLowerCase().includes(q) ||
-    r.tactics.toLowerCase().includes(q) ||
-    r.audit_category.toLowerCase().includes(q) ||
-    r.audit_sub_category.toLowerCase().includes(q)
-  );
-  buildTable(mitreTableEl, rows, MITRE_COLUMNS);
-}
-mitreSearchEl.addEventListener('input', e => renderMitreTable(e.target.value));
-renderMitreTable('');
 
-// ---- NTSTATUS codes table (filterable - 1,795 rows) ----
-const NTSTATUS_COLUMNS = [
-  { key: 'code', label: 'Code' },
-  { key: 'name', label: 'Name' },
-  { key: 'description', label: 'Description' },
-];
-const ntstatusTableEl = document.getElementById('ref-ntstatus');
-const ntstatusSearchEl = document.getElementById('ntstatus-table-search');
-function renderNtstatusTable(q) {
-  q = (q || '').trim().toLowerCase();
-  const rows = !q ? DATA.ntstatus_codes : DATA.ntstatus_codes.filter(r =>
-    r.code.toLowerCase().includes(q) ||
-    r.name.toLowerCase().includes(q) ||
-    r.description.toLowerCase().includes(q)
-  );
-  buildTable(ntstatusTableEl, rows, NTSTATUS_COLUMNS);
+function wireRefTable(def) {
+  const tableEl = document.getElementById(`ref-${def.id}`);
+  const searchEl = document.getElementById(`${def.id}-table-search`);
+  const keys = def.columns.map(c => c.key);
+  function renderFiltered(q) {
+    q = (q || '').trim().toLowerCase();
+    const rows = !q ? DATA[def.data] : DATA[def.data].filter(r =>
+      keys.some(k => (r[k] || '').toLowerCase().includes(q))
+    );
+    buildTable(tableEl, rows, def.columns);
+  }
+  searchEl.addEventListener('input', e => renderFiltered(e.target.value));
+  renderFiltered('');
 }
-ntstatusSearchEl.addEventListener('input', e => renderNtstatusTable(e.target.value));
-renderNtstatusTable('');
+
+REF_TABLES.forEach(wireRefTable);
+
+document.getElementById('ref-nav').innerHTML = REF_TABLES.map(def =>
+  `<a href="#sec-${def.id}">${escapeHtml(def.nav)} <span class="count">${DATA[def.data].length}</span></a>`
+).join('');
+
+function jumpToRefTable(refId, query) {
+  return jumpToRefSearch(`${refId}-table-search`, query);
+}
 
 // deep link support: #4624
 if (location.hash) {

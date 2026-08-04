@@ -182,8 +182,20 @@ dropdown, which stopped being usable once the catalogue grew past ~40
 logs); toggle to show only ASD/ACSC priority logs; active filters surface
 as removable chips above the results. View full detail — description,
 sample log text, MITRE ATT&CK mapping, and how-to-collect configuration
-steps — plus a reference-tables tab for the NTLM/disconnect code lookups
-and the raw audit policy matrix. Open it directly in a browser.
+steps — plus a Reference tables tab covering 13 code/lookup tables (NTLM
+and Kerberos error/result codes, Kerberos encryption/pre-auth/ticket-option
+codes, Logon Type, IP protocol numbers, NPS reason codes, RDS disconnect
+codes, SharePoint audit types, the raw audit policy matrix, the MITRE
+ATT&CK mapping, and the full NTSTATUS reference). Every reference table
+has its own search box, and a sticky jump-nav at the top of the tab lists
+all 13 with their row counts and scrolls straight to any one of them —
+added once the tab grew past a handful of tables and scrolling to find one
+stopped being practical. Every table (both on the Reference tab and
+inline on an event's detail view) is also height-capped with its own
+internal scroll and a sticky header row, so a single 1,795-row table can't
+push the rest of the page — or, on events like 4768 that pull in four
+Kerberos tables at once, the whole detail view — out to an unreasonable
+length. Open it directly in a browser.
 
 ## Source
 
