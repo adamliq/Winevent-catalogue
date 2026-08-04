@@ -127,7 +127,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 
 ## Web lookup
 
-`site/index.html` is a self-contained (no build step, no external requests)
+`index.html` is a self-contained (no build step, no external requests)
 lookup page: search all 4,737 events by ID or keyword; filter by Log or
 Category via searchable multi-select comboboxes (logs grouped by provider
 family, e.g. all `Microsoft-Windows-AppLocker/*` variants collapse under
