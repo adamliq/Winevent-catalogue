@@ -111,6 +111,15 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   common logon-failure codes inline on 4625's detail view, with a link
   through to the full, searchable 1,795-row table on the Reference tables
   tab.
+- `data/reference/windows_message_tokens.csv` / `.json` — 17 Windows
+  message-table string references (the raw `%%NNNN` tokens Windows
+  substitutes into rendered event text): 11 `Sub Status` tokens seen on
+  Event ID 4625 (e.g. `%%2313` = clock skew, `%%2311` = account locked
+  out), plus 6 `Logon Process` / `Authentication Package` tokens (e.g.
+  `%%1833` = NtLmSsp, `%%1841` = Kerberos) seen across the logon-related
+  Security events. The web lookup page shows the full table inline on
+  4625 (which has both kinds of token) and the Logon Process/Package
+  subset inline on the other 15 events that carry those fields.
 - `data/reference/kerberos_encryption_types.csv` / `.json` — the 16
   Kerberos ticket encryption types (e.g. `0x12` = `AES256-CTS-HMAC-SHA1-96`,
   `0x17` = `ARCFOUR-HMAC` / RC4-HMAC), seen in the `Ticket Encryption Type`
@@ -182,16 +191,17 @@ dropdown, which stopped being usable once the catalogue grew past ~40
 logs); toggle to show only ASD/ACSC priority logs; active filters surface
 as removable chips above the results. View full detail — description,
 sample log text, MITRE ATT&CK mapping, and how-to-collect configuration
-steps — plus a Reference tables tab covering 13 code/lookup tables (NTLM
+steps — plus a Reference tables tab covering 14 code/lookup tables (NTLM
 and Kerberos error/result codes, Kerberos encryption/pre-auth/ticket-option
 codes, Logon Type, IP protocol numbers, NPS reason codes, RDS disconnect
 codes, SharePoint audit types, the raw audit policy matrix, the MITRE
-ATT&CK mapping, and the full NTSTATUS reference). A single search box at
-the top of the tab filters every one of the 13 tables at once — matching
-sections expand and show only their matching rows, non-matching sections
+ATT&CK mapping, the full NTSTATUS reference, and the Windows `%%`
+message-token table). A single search box at the top of the tab filters
+every one of the 14 tables at once — matching sections expand and show
+only their matching rows, non-matching sections
 disappear entirely (nav pills included), and clearing the box returns
 everything to its default collapsed state; a sticky jump-nav next to the
-search box lists all 13 with live row counts and scrolls straight to any
+search box lists all 14 with live row counts and scrolls straight to any
 one of them, switching back to plain browse mode (clearing the search) as
 it does — added once the tab grew past a handful of tables and scrolling
 to find one stopped being practical. Every table (both on the Reference
@@ -199,7 +209,7 @@ tab and inline on an event's detail view) is also height-capped with its
 own internal scroll and a sticky header row, so a single 1,795-row table
 can't push the rest of the page — or, on events like 4768 that pull in
 four Kerberos tables at once, the whole detail view — out to an
-unreasonable length. All 13 Reference tables collapse into an accordion
+unreasonable length. All 14 Reference tables collapse into an accordion
 by default (one click to expand, or the global search auto-expands
 whichever sections actually match) so the tab itself opens as a
 single-screen list of headings instead of every table rendered open at
