@@ -95,6 +95,23 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     sl <channel> /e:true` (or Event Viewer's "Enable Log") once the
     feature itself is turned on. The web lookup page shows it as a "Group
     Policy path" card in the detail view, with that caveat.
+  - `opposite_event_id` — for 109 rows forming 54 known success/failure
+    pairs of the same underlying operation with two distinct event IDs
+    (e.g. 4624 successful logon ↔ 4625 failed logon; 6272 NPS access
+    granted ↔ 6273 access denied; 51026 valid DHCP Info-request reply ↔
+    51027 invalid reply), the partner event's ID. Curated by manually
+    reviewing every same-subcategory description pair the catalogue's own
+    text flagged as plausible opposites (near-identical wording except for
+    a success/fail word), discarding false matches (state-machine states
+    like VPN "Connecting"/"Disconnected" aren't a success/failure pair;
+    cross-matched pairs where the operations didn't actually correspond);
+    left blank everywhere there wasn't a clear, confidently-verified
+    opposite. One pair (4656/4663, read/write to removable media) only
+    applies to those IDs' `Removable Media / Device (PNP)` rows — both
+    IDs mean something unrelated elsewhere in the Security log, so the
+    pairing is scoped to that specific category, not the bare event ID.
+    The web lookup page shows it as a clickable "Opposite outcome" field
+    that jumps straight to the paired event's own detail view.
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
