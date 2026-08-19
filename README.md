@@ -79,6 +79,39 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     not a guarantee of the real Windows event schema. The web lookup page
     renders it as a "Field Schema" section in the detail view, below the
     raw sample.
+  - `group_policy_path` — for the ~1,362 events whose log isn't driven by
+    the Advanced Audit Policy system (so `how_to_collect` is blank), the
+    Group Policy path that governs the underlying feature generating that
+    event — e.g. AppLocker events point at `Application Control
+    Policies\AppLocker`, BitLocker events at `BitLocker Drive Encryption`,
+    PowerShell script-block events at `Turn on PowerShell Script Block
+    Logging`. Populated only for logs with a well-established, documented
+    native Windows GPO path (curated by provider, not guessed per event);
+    left blank everywhere else, including every event that already has
+    `how_to_collect` — the two are mutually exclusive by design, since
+    those already get detailed audit-subcategory guidance. It's the
+    governing policy area for the feature, not a per-event "enable this
+    log" toggle — many of these channels still need a separate `wevtutil
+    sl <channel> /e:true` (or Event Viewer's "Enable Log") once the
+    feature itself is turned on. The web lookup page shows it as a "Group
+    Policy path" card in the detail view, with that caveat.
+  - `opposite_event_id` — for 109 rows forming 54 known success/failure
+    pairs of the same underlying operation with two distinct event IDs
+    (e.g. 4624 successful logon ↔ 4625 failed logon; 6272 NPS access
+    granted ↔ 6273 access denied; 51026 valid DHCP Info-request reply ↔
+    51027 invalid reply), the partner event's ID. Curated by manually
+    reviewing every same-subcategory description pair the catalogue's own
+    text flagged as plausible opposites (near-identical wording except for
+    a success/fail word), discarding false matches (state-machine states
+    like VPN "Connecting"/"Disconnected" aren't a success/failure pair;
+    cross-matched pairs where the operations didn't actually correspond);
+    left blank everywhere there wasn't a clear, confidently-verified
+    opposite. One pair (4656/4663, read/write to removable media) only
+    applies to those IDs' `Removable Media / Device (PNP)` rows — both
+    IDs mean something unrelated elsewhere in the Security log, so the
+    pairing is scoped to that specific category, not the bare event ID.
+    The web lookup page shows it as a clickable "Opposite outcome" field
+    that jumps straight to the paired event's own detail view.
 
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
@@ -332,6 +365,21 @@ reference to Microsoft's authoritative event schema — useful for seeing
 at a glance what a given event's `EventData` actually looks like without
 reading the full rendered sample, but not a substitute for the real
 schema when building a parser against live events.
+
+Finally, added `group_policy_path` (see above) for events whose log isn't
+driven by the Advanced Audit Policy system: went through every log with
+no `how_to_collect` value (most of the bulk ETW import — 188 logs in
+total needed checking) and, for the subset with a well-established native
+Windows GPO path I could point to with confidence (AppLocker, BitLocker,
+Windows Defender, Code Integrity/Device Guard, Windows Firewall with
+Advanced Security, WinRM, Remote Desktop Services — session host and
+client separately, NTLM auditing, Windows Hello for Business, certificate
+auto-enrollment, Windows Update, UAC, Smart Card, and Application
+Compatibility), added it — 1,362 events across 56 logs. Left
+blank everywhere else on purpose: most Diagnostic/Debug/Analytic/Trace
+ETW channels in this catalogue are enabled per-channel via `wevtutil`
+or Event Viewer rather than a discoverable Group Policy ADMX setting, and
+a wrong GPO path in a reference catalogue is worse than a missing one.
 
 ## Bulk ETW manifest import
 
