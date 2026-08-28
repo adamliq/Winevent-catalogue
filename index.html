@@ -687,6 +687,120 @@
     html { scroll-behavior: auto; }
   }
 
+  /* ---- schema explorer ---- */
+  .se-stats {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: 12px;
+    overflow: hidden; margin: 0 0 18px;
+  }
+  .se-stats .se-stat { background: var(--surface); padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; }
+  .se-stats .se-stat .n { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 1.35rem; font-weight: 700; color: var(--ink); line-height: 1.1; }
+  .se-stats .se-stat .l { font-size: 0.72rem; color: var(--muted); }
+  @media (max-width: 720px) { .se-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+  .se-workspace { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; }
+  .se-main { min-width: 0; }
+  @media (max-width: 860px) { .se-workspace { grid-template-columns: 1fr; } }
+  .se-rail { position: sticky; top: 12px; display: flex; flex-direction: column; gap: 18px; }
+  .se-rail-group h4 { margin: 0 0 8px; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+
+  .se-mode-toggle { display: flex; background: var(--surface-2); border-radius: 9px; padding: 3px; gap: 2px; }
+  .se-mode-btn { flex: 1; border: none; background: transparent; color: var(--muted); font: inherit; font-size: 0.82rem; font-weight: 700; padding: 7px 4px; border-radius: 6px; cursor: pointer; }
+  .se-mode-btn.active { background: var(--surface); color: var(--accent); box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+
+  .se-log-list { display: flex; flex-direction: column; gap: 3px; max-height: 320px; overflow-y: auto; }
+  .se-log-chip {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 9px;
+    border-radius: 7px; border: 1px solid transparent; background: transparent; color: var(--ink);
+    font: inherit; font-size: 0.8rem; text-align: left; cursor: pointer; width: 100%;
+  }
+  .se-log-chip:hover { background: var(--surface-2); }
+  .se-log-chip.active { background: var(--surface-2); border-color: var(--accent); color: var(--accent); font-weight: 700; }
+  .se-log-chip .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .se-log-chip .n { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.72rem; color: var(--muted); flex-shrink: 0; }
+
+  .se-type-legend { display: flex; flex-direction: column; gap: 6px; }
+  .se-type-legend .row { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--muted); }
+  .se-type-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+  .se-type-dot.string { background: #5C6E8C; }
+  .se-type-dot.integer { background: #0e7490; }
+  .se-type-dot.hex { background: #b45309; }
+  .se-type-dot.ip { background: #7a4e9e; }
+  .se-type-dot.guid { background: #a14f72; }
+  .se-type-dot.sid { background: #be185d; }
+  .se-type-dot.path { background: #2f8f4e; }
+  .se-type-dot.enum { background: #ca8a04; }
+  .se-type-dot.principal { background: #0f766e; }
+  .se-type-dot.other { background: #6b7280; }
+
+  .se-toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+  .se-toolbar .search-box { flex: 1; min-width: 240px; }
+  .se-result-count { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.76rem; color: var(--muted); white-space: nowrap; }
+
+  .se-table-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: auto; background: var(--surface); max-height: 560px; }
+  table.se-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  table.se-table th {
+    text-align: left; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--muted); padding: 9px 12px; border-bottom: 1px solid var(--line); background: var(--surface-2);
+    white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0;
+  }
+  table.se-table th:hover { color: var(--accent); }
+  table.se-table th.se-sorted::after { content: " \2193"; color: var(--accent); }
+  table.se-table th.se-sorted.se-asc::after { content: " \2191"; }
+  table.se-table td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.se-table tr:last-child td { border-bottom: none; }
+  table.se-table tbody tr { cursor: pointer; }
+  table.se-table tbody tr:hover { background: var(--surface-2); }
+  .se-col-log { white-space: nowrap; color: var(--muted); max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+  .se-col-event .lbl { font-weight: 700; }
+  .se-col-event .st { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 1px; max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .se-fname { font-family: ui-monospace, monospace; font-size: 0.78rem; font-weight: 600; }
+  .se-fname .sec { color: var(--faint); }
+  table.se-table mark { background: #fde68a; color: #7c4a03; padding: 0 1px; border-radius: 2px; }
+  .se-type-chip { display: inline-flex; align-items: center; gap: 5px; font-family: ui-monospace, monospace; font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+  .se-col-loc { color: var(--muted); max-width: 260px; }
+  .se-empty { padding: 40px 16px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+  .se-explore-list { display: flex; flex-direction: column; gap: 8px; }
+  .se-event-card { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
+  .se-event-card summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 15px; cursor: pointer; }
+  .se-event-card summary::-webkit-details-marker { display: none; }
+  .se-event-card summary::before { content: "\25B8"; color: var(--muted); font-size: 0.72rem; transition: transform 0.15s ease; flex-shrink: 0; }
+  .se-event-card[open] summary::before { transform: rotate(90deg); }
+  .se-ec-title { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .se-ec-title .lbl { font-weight: 700; font-size: 0.85rem; }
+  .se-ec-title .meta { font-size: 0.74rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .se-ec-count { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.72rem; color: var(--muted); background: var(--surface-2); border-radius: 999px; padding: 2px 9px; flex-shrink: 0; }
+  .se-ec-body { padding: 0 15px 15px; display: flex; flex-direction: column; gap: 10px; }
+  .se-ec-section .sec-name { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: var(--faint); margin-bottom: 5px; }
+  .se-field-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .se-field-chip { display: inline-flex; align-items: center; gap: 5px; font-family: ui-monospace, monospace; font-size: 0.72rem; padding: 4px 8px; border-radius: 7px; background: var(--surface-2); border: 1px solid var(--line); cursor: pointer; color: var(--ink); }
+  .se-field-chip:hover { border-color: var(--accent); }
+  .se-no-fields-note { font-size: 0.78rem; color: var(--muted); font-style: italic; margin: 0; }
+
+  /* ---- schema field detail modal ---- */
+  .se-modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 100;
+    align-items: flex-start; justify-content: center; padding: 8vh 16px;
+  }
+  .se-modal-overlay.open { display: flex; }
+  .se-modal {
+    background: var(--surface); border: 1px solid var(--line-strong); border-radius: 14px;
+    box-shadow: var(--shadow); max-width: 520px; width: 100%; max-height: 78vh; overflow-y: auto;
+  }
+  .se-modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 18px 20px 14px; border-bottom: 1px solid var(--line); }
+  .se-modal-eyebrow { margin: 0 0 3px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); }
+  .se-modal-title { margin: 0; font-size: 1.1rem; font-family: ui-monospace, monospace; word-break: break-word; }
+  .se-modal-subtitle { margin: 3px 0 0; font-size: 0.8rem; color: var(--muted); }
+  .se-modal-close { appearance: none; border: none; background: var(--surface-2); color: var(--muted); width: 28px; height: 28px; border-radius: 8px; font-size: 1.1rem; line-height: 1; cursor: pointer; flex-shrink: 0; }
+  .se-modal-close:hover { color: var(--ink); }
+  .se-modal-body { padding: 16px 20px 20px; }
+  .se-modal-grid { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: 0 0 16px; }
+  .se-modal-grid dt { font-size: 0.72rem; font-weight: 700; color: var(--muted); white-space: nowrap; padding-top: 1px; }
+  .se-modal-grid dd { margin: 0; font-size: 0.85rem; color: var(--ink); }
+  .se-modal-view-event { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--accent); text-decoration: none; font-size: 0.85rem; }
+  .se-modal-view-event:hover { text-decoration: underline; }
+
   footer.foot {
     color: var(--faint);
     font-size: 0.76rem;
@@ -727,6 +841,7 @@
   <nav class="tabs" id="tabs">
     <button class="active" data-panel="events">Events</button>
     <button data-panel="reference">Reference tables</button>
+    <button data-panel="schema">Schema explorer</button>
   </nav>
 
   <div class="panel active" id="panel-events">
@@ -922,6 +1037,77 @@
         of Event ID 4625 (An account failed to log on), and the <span class="mono">Logon Process</span> /
         <span class="mono">Authentication Package</span> fields of logon-related Security events.</p>
       <div class="table-scroll" id="ref-msgtokens"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-schema">
+    <p class="ref-empty-state" style="margin-bottom:14px;">Search, filter and browse every field parsed out of an event's sample log text — only events with a
+      detailed field schema (beyond the common header envelope) appear here.</p>
+    <div class="se-stats" id="se-stats"></div>
+    <div class="se-workspace">
+      <aside class="se-rail">
+        <div class="se-rail-group">
+          <h4>View</h4>
+          <div class="se-mode-toggle">
+            <button id="se-mode-search-btn" class="se-mode-btn active" type="button">Search</button>
+            <button id="se-mode-explore-btn" class="se-mode-btn" type="button">Explore</button>
+          </div>
+        </div>
+        <div class="se-rail-group">
+          <h4>Log</h4>
+          <div class="se-log-list" id="se-log-list"></div>
+        </div>
+        <div class="se-rail-group">
+          <h4>Field type</h4>
+          <div class="se-type-legend" id="se-type-legend"></div>
+        </div>
+      </aside>
+
+      <div class="se-main">
+        <div class="se-toolbar">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input id="se-search-box" type="search" placeholder="Search field names, event IDs, descriptions…" autocomplete="off" aria-label="Search schema fields" />
+          </div>
+          <span class="se-result-count" id="se-result-count"></span>
+        </div>
+
+        <div id="se-search-view">
+          <div class="se-table-wrap">
+            <table class="se-table">
+              <thead>
+                <tr>
+                  <th data-sort="log">Log</th>
+                  <th data-sort="event">Event</th>
+                  <th data-sort="name">Field</th>
+                  <th data-sort="type">Type</th>
+                  <th>Category</th>
+                </tr>
+              </thead>
+              <tbody id="se-fields-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="se-explore-view" class="se-explore-list" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="se-modal-overlay" id="se-modal-overlay">
+    <div class="se-modal" role="dialog" aria-modal="true" aria-labelledby="se-modal-title">
+      <div class="se-modal-header">
+        <div>
+          <p class="se-modal-eyebrow" id="se-modal-eyebrow">Schema field</p>
+          <h2 class="se-modal-title" id="se-modal-title">—</h2>
+          <p class="se-modal-subtitle" id="se-modal-subtitle"></p>
+        </div>
+        <button class="se-modal-close" id="se-modal-close" type="button" aria-label="Close field details">×</button>
+      </div>
+      <div class="se-modal-body">
+        <dl class="se-modal-grid" id="se-modal-grid"></dl>
+        <a href="#" class="se-modal-view-event" id="se-modal-view-event">View this event →</a>
+      </div>
     </div>
   </div>
 
@@ -1609,6 +1795,222 @@ function jumpToEvent(eventId, log) {
   }, 50);
   return false;
 }
+
+// ---- schema explorer: search/filter/browse every field parsed out of an event's sample log text ----
+// Only the "header" block is common envelope (log name, source, event id, level, user, computer, description)
+// repeated near-identically on every event -- it isn't interesting to search, so it's excluded here.
+function seFlattenSchema(obj, prefix) {
+  const rows = [];
+  for (const k in obj) {
+    const v = obj[k];
+    const path = prefix ? `${prefix}.${k}` : k;
+    if (v && typeof v === 'object' && !Array.isArray(v)) {
+      rows.push(...seFlattenSchema(v, path));
+    } else {
+      rows.push({ path, name: k, section: prefix || '', type: v });
+    }
+  }
+  return rows;
+}
+
+const seEvents = events
+  .map(e => ({ e, fields: e.field_schema ? seFlattenSchema(e.field_schema, '').filter(f => !f.path.startsWith('header.')) : [] }))
+  .filter(x => x.fields.length > 0);
+
+const seFieldRows = seEvents.flatMap(({ e, fields }) => fields.map(f => ({ e, ...f })));
+
+const SE_TYPE_LABELS = {
+  string: 'string', integer: 'integer', hex: 'hex value', ip: 'IP address', guid: 'GUID',
+  sid: 'security identifier', path: 'file/registry path', enum: 'enumerated value',
+  principal: 'account principal', 'list<string>': 'list of strings'
+};
+function seTypeKey(t) { return SE_TYPE_LABELS[t] ? t : 'other'; }
+
+let seState = { mode: 'search', query: '', log: 'all', sortKey: 'log', sortDir: 'asc' };
+
+function seHighlight(text, q) {
+  const s = String(text == null ? '' : text);
+  if (!q) return escapeHtml(s);
+  const idx = s.toLowerCase().indexOf(q);
+  if (idx === -1) return escapeHtml(s);
+  return escapeHtml(s.slice(0, idx)) + '<mark>' + escapeHtml(s.slice(idx, idx + q.length)) + '</mark>' + escapeHtml(s.slice(idx + q.length));
+}
+
+function renderSeStats() {
+  const logs = new Set(seEvents.map(x => x.e.log));
+  const types = new Set(seFieldRows.map(r => seTypeKey(r.type)));
+  const stats = [
+    { n: seEvents.length.toLocaleString(), l: 'Documented events' },
+    { n: logs.size, l: 'Logs' },
+    { n: seFieldRows.length.toLocaleString(), l: 'Schema fields' },
+    { n: types.size, l: 'Field types' }
+  ];
+  document.getElementById('se-stats').innerHTML = stats.map(s => `<div class="se-stat"><span class="n">${s.n}</span><span class="l">${s.l}</span></div>`).join('');
+}
+
+function seRenderLogList() {
+  const counts = {};
+  seEvents.forEach(x => { counts[x.e.log] = (counts[x.e.log] || 0) + 1; });
+  const logsSorted = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+  const el = document.getElementById('se-log-list');
+  let html = `<button type="button" class="se-log-chip ${seState.log === 'all' ? 'active' : ''}" data-log="all"><span class="name">All logs</span><span class="n">${seEvents.length}</span></button>`;
+  html += logsSorted.map(log =>
+    `<button type="button" class="se-log-chip ${seState.log === log ? 'active' : ''}" data-log="${escapeHtml(log)}"><span class="name">${escapeHtml(log)}</span><span class="n">${counts[log]}</span></button>`
+  ).join('');
+  el.innerHTML = html;
+  el.querySelectorAll('.se-log-chip').forEach(btn => btn.addEventListener('click', () => { seState.log = btn.dataset.log; seRenderAll(); }));
+}
+
+function seRenderTypeLegend() {
+  const present = new Set(seFieldRows.map(r => seTypeKey(r.type)));
+  const order = ['string', 'integer', 'hex', 'ip', 'guid', 'sid', 'path', 'enum', 'principal', 'list<string>', 'other'];
+  document.getElementById('se-type-legend').innerHTML = order.filter(k => present.has(k))
+    .map(k => `<div class="row"><span class="se-type-dot ${k === 'list<string>' ? 'other' : k}"></span>${escapeHtml(SE_TYPE_LABELS[k] || 'other')}</div>`).join('');
+}
+
+function seSortRows(rows) {
+  const dir = seState.sortDir === 'asc' ? 1 : -1;
+  const keyFn = {
+    log: r => r.e.log + '|' + r.e.event_id + '|' + r.name,
+    event: r => r.e.event_id + '|' + r.name,
+    name: r => r.name,
+    type: r => r.type
+  }[seState.sortKey];
+  return rows.slice().sort((a, b) => keyFn(a).localeCompare(keyFn(b), undefined, { numeric: true }) * dir);
+}
+
+function seFieldRowMatches(r, q) {
+  const hay = [r.e.log, r.e.event_id, r.e.category, r.e.subcategory, r.e.description, r.path, r.name].join(' ').toLowerCase();
+  return hay.includes(q);
+}
+
+function seRenderSearchView() {
+  const q = seState.query.trim().toLowerCase();
+  let rows = seFieldRows.filter(r => (seState.log === 'all' || r.e.log === seState.log) && (!q || seFieldRowMatches(r, q)));
+  document.getElementById('se-result-count').textContent = `${rows.length.toLocaleString()} field${rows.length === 1 ? '' : 's'}`;
+  rows = seSortRows(rows);
+  document.querySelectorAll('table.se-table th[data-sort]').forEach(th => {
+    th.classList.toggle('se-sorted', th.dataset.sort === seState.sortKey);
+    th.classList.toggle('se-asc', th.dataset.sort === seState.sortKey && seState.sortDir === 'asc');
+  });
+  const body = document.getElementById('se-fields-body');
+  if (!rows.length) {
+    body.innerHTML = `<tr><td colspan="5"><div class="se-empty">No fields match &ldquo;${escapeHtml(seState.query)}&rdquo;. Try a different log or term.</div></td></tr>`;
+    return;
+  }
+  body.innerHTML = rows.map((r, i) => {
+    const tk = seTypeKey(r.type);
+    return `<tr data-idx="${i}">
+      <td class="se-col-log">${seHighlight(r.e.log, q)}</td>
+      <td class="se-col-event"><span class="lbl">Event ${escapeHtml(r.e.event_id)}</span><span class="st">${escapeHtml(r.e.description)}</span></td>
+      <td class="se-fname">${r.section ? `<span class="sec">${escapeHtml(r.section)}.</span>` : ''}${seHighlight(r.name, q)}</td>
+      <td><span class="se-type-chip"><span class="se-type-dot ${tk === 'list<string>' ? 'other' : tk}"></span>${escapeHtml(r.type)}</span></td>
+      <td class="se-col-loc">${escapeHtml(r.e.category)}${r.e.subcategory ? ' › ' + escapeHtml(r.e.subcategory) : ''}</td>
+    </tr>`;
+  }).join('');
+  body.querySelectorAll('tr[data-idx]').forEach(tr => {
+    tr.addEventListener('click', () => openSeFieldModal(rows[Number(tr.dataset.idx)]));
+  });
+}
+
+function seRenderExploreView() {
+  const q = seState.query.trim().toLowerCase();
+  let shown = seEvents.filter(x => seState.log === 'all' || x.e.log === seState.log);
+  if (q) {
+    shown = shown
+      .map(x => ({ e: x.e, fields: x.fields.filter(f => seFieldRowMatches({ e: x.e, ...f }, q)) }))
+      .filter(x => x.fields.length > 0 || [x.e.log, x.e.event_id, x.e.category, x.e.subcategory, x.e.description].join(' ').toLowerCase().includes(q));
+  }
+  document.getElementById('se-result-count').textContent = `${shown.length.toLocaleString()} event${shown.length === 1 ? '' : 's'}`;
+  const el = document.getElementById('se-explore-view');
+  if (!shown.length) {
+    el.innerHTML = `<div class="se-empty">No events match &ldquo;${escapeHtml(seState.query)}&rdquo;.</div>`;
+    return;
+  }
+  el.innerHTML = shown.map(({ e, fields }) => {
+    const sections = {};
+    fields.forEach(f => {
+      (sections[f.section] = sections[f.section] || []).push(f);
+    });
+    const body = Object.keys(sections).sort().map(sec => {
+      const chips = sections[sec].map(f =>
+        `<span class="se-field-chip" data-event-id="${escapeHtml(e.event_id)}" data-log="${escapeHtml(e.log)}" data-path="${escapeHtml(f.path)}"><span class="se-type-dot ${seTypeKey(f.type) === 'list<string>' ? 'other' : seTypeKey(f.type)}"></span>${seHighlight(f.name, q)}</span>`
+      ).join('');
+      return `<div class="se-ec-section"><div class="sec-name">${escapeHtml(sec || 'top level')}</div><div class="se-field-chips">${chips}</div></div>`;
+    }).join('') || `<p class="se-no-fields-note">No fields in this event matched &ldquo;${escapeHtml(seState.query)}&rdquo; — matched on the event's own log, ID, or description instead.</p>`;
+    return `<details class="se-event-card">
+      <summary>
+        <div class="se-ec-title"><span class="lbl">Event ${seHighlight(e.event_id, q)}</span><span class="meta">${escapeHtml(e.log)} &middot; ${seHighlight(e.description, q)}</span></div>
+        <span class="se-ec-count">${fields.length}</span>
+      </summary>
+      <div class="se-ec-body">${body}</div>
+    </details>`;
+  }).join('');
+  el.querySelectorAll('.se-field-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const row = seFieldRows.find(r => r.path === chip.dataset.path && r.e.event_id === chip.dataset.eventId && r.e.log === chip.dataset.log);
+      if (row) openSeFieldModal(row);
+    });
+  });
+}
+
+function seRenderAll() {
+  seRenderLogList();
+  if (seState.mode === 'search') seRenderSearchView(); else seRenderExploreView();
+}
+
+function openSeFieldModal(row) {
+  document.getElementById('se-modal-eyebrow').textContent = `${row.e.log} · Event ${row.e.event_id}`;
+  document.getElementById('se-modal-title').textContent = row.path;
+  document.getElementById('se-modal-subtitle').textContent = SE_TYPE_LABELS[row.type] || row.type;
+  const rows = [
+    ['Type', row.type],
+    ['Section', row.section || '(top level)'],
+    ['Event', `${row.e.event_id} — ${row.e.description}`],
+    ['Category', row.e.category],
+    ['Subcategory', row.e.subcategory || '—']
+  ];
+  document.getElementById('se-modal-grid').innerHTML = rows.map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`).join('');
+  const link = document.getElementById('se-modal-view-event');
+  link.onclick = () => { closeSeFieldModal(); return jumpToEvent(row.e.event_id, row.e.log); };
+  document.getElementById('se-modal-overlay').classList.add('open');
+}
+function closeSeFieldModal() {
+  document.getElementById('se-modal-overlay').classList.remove('open');
+}
+document.getElementById('se-modal-close').addEventListener('click', closeSeFieldModal);
+document.getElementById('se-modal-overlay').addEventListener('click', e => { if (e.target.id === 'se-modal-overlay') closeSeFieldModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSeFieldModal(); });
+
+document.getElementById('se-search-box').addEventListener('input', e => { seState.query = e.target.value; seRenderAll(); });
+document.getElementById('se-mode-search-btn').addEventListener('click', () => {
+  seState.mode = 'search';
+  document.getElementById('se-mode-search-btn').classList.add('active');
+  document.getElementById('se-mode-explore-btn').classList.remove('active');
+  document.getElementById('se-search-view').hidden = false;
+  document.getElementById('se-explore-view').hidden = true;
+  seRenderAll();
+});
+document.getElementById('se-mode-explore-btn').addEventListener('click', () => {
+  seState.mode = 'explore';
+  document.getElementById('se-mode-explore-btn').classList.add('active');
+  document.getElementById('se-mode-search-btn').classList.remove('active');
+  document.getElementById('se-search-view').hidden = true;
+  document.getElementById('se-explore-view').hidden = false;
+  seRenderAll();
+});
+document.querySelectorAll('table.se-table th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.sort;
+    if (seState.sortKey === key) seState.sortDir = seState.sortDir === 'asc' ? 'desc' : 'asc';
+    else { seState.sortKey = key; seState.sortDir = 'asc'; }
+    seRenderSearchView();
+  });
+});
+
+renderSeStats();
+seRenderTypeLegend();
+seRenderAll();
 
 // deep link support: #4624
 if (location.hash) {
