@@ -1,0 +1,114 @@
+[
+  {
+    "data_model": "Authentication",
+    "dataset": "Authentication",
+    "description": "Tracks authentication attempts and logon/logoff activity -- interactive, network, service, Kerberos, and RDP/smart-card logons.",
+    "key_cim_fields": "action (success|failure), app, dest, src, user, signature, signature_id, authentication_method, duration, reason",
+    "windows_sources": "Security: Audit Logon/Logoff, Audit Credential Validation, Audit Kerberos Authentication Service, Audit Kerberos Service Ticket Operations, Audit Account Lockout, Audit Special Logon, Audit Network Policy Server, Audit Other Account Logon/Logoff Events; Smart Card CHV verification; RDP client/server authentication events"
+  },
+  {
+    "data_model": "Change",
+    "dataset": "Change.Account_Management",
+    "description": "Tracks the create/modify/delete/enable/disable/lock/unlock lifecycle of user, computer, and group (security, distribution, application) accounts.",
+    "key_cim_fields": "action (created|deleted|modified|enabled|disabled), change_type, dest, object, object_category (user|group), src_user, status, user",
+    "windows_sources": "Security: Audit User/Computer Account Management, Audit Security/Distribution/Application Group Management, Audit Other Account Management Events; RDS local admin/RD Users group membership changes"
+  },
+  {
+    "data_model": "Change",
+    "dataset": "Change.Auditing_Changes",
+    "description": "Tracks changes to the audit policy itself and to authentication/authorization policy configuration.",
+    "key_cim_fields": "action, change_type, dest, object, result, src_user, status, user",
+    "windows_sources": "Security: Audit Audit Policy Change, Audit Authentication Policy Change, Audit Authorization Policy Change, Audit Other Policy Change Events"
+  },
+  {
+    "data_model": "Change",
+    "dataset": "Change.Endpoint_Changes",
+    "description": "Tracks broader host security-state changes -- startup, shutdown, and recovery from an audit failure.",
+    "key_cim_fields": "action, change_type, dest, object, status, user",
+    "windows_sources": "Security: Audit Security State Change"
+  },
+  {
+    "data_model": "Change",
+    "dataset": "Change.Network_Changes",
+    "description": "Tracks changes to host firewall and IPsec configuration -- rule/policy add, modify, delete, and reset-to-default.",
+    "key_cim_fields": "action, change_type, dest, dvc, object, rule, status, user",
+    "windows_sources": "Security: Audit MPSSVC Rule-Level Policy Change, Audit Filtering Platform Policy Change; the dedicated Windows Firewall With Advanced Security Firewall/FirewallVerbose/ConnectionSecurity/ConnectionSecurityVerbose channels"
+  },
+  {
+    "data_model": "Endpoint",
+    "dataset": "Endpoint.Processes",
+    "description": "Tracks process creation and termination on the endpoint.",
+    "key_cim_fields": "process, process_name, process_id, process_path, process_hash, parent_process, parent_process_id, dest, user",
+    "windows_sources": "Security: Audit Process Creation/Termination (4688/4689, 4696); Sysmon Event ID 1 (process create), 5 (process terminate), 27 (executable blocked)"
+  },
+  {
+    "data_model": "Endpoint",
+    "dataset": "Endpoint.Services",
+    "description": "Tracks Windows service lifecycle -- installed, started, stopped, or failed to start.",
+    "key_cim_fields": "service, service_name, service_hash, status, dest, signature",
+    "windows_sources": "Security: Audit Security System Extension (4697 service installed); System log Service Control Manager events (7000, 7031, 7036, and similar)"
+  },
+  {
+    "data_model": "Endpoint",
+    "dataset": "Endpoint.Filesystem",
+    "description": "Tracks file and network-share create/delete/modify/access activity.",
+    "key_cim_fields": "file_name, file_path, file_hash, action, dest, user",
+    "windows_sources": "Security: Audit File System, Audit File Share, Audit Detailed File Share, removable-media read/write (4656/4663); Sysmon Event ID 2, 11, 15, 23, 26, 28, 29"
+  },
+  {
+    "data_model": "Endpoint",
+    "dataset": "Endpoint.Registry",
+    "description": "Tracks Windows registry key and value create/modify/delete activity.",
+    "key_cim_fields": "registry_key_name, registry_value_name, registry_value_data, action, dest, user",
+    "windows_sources": "Security: Audit Registry (4657, 5039); Sysmon Event ID 12, 13, 14"
+  },
+  {
+    "data_model": "Network Traffic",
+    "dataset": "Network_Traffic",
+    "description": "Tracks network connections and the host firewall/IPsec allow-or-block decision made about them (not the rule configuration itself -- see Change.Network_Changes for that).",
+    "key_cim_fields": "action (allowed|blocked|teardown), src, src_port, dest, dest_port, protocol, transport, direction, dvc",
+    "windows_sources": "Security: Audit Filtering Platform Connection/Packet Drop, Audit IPsec Main/Quick/Extended Mode, Audit IPsec Driver; Sysmon Event ID 3 (network connect)"
+  },
+  {
+    "data_model": "Network Sessions",
+    "dataset": "Network_Sessions",
+    "description": "Tracks the lifecycle of remote-access sessions -- RDP/Terminal Services logon, disconnect, reconnect, and remote-control (shadow) sessions.",
+    "key_cim_fields": "action, dest, duration, session_id, src, user, vendor_product",
+    "windows_sources": "Terminal Services LocalSessionManager/RemoteConnectionManager/RDPClient/SessionBroker-Client Operational and Admin channels -- session logon/logoff/disconnect/reconnect, connection accepted, remote-control (shadow) session start/stop, session redirection"
+  },
+  {
+    "data_model": "Network Resolution (DNS)",
+    "dataset": "Network_Resolution",
+    "description": "Tracks DNS query/response and DNS server administrative activity.",
+    "key_cim_fields": "query, answer, record_type, message_type, src, dest",
+    "windows_sources": "DNS Server Operational log (zone transfer); Sysmon Event ID 22 (DNS query)"
+  },
+  {
+    "data_model": "Malware",
+    "dataset": "Malware.Malware_Attacks",
+    "description": "Tracks malware/PUA detections and the protective action the antivirus product took (or failed to take) in response.",
+    "key_cim_fields": "action, category, file_name, file_hash, signature, signature_id, dest, product_version, vendor_product",
+    "windows_sources": "Windows Defender Operational log: detections and remediation actions (1006-1012, 1015, 1116-1128, 1133, 1134, 1160)"
+  },
+  {
+    "data_model": "Malware",
+    "dataset": "Malware.Malware_Operations",
+    "description": "Tracks the antivirus product's own operational lifecycle -- scan start/stop/completion, signature and engine updates, protection enabled/disabled, and product errors.",
+    "key_cim_fields": "action, dest, product_version, signature_version, vendor_product",
+    "windows_sources": "Windows Defender Operational log: scan and update lifecycle (101, 1000-1005, 1013, 1014, 1150, 1151, 2000-2013, 2030-2051, 3002, 3007, 5000-5012, 5100, 5101)"
+  },
+  {
+    "data_model": "Updates",
+    "dataset": "Updates",
+    "description": "Tracks OS and software patch/update installation activity.",
+    "key_cim_fields": "dest, status, package, package_id, vendor_product",
+    "windows_sources": "System log: Windows Update Client / patch and vulnerability management events"
+  },
+  {
+    "data_model": "Certificates",
+    "dataset": "Certificates",
+    "description": "Tracks certificate lifecycle activity -- issuance, renewal, revocation, export, backup/restore, and client-side certificate store changes.",
+    "key_cim_fields": "dest, ssl_issuer, ssl_subject, ssl_serial, action, status",
+    "windows_sources": "Security: Audit Certification Services, OCSP Responder Service; CertificateServicesClient Lifecycle-System/Lifecycle-User/CredentialRoaming Operational channels"
+  }
+]
