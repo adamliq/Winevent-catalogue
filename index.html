@@ -801,6 +801,85 @@
   .se-modal-view-event { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--accent); text-decoration: none; font-size: 0.85rem; }
   .se-modal-view-event:hover { text-decoration: underline; }
 
+  /* ---- pivot explorer ---- */
+  .pv-universe-count { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.78rem; color: var(--muted); white-space: nowrap; margin-left: auto; align-self: center; }
+
+  .pv-axis-bar {
+    display: flex; align-items: end; gap: 14px; flex-wrap: wrap; background: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 14px;
+  }
+  .pv-axis-field { display: flex; flex-direction: column; gap: 5px; }
+  .pv-axis-field label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+  .pv-axis-field select {
+    font: inherit; font-size: 0.85rem; font-weight: 600; padding: 8px 30px 8px 11px; border-radius: 8px;
+    border: 1px solid var(--line-strong); background: var(--surface) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23746b57" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>') no-repeat right 8px center / 14px;
+    color: var(--ink); appearance: none; cursor: pointer; min-width: 190px;
+  }
+  .pv-axis-field select:focus { border-color: var(--accent); outline: none; }
+  #pv-swap {
+    appearance: none; border: 1px solid var(--line-strong); background: var(--surface); color: var(--muted);
+    width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1rem; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 1px;
+  }
+  #pv-swap:hover { color: var(--accent); border-color: var(--accent); }
+  .pv-axis-spacer { flex: 1 1 auto; }
+
+  .pv-matrix-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: auto; background: var(--surface); max-height: 560px; }
+  table.pv-table { border-collapse: collapse; font-size: 0.8rem; }
+  table.pv-table th, table.pv-table td { padding: 0; }
+  .pv-corner {
+    position: sticky; top: 0; left: 0; z-index: 3; background: var(--surface-2); border-bottom: 1px solid var(--line-strong);
+    border-right: 1px solid var(--line-strong); padding: 10px 14px !important; text-align: left; min-width: 180px;
+  }
+  .pv-corner .n { display: block; font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 1.05rem; font-weight: 700; }
+  .pv-corner .l { display: block; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1px; }
+  .pv-col-head {
+    position: sticky; top: 0; z-index: 2; background: var(--surface-2); border-bottom: 1px solid var(--line-strong);
+    border-left: 1px solid var(--line); padding: 8px 12px !important; text-align: left; cursor: pointer; min-width: 108px; max-width: 160px;
+    vertical-align: bottom;
+  }
+  .pv-col-head:hover { background: color-mix(in srgb, var(--accent) 10%, var(--surface-2)); }
+  .pv-col-head .lbl { display: block; font-weight: 700; font-size: 0.76rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pv-col-head .n { display: block; font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+  .pv-row-head {
+    position: sticky; left: 0; z-index: 1; background: var(--surface); border-right: 1px solid var(--line-strong);
+    border-top: 1px solid var(--line); padding: 8px 14px !important; text-align: left; cursor: pointer; white-space: nowrap;
+    max-width: 220px; overflow: hidden; text-overflow: ellipsis;
+  }
+  .pv-row-head:hover { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+  .pv-row-head .lbl { font-weight: 700; font-size: 0.79rem; }
+  .pv-row-head .n { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.7rem; color: var(--muted); margin-left: 7px; }
+  .pv-cell {
+    border-top: 1px solid var(--line); border-left: 1px solid var(--line); text-align: center; cursor: pointer;
+    font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.82rem; font-weight: 600;
+    padding: 8px 10px !important; color: var(--ink); background: var(--surface); min-width: 62px;
+  }
+  .pv-cell.zero { color: var(--faint); font-weight: 400; }
+  .pv-cell:hover { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .pv-cell.picked { outline: 2px solid var(--accent); outline-offset: -2px; background: color-mix(in srgb, var(--accent) 22%, var(--surface)) !important; }
+  .pv-row-head.picked, .pv-col-head.picked { color: var(--accent); }
+
+  .pv-matrix-note { margin: 8px 0 0; font-size: 0.76rem; color: var(--muted); }
+
+  .pv-drilldown { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; margin-top: 14px; }
+  .pv-dd-empty { padding: 34px 16px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+  .pv-dd-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 16px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+  .pv-dd-title { font-size: 0.88rem; font-weight: 700; }
+  .pv-dd-title .via { font-weight: 400; color: var(--muted); }
+  .pv-dd-title .val { color: var(--accent); }
+  .pv-dd-meta { display: flex; align-items: center; gap: 14px; }
+  .pv-dd-count { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.76rem; color: var(--muted); white-space: nowrap; }
+  .pv-dd-clear { appearance: none; border: none; background: none; color: var(--muted); font: inherit; font-size: 0.76rem; font-weight: 600; cursor: pointer; padding: 4px 6px; }
+  .pv-dd-clear:hover { color: var(--accent); }
+  .pv-dd-list { max-height: 380px; overflow-y: auto; }
+  .pv-dd-row { display: flex; gap: 12px; align-items: baseline; padding: 9px 16px; border-bottom: 1px solid var(--line); font-size: 0.82rem; cursor: pointer; color: inherit; text-decoration: none; }
+  .pv-dd-row:hover { background: var(--surface-2); }
+  .pv-dd-row:last-child { border-bottom: none; }
+  .pv-dd-row .eid { font-family: ui-monospace, monospace; font-weight: 700; flex-shrink: 0; width: 52px; }
+  .pv-dd-row .elog { color: var(--muted); flex-shrink: 0; width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.76rem; }
+  .pv-dd-row .edesc { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pv-dd-more { padding: 9px 16px; font-size: 0.78rem; color: var(--muted); font-style: italic; }
+
   footer.foot {
     color: var(--faint);
     font-size: 0.76rem;
@@ -842,6 +921,7 @@
     <button class="active" data-panel="events">Events</button>
     <button data-panel="reference">Reference tables</button>
     <button data-panel="schema">Schema explorer</button>
+    <button data-panel="pivot">Pivot explorer</button>
   </nav>
 
   <div class="panel active" id="panel-events">
@@ -1109,6 +1189,51 @@
         <a href="#" class="se-modal-view-event" id="se-modal-view-event">View this event →</a>
       </div>
     </div>
+  </div>
+
+  <div class="panel" id="panel-pivot">
+    <p class="ref-empty-state" style="margin-bottom:14px;">Cross-tabulate the catalogue by any two facets — log, category, ACSC priority, MITRE technique,
+      NIST&nbsp;800-53 AU control, and more — then click a cell, row, or column to see exactly which events fall into it.</p>
+
+    <div class="search-row" style="margin-bottom:12px;">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="pv-search" type="text" placeholder="Narrow the universe before pivoting — keyword across log, category, description…" autocomplete="off" />
+      </div>
+      <button id="pv-acsc-toggle" class="acsc-toggle" type="button" title="Only pivot over events listed in the ASD/ACSC &quot;Priority logs for SIEM ingestion: Practitioner guidance&quot;">
+        <span class="dot"></span>ACSC priority logs only
+      </button>
+      <span class="pv-universe-count" id="pv-universe-count"></span>
+    </div>
+
+    <div class="pv-axis-bar">
+      <div class="pv-axis-field">
+        <label for="pv-row-facet">Rows</label>
+        <select id="pv-row-facet"></select>
+      </div>
+      <button id="pv-swap" type="button" title="Swap rows and columns">⇄</button>
+      <div class="pv-axis-field">
+        <label for="pv-col-facet">Columns</label>
+        <select id="pv-col-facet"></select>
+      </div>
+      <div class="pv-axis-spacer"></div>
+      <div class="pv-axis-field">
+        <label for="pv-topn">Show top</label>
+        <select id="pv-topn">
+          <option value="8">8</option>
+          <option value="12" selected>12</option>
+          <option value="16">16</option>
+          <option value="24">24</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="pv-matrix-wrap"><table class="pv-table" id="pv-table"></table></div>
+    <p class="pv-matrix-note" id="pv-matrix-note"></p>
+
+    <section class="pv-drilldown" id="pv-drilldown">
+      <div class="pv-dd-empty">Click a cell, or a row/column header, to see the matching events.</div>
+    </section>
   </div>
 
   <footer class="foot">Built from a Windows Server administration notebook · 4,737 events indexed · <a href="https://github.com/adamliq/Winevent-catalogue" target="_blank" rel="noopener">Winevent-catalogue</a> data files</footer>
@@ -2011,6 +2136,181 @@ document.querySelectorAll('table.se-table th[data-sort]').forEach(th => {
 renderSeStats();
 seRenderTypeLegend();
 seRenderAll();
+
+// ---- pivot explorer: cross-tabulate the catalogue by any two facets ----
+const PV_OTHER = '— Other —';
+
+const PV_FACETS = {
+  log:   { label: 'Log',                          get: e => [e.log] },
+  cat:   { label: 'Category',                     get: e => [e.category] },
+  sub:   { label: 'Subcategory',                  get: e => [e.subcategory || '(none)'] },
+  acsc:  { label: 'ACSC priority log',             get: e => [e.acsc_priority_log === 'Yes' ? 'Yes' : 'No'] },
+  mitre: { label: 'MITRE ATT&CK technique',        get: e => e.mitre_techniques ? e.mitre_techniques.split(';').map(s => s.trim()).filter(Boolean) : ['(none mapped)'] },
+  nist:  { label: 'NIST 800-53 AU control',        get: e => e.nist_800_53_au ? e.nist_800_53_au.split(',').map(s => s.trim()).filter(Boolean) : ['(none mapped)'] },
+  st:    { label: 'Sample type',                   get: e => [e.sample_type || 'unknown'] },
+  htc:   { label: 'Has how-to-collect steps',      get: e => [e.how_to_collect && e.how_to_collect.trim() ? 'Yes' : 'No'] },
+  gpo:   { label: 'Has Group Policy path',         get: e => [e.group_policy_path && e.group_policy_path.trim() ? 'Yes' : 'No'] },
+  opp:   { label: 'Has a success/failure pairing', get: e => [e.opposite_event_id && e.opposite_event_id.trim() ? 'Yes' : 'No'] },
+};
+
+let pvState = { q: '', acscOnly: false, rowFacet: 'log', colFacet: 'acsc', topN: 12, pick: null };
+
+const pvRowSel = document.getElementById('pv-row-facet');
+const pvColSel = document.getElementById('pv-col-facet');
+Object.keys(PV_FACETS).forEach(k => {
+  pvRowSel.innerHTML += `<option value="${k}">${escapeHtml(PV_FACETS[k].label)}</option>`;
+  pvColSel.innerHTML += `<option value="${k}">${escapeHtml(PV_FACETS[k].label)}</option>`;
+});
+pvRowSel.value = pvState.rowFacet;
+pvColSel.value = pvState.colFacet;
+
+function pvUniverse() {
+  const q = pvState.q.trim().toLowerCase();
+  return events.filter(e => {
+    if (pvState.acscOnly && e.acsc_priority_log !== 'Yes') return false;
+    if (!q) return true;
+    return (e.log + ' ' + e.category + ' ' + e.subcategory + ' ' + e.description + ' ' + e.event_id).toLowerCase().includes(q);
+  });
+}
+
+function pvTopValues(uni, facetKey, n) {
+  const counts = new Map();
+  uni.forEach(e => PV_FACETS[facetKey].get(e).forEach(v => counts.set(v, (counts.get(v) || 0) + 1)));
+  const sorted = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  return { top: sorted.slice(0, n).map(([v]) => v), otherN: sorted.length - n };
+}
+
+let pvMatrix = null;
+
+function pvCompute() {
+  const uni = pvUniverse();
+  const N = pvState.topN;
+  const rowInfo = pvTopValues(uni, pvState.rowFacet, N);
+  const colInfo = pvTopValues(uni, pvState.colFacet, N);
+  const rowVals = rowInfo.top.concat(rowInfo.otherN > 0 ? [PV_OTHER] : []);
+  const colVals = colInfo.top.concat(colInfo.otherN > 0 ? [PV_OTHER] : []);
+  const rowTopSet = new Set(rowInfo.top);
+  const colTopSet = new Set(colInfo.top);
+
+  const cells = {}, rowTotals = {}, colTotals = {}, rowBucket = {}, colBucket = {};
+  rowVals.forEach(r => { cells[r] = {}; rowTotals[r] = 0; rowBucket[r] = []; colVals.forEach(c => cells[r][c] = { count: 0, events: [] }); });
+  colVals.forEach(c => { colTotals[c] = 0; colBucket[c] = []; });
+
+  uni.forEach(e => {
+    const rSet = new Set(PV_FACETS[pvState.rowFacet].get(e).map(v => rowTopSet.has(v) ? v : PV_OTHER));
+    const cSet = new Set(PV_FACETS[pvState.colFacet].get(e).map(v => colTopSet.has(v) ? v : PV_OTHER));
+    rSet.forEach(r => { rowTotals[r]++; rowBucket[r].push(e); });
+    cSet.forEach(c => { colTotals[c]++; colBucket[c].push(e); });
+    rSet.forEach(r => cSet.forEach(c => { cells[r][c].count++; cells[r][c].events.push(e); }));
+  });
+
+  let maxCell = 0;
+  rowVals.forEach(r => colVals.forEach(c => { maxCell = Math.max(maxCell, cells[r][c].count); }));
+
+  return { uni, rowVals, colVals, cells, rowTotals, colTotals, rowBucket, colBucket, maxCell, otherRowN: rowInfo.otherN, otherColN: colInfo.otherN };
+}
+
+function pvRender() {
+  const m = pvCompute();
+  pvMatrix = m;
+  document.getElementById('pv-universe-count').textContent = `${m.uni.length.toLocaleString()} of ${events.length.toLocaleString()} events in scope`;
+
+  let html = '<thead><tr><th class="pv-corner"><span class="n">' + m.uni.length.toLocaleString() + '</span><span class="l">total events</span></th>';
+  m.colVals.forEach(c => {
+    html += `<th class="pv-col-head${pvState.pick && pvState.pick.type === 'col' && pvState.pick.val === c ? ' picked' : ''}" data-col="${escapeHtml(c)}" title="${escapeHtml(c)}"><span class="lbl">${escapeHtml(c)}</span><span class="n">${m.colTotals[c].toLocaleString()}</span></th>`;
+  });
+  html += '</tr></thead><tbody>';
+  m.rowVals.forEach(r => {
+    html += `<tr><th class="pv-row-head${pvState.pick && pvState.pick.type === 'row' && pvState.pick.val === r ? ' picked' : ''}" data-row="${escapeHtml(r)}" title="${escapeHtml(r)}"><span class="lbl">${escapeHtml(r)}</span><span class="n">${m.rowTotals[r].toLocaleString()}</span></th>`;
+    m.colVals.forEach(c => {
+      const cell = m.cells[r][c];
+      const pct = m.maxCell ? Math.round((cell.count / m.maxCell) * 100) : 0;
+      const picked = pvState.pick && pvState.pick.type === 'cell' && pvState.pick.row === r && pvState.pick.col === c;
+      const style = cell.count ? `style="background:color-mix(in srgb, var(--accent) ${pct}%, var(--surface))"` : '';
+      html += `<td class="pv-cell${cell.count ? '' : ' zero'}${picked ? ' picked' : ''}" data-row="${escapeHtml(r)}" data-col="${escapeHtml(c)}" ${style}>${cell.count.toLocaleString()}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody>';
+  document.getElementById('pv-table').innerHTML = html;
+
+  const notes = [];
+  if (m.otherRowN > 0) notes.push(`${m.otherRowN} more ${PV_FACETS[pvState.rowFacet].label} value${m.otherRowN === 1 ? '' : 's'} folded into "Other"`);
+  if (m.otherColN > 0) notes.push(`${m.otherColN} more ${PV_FACETS[pvState.colFacet].label} value${m.otherColN === 1 ? '' : 's'} folded into "Other"`);
+  notes.push('rows/columns are sorted by count; an event with several values for a facet (e.g. multiple MITRE techniques) is counted once per matching cell');
+  document.getElementById('pv-matrix-note').textContent = notes.join(' · ');
+
+  pvRenderDrilldown();
+}
+
+function pvRenderDrilldown() {
+  const el = document.getElementById('pv-drilldown');
+  if (!pvState.pick) {
+    el.innerHTML = '<div class="pv-dd-empty">Click a cell, or a row/column header, to see the matching events.</div>';
+    return;
+  }
+  let evs, titleHtml;
+  const m = pvMatrix;
+  if (pvState.pick.type === 'cell') {
+    evs = m.cells[pvState.pick.row][pvState.pick.col].events;
+    titleHtml = `<span class="val">${escapeHtml(pvState.pick.row)}</span> <span class="via">×</span> <span class="val">${escapeHtml(pvState.pick.col)}</span>`;
+  } else if (pvState.pick.type === 'row') {
+    evs = m.rowBucket[pvState.pick.val];
+    titleHtml = `<span class="via">${escapeHtml(PV_FACETS[pvState.rowFacet].label)} =</span> <span class="val">${escapeHtml(pvState.pick.val)}</span>`;
+  } else {
+    evs = m.colBucket[pvState.pick.val];
+    titleHtml = `<span class="via">${escapeHtml(PV_FACETS[pvState.colFacet].label)} =</span> <span class="val">${escapeHtml(pvState.pick.val)}</span>`;
+  }
+  const cap = 60;
+  const shown = evs.slice(0, cap);
+  let html = `<div class="pv-dd-header"><div class="pv-dd-title">${titleHtml}</div><div class="pv-dd-meta"><span class="pv-dd-count">${evs.length.toLocaleString()} event${evs.length === 1 ? '' : 's'}</span><button class="pv-dd-clear" id="pv-dd-clear" type="button">Clear ✕</button></div></div><div class="pv-dd-list">`;
+  shown.forEach(e => {
+    html += `<div class="pv-dd-row" data-id="${escapeHtml(e.event_id)}" data-log="${escapeHtml(e.log)}"><span class="eid mono">${escapeHtml(e.event_id)}</span><span class="elog" title="${escapeHtml(e.log)}">${escapeHtml(e.log)}</span><span class="edesc" title="${escapeHtml(e.description)}">${escapeHtml(e.description)}</span></div>`;
+  });
+  html += '</div>';
+  if (evs.length > cap) html += `<div class="pv-dd-more">+ ${(evs.length - cap).toLocaleString()} more not shown</div>`;
+  el.innerHTML = html;
+  document.getElementById('pv-dd-clear').addEventListener('click', () => { pvState.pick = null; pvRender(); });
+  el.querySelectorAll('.pv-dd-row').forEach(row => {
+    row.addEventListener('click', () => jumpToEvent(row.dataset.id, row.dataset.log));
+  });
+}
+
+document.getElementById('pv-table').addEventListener('click', e => {
+  const cell = e.target.closest('.pv-cell');
+  const rowHead = e.target.closest('.pv-row-head');
+  const colHead = e.target.closest('.pv-col-head');
+  if (cell) {
+    const row = cell.dataset.row, col = cell.dataset.col;
+    pvState.pick = (pvState.pick && pvState.pick.type === 'cell' && pvState.pick.row === row && pvState.pick.col === col) ? null : { type: 'cell', row, col };
+  } else if (rowHead) {
+    const val = rowHead.dataset.row;
+    pvState.pick = (pvState.pick && pvState.pick.type === 'row' && pvState.pick.val === val) ? null : { type: 'row', val };
+  } else if (colHead) {
+    const val = colHead.dataset.col;
+    pvState.pick = (pvState.pick && pvState.pick.type === 'col' && pvState.pick.val === val) ? null : { type: 'col', val };
+  } else return;
+  pvRender();
+});
+
+document.getElementById('pv-search').addEventListener('input', e => { pvState.q = e.target.value; pvState.pick = null; pvRender(); });
+document.getElementById('pv-acsc-toggle').addEventListener('click', () => {
+  pvState.acscOnly = !pvState.acscOnly;
+  document.getElementById('pv-acsc-toggle').classList.toggle('on', pvState.acscOnly);
+  pvState.pick = null;
+  pvRender();
+});
+pvRowSel.addEventListener('change', e => { pvState.rowFacet = e.target.value; if (pvState.rowFacet === pvState.colFacet) { pvState.colFacet = Object.keys(PV_FACETS).find(k => k !== pvState.rowFacet); pvColSel.value = pvState.colFacet; } pvState.pick = null; pvRender(); });
+pvColSel.addEventListener('change', e => { pvState.colFacet = e.target.value; if (pvState.colFacet === pvState.rowFacet) { pvState.rowFacet = Object.keys(PV_FACETS).find(k => k !== pvState.colFacet); pvRowSel.value = pvState.rowFacet; } pvState.pick = null; pvRender(); });
+document.getElementById('pv-topn').addEventListener('change', e => { pvState.topN = Number(e.target.value); pvState.pick = null; pvRender(); });
+document.getElementById('pv-swap').addEventListener('click', () => {
+  [pvState.rowFacet, pvState.colFacet] = [pvState.colFacet, pvState.rowFacet];
+  pvRowSel.value = pvState.rowFacet; pvColSel.value = pvState.colFacet;
+  pvState.pick = null;
+  pvRender();
+});
+
+pvRender();
 
 // deep link support: #4624
 if (location.hash) {
