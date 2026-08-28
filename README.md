@@ -112,7 +112,73 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     pairing is scoped to that specific category, not the bare event ID.
     The web lookup page shows it as a clickable "Opposite outcome" field
     that jumps straight to the paired event's own detail view.
+  - `cim_mapping` — for 546 rows, the Splunk Common Information Model
+    data model/dataset the event maps to cleanly (e.g. `Authentication`,
+    `Change.Account_Management`, `Endpoint.Processes`,
+    `Malware.Malware_Attacks`) — see
+    `data/reference/splunk_cim_data_models.csv` for what each dataset
+    means, which CIM fields it carries, and whether it's confirmed by the
+    real Splunk Add-on for Microsoft Windows package.
 
+    Built in two passes. First, this catalogue's own analysis: per
+    Security-log audit subcategory (the official Advanced Audit Policy
+    taxonomy already in `category`/`subcategory` maps very predictably to
+    CIM datasets — e.g. every `Audit User Account Management` event is
+    `Change.Account_Management`), per canonical Sysmon event ID, and by
+    hand-reviewing every event's actual message text on channels that
+    looked homogeneous but turned out to mix genuine signal with
+    diagnostic noise — e.g. the Terminal Services connection-manager
+    channels contain real session-lifecycle events (logon, disconnect,
+    reconnect, shadow session start/stop) alongside licensing/timing/
+    profile-cache diagnostics that don't belong in any CIM dataset, so
+    those were mapped event ID by event ID rather than as a whole channel;
+    the dedicated Windows Firewall/IPsec channels turned out to be rule
+    *configuration* events (`Change.Network_Changes`), not actual traffic
+    pass/block events, once their text was read rather than assumed from
+    the channel name.
+
+    Second, a real `Splunk_TA_windows-11.0.2.tar` package (the actual
+    Splunk Add-on for Microsoft Windows) was supplied and cross-checked
+    against the first pass: its `eventtypes.conf`/`tags.conf` were parsed
+    to compute, per Security/System-log EventCode, the union of CIM tags
+    every matching eventtype assigns, then classified into a dataset by
+    the standard CIM tag-requirement combinations (`change`+`account` →
+    `Change.Account_Management`, `process`+`report` →
+    `Endpoint.Processes`, etc.). Wherever that produced an explicit
+    answer it **overrode** this catalogue's own guess, correcting several
+    real mistakes — e.g. 4634/4647 (logoff) and 4740/4767 (account
+    lockout/unlock) had been guessed as `Authentication` but the real
+    add-on tags them `Change.Account_Management`; 5154/5158/4957/861
+    (Windows Filtering Platform "permitted to listen") had been guessed
+    as `Network_Traffic`/`Change.Network_Changes` but the add-on has a
+    dedicated `Endpoint.Ports` dataset for exactly this; 4717/4718 had
+    been guessed as `Change.Auditing_Changes` but the add-on tags them
+    `Change.Account_Management`. It also surfaced a real product gap
+    worth noting: EventCode 4772 (Kerberos service-ticket request
+    failed) is listed in the add-on's own `eventtypes.conf` *comment*
+    but the comment doesn't match its actual search filter, so 4772 (and
+    4770, ticket renewed) get no CIM tag in the real product at all —
+    left blank here too, matching the real add-on rather than what
+    seems like it should obviously be true. The add-on doesn't cover
+    Sysmon, Terminal Services, the dedicated Windows Firewall channels,
+    Certificate Services Client, or DNS Server at the event-code level
+    at all, so those stay as this catalogue's own analysis from the
+    first pass, unverified but undisputed.
+
+    Left blank everywhere a confident single-dataset mapping doesn't
+    exist (ambiguous object-access events, and channels like
+    `CertificateServices-Deployment/Operational` whose message text in
+    this catalogue is an undecoded placeholder). The web lookup page
+    shows it as a clickable "Splunk CIM" field that jumps to the matching
+    row in the new Reference tables entry, and it's also selectable as a
+    Pivot explorer facet.
+
+- `data/reference/splunk_cim_data_models.csv` / `.json` — the 18 Splunk
+  CIM data models/datasets referenced by `cim_mapping`, each with its
+  description, representative CIM field list, whether it's confirmed by
+  the real Splunk Add-on for Microsoft Windows package (`ta_verified`:
+  Yes/Partial/No), and which Windows event
+  sources in this catalogue feed it.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
@@ -223,18 +289,19 @@ one header — this replaced a flat 188-button chip row and a 189-option
 dropdown, which stopped being usable once the catalogue grew past ~40
 logs); toggle to show only ASD/ACSC priority logs; active filters surface
 as removable chips above the results. View full detail — description,
-sample log text, MITRE ATT&CK mapping, and how-to-collect configuration
-steps — plus a Reference tables tab covering 14 code/lookup tables (NTLM
-and Kerberos error/result codes, Kerberos encryption/pre-auth/ticket-option
-codes, Logon Type, IP protocol numbers, NPS reason codes, RDS disconnect
-codes, SharePoint audit types, the raw audit policy matrix, the MITRE
-ATT&CK mapping, the full NTSTATUS reference, and the Windows `%%`
-message-token table). A single search box at the top of the tab filters
-every one of the 14 tables at once — matching sections expand and show
+sample log text, MITRE ATT&CK mapping, Splunk CIM data model mapping, and
+how-to-collect configuration steps — plus a Reference tables tab covering
+15 code/lookup tables (NTLM and Kerberos error/result codes, Kerberos
+encryption/pre-auth/ticket-option codes, Logon Type, IP protocol numbers,
+NPS reason codes, RDS disconnect codes, SharePoint audit types, the raw
+audit policy matrix, the MITRE ATT&CK mapping, the full NTSTATUS
+reference, the Windows `%%` message-token table, and the Splunk CIM data
+model reference). A single search box at the top of the tab filters
+every one of the 15 tables at once — matching sections expand and show
 only their matching rows, non-matching sections
 disappear entirely (nav pills included), and clearing the box returns
 everything to its default collapsed state; a sticky jump-nav next to the
-search box lists all 14 with live row counts and scrolls straight to any
+search box lists all 15 with live row counts and scrolls straight to any
 one of them, switching back to plain browse mode (clearing the search) as
 it does — added once the tab grew past a handful of tables and scrolling
 to find one stopped being practical. Every table (both on the Reference
@@ -242,7 +309,7 @@ tab and inline on an event's detail view) is also height-capped with its
 own internal scroll and a sticky header row, so a single 1,795-row table
 can't push the rest of the page — or, on events like 4768 that pull in
 four Kerberos tables at once, the whole detail view — out to an
-unreasonable length. All 14 Reference tables collapse into an accordion
+unreasonable length. All 15 Reference tables collapse into an accordion
 by default (one click to expand, or the global search auto-expands
 whichever sections actually match) so the tab itself opens as a
 single-screen list of headings instead of every table rendered open at
