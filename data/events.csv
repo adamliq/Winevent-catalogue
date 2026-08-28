@@ -327,7 +327,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
 4611,Security,Microsoft-Windows-Security-Auditing,System,Audit Security System Extension,A trusted logon process has been registered with the Local Security Authority.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4611
@@ -343,7 +343,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
 4612,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,"Internal resources allocated for the queuing of audit messages have been exhausted, leading to the loss of some audits.","Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4612
@@ -375,7 +375,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
 4615,Security,Microsoft-Windows-Security-Auditing,System,Audit System Integrity,Invalid use of LPC port.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4615
@@ -455,7 +455,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
 4624,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,An account was successfully logged on.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4624
@@ -606,7 +606,7 @@ Subject:
 	Account Domain:		CORP
 	Logon ID:		0x3E7F21
 
-Logon Type:			3",,Audit Logoff,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Authentication
+Logon Type:			3",,Audit Logoff,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4646,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit IPsec Main Mode,IKE DoS-prevention mode started.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4646
@@ -650,7 +650,7 @@ Subject:
 	Account Domain:		CORP
 	Logon ID:		0x3E7F21
 
-Logon Type:			3",,Audit Logoff,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Authentication
+Logon Type:			3",,Audit Logoff,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4648,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,A logon was attempted using explicit credentials.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4648
@@ -1431,7 +1431,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,T1036; T1037; T1053; T1055; T1056; T1070; T1080; T1098; T1111; T1112; T1137; T1140; T1187; T1218; T1485; T1486; T1489; T1490; T1491; T1505; T1543; T1546; T1547; T1548; T1553; T1554; T1556; T1557; T1562; T1564; T1565; T1569; T1574; T1600; T1601; T1036.003; T1037.002; T1037.003; T1037.004; T1037.005; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1055.009; T1056.001; T1056.003; T1070.002; T1070.003; T1070.006; T1098.004; T1137.001; T1137.002; T1137.006; T1218.002; T1491.001; T1491.002; T1505.003; T1505.004; T1543.001; T1543.002; T1543.003; T1543.004; T1546.001; T1546.002; T1546.004; T1546.005; T1546.006; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.013; T1546.014; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.006; T1547.007; T1547.008; T1547.009; T1547.010; T1547.011; T1547.012; T1547.013; T1547.014; T1547.015; T1548.001; T1548.002; T1548.003; T1553.001; T1553.003; T1553.004; T1553.006; T1556.001; T1556.002; T1556.003; T1556.004; T1557.001; T1562.001; T1562.004; T1562.006; T1562.009; T1564.002; T1564.003; T1564.004; T1564.005; T1564.006; T1564.008; T1565.001; T1565.003; T1569.001; T1569.002; T1574.001; T1574.002; T1574.004; T1574.005; T1574.006; T1574.007; T1574.008; T1574.009; T1574.010; T1574.011; T1574.012; T1600.001; T1600.002; T1601.001; T1601.002,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
+	Logon ID:		0x3E7F21",,,illustrative,T1036; T1037; T1053; T1055; T1056; T1070; T1080; T1098; T1111; T1112; T1137; T1140; T1187; T1218; T1485; T1486; T1489; T1490; T1491; T1505; T1543; T1546; T1547; T1548; T1553; T1554; T1556; T1557; T1562; T1564; T1565; T1569; T1574; T1600; T1601; T1036.003; T1037.002; T1037.003; T1037.004; T1037.005; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1055.009; T1056.001; T1056.003; T1070.002; T1070.003; T1070.006; T1098.004; T1137.001; T1137.002; T1137.006; T1218.002; T1491.001; T1491.002; T1505.003; T1505.004; T1543.001; T1543.002; T1543.003; T1543.004; T1546.001; T1546.002; T1546.004; T1546.005; T1546.006; T1546.007; T1546.008; T1546.009; T1546.010; T1546.011; T1546.012; T1546.013; T1546.014; T1546.015; T1547.001; T1547.002; T1547.003; T1547.004; T1547.005; T1547.006; T1547.007; T1547.008; T1547.009; T1547.010; T1547.011; T1547.012; T1547.013; T1547.014; T1547.015; T1548.001; T1548.002; T1548.003; T1553.001; T1553.003; T1553.004; T1553.006; T1556.001; T1556.002; T1556.003; T1556.004; T1557.001; T1562.001; T1562.004; T1562.006; T1562.009; T1564.002; T1564.003; T1564.004; T1564.005; T1564.006; T1564.008; T1565.001; T1565.003; T1569.001; T1569.002; T1574.001; T1574.002; T1574.004; T1574.005; T1574.006; T1574.007; T1574.008; T1574.009; T1574.010; T1574.011; T1574.012; T1600.001; T1600.002; T1601.001; T1601.002,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Registry
 4671,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,An application attempted to access a blocked ordinal through the TBS.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4671
@@ -1481,7 +1481,7 @@ Subject:
 
 Privileges:		SeBackupPrivilege
 			SeRestorePrivilege
-			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,T1078.002,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,T1078.002,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Authentication
 4672,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,Special privileges assigned to new logon.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4672
@@ -1501,7 +1501,7 @@ Subject:
 
 Privileges:		SeBackupPrivilege
 			SeRestorePrivilege
-			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,T1078.002,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,T1078.002,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Authentication
 4673,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,A privileged service was called.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4673
@@ -1521,7 +1521,7 @@ Subject:
 
 Privileges:		SeBackupPrivilege
 			SeRestorePrivilege
-			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Processes
 4673,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,A privileged service was called.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4673
@@ -1541,7 +1541,7 @@ Subject:
 
 Privileges:		SeBackupPrivilege
 			SeRestorePrivilege
-			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Processes
 4674,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Non-Sensitive Privilege Use,An operation was attempted on a privileged object.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4674
@@ -1561,7 +1561,7 @@ Subject:
 
 Privileges:		SeBackupPrivilege
 			SeRestorePrivilege
-			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Processes
 4674,Security,Microsoft-Windows-Security-Auditing,Privilege Use,Audit Sensitive Privilege Use,An operation was attempted on a privileged object.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4674
@@ -1581,7 +1581,7 @@ Subject:
 
 Privileges:		SeBackupPrivilege
 			SeRestorePrivilege
-			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+			SeDebugPrivilege",,Audit Non-Sensitive Privilege Use; Audit Sensitive Privilege Use,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""privileges"":""string"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Processes
 4675,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Logon,SIDs were filtered.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4675
@@ -1871,7 +1871,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1053; T1053.001; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1053.007,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,
+				ReadData (or ListDirectory)",,,illustrative,T1053; T1053.001; T1053.002; T1053.003; T1053.004; T1053.005; T1053.006; T1053.007,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,Change
 4699,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,A scheduled task was deleted.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4699
@@ -1931,7 +1931,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,
+				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,Change
 4701,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,A scheduled task was disabled.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4701
@@ -1961,7 +1961,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,
+				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,Change
 4702,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Other Object Access Events,A scheduled task was updated.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4702
@@ -1991,7 +1991,7 @@ Process Information:
 
 Access Request Information:
 	Accesses:		READ_CONTROL
-				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,
+				ReadData (or ListDirectory)",,,illustrative,T1036; T1036.004,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""object"":{""object_server"":""string"",""object_type"":""string"",""object_name"":""path"",""handle_id"":""hex""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""access_request_information"":{""accesses"":""string""}}",,,Change
 4704,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,A user right was assigned.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4704
@@ -2007,7 +2007,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4705,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,A user right was removed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4705
@@ -2023,7 +2023,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4706,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,A new trust was created to a domain.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4706
@@ -2039,7 +2039,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change
 4707,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,A trust to a domain was removed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4707
@@ -2179,7 +2179,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
+	Logon ID:		0x3E7F21",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change
 4714,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authorization Policy Change,Encrypted data recovery policy was changed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4714
@@ -2243,7 +2243,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
+	Logon ID:		0x3E7F21",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4718,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Authentication Policy Change,System security access was removed from an account.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4718
@@ -2259,7 +2259,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
+	Logon ID:		0x3E7F21",,,illustrative,T1098; T1528; T1531; T1098.001; T1098.002; T1098.003,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4719,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Audit Policy Change,System Audit Policy was changed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4719
@@ -2797,7 +2797,7 @@ Member:
 Group:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-3201
 	Group Name:		Finance-ReadOnly
-	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change.Account_Management
+	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change
 4745,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,A security-disabled local group was changed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4745
@@ -2922,7 +2922,7 @@ Member:
 Group:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-3201
 	Group Name:		Finance-ReadOnly
-	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change.Account_Management
+	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change
 4750,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,A security-disabled global group was changed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4750
@@ -2947,7 +2947,7 @@ Member:
 Group:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-3201
 	Group Name:		Finance-ReadOnly
-	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change.Account_Management
+	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change
 4751,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,A member was added to a security-disabled global group.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4751
@@ -3172,7 +3172,7 @@ Member:
 Group:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-3201
 	Group Name:		Finance-ReadOnly
-	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change.Account_Management
+	Group Domain:		CORP",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""member"":{""security_id"":""sid"",""account_name"":""string""},""group"":{""security_id"":""sid"",""group_name"":""string"",""group_domain"":""string""}}",,,Change
 4760,Security,Microsoft-Windows-Security-Auditing,Account Management,Audit Distribution Group Management,A security-disabled universal group was changed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4760
@@ -4024,7 +4024,7 @@ Detailed Authentication Information:
 	Authentication Package:	Kerberos
 	Transited Services:	-
 	Package Name (NTLM only):	-
-	Key Length:		0",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""new_logon"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex"",""logon_guid"":""guid""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""network_information"":{""workstation_name"":""string"",""source_network_address"":""ip"",""source_port"":""integer""},""detailed_authentication_information"":{""logon_process"":""string"",""authentication_package"":""string"",""transited_services"":""string"",""package_name_ntlm_only"":""string"",""key_length"":""integer""}}",,,Authentication
+	Key Length:		0",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""new_logon"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex"",""logon_guid"":""guid""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""network_information"":{""workstation_name"":""string"",""source_network_address"":""ip"",""source_port"":""integer""},""detailed_authentication_information"":{""logon_process"":""string"",""authentication_package"":""string"",""transited_services"":""string"",""package_name_ntlm_only"":""string"",""key_length"":""integer""}}",,,Change.Account_Management
 4800,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,The workstation was locked.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4800
@@ -4042,7 +4042,7 @@ Subject:
 	Account Domain:		CORP
 	Logon ID:		0x3E7F21
 
-Logon Type:			3",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Authentication
+Logon Type:			3",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4801,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,The workstation was unlocked.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4801
@@ -4083,7 +4083,7 @@ Detailed Authentication Information:
 	Authentication Package:	Kerberos
 	Transited Services:	-
 	Package Name (NTLM only):	-
-	Key Length:		0",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""new_logon"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex"",""logon_guid"":""guid""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""network_information"":{""workstation_name"":""string"",""source_network_address"":""ip"",""source_port"":""integer""},""detailed_authentication_information"":{""logon_process"":""string"",""authentication_package"":""string"",""transited_services"":""string"",""package_name_ntlm_only"":""string"",""key_length"":""integer""}}",,,Authentication
+	Key Length:		0",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""new_logon"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex"",""logon_guid"":""guid""},""process_information"":{""process_id"":""hex"",""process_name"":""path""},""network_information"":{""workstation_name"":""string"",""source_network_address"":""ip"",""source_port"":""integer""},""detailed_authentication_information"":{""logon_process"":""string"",""authentication_package"":""string"",""transited_services"":""string"",""package_name_ntlm_only"":""string"",""key_length"":""integer""}}",,,Change.Account_Management
 4801,Security,Microsoft-Windows-Security-Auditing,Logon/Logoff,Audit Other Logon/Logoff Events,The workstation was unlocked.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4801
@@ -4101,7 +4101,7 @@ Subject:
 	Account Domain:		CORP
 	Logon ID:		0x3E7F21
 
-Logon Type:			3",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Authentication
+Logon Type:			3",,Audit Kerberos (verbose / debug logging); Audit Other Logon/Logoff Events,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""logon_type"":""integer"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Account_Management
 4802,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Other Account Logon Events,The screen saver was invoked.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4802
@@ -4486,7 +4486,7 @@ Certificate Services:
 	Certificate Template:	User
 
 Disposition:
-	Reason:			Issued",,Audit Certification Services,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""certificate_services"":{""server"":""string"",""requester"":""principal"",""request_id"":""integer"",""certificate_template"":""string""},""disposition"":{""reason"":""string""}}",,,Certificates
+	Reason:			Issued",,Audit Certification Services,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""certificate_services"":{""server"":""string"",""requester"":""principal"",""request_id"":""integer"",""certificate_template"":""string""},""disposition"":{""reason"":""string""}}",,,Change
 4877,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Certification Services,Certificate Services backup completed.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4877
@@ -5609,7 +5609,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,,Change.Network_Changes
+	Layer Run-Time ID:	44",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,,Endpoint.Ports
 4958,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit MPSSVC Rule-Level Policy Change,Windows Firewall did not apply a rule because it referred to items not configured on this computer.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4958
@@ -6087,7 +6087,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
 5025,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,The Windows Firewall Service has been stopped.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5025
@@ -6103,7 +6103,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,T1562; T1562.004; T1562.007,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+	Logon ID:		0x3E7F21",,,illustrative,T1562; T1562.004; T1562.007,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
 5027,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,The Windows Firewall Service was unable to retrieve the security policy from local storage.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5027
@@ -6167,7 +6167,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
 5031,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Firewall Service blocked an application from accepting incoming connections on the network.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5031
@@ -6219,7 +6219,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
 5034,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,The Windows Firewall Driver has been stopped.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5034
@@ -6235,7 +6235,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
 5035,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,The Windows Firewall Driver failed to start.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5035
@@ -6251,7 +6251,7 @@ Subject:
 	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1105
 	Account Name:		admin.jsmith
 	Account Domain:		CORP
-	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+	Logon ID:		0x3E7F21",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Endpoint.Services
 5037,Security,Microsoft-Windows-Security-Auditing,System,Audit Other System Events,The Windows Firewall Driver detected a critical runtime error and is terminating.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5037
@@ -7383,7 +7383,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,5155,Network_Traffic
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,5155,Endpoint.Ports
 5155,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Filtering Platform blocked an application or service from listening on a port for incoming connections.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5155
@@ -7491,7 +7491,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,5159,Network_Traffic
+	Layer Run-Time ID:	44",,,illustrative,T1008; T1011; T1018; T1020; T1021; T1029; T1030; T1041; T1047; T1048; T1090; T1102; T1104; T1105; T1114; T1176; T1189; T1197; T1204; T1205; T1218; T1219; T1221; T1496; T1542; T1568; T1571; T1572; T1602; T1612; T1011.001; T1020.001; T1021.001; T1021.002; T1021.003; T1021.004; T1021.005; T1021.006; T1048.001; T1048.002; T1048.003; T1090.001; T1090.002; T1090.003; T1102.002; T1102.003; T1114.002; T1204.001; T1205.001; T1218.003; T1218.005; T1218.007; T1218.010; T1542.005; T1568.001; T1568.002; T1602.001; T1602.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,5159,Endpoint.Ports
 5159,Security,Microsoft-Windows-Security-Auditing,Object Access,Audit Filtering Platform Connection,The Windows Filtering Platform blocked a bind to a local port.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5159
@@ -8148,7 +8148,7 @@ Network Information:
 Filter Information:
 	Filter Run-Time ID:	68142
 	Layer Name:		Receive/Accept
-	Layer Run-Time ID:	44",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,5460,Change.Network_Changes
+	Layer Run-Time ID:	44",,,illustrative,,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""application_information"":{""process_id"":""integer"",""application_name"":""path""},""network_information"":{""direction"":""string"",""source_address"":""ip"",""source_port"":""integer"",""destination_address"":""ip"",""destination_port"":""integer"",""protocol"":""integer""},""filter_information"":{""filter_run-time_id"":""integer"",""layer_name"":""string"",""layer_run-time_id"":""integer""}}",,5460,Change
 5462,Security,Microsoft-Windows-Security-Auditing,Policy Change,Audit Filtering Platform Policy Change,PAStore Engine failed to apply some rules of the active IPsec policy on the computer.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5462
@@ -8498,7 +8498,7 @@ IKE/AuthIP Information:
 	Authentication Method:		Preshared key
 	Diffie-Hellman Group:		2 (1024 bit MODP)
 	Encryption Algorithm:		AES-128
-	Integrity Algorithm:		SHA1",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""local_endpoint"":{""local_principal_name"":""string"",""local_address"":""ip"",""local_port"":""integer""},""remote_endpoint"":{""remote_principal_name"":""string"",""remote_address"":""ip"",""remote_port"":""integer""},""ikeauth_ip_information"":{""authentication_method"":""string"",""diffie-hellman_group"":""string"",""encryption_algorithm"":""string"",""integrity_algorithm"":""string""}}",,,Network_Traffic
+	Integrity Algorithm:		SHA1",,,illustrative,,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""keywords"":""string"",""user"":""string"",""computer"":""string"",""description"":""string""},""local_endpoint"":{""local_principal_name"":""string"",""local_address"":""ip"",""local_port"":""integer""},""remote_endpoint"":{""remote_principal_name"":""string"",""remote_address"":""ip"",""remote_port"":""integer""},""ikeauth_ip_information"":{""authentication_method"":""string"",""diffie-hellman_group"":""string"",""encryption_algorithm"":""string"",""integrity_algorithm"":""string""}}",,,Endpoint.Services
 5479,Security,Microsoft-Windows-Security-Auditing,System,Audit IPsec Driver,IPsec Services has been shut down successfully.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      5479
@@ -10531,7 +10531,7 @@ Target Account:
 
 Changes:
 	User Right:		SeDebugPrivilege
-	Assigned To:	CORP\svc-backup","Microsoft Learn, ""Advanced Audit Policy Configuration"" (MicrosoftDocs/windowsserverdocs, identity/ad-ds/plan/security-best-practices/advanced-audit-policy-configuration.md)",,illustrative,T1134,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""target_account"":{""security_id"":""sid"",""account_name"":""string""},""changes"":{""user_right"":""string"",""assigned_to"":""principal""}}",,,
+	Assigned To:	CORP\svc-backup","Microsoft Learn, ""Advanced Audit Policy Configuration"" (MicrosoftDocs/windowsserverdocs, identity/ad-ds/plan/security-best-practices/advanced-audit-policy-configuration.md)",,illustrative,T1134,Yes,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""computer"":""string"",""description"":""string""},""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""},""target_account"":{""security_id"":""sid"",""account_name"":""string""},""changes"":{""user_right"":""string"",""assigned_to"":""principal""}}",,,Change.Account_Management
 4820,Security,Microsoft-Windows-Security-Auditing,Account Logon,Audit Kerberos Service Ticket Operations,A Kerberos Ticket-granting-ticket (TGT) was denied because the device does not meet the access control restrictions.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4820
@@ -10683,7 +10683,7 @@ Subject:
 	Logon ID:		0x3E7F21
 
 Category ID:		%%8272
-Subcategory ID:		0x0","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative,T1070.001,Yes,AU-9,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""computer"":""string"",""description"":""string""},""category_id"":""string"",""subcategory_id"":""hex"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,
+Subcategory ID:		0x0","ASD/ACSC ""Priority logs for SIEM ingestion: Practitioner guidance"" (2025), Microsoft Domain Controller / AD & Domain Service Security Logs / Microsoft Windows endpoint logs / Windows DNS server analytic event logs tables",,illustrative,T1070.001,Yes,AU-9,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""task_category"":""string"",""level"":""enum"",""computer"":""string"",""description"":""string""},""category_id"":""string"",""subcategory_id"":""hex"",""subject"":{""security_id"":""sid"",""account_name"":""string"",""account_domain"":""string"",""logon_id"":""hex""}}",,,Change.Auditing_Changes
 1200,Security,AD FS Auditing,AD FS,Token Issuance,The Federation Service issued a token in response to a request for a security token.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      1200
@@ -11944,7 +11944,7 @@ Computer:      WKS-0142.corp.local
 Description:
 The Windows Event Log service shut down.
 
-[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Endpoint.Services
 1101,Security,Microsoft-Windows-Security-Auditing,Audit and system lifecycle,,Audit events were dropped by the transport.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      1101
@@ -11953,7 +11953,7 @@ Computer:      WKS-0142.corp.local
 Description:
 Audit events were dropped by the transport.
 
-[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Change.Auditing_Changes
 1104,Security,Microsoft-Windows-Security-Auditing,Audit and system lifecycle,,The Security log became full.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      1104
@@ -11971,7 +11971,7 @@ Computer:      WKS-0142.corp.local
 Description:
 The audit log was automatically backed up.
 
-[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Change.Auditing_Changes
 1108,Security,Microsoft-Windows-Security-Auditing,Audit and system lifecycle,,The event logging service encountered an error while processing an event.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      1108
@@ -11980,7 +11980,7 @@ Computer:      WKS-0142.corp.local
 Description:
 The event logging service encountered an error while processing an event.
 
-[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+[Collection note: Event 1102 is a high-value tampering indicator. Collect Security logs in XML format where possible.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1070.001; T1562.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Change.Auditing_Changes
 4626,Security,Microsoft-Windows-Security-Auditing,Authentication,,User or device claims information was recorded.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4626
@@ -12007,7 +12007,7 @@ Computer:      WKS-0142.corp.local
 Description:
 A Kerberos service ticket request failed.
 
-[Collection note: Primarily generated on domain controllers. Retain TicketEncryptionType, ServiceName, ClientAddress, Status and FailureCode.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1558; T1110.003; T1078.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+[Collection note: Primarily generated on domain controllers. Retain TicketEncryptionType, ServiceName, ClientAddress, Status and FailureCode.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1558; T1110.003; T1078.002,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Authentication
 4798,Security,Microsoft-Windows-Security-Auditing,Account management,,A user's local group membership was enumerated.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4798
@@ -12016,7 +12016,7 @@ Computer:      WKS-0142.corp.local
 Description:
 A user's local group membership was enumerated.
 
-[Collection note: High-value identity lifecycle events. Correlate SubjectLogonId, TargetSid and directory changes.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1136; T1098; T1078; T1003,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+[Collection note: High-value identity lifecycle events. Correlate SubjectLogonId, TargetSid and directory changes.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1136; T1098; T1078; T1003,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Change.Account_Management
 4799,Security,Microsoft-Windows-Security-Auditing,Account management,,A security-enabled local group membership was enumerated.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4799
@@ -12025,7 +12025,7 @@ Computer:      WKS-0142.corp.local
 Description:
 A security-enabled local group membership was enumerated.
 
-[Collection note: High-value identity lifecycle events. Correlate SubjectLogonId, TargetSid and directory changes.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1136; T1098; T1078; T1003,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+[Collection note: High-value identity lifecycle events. Correlate SubjectLogonId, TargetSid and directory changes.]","Uploaded ""Windows Event ID Catalogue"" reference CSV",,illustrative,T1136; T1098; T1078; T1003,,,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Change
 4826,Security,Microsoft-Windows-Security-Auditing,Audit and system lifecycle,,Boot Configuration Data was loaded.,"Log Name:      Security
 Source:        Microsoft-Windows-Security-Auditing
 Event ID:      4826
@@ -13015,7 +13015,7 @@ Event ID:      104
 Level:         Information
 Computer:      WKS-0142.corp.local
 Description:
-Event Log was Cleared","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,T1070.001,,AU-9,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,
+Event Log was Cleared","NSA, ""Event Forwarding Guidance"" (github.com/nsacyber/Event-Forwarding-Guidance, Events/RecommendedEvents.csv) — companion to ""Spotting the Adversary with Windows Event Log Monitoring""",,illustrative,T1070.001,,AU-9,"{""header"":{""log_name"":""string"",""source"":""string"",""event_id"":""integer"",""level"":""enum"",""computer"":""string"",""description"":""string""}}",,,Change.Auditing_Changes
 256,Microsoft-Windows-DNSServer/Analytical,Microsoft-Windows-DNSServer,DNS/Directory Services,,DNS Request/Response,"Log Name:      Microsoft-Windows-DNSServer/Analytical
 Source:        Microsoft-Windows-DNSServer
 Event ID:      256

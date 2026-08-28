@@ -1136,7 +1136,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Endpoint.Services"
+    "cim_mapping": ""
   },
   {
     "event_id": "4611",
@@ -1173,7 +1173,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Endpoint.Services"
+    "cim_mapping": ""
   },
   {
     "event_id": "4612",
@@ -1247,7 +1247,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Endpoint.Services"
+    "cim_mapping": ""
   },
   {
     "event_id": "4615",
@@ -1432,7 +1432,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Endpoint.Services"
+    "cim_mapping": ""
   },
   {
     "event_id": "4624",
@@ -1663,7 +1663,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Authentication"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4646",
@@ -1748,7 +1748,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Authentication"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4648",
@@ -3099,7 +3099,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Auditing_Changes"
+    "cim_mapping": "Endpoint.Registry"
   },
   {
     "event_id": "4671",
@@ -3187,7 +3187,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Authentication"
   },
   {
     "event_id": "4672",
@@ -3225,7 +3225,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Authentication"
   },
   {
     "event_id": "4673",
@@ -3263,7 +3263,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Processes"
   },
   {
     "event_id": "4673",
@@ -3301,7 +3301,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Processes"
   },
   {
     "event_id": "4674",
@@ -3339,7 +3339,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Processes"
   },
   {
     "event_id": "4674",
@@ -3377,7 +3377,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Processes"
   },
   {
     "event_id": "4675",
@@ -3911,7 +3911,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4699",
@@ -4011,7 +4011,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4701",
@@ -4061,7 +4061,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4702",
@@ -4111,7 +4111,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4704",
@@ -4148,7 +4148,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Auditing_Changes"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4705",
@@ -4185,7 +4185,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Auditing_Changes"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4706",
@@ -4222,7 +4222,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Auditing_Changes"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4707",
@@ -4488,7 +4488,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Auditing_Changes"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4714",
@@ -4636,7 +4636,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Auditing_Changes"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4718",
@@ -4673,7 +4673,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Auditing_Changes"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4719",
@@ -5715,7 +5715,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Account_Management"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4745",
@@ -5945,7 +5945,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Account_Management"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4750",
@@ -5991,7 +5991,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Account_Management"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4751",
@@ -6405,7 +6405,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Account_Management"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4760",
@@ -7941,7 +7941,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Authentication"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4800",
@@ -7979,7 +7979,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Authentication"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4801",
@@ -8040,7 +8040,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Authentication"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4801",
@@ -8078,7 +8078,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Authentication"
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4802",
@@ -8858,7 +8858,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Certificates"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4877",
@@ -11105,7 +11105,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Change.Network_Changes"
+    "cim_mapping": "Endpoint.Ports"
   },
   {
     "event_id": "4958",
@@ -11959,7 +11959,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "5025",
@@ -11996,7 +11996,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "5027",
@@ -12144,7 +12144,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "5031",
@@ -12259,7 +12259,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "5034",
@@ -12296,7 +12296,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "5035",
@@ -12333,7 +12333,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "5037",
@@ -14444,7 +14444,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "5155",
-    "cim_mapping": "Network_Traffic"
+    "cim_mapping": "Endpoint.Ports"
   },
   {
     "event_id": "5155",
@@ -14636,7 +14636,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "5159",
-    "cim_mapping": "Network_Traffic"
+    "cim_mapping": "Endpoint.Ports"
   },
   {
     "event_id": "5159",
@@ -15815,7 +15815,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "5460",
-    "cim_mapping": "Change.Network_Changes"
+    "cim_mapping": "Change"
   },
   {
     "event_id": "5462",
@@ -16438,7 +16438,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": "Network_Traffic"
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "5479",
@@ -20930,7 +20930,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4820",
@@ -21270,7 +21270,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change.Auditing_Changes"
   },
   {
     "event_id": "1200",
@@ -25026,7 +25026,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Endpoint.Services"
   },
   {
     "event_id": "1101",
@@ -25054,7 +25054,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change.Auditing_Changes"
   },
   {
     "event_id": "1104",
@@ -25110,7 +25110,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change.Auditing_Changes"
   },
   {
     "event_id": "1108",
@@ -25138,7 +25138,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change.Auditing_Changes"
   },
   {
     "event_id": "4626",
@@ -25222,7 +25222,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Authentication"
   },
   {
     "event_id": "4798",
@@ -25250,7 +25250,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change.Account_Management"
   },
   {
     "event_id": "4799",
@@ -25278,7 +25278,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change"
   },
   {
     "event_id": "4826",
@@ -28474,7 +28474,7 @@
     },
     "group_policy_path": "",
     "opposite_event_id": "",
-    "cim_mapping": ""
+    "cim_mapping": "Change.Auditing_Changes"
   },
   {
     "event_id": "256",

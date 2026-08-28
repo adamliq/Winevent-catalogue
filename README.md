@@ -112,15 +112,18 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     pairing is scoped to that specific category, not the bare event ID.
     The web lookup page shows it as a clickable "Opposite outcome" field
     that jumps straight to the paired event's own detail view.
-  - `cim_mapping` — for 524 rows, the Splunk Common Information Model
+  - `cim_mapping` — for 546 rows, the Splunk Common Information Model
     data model/dataset the event maps to cleanly (e.g. `Authentication`,
     `Change.Account_Management`, `Endpoint.Processes`,
     `Malware.Malware_Attacks`) — see
     `data/reference/splunk_cim_data_models.csv` for what each dataset
-    means and which CIM fields it carries. Curated per Security-log audit
-    subcategory (the official Advanced Audit Policy taxonomy already in
-    `category`/`subcategory` maps very predictably to CIM datasets — e.g.
-    every `Audit User Account Management` event is
+    means, which CIM fields it carries, and whether it's confirmed by the
+    real Splunk Add-on for Microsoft Windows package.
+
+    Built in two passes. First, this catalogue's own analysis: per
+    Security-log audit subcategory (the official Advanced Audit Policy
+    taxonomy already in `category`/`subcategory` maps very predictably to
+    CIM datasets — e.g. every `Audit User Account Management` event is
     `Change.Account_Management`), per canonical Sysmon event ID, and by
     hand-reviewing every event's actual message text on channels that
     looked homogeneous but turned out to mix genuine signal with
@@ -132,17 +135,49 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     the dedicated Windows Firewall/IPsec channels turned out to be rule
     *configuration* events (`Change.Network_Changes`), not actual traffic
     pass/block events, once their text was read rather than assumed from
-    the channel name. Left blank everywhere a confident single-dataset
-    mapping doesn't exist (ambiguous object-access events, and channels
-    like `CertificateServices-Deployment/Operational` whose message text
-    in this catalogue is an undecoded placeholder). The web lookup page
+    the channel name.
+
+    Second, a real `Splunk_TA_windows-11.0.2.tar` package (the actual
+    Splunk Add-on for Microsoft Windows) was supplied and cross-checked
+    against the first pass: its `eventtypes.conf`/`tags.conf` were parsed
+    to compute, per Security/System-log EventCode, the union of CIM tags
+    every matching eventtype assigns, then classified into a dataset by
+    the standard CIM tag-requirement combinations (`change`+`account` →
+    `Change.Account_Management`, `process`+`report` →
+    `Endpoint.Processes`, etc.). Wherever that produced an explicit
+    answer it **overrode** this catalogue's own guess, correcting several
+    real mistakes — e.g. 4634/4647 (logoff) and 4740/4767 (account
+    lockout/unlock) had been guessed as `Authentication` but the real
+    add-on tags them `Change.Account_Management`; 5154/5158/4957/861
+    (Windows Filtering Platform "permitted to listen") had been guessed
+    as `Network_Traffic`/`Change.Network_Changes` but the add-on has a
+    dedicated `Endpoint.Ports` dataset for exactly this; 4717/4718 had
+    been guessed as `Change.Auditing_Changes` but the add-on tags them
+    `Change.Account_Management`. It also surfaced a real product gap
+    worth noting: EventCode 4772 (Kerberos service-ticket request
+    failed) is listed in the add-on's own `eventtypes.conf` *comment*
+    but the comment doesn't match its actual search filter, so 4772 (and
+    4770, ticket renewed) get no CIM tag in the real product at all —
+    left blank here too, matching the real add-on rather than what
+    seems like it should obviously be true. The add-on doesn't cover
+    Sysmon, Terminal Services, the dedicated Windows Firewall channels,
+    Certificate Services Client, or DNS Server at the event-code level
+    at all, so those stay as this catalogue's own analysis from the
+    first pass, unverified but undisputed.
+
+    Left blank everywhere a confident single-dataset mapping doesn't
+    exist (ambiguous object-access events, and channels like
+    `CertificateServices-Deployment/Operational` whose message text in
+    this catalogue is an undecoded placeholder). The web lookup page
     shows it as a clickable "Splunk CIM" field that jumps to the matching
     row in the new Reference tables entry, and it's also selectable as a
     Pivot explorer facet.
 
-- `data/reference/splunk_cim_data_models.csv` / `.json` — the 16 Splunk
+- `data/reference/splunk_cim_data_models.csv` / `.json` — the 18 Splunk
   CIM data models/datasets referenced by `cim_mapping`, each with its
-  description, representative CIM field list, and which Windows event
+  description, representative CIM field list, whether it's confirmed by
+  the real Splunk Add-on for Microsoft Windows package (`ta_verified`:
+  Yes/Partial/No), and which Windows event
   sources in this catalogue feed it.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
