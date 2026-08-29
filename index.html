@@ -2188,6 +2188,11 @@ const PV_FACETS = {
   gpo:   { label: 'Has Group Policy path',         get: e => [e.group_policy_path && e.group_policy_path.trim() ? 'Yes' : 'No'] },
   opp:   { label: 'Has a success/failure pairing', get: e => [e.opposite_event_id && e.opposite_event_id.trim() ? 'Yes' : 'No'] },
   cim:   { label: 'Splunk CIM data model',         get: e => [e.cim_mapping || '(not mapped)'] },
+  field: { label: 'Field name (from event schema)', get: e => {
+    if (!e.field_schema) return ['(no schema fields)'];
+    const flat = seFlattenSchema(e.field_schema, '').filter(f => !f.path.startsWith('header.'));
+    return flat.length ? [...new Set(flat.map(f => f.name))] : ['(no schema fields)'];
+  } },
 };
 
 let pvState = { q: '', acscOnly: false, rowFacet: 'log', colFacet: 'acsc', topN: 12, pick: null };
