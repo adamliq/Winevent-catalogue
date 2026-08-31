@@ -142,5 +142,21 @@
     "description": "Tracks certificate lifecycle activity -- issuance, renewal, revocation, export, backup/restore, and client-side certificate store changes. Not addressed by the real Splunk_TA_windows package at all; this catalogue's own analysis.",
     "key_cim_fields": "dest, ssl_issuer, ssl_subject, ssl_serial, action, status",
     "windows_sources": "Security: Audit Certification Services, OCSP Responder Service; CertificateServicesClient Lifecycle-System/Lifecycle-User/CredentialRoaming Operational channels"
+  },
+  {
+    "data_model": "Alerts",
+    "dataset": "Alerts",
+    "ta_verified": "No",
+    "description": "Tracks generic alert/notification firings from any monitoring or alerting system -- not addressed by Splunk_TA_windows (a Windows-only add-on); this catalogue's own analysis, first used for Azure Monitor alert firings.",
+    "key_cim_fields": "signature, severity, dest, src, app, vendor_product",
+    "windows_sources": "None from the Windows Event Log catalogue; Azure: Subscription Activity Log's Alert category"
+  },
+  {
+    "data_model": "Data Loss Prevention (DLP)",
+    "dataset": "DLP",
+    "ta_verified": "No",
+    "description": "Tracks data loss prevention policy matches -- sensitive content detected and the action taken (blocked, audited, notified). Not addressed by Splunk_TA_windows (a Windows-only add-on, and DLP is a content-inspection concern, not an event-log one); this catalogue's own analysis, first used for Microsoft Purview DLP policy matches.",
+    "key_cim_fields": "signature, action, dest, src, user, file_name, file_hash, vendor_product",
+    "windows_sources": "None from the Windows Event Log catalogue; Microsoft 365: ComplianceDLPSharePoint, ComplianceDLPExchange, DLPEndpoint"
   }
 ]
