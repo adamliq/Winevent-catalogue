@@ -181,52 +181,73 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   sources in this catalogue feed it. Includes `Alerts`, added for the
   Azure/Entra cloud logs below (Splunk_TA_windows doesn't cover it, since
   it's a Windows-only add-on — `ta_verified: No`).
-- `data/cloud_logs.csv` / `.json` — first pass at expanding beyond Windows
-  Event Log into Microsoft's cloud platforms, kept as a separate data
-  model rather than shoehorned into `events.csv`: Azure/Entra logs are
-  identified by a named category within a resource type (e.g.
-  `SignInLogs` under the tenant-wide `Microsoft Entra ID` area), not a
-  numeric event ID, and a single category like `AuditLogs` covers many
-  distinct operation types rather than being enumerated individually the
-  way Windows events are — so `event_id`/`group_policy_path`/
-  `how_to_collect` don't apply and aren't reused. 21 rows: all 13
-  Microsoft Entra ID tenant-wide log categories (`AuditLogs`,
-  `SignInLogs`, `RiskyUsers`, etc.) and all 8 Subscription Activity Log
-  categories (`Administrative`, `Security`, `Policy`, etc.) — deduplicated
-  and comma-escaping-fixed from a supplied
-  `Azure_Log_Categories_Complete.csv` export, which had both issues in
-  its raw form. Fields: `platform` (`Entra ID` / `Azure`), `area`,
-  `resource_type`, `category`, `description`, `severity_notes` (including
-  license-tier caveats like "P1/P2"), `config_location` (the Diagnostic
-  Settings path — the cloud analog of `group_policy_path`), `cim_mapping`
-  (reuses `splunk_cim_data_models.csv` — CIM is platform-agnostic, so e.g.
+- `data/cloud_logs.csv` / `.json` — expands beyond Windows Event Log into
+  Microsoft's cloud platforms, kept as a separate data model rather than
+  shoehorned into `events.csv`: Azure/Entra logs are identified by a
+  named category within a resource type (e.g. `SignInLogs` under the
+  tenant-wide `Microsoft Entra ID` area), not a numeric event ID, and a
+  single category like `AuditLogs` covers many distinct operation types
+  rather than being enumerated individually the way Windows events are —
+  so `event_id`/`group_policy_path`/`how_to_collect` don't apply and
+  aren't reused. 135 rows: all 13 Microsoft Entra ID tenant-wide log
+  categories (`AuditLogs`, `SignInLogs`, `RiskyUsers`, etc.), all 8
+  Subscription Activity Log categories (`Administrative`, `Security`,
+  `Policy`, etc.), and 114 Azure resource-log categories across 35
+  resource types (`Microsoft.KeyVault/vaults`, `Microsoft.Storage/
+  storageAccounts`, `Microsoft.ContainerService/managedClusters`,
+  `Microsoft.Sql/servers/databases`, and 31 more, down to niche ones like
+  `Microsoft.SignalRService/SignalR` and `Microsoft.Batch/
+  batchAccounts`) — deduplicated, unioned, and comma-escaping-fixed from
+  a supplied `Azure_Log_Categories_Complete.csv` export, which had a
+  large duplicated block (several resource types listed twice,
+  near-verbatim, later in the file) and two rows with unescaped commas
+  inside unquoted description fields that would have silently misaligned
+  columns on a naive parse; the two occurrences of each duplicated
+  resource type were unioned rather than either one being dropped
+  outright, since the second pass sometimes added genuinely new
+  categories the first didn't have (e.g. `Microsoft.ContainerService/
+  managedClusters` gained `csi-azuredisk-controller` and
+  `csi-azurefile-controller` from its second listing).
+
+  Fields: `platform` (`Entra ID` / `Azure`), `area`, `resource_type`,
+  `category`, `description`, `severity_notes` (including license-tier
+  caveats like "P1/P2"), `config_location` (the Diagnostic Settings path
+  — the cloud analog of `group_policy_path`), `cim_mapping` (reuses
+  `splunk_cim_data_models.csv` — CIM is platform-agnostic, so e.g.
   `SignInLogs` maps to `Authentication` exactly like Windows 4624/4625
-  do), `nist_800_53_au` (the same `AU-2, AU-3, AU-12` controls that apply
-  to any audit-logging configuration), and `windows_equivalent` — a new
-  cross-link (semicolon-separated Security-log event IDs) pointing at the
-  on-premises Windows event that's the closest counterpart to a cloud log
-  category, for hybrid AD environments (currently populated only for
-  `SignInLogs`/`ADFSSignInLogs` → `4624`, the clean, unambiguous case;
-  left blank everywhere the mapping would be reductive or misleading,
-  e.g. `AuditLogs` covers far more than the handful of Windows
-  Account-Management events it would be tempting to link). Both
-  `cim_mapping` and `windows_equivalent` were populated conservatively —
-  left blank on roughly half the rows (`RiskyUsers`, `ServiceHealth`,
-  `MicrosoftGraphActivityLogs`, and others) where no clean, confident
-  mapping exists, rather than guessed. The web lookup page's new "Cloud
-  logs" tab browses this list with the same search/filter/detail-view
-  pattern as the Events tab, and its clickable Splunk CIM / Windows
+  do, and `AzureFirewallNetworkRule`/`ApplicationGatewayFirewallLog` map
+  to `Network_Traffic` exactly like Windows' own Filtering Platform
+  events do), `nist_800_53_au` (the same `AU-2, AU-3, AU-12` controls
+  that apply to any audit-logging configuration), and
+  `windows_equivalent` — a cross-link (semicolon-separated Security-log
+  event IDs) pointing at the on-premises Windows event that's the
+  closest counterpart to a cloud log category, for hybrid AD
+  environments (populated for `SignInLogs`/`ADFSSignInLogs` and
+  `Microsoft.AAD/domainServices`' `AccountLogon`/`LogonLogoff` → `4624`
+  — Azure AD Domain Services runs an actual Windows-style directory, so
+  its own log category names mirror Security log categories directly).
+  Both `cim_mapping` and `windows_equivalent` were populated
+  conservatively throughout — populated on about a fifth of the 135 rows
+  where a clean, confident mapping exists (mostly Authentication,
+  Change.Account_Management, and Network_Traffic — the same three
+  datasets that dominate the Windows side too), left blank everywhere
+  else (`RiskyUsers`, all the SQL/DocumentDB/Databricks/Synapse
+  performance-telemetry categories, App Insights telemetry, and most of
+  the platform-as-a-service operational logs) rather than force-fit a
+  Splunk CIM dataset that doesn't actually describe what the category
+  captures. The web lookup page's "Cloud logs" tab browses this list
+  with the same search/filter/detail-view pattern as the Events tab —
+  its list rows show the resource type as their second badge for the
+  114 Azure Resource Log rows (the `area` field is identical, "Azure
+  Resource Logs", across all of them, so it wouldn't help distinguish
+  anything at a glance) — and its clickable Splunk CIM / Windows
   equivalent fields jump into the Reference tables tab and Events tab
   respectively, reusing `jumpToCimTable()`/`jumpToEvent()` rather than
   new navigation code.
 
-  This is deliberately a first pass covering the two highest-value,
-  tenant-wide log sources — not the ~90 Azure resource-specific log
-  categories (Key Vault, Storage, SQL, AKS, and the rest) also present in
-  the supplied export, which is a much larger, lower-signal-density
-  undertaking better tackled as its own follow-up pass, resource type by
-  resource type, the same way this catalogue's own ACSC-priority Windows
-  events were tackled before its long tail.
+  Not every Azure resource type is here — only the ones present in the
+  supplied export — and new Azure resource types ship regularly, so this
+  will always be a snapshot rather than a complete enumeration.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
