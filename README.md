@@ -173,12 +173,60 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     row in the new Reference tables entry, and it's also selectable as a
     Pivot explorer facet.
 
-- `data/reference/splunk_cim_data_models.csv` / `.json` — the 18 Splunk
+- `data/reference/splunk_cim_data_models.csv` / `.json` — the 19 Splunk
   CIM data models/datasets referenced by `cim_mapping`, each with its
   description, representative CIM field list, whether it's confirmed by
   the real Splunk Add-on for Microsoft Windows package (`ta_verified`:
   Yes/Partial/No), and which Windows event
-  sources in this catalogue feed it.
+  sources in this catalogue feed it. Includes `Alerts`, added for the
+  Azure/Entra cloud logs below (Splunk_TA_windows doesn't cover it, since
+  it's a Windows-only add-on — `ta_verified: No`).
+- `data/cloud_logs.csv` / `.json` — first pass at expanding beyond Windows
+  Event Log into Microsoft's cloud platforms, kept as a separate data
+  model rather than shoehorned into `events.csv`: Azure/Entra logs are
+  identified by a named category within a resource type (e.g.
+  `SignInLogs` under the tenant-wide `Microsoft Entra ID` area), not a
+  numeric event ID, and a single category like `AuditLogs` covers many
+  distinct operation types rather than being enumerated individually the
+  way Windows events are — so `event_id`/`group_policy_path`/
+  `how_to_collect` don't apply and aren't reused. 21 rows: all 13
+  Microsoft Entra ID tenant-wide log categories (`AuditLogs`,
+  `SignInLogs`, `RiskyUsers`, etc.) and all 8 Subscription Activity Log
+  categories (`Administrative`, `Security`, `Policy`, etc.) — deduplicated
+  and comma-escaping-fixed from a supplied
+  `Azure_Log_Categories_Complete.csv` export, which had both issues in
+  its raw form. Fields: `platform` (`Entra ID` / `Azure`), `area`,
+  `resource_type`, `category`, `description`, `severity_notes` (including
+  license-tier caveats like "P1/P2"), `config_location` (the Diagnostic
+  Settings path — the cloud analog of `group_policy_path`), `cim_mapping`
+  (reuses `splunk_cim_data_models.csv` — CIM is platform-agnostic, so e.g.
+  `SignInLogs` maps to `Authentication` exactly like Windows 4624/4625
+  do), `nist_800_53_au` (the same `AU-2, AU-3, AU-12` controls that apply
+  to any audit-logging configuration), and `windows_equivalent` — a new
+  cross-link (semicolon-separated Security-log event IDs) pointing at the
+  on-premises Windows event that's the closest counterpart to a cloud log
+  category, for hybrid AD environments (currently populated only for
+  `SignInLogs`/`ADFSSignInLogs` → `4624`, the clean, unambiguous case;
+  left blank everywhere the mapping would be reductive or misleading,
+  e.g. `AuditLogs` covers far more than the handful of Windows
+  Account-Management events it would be tempting to link). Both
+  `cim_mapping` and `windows_equivalent` were populated conservatively —
+  left blank on roughly half the rows (`RiskyUsers`, `ServiceHealth`,
+  `MicrosoftGraphActivityLogs`, and others) where no clean, confident
+  mapping exists, rather than guessed. The web lookup page's new "Cloud
+  logs" tab browses this list with the same search/filter/detail-view
+  pattern as the Events tab, and its clickable Splunk CIM / Windows
+  equivalent fields jump into the Reference tables tab and Events tab
+  respectively, reusing `jumpToCimTable()`/`jumpToEvent()` rather than
+  new navigation code.
+
+  This is deliberately a first pass covering the two highest-value,
+  tenant-wide log sources — not the ~90 Azure resource-specific log
+  categories (Key Vault, Storage, SQL, AKS, and the rest) also present in
+  the supplied export, which is a much larger, lower-signal-density
+  undertaking better tackled as its own follow-up pass, resource type by
+  resource type, the same way this catalogue's own ACSC-priority Windows
+  events were tackled before its long tail.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
