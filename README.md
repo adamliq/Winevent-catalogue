@@ -178,10 +178,11 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   description, representative CIM field list, whether it's confirmed by
   the real Splunk Add-on for Microsoft Windows package (`ta_verified`:
   Yes/Partial/No), and which Windows event sources in this catalogue feed
-  it. Includes `Alerts` (Azure Monitor alert firings) and `Data Loss
-  Prevention (DLP)` (Microsoft Purview DLP policy matches), added for the
-  cloud logs below — neither is covered by Splunk_TA_windows, since it's
-  a Windows-only add-on (`ta_verified: No` for both).
+  it. Includes `Alerts` (Azure Monitor alert firings and Microsoft
+  Defender XDR's cross-product alert record) and `Data Loss Prevention
+  (DLP)` (Microsoft Purview DLP policy matches), added for the cloud logs
+  below — neither is covered by Splunk_TA_windows, since it's a
+  Windows-only add-on (`ta_verified: No` for both).
 - `data/cloud_logs.csv` / `.json` — expands beyond Windows Event Log into
   Microsoft's cloud platforms, kept as a separate data model rather than
   shoehorned into `events.csv`: cloud logs are identified by a named
@@ -190,7 +191,7 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   single category like `AuditLogs` covers many distinct operation types
   rather than being enumerated individually the way Windows events are —
   so `event_id`/`group_policy_path`/`how_to_collect` don't apply and
-  aren't reused. 160 rows across three platforms:
+  aren't reused. 183 rows across four platforms:
   - **Entra ID** (13 rows) — all Microsoft Entra ID tenant-wide log
     categories (`AuditLogs`, `SignInLogs`, `RiskyUsers`, etc.).
   - **Azure** (122 rows) — all 8 Subscription Activity Log categories
@@ -223,48 +224,70 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     the record types with genuinely established, well-known meaning
     rather than attempting to enumerate the full record-type list from
     memory.
+  - **Microsoft Defender** (23 rows) — added from a second, updated
+    supplied export that appended 11 source rows for Defender for Cloud,
+    Endpoint, Identity, Cloud Apps, and Office 365. Several of those
+    source rows named multiple Microsoft Sentinel/Defender XDR advanced
+    hunting tables together (e.g. `DeviceEvents / DeviceProcessEvents /
+    DeviceNetworkEvents / ...`); each was split into its own row here,
+    since these are genuinely distinct, individually well-documented
+    tables with their own schemas — the same granularity choice this
+    catalogue already makes for e.g. its own Sysmon rows.
 
-  Fields: `platform` (`Entra ID` / `Azure` / `Microsoft 365`), `area`,
-  `resource_type`, `category`, `description`, `severity_notes` (including
-  license-tier caveats like "P1/P2" or "requires Microsoft 365 E5 /
-  Advanced Audit"), `config_location` (the Diagnostic Settings / Purview
-  Audit path — the cloud analog of `group_policy_path`), `cim_mapping`
-  (reuses `splunk_cim_data_models.csv` — CIM is platform-agnostic, so
-  e.g. `SignInLogs` maps to `Authentication` exactly like Windows
-  4624/4625 do, `AzureFirewallNetworkRule`/`ApplicationGatewayFirewallLog`
-  map to `Network_Traffic` exactly like Windows' own Filtering Platform
-  events do, and `ComplianceDLPExchange`/`ComplianceDLPSharePoint`/
-  `DLPEndpoint` map to the new `DLP` dataset), `nist_800_53_au` (the same
-  `AU-2, AU-3, AU-12` controls that apply to any audit-logging
-  configuration), and `windows_equivalent` — a cross-link
-  (semicolon-separated Security-log event IDs) pointing at the
-  on-premises Windows event that's the closest counterpart to a cloud log
-  category, for hybrid AD environments (populated for
-  `SignInLogs`/`ADFSSignInLogs` and `Microsoft.AAD/domainServices`'
-  `AccountLogon`/`LogonLogoff` → `4624` — Azure AD Domain Services runs
-  an actual Windows-style directory, so its own log category names
-  mirror Security log categories directly; nothing in the Microsoft 365
+  Fields: `platform` (`Entra ID` / `Azure` / `Microsoft 365` /
+  `Microsoft Defender`), `area`, `resource_type`, `category`,
+  `description`, `severity_notes` (including license-tier caveats like
+  "P1/P2" or "requires Microsoft 365 E5 / Advanced Audit"),
+  `config_location` (the Diagnostic Settings / Purview Audit / Defender
+  XDR connector path — the cloud analog of `group_policy_path`),
+  `cim_mapping` (reuses `splunk_cim_data_models.csv` — CIM is
+  platform-agnostic, so e.g. `SignInLogs` and Defender for Endpoint's
+  `DeviceLogonEvents` both map to `Authentication` exactly like Windows
+  4624/4625 do, `DeviceProcessEvents` maps to `Endpoint.Processes`
+  exactly like Windows 4688/Sysmon 1 do, `AzureFirewallNetworkRule`/
+  `ApplicationGatewayFirewallLog` map to `Network_Traffic` exactly like
+  Windows' own Filtering Platform events do, `ComplianceDLPExchange`/
+  `ComplianceDLPSharePoint`/`DLPEndpoint` map to the `DLP` dataset, and
+  Defender for Cloud's `SecurityAlerts` / Defender XDR's `AlertInfo` map
+  to the `Alerts` dataset), `nist_800_53_au` (the same `AU-2, AU-3,
+  AU-12` controls that apply to any audit-logging configuration), and
+  `windows_equivalent` — a cross-link (semicolon-separated Security-log
+  event IDs) pointing at the on-premises Windows event that's the
+  closest counterpart to a cloud log category, for hybrid AD
+  environments (populated for `SignInLogs`/`ADFSSignInLogs`,
+  `Microsoft.AAD/domainServices`' `AccountLogon`/`LogonLogoff`, and
+  Defender's `DeviceLogonEvents`/`IdentityLogonEvents` → `4624`, plus
+  `DeviceProcessEvents` → `4688` and `DeviceRegistryEvents` → `4657` —
+  Azure AD Domain Services runs an actual Windows-style directory so its
+  log category names mirror Security log categories directly, and
+  Defender for Endpoint/Identity observe the same underlying Windows
+  activity from a different vantage point; nothing in the Microsoft 365
   rows gets one, since Exchange/SharePoint/Teams have no on-premises
   event in this catalogue to point at).
 
   `cim_mapping` and `windows_equivalent` were populated conservatively
-  throughout — on about a fifth of the 160 rows, where a clean, confident
-  mapping exists (mostly Authentication, Change.Account_Management,
-  Network_Traffic, and DLP), left blank everywhere else (`RiskyUsers`,
-  all the SQL/DocumentDB/Databricks/Synapse performance-telemetry
-  categories, App Insights telemetry, most platform-as-a-service
-  operational logs, and most Exchange/SharePoint/Teams activity
-  categories) rather than force-fit a Splunk CIM dataset that doesn't
-  actually describe what the category captures. The web lookup page's
-  "Cloud logs" tab browses this list with the same search/filter/
-  detail-view pattern as the Events tab, a three-way platform toggle
-  (Entra ID / Azure / Microsoft 365, each independently on or off) in
-  place of the Events tab's Log/Category comboboxes — its list rows show
-  the resource type as their second badge for the Azure Resource Log and
-  Microsoft Purview rows (their `area` field is identical across every
-  row within each group, so it wouldn't help distinguish anything at a
-  glance) — and its clickable Splunk CIM / Windows equivalent fields jump
-  into the Reference tables tab and Events tab respectively, reusing
+  throughout — on about a fifth of the 183 rows, where a clean,
+  confident mapping exists (mostly Authentication, Change.Account_
+  Management, Network_Traffic, DLP, and Alerts), left blank everywhere
+  else (`RiskyUsers`, all the SQL/DocumentDB/Databricks/Synapse
+  performance-telemetry categories, App Insights telemetry, most
+  platform-as-a-service operational logs, most Exchange/SharePoint/Teams
+  activity categories, and the broader Defender advanced-hunting tables
+  like `DeviceEvents`/`CloudAppEvents`/`EmailEvents` whose content spans
+  too many kinds of activity to fit one CIM dataset) rather than
+  force-fit a Splunk CIM dataset that doesn't actually describe what the
+  category captures. The web lookup page's "Cloud logs" tab browses this
+  list with the same search/filter/detail-view pattern as the Events
+  tab, a four-way platform toggle (each platform independently on or
+  off) in place of the Events tab's Log/Category comboboxes — its list
+  rows show the resource type as their second badge for the Azure
+  Resource Log and Microsoft Purview rows specifically (their `area`
+  field is identical across every row within each of those two groups,
+  so it wouldn't help distinguish anything at a glance; the Microsoft
+  Defender rows' `area` already varies meaningfully row to row — "for
+  Endpoint" vs. "for Identity" and so on — so they keep showing it) —
+  and its clickable Splunk CIM / Windows equivalent fields jump into the
+  Reference tables tab and Events tab respectively, reusing
   `jumpToCimTable()`/`jumpToEvent()` rather than new navigation code.
 
   This remains a snapshot, not a claimed-complete enumeration: not every
