@@ -191,17 +191,19 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   single category like `AuditLogs` covers many distinct operation types
   rather than being enumerated individually the way Windows events are —
   so `event_id`/`group_policy_path`/`how_to_collect` don't apply and
-  aren't reused. 183 rows across four platforms:
+  aren't reused. 216 rows across seven platforms:
   - **Entra ID** (13 rows) — all Microsoft Entra ID tenant-wide log
     categories (`AuditLogs`, `SignInLogs`, `RiskyUsers`, etc.).
-  - **Azure** (122 rows) — all 8 Subscription Activity Log categories
-    (`Administrative`, `Security`, `Policy`, etc.) plus 114 Azure
-    resource-log categories across 35 resource types
+  - **Azure** (146 rows) — all 8 Subscription Activity Log categories
+    (`Administrative`, `Security`, `Policy`, etc.) plus 138 Azure
+    resource-log categories across 47 resource types
     (`Microsoft.KeyVault/vaults`, `Microsoft.Storage/storageAccounts`,
     `Microsoft.ContainerService/managedClusters`,
-    `Microsoft.Sql/servers/databases`, and 31 more, down to niche ones
-    like `Microsoft.SignalRService/SignalR` and
-    `Microsoft.Batch/batchAccounts`) — deduplicated, unioned, and
+    `Microsoft.Sql/servers/databases`, and dozens more, from
+    high-traffic ones like `Microsoft.Cdn/profiles` (Azure Front Door)
+    down to niche ones like `Microsoft.SignalRService/SignalR`,
+    `Microsoft.Batch/batchAccounts`, `Microsoft.Maps/accounts`, and
+    `Microsoft.AzureStackHCI/clusters`) — deduplicated, unioned, and
     comma-escaping-fixed from a supplied
     `Azure_Log_Categories_Complete.csv` export, which had a large
     duplicated block (several resource types listed twice, near-verbatim,
@@ -212,18 +214,47 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     second pass sometimes added genuinely new categories the first didn't
     have (e.g. `Microsoft.ContainerService/managedClusters` gained
     `csi-azuredisk-controller` and `csi-azurefile-controller` from its
-    second listing).
-  - **Microsoft 365** (25 rows) — the major record types of the
+    second listing). Two later export rounds added the rest of the long
+    tail (Azure Virtual Desktop, Azure Front Door/WAF, Microsoft Purview's
+    own account-level resource logs, Azure Arc, Managed DevOps Pools,
+    Azure Communication Services, Azure AI Services/OpenAI, Azure Maps,
+    and Azure Stack HCI) — split into one row per documented diagnostic
+    category the same way the earlier resource types were (e.g. Azure
+    Virtual Desktop's `Checkpoint`/`Error`/`Management`/`Connection`/
+    `HostRegistration` categories became 5 separate `hostpools` rows
+    rather than one combined row), except where the source only gave a
+    single combined category name without enough detail to split
+    confidently (Azure Communication Services, Azure Arc). One export
+    round also supplied two more Azure Backup/Site Recovery categories
+    for the existing `Microsoft.RecoveryServices/vaults` row
+    (`CoreAzureBackup`, the `AddonAzureBackup*` family,
+    `AzureSiteRecoveryReplicatedItems`) that were merged into that row's
+    existing combined category string rather than added as new rows,
+    since they're the same resource type's diagnostic settings, just
+    described at finer granularity than the first pass had captured.
+  - **Microsoft 365** (28 rows) — the major record types of the
     Microsoft Purview unified audit log: Exchange Online admin/mailbox
     activity, SharePoint Online/OneDrive file and sharing operations,
-    Microsoft Teams, Power Platform, Data Loss Prevention policy matches,
-    and Microsoft Defender for Office 365 threat detections. Unlike the
-    Azure rows, there was no source export for this one — it's built
+    Microsoft Teams, Power Platform, Power BI, Dynamics 365/Dataverse,
+    Microsoft Fabric, Data Loss Prevention policy matches, and Microsoft
+    Defender for Office 365 threat detections. Most of these were built
     from Microsoft's own published audit-log record-type reference
-    (well-established, common security-engineering knowledge), scoped to
-    the record types with genuinely established, well-known meaning
-    rather than attempting to enumerate the full record-type list from
-    memory.
+    (well-established, common security-engineering knowledge) rather
+    than a source export, scoped to record types with genuinely
+    established, well-known meaning rather than attempting to enumerate
+    the full record-type list from memory. A later supplied export's
+    Microsoft 365/Power Platform rows turned out to substantially
+    restate record types already covered here at a coarser or
+    less-precise grain (e.g. its generic
+    `UnifiedAuditLog / Audit.General / ...` row versus this catalogue's
+    already-itemized `ExchangeAdmin`/`ExchangeItem`/etc.; its
+    `PowerAppsActivity / PowerAutomateActivity / PowerBIActivity` row
+    versus the already-present `MicrosoftFlow`/`PowerAppsApp` record
+    types) — those were left out rather than duplicated, and only the
+    genuinely new, confidently-real record type it surfaced
+    (`PowerBIAudit`) was added, alongside `Dynamics365Activity` and a
+    Microsoft Fabric workspace-activity row built from general knowledge
+    of Purview's audit coverage.
   - **Microsoft Defender** (23 rows) — added from a second, updated
     supplied export that appended 11 source rows for Defender for Cloud,
     Endpoint, Identity, Cloud Apps, and Office 365. Several of those
@@ -233,9 +264,25 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     since these are genuinely distinct, individually well-documented
     tables with their own schemas — the same granularity choice this
     catalogue already makes for e.g. its own Sysmon rows.
+  - **Azure DevOps** (3 rows) — organization-level audit streaming
+    (`AzureDevOpsAuditing`, plus a row summarizing the Category/Area
+    taxonomy its events carry) and pipeline run diagnostic/agent/worker
+    logging (`system.debug=true`). A new platform rather than folded
+    into Azure, since it's a separate product surface with its own
+    auditing model, not an ARM resource with diagnostic settings.
+  - **Microsoft Intune** (2 rows) — tenant-wide device compliance/
+    configuration/app-protection logging, plus Windows 365 Cloud PC
+    provisioning/connection activity (folded in here rather than given
+    its own platform, since Windows 365 is managed entirely through the
+    Intune admin center).
+  - **GitHub** (1 row) — organization/enterprise audit log streaming.
+    Included since GitHub is a Microsoft subsidiary whose audit log is
+    commonly piped into the same Sentinel/Splunk pipelines as the rest
+    of this catalogue's cloud sources.
 
   Fields: `platform` (`Entra ID` / `Azure` / `Microsoft 365` /
-  `Microsoft Defender`), `area`, `resource_type`, `category`,
+  `Microsoft Defender` / `Azure DevOps` / `Microsoft Intune` /
+  `GitHub`), `area`, `resource_type`, `category`,
   `description`, `severity_notes` (including license-tier caveats like
   "P1/P2" or "requires Microsoft 365 E5 / Advanced Audit"),
   `config_location` (the Diagnostic Settings / Purview Audit / Defender
@@ -247,9 +294,12 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   exactly like Windows 4688/Sysmon 1 do, `AzureFirewallNetworkRule`/
   `ApplicationGatewayFirewallLog` map to `Network_Traffic` exactly like
   Windows' own Filtering Platform events do, `ComplianceDLPExchange`/
-  `ComplianceDLPSharePoint`/`DLPEndpoint` map to the `DLP` dataset, and
-  Defender for Cloud's `SecurityAlerts` / Defender XDR's `AlertInfo` map
-  to the `Alerts` dataset), `nist_800_53_au` (the same `AU-2, AU-3,
+  `ComplianceDLPSharePoint`/`DLPEndpoint` map to the `DLP` dataset,
+  Defender for Cloud's `SecurityAlerts` / Defender XDR's `AlertInfo` /
+  Azure Front Door's WAF logs map to the `Alerts` dataset, and
+  `AzureDevOpsAuditing` / the GitHub audit log map to `Change` the same
+  way the Azure Subscription Activity Log's `Administrative` category
+  does), `nist_800_53_au` (the same `AU-2, AU-3,
   AU-12` controls that apply to any audit-logging configuration), and
   `windows_equivalent` — a cross-link (semicolon-separated Security-log
   event IDs) pointing at the on-premises Windows event that's the
@@ -266,35 +316,36 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   event in this catalogue to point at).
 
   `cim_mapping` and `windows_equivalent` were populated conservatively
-  throughout — on about a fifth of the 183 rows, where a clean,
+  throughout — on a bit under a quarter of the 216 rows, where a clean,
   confident mapping exists (mostly Authentication, Change.Account_
-  Management, Network_Traffic, DLP, and Alerts), left blank everywhere
-  else (`RiskyUsers`, all the SQL/DocumentDB/Databricks/Synapse
-  performance-telemetry categories, App Insights telemetry, most
+  Management, Network_Traffic, DLP, Alerts, and bare Change), left blank
+  everywhere else (`RiskyUsers`, all the SQL/DocumentDB/Databricks/
+  Synapse performance-telemetry categories, App Insights telemetry, most
   platform-as-a-service operational logs, most Exchange/SharePoint/Teams
-  activity categories, and the broader Defender advanced-hunting tables
-  like `DeviceEvents`/`CloudAppEvents`/`EmailEvents` whose content spans
-  too many kinds of activity to fit one CIM dataset) rather than
-  force-fit a Splunk CIM dataset that doesn't actually describe what the
-  category captures. The web lookup page's "Cloud logs" tab browses this
-  list with the same search/filter/detail-view pattern as the Events
-  tab, a four-way platform toggle (each platform independently on or
-  off) in place of the Events tab's Log/Category comboboxes — its list
-  rows show the resource type as their second badge for the Azure
-  Resource Log and Microsoft Purview rows specifically (their `area`
-  field is identical across every row within each of those two groups,
-  so it wouldn't help distinguish anything at a glance; the Microsoft
-  Defender rows' `area` already varies meaningfully row to row — "for
-  Endpoint" vs. "for Identity" and so on — so they keep showing it) —
-  and its clickable Splunk CIM / Windows equivalent fields jump into the
-  Reference tables tab and Events tab respectively, reusing
+  activity categories, the Azure Virtual Desktop/Arc/Intune/Communication
+  Services rows, and the broader Defender advanced-hunting tables like
+  `DeviceEvents`/`CloudAppEvents`/`EmailEvents` whose content spans too
+  many kinds of activity to fit one CIM dataset) rather than force-fit a
+  Splunk CIM dataset that doesn't actually describe what the category
+  captures. The web lookup page's "Cloud logs" tab browses this list
+  with the same search/filter/detail-view pattern as the Events tab, a
+  seven-way platform toggle (each platform independently on or off,
+  wrapping onto a second row on narrow viewports) in place of the Events
+  tab's Log/Category comboboxes — its list rows show the resource type
+  as their second badge for the Azure Resource Log and Microsoft Purview
+  rows specifically (their `area` field is identical across every row
+  within each of those two groups, so it wouldn't help distinguish
+  anything at a glance; every other platform's `area` already varies
+  meaningfully row to row, so they keep showing it) — and its clickable
+  Splunk CIM / Windows equivalent fields jump into the Reference tables
+  tab and Events tab respectively, reusing
   `jumpToCimTable()`/`jumpToEvent()` rather than new navigation code.
 
   This remains a snapshot, not a claimed-complete enumeration: not every
   Azure resource type is here (only the ones present in the supplied
-  export), Microsoft 365's own record-type list is larger than the 25
-  covered here, and neither Azure nor Microsoft 365 stand still — both
-  ship new log sources on an ongoing basis.
+  exports), Microsoft 365's own record-type list is larger than the 28
+  covered here, and none of these seven platforms stand still — all of
+  them ship new log sources on an ongoing basis.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
