@@ -330,7 +330,7 @@
     font-family: ui-monospace, monospace;
   }
   .list {
-    max-height: 68vh;
+    max-height: var(--fit-list-vh, 68vh);
     overflow-y: auto;
   }
   .row {
@@ -392,13 +392,13 @@
     border-radius: 12px;
     box-shadow: var(--shadow);
     padding: 24px 26px 28px;
-    min-height: 68vh;
+    min-height: var(--fit-vh, 68vh);
   }
   .detail-empty {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 68vh;
+    height: var(--fit-vh, 68vh);
     color: var(--faint);
     font-size: 0.9rem;
     text-align: center;
@@ -889,7 +889,13 @@
   .cl-platform-btn {
     display: inline-flex; align-items: center; gap: 7px; font: inherit; font-size: 0.82rem; font-weight: 600;
     padding: 9px 13px; border-radius: 9px; border: 1px solid var(--line-strong); background: var(--surface);
-    color: var(--ink); cursor: pointer; white-space: nowrap;
+    color: var(--ink); cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  }
+  @media (max-width: 640px) {
+    /* Seven platform buttons wrapping onto 3-4 rows eats a lot of a phone's
+       vertical space before the list even starts -- scroll horizontally
+       instead, the same pattern nav.tabs already uses for the same reason. */
+    .cl-platform-toggle { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
   }
   .cl-platform-btn .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); flex-shrink: 0; }
   .cl-platform-btn.on { border-color: var(--accent); color: var(--accent); }
@@ -1276,7 +1282,7 @@
   </div>
 
   <div class="panel" id="panel-cloud">
-    <div class="cl-preview-note">⬡ Covers Microsoft Entra ID, Subscription Activity Log, 47 Azure resource types, Azure DevOps, the Microsoft Purview unified audit log, Microsoft Defender XDR (Cloud, Endpoint, Identity, Cloud Apps, Office 365), Microsoft Intune, and GitHub — 216 log categories total. Not every Microsoft cloud log source exists yet; more ship regularly.</div>
+    <div class="cl-preview-note">⬡ 216 log categories across 7 Microsoft cloud platforms — Entra ID, Azure, Microsoft 365, Defender, Azure DevOps, Intune, GitHub. A snapshot, not a complete enumeration; more ship regularly.</div>
     <div class="search-row" style="margin-bottom:10px;">
       <div class="search-box">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1566,7 +1572,31 @@ document.getElementById('tabs').addEventListener('click', e => {
   document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('active', b === btn));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+  fitPanelsToViewport();
 });
+
+// ---- fit list/detail panels to the actual remaining screen height ----
+// A flat vh fraction doesn't know how much header/tab/search chrome sits
+// above it (which differs per tab, e.g. Cloud logs' extra platform-toggle
+// row), so on some window sizes it either leaves dead space below the
+// panel or overflows into a second scrollbar. Measure the visible panel's
+// real top offset instead and size to what's actually left of the window.
+function fitPanelsToViewport() {
+  const listWrap = document.querySelector('.panel.active .list-wrap');
+  const countBar = document.querySelector('.panel.active .list-count');
+  if (!listWrap) return;
+  const top = listWrap.getBoundingClientRect().top;
+  const bottomReserve = 24; // breathing room so the panel edge isn't flush with the window edge
+  const total = Math.max(320, Math.round(window.innerHeight - top - bottomReserve));
+  document.documentElement.style.setProperty('--fit-vh', total + 'px');
+  // .list sits below .list-count inside the same wrap, so its own max-height
+  // needs that bar's height subtracted or the wrap would run past --fit-vh.
+  const countBarH = countBar ? countBar.getBoundingClientRect().height : 0;
+  document.documentElement.style.setProperty('--fit-list-vh', Math.max(240, total - countBarH) + 'px');
+}
+window.addEventListener('resize', fitPanelsToViewport);
+window.addEventListener('orientationchange', fitPanelsToViewport);
+fitPanelsToViewport();
 
 // ---- search + list ----
 const searchEl = document.getElementById('search');
