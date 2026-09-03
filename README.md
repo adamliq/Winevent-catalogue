@@ -410,6 +410,18 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   page's own already-embedded data (no separate fetch for that part —
   the relationship is fully reconstructable from what's already on the
   page). Rows with no ARM match show neither section, not an empty one.
+
+  Cloud Actions Explorer also has a Search/Explore view toggle, the same
+  pattern as Schema explorer: Search is the sortable/filterable table
+  above; Explore groups rows into collapsible cards by `(service,
+  category)` — the one grouping every row can join (`resource_type`/
+  `provider` are `N/A` for four of the six services, so grouping by
+  those would leave most of the catalogue in one undifferentiated
+  bucket) — each card showing its operations as clickable chips (falling
+  back to `resource_type`, then `provider`, then the category name
+  itself for the rows whose own `operation` is `N/A`) that open the same
+  detail modal a table row does. The search box and Service filter both
+  apply to whichever view is active.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
