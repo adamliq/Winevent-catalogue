@@ -1320,6 +1320,13 @@
     <div class="se-workspace">
       <aside class="se-rail">
         <div class="se-rail-group">
+          <h4>View</h4>
+          <div class="se-mode-toggle">
+            <button id="ca-mode-search-btn" class="se-mode-btn active" type="button">Search</button>
+            <button id="ca-mode-explore-btn" class="se-mode-btn" type="button">Explore</button>
+          </div>
+        </div>
+        <div class="se-rail-group">
           <h4>Service</h4>
           <div class="se-log-list" id="ca-service-list"></div>
         </div>
@@ -1332,21 +1339,26 @@
           </div>
           <span class="se-result-count" id="ca-result-count"></span>
         </div>
-        <div class="se-table-wrap">
-          <table class="se-table">
-            <thead>
-              <tr>
-                <th data-sort="service">Service</th>
-                <th data-sort="category">Category</th>
-                <th data-sort="operation">Operation</th>
-                <th data-sort="provider">Resource provider</th>
-                <th data-sort="resourceType">Resource type</th>
-              </tr>
-            </thead>
-            <tbody id="ca-actions-body"></tbody>
-          </table>
+
+        <div id="ca-search-view">
+          <div class="se-table-wrap">
+            <table class="se-table">
+              <thead>
+                <tr>
+                  <th data-sort="service">Service</th>
+                  <th data-sort="category">Category</th>
+                  <th data-sort="operation">Operation</th>
+                  <th data-sort="provider">Resource provider</th>
+                  <th data-sort="resourceType">Resource type</th>
+                </tr>
+              </thead>
+              <tbody id="ca-actions-body"></tbody>
+            </table>
+          </div>
+          <p style="margin:8px 2px 0; font-size:0.76rem; color:var(--muted);" id="ca-table-note"></p>
         </div>
-        <p style="margin:8px 2px 0; font-size:0.76rem; color:var(--muted);" id="ca-table-note"></p>
+
+        <div id="ca-explore-view" class="se-explore-list" hidden></div>
       </div>
     </div>
   </div>
@@ -2608,7 +2620,7 @@ const caModalTitle = document.getElementById('ca-modal-title');
 const caModalSubtitle = document.getElementById('ca-modal-subtitle');
 const caModalGrid = document.getElementById('ca-modal-grid');
 const CA_RESULT_CAP = 300;
-let caState = { query: '', service: '__all__', sortKey: 'service', sortDir: 'asc' };
+let caState = { query: '', service: '__all__', sortKey: 'service', sortDir: 'asc', mode: 'search' };
 
 function caServiceCounts() {
   const counts = {};
@@ -2697,7 +2709,62 @@ function caRenderTable() {
     : '';
 }
 
-function caRenderAll() { caRenderServiceList(); caRenderTable(); }
+function caRenderAll() {
+  caRenderServiceList();
+  if (caState.mode === 'search') caRenderTable(); else caRenderExploreView();
+}
+
+function caChipLabel(a) {
+  if (a.operation && a.operation !== 'N/A') return a.operation;
+  if (a.resource_type && a.resource_type.indexOf('N/A') !== 0) return a.resource_type;
+  if (a.provider && a.provider !== 'N/A') return a.provider;
+  return a.category;
+}
+
+function caRenderExploreView() {
+  const q = caState.query.trim().toLowerCase();
+  const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
+  const inService = caState.service === '__all__'
+    ? cloudActions
+    : cloudActions.filter(a => a.service === caState.service);
+  const groups = {};
+  const order = [];
+  inService.forEach(a => {
+    const key = a.service + '\u2502' + a.category;
+    if (!groups[key]) { groups[key] = { service: a.service, category: a.category, rows: [] }; order.push(key); }
+    groups[key].rows.push(a);
+  });
+  let shown = order.map(k => groups[k]);
+  if (tokens.length) {
+    shown = shown
+      .map(g => ({ ...g, rows: g.rows.filter(a => tokens.every(t => a._hay.includes(t))) }))
+      .filter(g => g.rows.length > 0 || tokens.every(t => (g.category + ' ' + g.service).toLowerCase().includes(t)));
+  }
+  caResultCountEl.textContent = shown.length.toLocaleString() + (shown.length === 1 ? ' category' : ' categories');
+  const el = document.getElementById('ca-explore-view');
+  if (!shown.length) {
+    el.innerHTML = '<div class="se-empty">No categories match.</div>';
+    return;
+  }
+  el.innerHTML = shown.map(g => {
+    const chips = g.rows.map(a =>
+      `<span class="se-field-chip" data-id="${escapeHtml(a._id)}">${caHighlight(caChipLabel(a), q)}</span>`
+    ).join('');
+    return `<details class="se-event-card">
+      <summary>
+        <div class="se-ec-title"><span class="lbl">${caHighlight(g.category, q)}</span><span class="meta">${escapeHtml(CA_SERVICE_LABELS[g.service] || g.service)}</span></div>
+        <span class="se-ec-count">${g.rows.length}</span>
+      </summary>
+      <div class="se-ec-body"><div class="se-field-chips">${chips}</div></div>
+    </details>`;
+  }).join('');
+  el.querySelectorAll('.se-field-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const a = cloudActions.find(x => x._id === chip.dataset.id);
+      if (a) caOpenModal(a);
+    });
+  });
+}
 
 function caFieldRow(label, value) {
   if (!value) return '';
@@ -2753,7 +2820,26 @@ function caOpenModal(a) {
 }
 function caCloseModal() { caModalOverlay.classList.remove('open'); }
 
-caSearchEl.addEventListener('input', () => { caState.query = caSearchEl.value; caRenderTable(); });
+caSearchEl.addEventListener('input', () => {
+  caState.query = caSearchEl.value;
+  if (caState.mode === 'search') caRenderTable(); else caRenderExploreView();
+});
+document.getElementById('ca-mode-search-btn').addEventListener('click', () => {
+  caState.mode = 'search';
+  document.getElementById('ca-mode-search-btn').classList.add('active');
+  document.getElementById('ca-mode-explore-btn').classList.remove('active');
+  document.getElementById('ca-search-view').hidden = false;
+  document.getElementById('ca-explore-view').hidden = true;
+  caRenderAll();
+});
+document.getElementById('ca-mode-explore-btn').addEventListener('click', () => {
+  caState.mode = 'explore';
+  document.getElementById('ca-mode-explore-btn').classList.add('active');
+  document.getElementById('ca-mode-search-btn').classList.remove('active');
+  document.getElementById('ca-search-view').hidden = true;
+  document.getElementById('ca-explore-view').hidden = false;
+  caRenderAll();
+});
 caServiceListEl.addEventListener('click', e => {
   const chip = e.target.closest('.se-log-chip');
   if (!chip) return;
