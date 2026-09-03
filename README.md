@@ -390,6 +390,26 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
     Shown only in the web lookup page's detail view, not the table — most
     values are short, some (particularly Azure DevOps's) are full
     citations of the Microsoft Learn page a row was confirmed against.
+
+  The embedded copy the web lookup page actually runs on carries one
+  more field this repo's own `data/cloud_actions.csv`/`.json` doesn't:
+  an optional `arm` object, present on the 1,868 rows whose (provider,
+  resource_type) matches a real Azure Resource Manager resource type —
+  provider/resource-type display names, supported API versions, the
+  default API version, how many Azure regions the type is available in,
+  and which governance capabilities it supports (private endpoints,
+  managed identity, tags, resource locks). Sourced from an Azure
+  Resource Manager resource-type catalog snapshot maintained in the
+  `catscan` repo (`windows/data/azureresourcetypes.json` there,
+  `windows/tools/enrich_microsoft_schema.py` does the join) rather than
+  in this one, since that catalog is 12,233 rows/~13&nbsp;MB on its own —
+  far more than this schema needs, and out of place next to this
+  repo's own Windows-specific data. The Cloud Actions Explorer detail
+  view shows this `arm` block when present, plus a same-resource-type
+  "other operations here" cross-reference computed client-side from the
+  page's own already-embedded data (no separate fetch for that part —
+  the relationship is fully reconstructable from what's already on the
+  page). Rows with no ARM match show neither section, not an empty one.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
