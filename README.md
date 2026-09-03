@@ -349,32 +349,47 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
 - `data/cloud_actions.csv` / `.json` — a companion to `cloud_logs.csv`
   above, one level more granular: where that file lists log *categories*
   (`AuditLogs`, `SignInLogs`, …), this lists the individual *operations*
-  reported within three of those categories' schemas — 1,390 rows across
-  Microsoft Entra ID audit activities, Azure resource-log/Activity Log
-  operations, and Microsoft Intune audit events. Powers the web lookup
-  page's Cloud Actions Explorer tab, next to Cloud logs. One row per
-  `(service, category, operation)`:
-  - `service` — which of the three source schemas the row came from:
+  reported within six of those categories' schemas — 3,670 rows across
+  Microsoft Entra ID audit activities, Azure resource-log operations, the
+  Azure Activity Log, Microsoft Intune audit events, Microsoft Purview's
+  unified audit log, and Azure DevOps's own audit log. Powers the web
+  lookup page's Cloud Actions Explorer tab, next to Cloud logs. One row
+  per `(service, category, operation)`:
+  - `service` — which of the six source schemas the row came from:
     `identity` (Microsoft Entra ID / AADIAM audit activities, 918 rows),
-    `logshipping` (Azure Monitor Activity Log and per-resource-type
-    diagnostic-setting operations, 419 rows), or `intunelogshipping`
-    (Microsoft Intune audit events, 53 rows)
+    `logshipping` (per-resource-type diagnostic-setting operations, 1,170
+    rows), `activitylog` (the subscription-level Azure Activity Log, 18
+    rows — distinct from `logshipping`'s per-resource diagnostic
+    settings), `intunelogshipping` (Microsoft Intune audit events, 53
+    rows), `purview` (Microsoft Purview's unified audit log across
+    Microsoft 365/Entra/Copilot/Agent 365, 1,290 rows), or `azuredevops`
+    (Azure DevOps's own separate audit log — not part of Azure
+    Monitor/Entra ID, 221 rows)
   - `category` — the diagnostic-setting/log category the operation is
-    reported under (e.g. `AuditLogs`, `SignInLogs`, `StorageWrite`) — 74
-    distinct values across the three services
-  - `operation` — the individual action/operation name
+    reported under (e.g. `AuditLogs`, `SignInLogs`, `StorageWrite`) — 754
+    distinct values across the six services
+  - `operation` — the individual action/operation name, or `N/A` for 873
+    rows (mostly `logshipping`, plus a few `purview`/`activitylog`
+    categories) whose real schema is a fixed structure rather than an
+    enumerable operation name
   - `provider` — the Azure resource provider namespace the operation
-    belongs to (e.g. `Microsoft.AADIAM`, `Microsoft.Storage`), or `N/A`
-    for subscription-level Activity Log rows not scoped to a specific
-    resource provider
+    belongs to (e.g. `Microsoft.AADIAM`, `Microsoft.Storage`) — 116
+    distinct values — or `N/A` for the 1,530 rows from services that
+    aren't scoped to a specific Azure resource provider (`identity`,
+    `activitylog`, `purview`, `azuredevops`)
   - `resource_type` — the resource type within that provider (e.g.
-    `diagnosticSettings`, `storageAccounts/blobServices`), or an `N/A`
-    variant where the row is subscription-level rather than per-resource
-  - `gap_filled` — `Yes` for the 729 rows added during a later
-    enrichment pass against Microsoft's published schemas to fill gaps
-    in the original 661-row export (each graded confirmed or inferred by
-    analogy against the existing rows — nothing fabricated), blank for
-    the 661 original rows.
+    `diagnosticSettings`, `storageAccounts/blobServices`), or an
+    explanatory `N/A (…)` string for rows with no per-resource-type
+    scope (the web lookup page truncates these with an ellipsis in the
+    table and shows the full text on hover/in the detail view)
+  - `source` — free-text provenance for the row: `Original data (your
+    export)` for the 661 rows from the original supplied export, and one
+    of several `Gap-fill — …`/`Azure catalog — …`/Microsoft Learn
+    citation strings for everything added during later enrichment passes
+    (each graded Confirmed vs. Inferred by analogy; nothing fabricated).
+    Shown only in the web lookup page's detail view, not the table — most
+    values are short, some (particularly Azure DevOps's) are full
+    citations of the Microsoft Learn page a row was confirmed against.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to
