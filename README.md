@@ -346,6 +346,35 @@ Activity, Task Scheduler, ESENT, and Windows DNS Server analytic events.
   exports), Microsoft 365's own record-type list is larger than the 28
   covered here, and none of these seven platforms stand still — all of
   them ship new log sources on an ongoing basis.
+- `data/cloud_actions.csv` / `.json` — a companion to `cloud_logs.csv`
+  above, one level more granular: where that file lists log *categories*
+  (`AuditLogs`, `SignInLogs`, …), this lists the individual *operations*
+  reported within three of those categories' schemas — 1,390 rows across
+  Microsoft Entra ID audit activities, Azure resource-log/Activity Log
+  operations, and Microsoft Intune audit events. Powers the web lookup
+  page's Cloud Actions Explorer tab, next to Cloud logs. One row per
+  `(service, category, operation)`:
+  - `service` — which of the three source schemas the row came from:
+    `identity` (Microsoft Entra ID / AADIAM audit activities, 918 rows),
+    `logshipping` (Azure Monitor Activity Log and per-resource-type
+    diagnostic-setting operations, 419 rows), or `intunelogshipping`
+    (Microsoft Intune audit events, 53 rows)
+  - `category` — the diagnostic-setting/log category the operation is
+    reported under (e.g. `AuditLogs`, `SignInLogs`, `StorageWrite`) — 74
+    distinct values across the three services
+  - `operation` — the individual action/operation name
+  - `provider` — the Azure resource provider namespace the operation
+    belongs to (e.g. `Microsoft.AADIAM`, `Microsoft.Storage`), or `N/A`
+    for subscription-level Activity Log rows not scoped to a specific
+    resource provider
+  - `resource_type` — the resource type within that provider (e.g.
+    `diagnosticSettings`, `storageAccounts/blobServices`), or an `N/A`
+    variant where the row is subscription-level rather than per-resource
+  - `gap_filled` — `Yes` for the 729 rows added during a later
+    enrichment pass against Microsoft's published schemas to fill gaps
+    in the original 661-row export (each graded confirmed or inferred by
+    analogy against the existing rows — nothing fabricated), blank for
+    the 661 original rows.
 - `data/reference/audit_configuration.csv` / `.json` — how to configure
   auditing to collect events, one row per audit subcategory (or
   product-specific setting): the Group Policy / registry path, the steps to

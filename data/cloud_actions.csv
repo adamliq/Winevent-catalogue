@@ -1,0 +1,1391 @@
+service,category,operation,provider,resource_type,gap_filled
+identity,AuditLogs,Add Passkey (device-bound),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add app role assignment grant to user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add app role assignment to service principal,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role in PIM completed (permanent),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Admin registered security info,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,ApprovalNotification_Create,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Approve decision,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Bulk Deny decisions,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Cancel request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create access package assignment policy,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create resource remove request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Decision Item Summary,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete BitLocker key,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete application,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete business flow,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete platform credential,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Device no longer compliant,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Extend access package assignment,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Features_GetFeaturesAsync,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Generate one time password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get CIAM directory resource,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get CIAM directory resources in a subscription,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get authenticationEventListeners,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get custom policies,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Group_GetDynamicGroupProperties,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Hard Delete group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Import,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Onboarded resource to PIM,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,POST UserAuthMethod.SoftwareOathProofupRegistration,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Redeem external user invite,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove eligible member from role in PIM completed (timebound),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove member from group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove member from role requested (PIM deactivate),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove registered owner from device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove service principal credentials,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Reset password (by admin),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Reset password (self-service),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Restore user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Settings_GetSettingsAsync,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update PasswordProfile,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update access package assignment request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update access review,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update application,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update application – Certificates and secrets management,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update business flow,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update contact,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User registered all required security info,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User started password change,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Verify email address,Microsoft.AADIAM,diagnosticSettings,
+identity,SignInLogs,Sign-in activity,Microsoft.AADIAM,diagnosticSettings,
+intunelogshipping,AuditLogs,Create ClientCertificate,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Create DeviceManagementConfigurationPolicyAssignment,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Create MobileAppAssignment,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Delete MobileAppRelationship,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,DeleteDevicePrimaryUsers ManagedDevice,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Patch MobileAppAssignment,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Send test email NotificationMessageTemplate,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,UpdateDevicePrimaryUsers ManagedDevice,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,UpdateDeviceProperties WindowsAutopilotDeviceIdentity,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,createDeviceHealthScript DeviceHealthScript,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,patchDeviceHealthScript DeviceHealthScript,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,syncDevice ManagedDevice,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,DeviceComplianceOrg,DeviceCompliance,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,Devices,Devices,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,OperationalLogs,Compliance,Microsoft.Intune,diagnosticSettings,
+logshipping,Administrative,Add eligible member to role in PIM completed (timebound),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Add member to role in PIM requested (timebound),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Add member to role request approved (PIM activation),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Add member to role requested (PIM activation),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/APIS/OPERATIONS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/APIS/POLICIES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/APIS/SCHEMAS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/IDENTITYPROVIDERS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/SUBSCRIPTIONS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/USERS/TOKEN/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/RESTOREPOINTCOLLECTIONS/RESTOREPOINTS/RETRIEVESASURIS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/DEALLOCATE/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/EXTENSIONS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/START/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTESCHEDULE/LOCATIONS/VIRTUALMACHINESEXECUTESTART/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTESCHEDULE/LOCATIONS/VIRTUALMACHINESGETOPERATIONSTATUS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DESKTOPVIRTUALIZATION/HOSTPOOLS/SESSIONHOSTS/USERSESSIONS/SENDMESSAGE/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.EVENTGRID/REGISTER/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.GUESTCONFIGURATION/GUESTCONFIGURATIONASSIGNMENTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.INSIGHTS/COMPONENTS/ANNOTATIONS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.INSIGHTS/METRICALERTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.KEYVAULT/VAULTS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.KEYVAULT/VAULTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/FIREWALLPOLICIES/CERTIFICATES/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/FIREWALLPOLICIES/VALIDATE/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/FIREWALLPOLICIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/FRONTDOORWEBAPPLICATIONFIREWALLPOLICIES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/IPGROUPS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/NETWORKINTERFACES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/NETWORKINTERFACES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/PRIVATEENDPOINTS/PRIVATEDNSZONEGROUPS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/PRIVATEENDPOINTS/PRIVATELINKSERVICEPROXIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/PUBLICIPADDRESSES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/ROUTETABLES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/ROUTETABLES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/SUBNETS/PREPARENETWORKPOLICIES/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RECOVERYSERVICES/VAULTS/BACKUPFABRICS/PROTECTIONCONTAINERS/PROTECTEDITEMS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RESOURCES/DEPLOYMENTS/OPERATIONSTATUSES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SEARCH/SEARCHSERVICES/LISTQUERYKEYS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SEARCH/SEARCHSERVICES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/DATABASES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/DATABASES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/SECURITYALERTPOLICIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/SERVERS/DATABASES/SECURITYALERTPOLICIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/SERVERS/DATABASES/SYNCGROUPS/TRIGGERSYNC/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/VIRTUALCLUSTERS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/VIRTUALCLUSTERS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/BLOBSERVICES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/LISTACCOUNTSAS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/LISTKEYS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.WEB/SITES/PUBLISHXML/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/backup/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,AgentHealthStatus,AgentUpdateHealthStatus,Microsoft.DesktopVirtualization,hostpools,
+logshipping,AuditEvent,Authentication,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificateListVersions,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificatePendingGet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificatePendingMerge,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,VaultGet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,VaultPatch,Microsoft.KeyVault,vaults,
+logshipping,Error,ClientRDPConnect,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,ComputeAPIVMOperation,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,Logon,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Errors,ErrorEvent,Microsoft.Sql,servers/databases,
+logshipping,GatewayDiagnosticLog,SetConnectionConfiguration,Microsoft.Network,virtualNetworkGateways,
+logshipping,HostRegistration,RegistrationToken,Microsoft.DesktopVirtualization,hostpools,
+logshipping,IKEDiagnosticLog,IKELogEvent,Microsoft.Network,virtualNetworkGateways,
+logshipping,NetworkSecurityGroupEvent,NetworkSecurityGroupEvents,Microsoft.Network,networkSecurityGroups,
+logshipping,NetworkSecurityGroupRuleCounter,NetworkSecurityGroupCounters,Microsoft.Network,networkSecurityGroups,
+logshipping,OperationLogs,DataSources.Update,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Indexers.Update,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Skillsets.Update,Microsoft.Search,searchServices,
+logshipping,Policy,MICROSOFT.AUTHORIZATION/POLICIES/DEPLOYIFNOTEXISTS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Recommendation,Microsoft.Advisor/recommendations/available/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,RequestResponse,List_Vector_Stores,Microsoft.CognitiveServices,accounts,
+logshipping,RouteDiagnosticLog,BgpRouteUpdate,Microsoft.Network,virtualNetworkGateways,
+logshipping,SQLSecurityAuditEvents,AuditEvent,Microsoft.Sql,servers/databases,
+logshipping,ServiceHealth,Microsoft.ServiceHealth/maintenance/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,StorageRead,GetBlobMetadata,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetBlobProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetContainerProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetFile,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetShareProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetUserDelegationKey,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,ListQueues,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,Read,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,SetShareProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CreateDirectory,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CreateQueue,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,GetMessage,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,MergeEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,OplockBreak,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetFileProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,WorkflowRuntime,Microsoft.Logic/workflows/workflowActionStarted,Microsoft.Web,sites,
+logshipping,WorkflowRuntime,Microsoft.Logic/workflows/workflowTriggerCompleted,Microsoft.Web,sites,
+identity,AuditLogs,Add BitLocker key,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add application,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add contact,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add delegated permission grant,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add eligible member to role in PIM completed (timebound),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add eligible member to role in PIM requested (permanent),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role in PIM requested (timebound),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role request approved (PIM activation),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role requested (PIM activation),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add passwordless phone sign-in credential,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add registered owner to device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Administrator directly assigns user to access package,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Approval_GetAll,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Approve access package assignment request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Assign label to group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Auto apply review,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Consent to application,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create access package catalog,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create resource request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,CreateBulkJob,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete access package,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete access package assignment request for a deleted user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete access package resource role scope,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Device no longer managed,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Disable account,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Entitlement Management removes access package assignment request for user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Evaluate conditional access policies,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Finish applying group based license to users,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Fulfill access package resource assignment,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get configured custom identity providers,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get configured local identity providers,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get passkey creation options,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get resource properties of a tenant,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Hard Delete user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Hard delete service principal,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Invite external user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Issue an id_token to the application,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Recover device local administrator password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Register device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove access package resource assignment,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove app role assignment from user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove service principal,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Reset user password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Send verification email,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update StsRefreshTokenValidFrom Timestamp,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User registered security info,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User requests to extend access package assignment,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User reset password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User started security info registration,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User was marked as risky by Entra ID Protection requested access to an access package,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Validate Password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Validate user authentication,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Verify one time password,Microsoft.AADIAM,diagnosticSettings,
+identity,RiskyUsers,Risky user,Microsoft.AADIAM,diagnosticSettings,
+intunelogshipping,AuditLogs,Create NotificationMessageTemplate,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Create localized message NotificationMessageTemplate,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Delete DeviceManagementConfigurationPolicy,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Delete ManagedDevice,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Get DeviceConfiguration,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Patch DeviceConfiguration,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Patch NotificationMessageTemplate,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,SetReference MobileApp,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,initiateOnDemandProactiveRemediation ManagedDevice,Microsoft.Intune,diagnosticSettings,
+logshipping,Administrative,Add member to role in PIM completed (permanent),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,CALL MANAGEMENT API,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/APIS/REVISIONS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/TENANT/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/USERS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/WORKSPACES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COGNITIVESERVICES/ACCOUNTS/LISTKEYS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/RESTOREPOINTCOLLECTIONS/RESTOREPOINTS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/RESTOREPOINTCOLLECTIONS/RESTOREPOINTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/RUNCOMMAND/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.CONTAINERSERVICE/MANAGEDCLUSTERS/TRUSTEDACCESSROLEBINDINGS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DATAMIGRATION/SQLMIGRATIONSERVICES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DESKTOPVIRTUALIZATION/HOSTPOOLS/SESSIONHOSTS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DESKTOPVIRTUALIZATION/HOSTPOOLS/SESSIONHOSTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DESKTOPVIRTUALIZATION/HOSTPOOLS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DEVTESTLAB/SCHEDULES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DEVTESTLAB/SCHEDULES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.EVENTGRID/EVENTSUBSCRIPTIONS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.EVENTGRID/EVENTSUBSCRIPTIONS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.MANAGEDIDENTITY/USERASSIGNEDIDENTITIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/AZUREFIREWALLS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/LOADBALANCERS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/NETWORKINTENTPOLICIES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/NETWORKINTENTPOLICIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/REMOTEVIRTUALNETWORKPEERINGPROXIES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/REMOTEVIRTUALNETWORKPEERINGPROXIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALWANS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RECOVERYSERVICES/VAULTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RESOURCES/TAGS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SECURITY/ADVANCEDTHREATPROTECTIONSETTINGS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SECURITY/DEFENDERFORSTORAGESETTINGS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SERVICEBUS/NAMESPACES/QUEUES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/DISTRIBUTEDAVAILABILITYGROUPS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/DISTRIBUTEDAVAILABILITYGROUPS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/SERVERS/DATABASES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/FILESERVICES/SHARES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SUPPORT/CLASSIFYSERVICES/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.WEB/REGISTER/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.WEB/SITES/START/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.WEB/SITES/STOP/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.WEB/SITES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Sql/servers/firewallRules/delete,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Sql/servers/firewallRules/write,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Sql/servers/write,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Remove request,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,AuditEvent,AccessPolicyMerge,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificateContactsGet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificateContactsSet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,KeyUnwrap,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,SecretExpiredEventGridNotification,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,SecretGet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,SecretList,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,SecretResourceGet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,SecretSet,Microsoft.KeyVault,vaults,
+logshipping,AutomaticTuning,AutomaticTuningSettingsSnapshotEvent,Microsoft.Sql,servers/databases,
+logshipping,AutoscaleEvaluationPooled,ScalingEvaluationSummary,Microsoft.DesktopVirtualization,hostpools,
+logshipping,AzureFirewallNetworkRule,AzureFirewallDNSResolutionFailureLog,Microsoft.Network,azureFirewalls,
+logshipping,AzureOpenAIRequestUsage,completion,Microsoft.CognitiveServices,accounts,
+logshipping,AzureOpenAIRequestUsage,embeddings,Microsoft.CognitiveServices,accounts,
+logshipping,Blocks,BlockEvent,Microsoft.Sql,servers/databases,
+logshipping,ContainerRegistryLoginEvents,Login,Microsoft.ContainerRegistry,registries,
+logshipping,DatabaseWaitStatistics,DatabaseWaitStatistcsEvent,Microsoft.Sql,servers/databases,
+logshipping,Deadlocks,DeadlockEvent,Microsoft.Sql,servers/databases,
+logshipping,Error,LookupSessionHostInPoolWithLoadBalancer,Microsoft.DesktopVirtualization,hostpools,
+logshipping,FrontDoorHealthProbeLog,Microsoft.Cdn/Profiles/FrontDoorHealthProbeLog/Write,Microsoft.Cdn,profiles,
+logshipping,GatewayDiagnosticLog,SetGatewayConfiguration,Microsoft.Network,virtualNetworkGateways,
+logshipping,NetworkData,Microsoft.DesktopVirtualization/HOSTPOOLS/Write,Microsoft.DesktopVirtualization,hostpools,
+logshipping,OperationLogs,DataSources.Put,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Indexes.Delete,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Indexes.Update,Microsoft.Search,searchServices,
+logshipping,Policy,MICROSOFT.AUTHORIZATION/POLICIES/AUDIT/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Policy,MICROSOFT.AUTHORIZATION/POLICIES/AUDITIFNOTEXISTS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,ResourceHealth,Microsoft.Resourcehealth/healthevent/InProgress/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,ResourceHealth,Microsoft.Resourcehealth/healthevent/Resolved/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,StorageDelete,DeleteFile,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageDelete,DeleteTable,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,FilePreflightRequest,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetBlobTags,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetDirectoryProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetFileServiceProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetFilesystemProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetQueueMetadata,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetShareStats,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetTableServiceProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,ListBlobs,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,ListContainers,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,ListShares,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,PeekMessage,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,QueryInfo,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,TablePreflightRequest,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,AcquireBlobLease,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,AcquireContainerLease,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,AcquireShareLease,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,AppendBlock,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CopyBlobSource,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CreateContainer,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CreateShare,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,InsertOrMergeEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,InsertOrReplaceEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,Ioctl,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetContainerACL,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SnapshotShare,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,Write,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,Timeouts,TimeoutEvent,Microsoft.Sql,servers/databases,
+logshipping,WorkflowRuntime,Microsoft.Logic/workflows/workflowActionCompleted,Microsoft.Web,sites,
+logshipping,WorkflowRuntime,Microsoft.Logic/workflows/workflowTriggerStarted,Microsoft.Web,sites,
+identity,AuditLogs,Add eligible member to role in PIM completed (permanent),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role completed (PIM activation),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role in PIM requested (permanent),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add owner to group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add registered users to device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add service principal,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add user sponsor,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Admin deleted security info,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Administrator directly removes user access package assignment,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Bulk Approve decisions,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Change user license,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Change user password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create application – Certificates and secrets management,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create business flow,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete access package assignment for a deleted user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete access package catalog,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,DeleteBulkJob,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Enable account,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Exchange token,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Execution,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get Api connectors,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get B2C directory resource,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get Guest Usages resources in a subscription,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get tenant details,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,GroupLifecyclePolicies_Get,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Initialize tenant,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Issue an authorization code to the application,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,PATCH UserAuthMethod.PatchSignInPreferencesAsync,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Pre-create device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Process role removal request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Read BitLocker key,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove eligible member from group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove member from role,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Restore device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Self-service password reset flow activity progress,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Set group license,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Synchronization rule action,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Unregister device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update access package catalog,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User changed password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User started password reset,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Validate local account credentials,Microsoft.AADIAM,diagnosticSettings,
+identity,UserRiskEvents,User Risk Detection,Microsoft.AADIAM,diagnosticSettings,
+intunelogshipping,AuditLogs,Create MobileAppRelationship,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Delete NotificationMessageTemplate,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,assignDeviceHealthScript DeviceHealthScript,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,cleanWindowsDevice ManagedDevice,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,rotateLocalAdminPassword ManagedDevice,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,OperationalLogs,ESPEnrollment,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,OperationalLogs,Enrollment,Microsoft.Intune,diagnosticSettings,
+logshipping,Administrative,Add eligible member to role in PIM requested (timebound),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Add member to role approval requested (PIM activation),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/APIS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/NAMEDVALUES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.AUTHORIZATION/LOCKS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.AUTHORIZATION/ROLEASSIGNMENTSCHEDULEREQUESTS/VALIDATE/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.AUTHORIZATION/ROLEASSIGNMENTSCHEDULEREQUESTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTESCHEDULE/LOCATIONS/VIRTUALMACHINESGETOPERATIONERRORS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.CONSUMPTION/BUDGETS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.CONTAINERREGISTRY/REGISTRIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.KEYVAULT/REGISTER/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.KEYVAULT/VAULTS/ACCESSPOLICIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/FIREWALLPOLICIES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/LOADBALANCERS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/PRIVATEDNSZONES/A/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/PRIVATEDNSZONES/A/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/PRIVATEENDPOINTS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/PRIVATEENDPOINTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALHUBS/HUBVIRTUALNETWORKCONNECTIONS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALHUBS/HUBVIRTUALNETWORKCONNECTIONS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/SUBNETS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RECOVERYSERVICES/VAULTS/BACKUPFABRICS/PROTECTIONCONTAINERS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/AZUREADONLYAUTHENTICATIONS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/SERVERS/ADMINISTRATORS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/BLOBSERVICES/CONTAINERS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/FILESERVICES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.WEB/SITES/RESTART/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Compute/virtualMachines/installPatches/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Compute/virtualMachines/upgradeVMExtensions/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Sql/servers/connectionPolicies/write,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Sql/servers/databases/write,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Microsoft.Support/supportTickets/write,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,PIM activation request expired,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Remove member from role (PIM activation expired),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,AppServiceAppLogs,Microsoft.Web/sites/log,Microsoft.Web,sites,
+logshipping,AppServiceFileAuditLogs,Microsoft.Web/sites/fileauditlogs,Microsoft.Web,sites,
+logshipping,ApplicationGatewayAccessLog,ApplicationGatewayAccess,Microsoft.Network,applicationGateways,
+logshipping,ApplicationGatewayFirewallLog,ApplicationGatewayFirewall,Microsoft.Network,applicationGateways,
+logshipping,AuditEvent,KeyList,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,VaultPut,Microsoft.KeyVault,vaults,
+logshipping,Autoscale,HostPoolLoadBalancerTypeUpdated,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,AzureFirewallDnsProxy,AzureFirewallDnsProxyLog,Microsoft.Network,azureFirewalls,
+logshipping,AzureFirewallNetworkRule,AzureFirewallIDSLog,Microsoft.Network,azureFirewalls,
+logshipping,ConnectionGraphicsData,Microsoft.DesktopVirtualization/HOSTPOOLS/Write,Microsoft.DesktopVirtualization,hostpools,
+logshipping,ContainerRegistryRepositoryEvents,Pull,Microsoft.ContainerRegistry,registries,
+logshipping,Error,ClientCrash,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,ClientOrchestration,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,ConnectionEstablished,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,DiagnosticsTimeoutActivity,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,GetWERInformation,Microsoft.DesktopVirtualization,hostpools,
+logshipping,FrontDoorAccessLog,Microsoft.Cdn/Profiles/AccessLog/Write,Microsoft.Cdn,profiles,
+logshipping,FrontDoorWebApplicationFirewallLog,Microsoft.Cdn/Profiles/WebApplicationFirewallLog/Write,Microsoft.Cdn,profiles,
+logshipping,FunctionAppLogs,Microsoft.Web/sites/functions/log,Microsoft.Web,sites,
+logshipping,Management,Management,Microsoft.DesktopVirtualization,hostpools,
+logshipping,OperationLogs,DataSources.List,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Indexers.List,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Indexers.Status,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Indexing.Index,Microsoft.Search,searchServices,
+logshipping,QueryStoreRuntimeStatistics,QueryStoreRuntimeStatisticsEvent,Microsoft.Sql,servers/databases,
+logshipping,RequestResponse,Creates an embedding vector representing the input text.,Microsoft.CognitiveServices,accounts,
+logshipping,RequestResponse,Projects_Wildcard_Get,Microsoft.CognitiveServices,accounts,
+logshipping,RequestResponse,post,Microsoft.CognitiveServices,accounts,
+logshipping,ResourceHealth,Microsoft.Resourcehealth/healthevent/Updated/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,StorageDelete,Close,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageDelete,DeleteBlob,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageDelete,DeleteContainer,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageDelete,DeleteShare,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,BlobPreflightRequest,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetBlobServiceProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetContainerServiceMetadata,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetFileProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetPageRanges,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,QueryTables,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,Cancel,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,Close,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CopyBlob,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,Flush,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,InsertEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,PutMessage,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,PutPage,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,PutRange,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,ReleaseBlobLease,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,ReleaseShareLease,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,RenewBlobLease,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,RenewContainerLease,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetBlobTags,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetDirectoryMetadata,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetDirectoryProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,TreeConnect,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,TreeDisconnect,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,TunnelDiagnosticLog,TunnelConnected,Microsoft.Network,virtualNetworkGateways,
+logshipping,TunnelDiagnosticLog,TunnelDisconnected,Microsoft.Network,virtualNetworkGateways,
+logshipping,WorkflowRuntime,Microsoft.Logic/workflows/workflowRunCompleted,Microsoft.Web,sites,
+identity,AuditLogs,Add eligible member to group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add eligible member to role in PIM requested (timebound),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role approval requested (PIM activation),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add member to role canceled (PIM activation),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Add service principal credentials,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,ApprovalNotification_Delete,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Auto approve access package assignment request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Cancel access package assignment request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Change password (self-service),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create access package,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Create access package resource role scope,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete access package assignment policy,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Delete user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Deny decision,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Export,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Fulfill access package assignment request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get configured identity providers,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get signInIdentifiers,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get supported identity providers,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Get user flows,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Group_GetDynamicMembershipUserBaseAttributes,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,GroupsODataV4_Get,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,GroupsODataV4_evaluateDynamicMembership,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Hard Delete application,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Hard Delete device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Offboarded resource from PIM,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Other,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,PIM activation request expired,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Process escrow,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Ready to fulfill access package assignment request,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove member from role (PIM activation expired),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove member from role completed (PIM deactivate),Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove owner from group,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove permanent direct role assignment,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Remove registered users from device,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Request approved,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Start applying group based license to users,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update access package assignment policy,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update company,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update device local administrator password,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update service principal,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,Update user,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User deleted security info,Microsoft.AADIAM,diagnosticSettings,
+identity,AuditLogs,User requests access package assignment,Microsoft.AADIAM,diagnosticSettings,
+intunelogshipping,AuditLogs,Commit Content MobileApp,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Create DeviceManagementConfigurationPolicy,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Create MobileApp,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Delete DeviceManagementConfigurationPolicyAssignment,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Delete MobileAppAssignment,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Patch DeviceManagementConfigurationPolicy,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,Patch MobileApp,Microsoft.Intune,diagnosticSettings,
+intunelogshipping,AuditLogs,SyncWindowsAutopilotDevices WindowsAutopilotSettings,Microsoft.Intune,diagnosticSettings,
+logshipping,Administrative,Add member to role completed (PIM activation),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,Add member to role in PIM requested (permanent),Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/APIS/DIAGNOSTICS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/APIS/OPERATIONS/POLICIES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/BACKENDS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/CACHES/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/PORTALCONFIGS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/TAGS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.APIMANAGEMENT/SERVICE/TENANT/SYNCSTATE/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.AUTHORIZATION/ROLEASSIGNMENTS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.AUTHORIZATION/ROLEASSIGNMENTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.AUTHORIZATION/ROLEELIGIBILITYSCHEDULEREQUESTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.AUTOMATION/AUTOMATIONACCOUNTS/JOBS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.CDN/PROFILES/USAGES/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.CDN/PROFILES/VALIDATESECRET/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.CLOUDSHELL/REGISTER/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/DISKS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/DISKS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/EXTENSIONS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.COMPUTE/VIRTUALMACHINES/RESTART/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DESKTOPVIRTUALIZATION/HOSTPOOLS/LISTREGISTRATIONTOKENS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.DESKTOPVIRTUALIZATION/HOSTPOOLS/SESSIONHOSTS/USERSESSIONS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.EVENTGRID/SYSTEMTOPICS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.EVENTGRID/SYSTEMTOPICS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.INSIGHTS/DATACOLLECTIONRULEASSOCIATIONS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.INSIGHTS/DIAGNOSTICSETTINGS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/AZUREFIREWALLS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/FIREWALLPOLICIES/RULECOLLECTIONGROUPS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/FRONTDOORWEBAPPLICATIONFIREWALLPOLICIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/IPGROUPS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALHUBS/HUBROUTETABLES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALHUBS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/SUBNETS/SERVICEASSOCIATIONLINKS/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/SUBNETS/SERVICEASSOCIATIONLINKS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/SUBNETS/UNPREPARENETWORKPOLICIES/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/TAGGEDTRAFFICCONSUMERS/VALIDATE/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.NETWORK/VIRTUALNETWORKS/VIRTUALNETWORKPEERINGS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RECOVERYSERVICES/LOCATIONS/BACKUPSTATUS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RECOVERYSERVICES/REGISTER/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RECOVERYSERVICES/VAULTS/BACKUPPOLICIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RESOURCES/DEPLOYMENTS/VALIDATE/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.RESOURCES/DEPLOYMENTS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SEARCH/SEARCHSERVICES/LISTADMINKEYS/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SECURITY/DATASCANNERS/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/SERVERTRUSTCERTIFICATES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/MANAGEDINSTANCES/SERVERTRUSTCERTIFICATES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.SQL/SERVERS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/PRIVATEENDPOINTCONNECTIONPROXIES/DELETE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/PRIVATEENDPOINTCONNECTIONPROXIES/VALIDATE/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/PRIVATEENDPOINTCONNECTIONPROXIES/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.STORAGE/STORAGEACCOUNTS/READ,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Administrative,MICROSOFT.WEB/SITES/CONFIG/WRITE,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,AppServiceConsoleLogs,Microsoft.Web/sites/log,Microsoft.Web,sites,
+logshipping,AppServicePlatformLogs,ContainerLogs,Microsoft.Web,sites,
+logshipping,Audit,ListKey,N/A,N/A,
+logshipping,AuditEvent,CertificateCreate,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificateGet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificateList,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,CertificatePolicyGet,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,SecretListVersions,Microsoft.KeyVault,vaults,
+logshipping,AuditEvent,VaultDelete,Microsoft.KeyVault,vaults,
+logshipping,Autoscale,ScalingEvaluationSummary,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,AzureFirewallApplicationRule,AzureFirewallApplicationRuleLog,Microsoft.Network,azureFirewalls,
+logshipping,AzureFirewallNetworkRule,AzureFirewallNetworkRuleLog,Microsoft.Network,azureFirewalls,
+logshipping,AzurePolicyEvaluationDetails,AzurePolicyEvaulation,Microsoft.KeyVault,vaults,
+logshipping,Checkpoint,Connection,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Connection,Connection,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,GatewayConnectionActive,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,LookupSessionHostPool,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Error,NetworkConnection,Microsoft.DesktopVirtualization,hostpools,
+logshipping,Feed,Feed,Microsoft.DesktopVirtualization,workspaces,
+logshipping,GatewayDiagnosticLog,HostMaintenanceEvent,Microsoft.Network,virtualNetworkGateways,
+logshipping,GatewayLogs,Microsoft.ApiManagement/GatewayLogs,Microsoft.ApiManagement,service,
+logshipping,OperationLogs,Indexes.Create,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Query.Lookup,Microsoft.Search,searchServices,
+logshipping,OperationLogs,Query.Search,Microsoft.Search,searchServices,
+logshipping,Policy,MICROSOFT.AUTHORIZATION/POLICIES/APPEND/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Policy,MICROSOFT.AUTHORIZATION/POLICIES/DENY/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,Policy,MICROSOFT.AUTHORIZATION/POLICIES/MODIFY/ACTION,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,QueryStoreWaitStatistics,QueryStoreWaitStatisticsEvent,Microsoft.Sql,servers/databases,
+logshipping,RequestResponse,chatcompletions_create,Microsoft.CognitiveServices,accounts,
+logshipping,ResourceHealth,Microsoft.Resourcehealth/healthevent/Activated/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,RouteDiagnosticLog,BgpConnectedEvent,Microsoft.Network,virtualNetworkGateways,
+logshipping,RouteDiagnosticLog,BgpDisconnectedEvent,Microsoft.Network,virtualNetworkGateways,
+logshipping,ServiceHealth,Microsoft.ServiceHealth/incident/action,Microsoft.Insights,"N/A (subscription-level Activity Log, not a per-resource type)",
+logshipping,StorageDelete,DeleteDirectory,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageDelete,DeleteEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageDelete,DeleteMessage,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,ChangeNotify,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetBlob,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetContainerACL,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetFileShareUniqueId,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetQueueServiceProperties,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,GetShareAcl,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,ListFiles,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,QueryDirectory,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,QueryEntities,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageRead,QueryEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CopyBlobDestination,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,Create,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CreateFile,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,CreateTable,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,DeleteEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,EntityGroupTransaction,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,GetMessages,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,PutBlob,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetBlobMetadata,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetContainerMetadata,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetInfo,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,SetShareMetadata,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,UpdateEntity,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,StorageWrite,UpdateMessage,Microsoft.Storage,storageAccounts/blobServices,
+logshipping,WorkflowRuntime,Microsoft.Logic/workflows/workflowRunStarted,Microsoft.Web,sites,
+identity,AuditLogs,Add AuthenticationContextClassReference,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add Conditional Access policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add named location,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete AuthenticationContextClassReference,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Conditional Access policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete named location,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update AuthenticationContextClassReference,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Conditional Access policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update continuous access evaluation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update named location,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update security defaults,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,DeleteDataFromBackend,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,DeleteDataFromCosmosDb,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,ExportDataFromBackend,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,ExportDataFromCosmosDb,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Fraud reported - no action taken,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Fraud reported - user is blocked for MFA,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Suspicious activity reported,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Assign Hardware Oath Token,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Methods Policy Reset,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Methods Policy Update,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Strength Combination Configuration Create,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Strength Combination Configuration Delete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Strength Combination Configuration Update,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Strength Policy Create,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Strength Policy Delete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Authentication Strength Policy Update,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Bulk upload Hardware Oath Token,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Hardware Oath Token,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Hardware Oath Token,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,MFA Service Policy Update,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,PATCH UserAuthMethod.ResetQRPinAsync,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,PATCH UserAuthMethod.UpdateQRPinAsync,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Hardware Oath Token,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,DELETE Subscription.DeleteProviders,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,DELETE Tenant.DeleteAgentStatuses,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,DELETE Tenant.DeleteCaches,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,DELETE Tenant.DeleteGreetings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,PATCH Tenant.Patch,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,PATCH Tenant.PatchCaches,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST SoundFile.Post,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Subscription.CreateProvider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Subscription.CreateSubscription,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.CreateBlockedUser,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.CreateBypassedUser,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.CreateCacheConfig,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.CreateGreeting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.CreateTenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.GenerateNewActivationCredentials,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.RemoveBlockedUser,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,POST Tenant.RemoveBypassedUser,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update IdentityProtectionPolicy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update NotificationSettings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create program,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Link program control,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Unlink program control,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update program,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Access review ended,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Apply decision,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Bulk Reset decisions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Bulk mark decisions as don't know,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create access review,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete access review,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete approvals,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Don't know decision,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Request expired,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Reset decision,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update partner directory settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Approve all requests in business flow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Auto review,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create governance policy template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete governance policy template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Deny all decisions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Deny all requests in business flow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Request denied,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update governance policy template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,NonInteractiveUserSignInLogs,Sign-in activity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ServicePrincipalSignInLogs,Sign-in activity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ManagedIdentitySignInLogs,Sign-in activity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ADFSSignInLogs,Sign-in activity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,MicrosoftServicePrincipalSignInLogs,Sign-in activity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ProvisioningLogs,Create,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ProvisioningLogs,Update,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ProvisioningLogs,Delete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ProvisioningLogs,StagedDelete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ProvisioningLogs,Disable,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ProvisioningLogs,Other,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,RiskyServicePrincipals,Risky service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,ServicePrincipalRiskEvents,Service Principal Risk Detection,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,RiskyAgents,Risky agent,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AgentRiskEvents,Agent Risk Detection,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add app role assignment to group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Convert federated user to managed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create application password for user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete application password for user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable Strong Authentication,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable Strong Authentication,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove OrganizationalUnit assigned to a user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove user sponsor,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Reset password,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set force change user password,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set user manager,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Takeover user cloned,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update OrganizationalUnit assigned to a user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update external secrets,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create group settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete group settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Finish applying group based license to user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Grant contextual consent to application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove app role assignment from group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove eligible owner from group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove label from group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set group to be managed by user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Trigger group license recalculation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update group settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add owner to application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add owner to service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add policy to application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add policy to service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Cancel application update with safe rollout,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Complete application update after safe rollout,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove app role assignment from service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove delegated permission grant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove owner from application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove owner from service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove policy from application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove policy from service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore consent,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set verified publisher,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Unset verified publisher,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update application with safe rollout,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update application - Certificates and secrets management,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add EligibleRoleAssignment to RoleDefinition,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add eligible member to role,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role scoped over Restricted Management Administrative Unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add role assignment to role definition,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add role definition,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add role from template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add scoped member to role,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete role definition,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove EligibleRoleAssignment from RoleDefinition,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove eligible member from role,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove member from role scoped over Restricted Management Administrative Unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove role assignment from role definition,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove scoped member from role,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update role,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update role definition,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add partner to company,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add sharedEmailDomainInvitation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add unverified domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add verified domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Company,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create company settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete company allowed data location,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete company settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete subscription,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Deleting Source Tenant subscriptions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Demote partner,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Directory deleted,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Directory deleted permanently,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Directory scheduled for deletion (Lifecycle),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Directory scheduled for deletion (UserRequest),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get cross-cloud verification code for domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete Domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Promote company to partner,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Promote sub domain to root domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove partner from company,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove unverified domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove verified domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Schedule Add sharedEmailDomain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Schedule Remove sharedEmailDomain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set Company Information,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set DirSync feature,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set DirSyncEnabled flag,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set Partnership,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set accidental deletion threshold,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set company allowed data location,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set company multinational feature enabled,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set directory feature on tenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set domain authentication,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set federation settings on domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set password policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Soft Delete Domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Suspending Source Tenant Subscriptions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update company settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update sharedEmailDomain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update sharedEmailDomainInvitation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Verify domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Verify email verified domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to restricted management administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove member from administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove member from restricted management administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update administrative unit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add agreement,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete agreement,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard delete agreement,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update agreement,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add CertBasedAuthConfiguration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard delete CertificationBasedAuthConfiguration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create CertificateAuthorityEntity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete CertificateAuthorityEntity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete CertificateAuthorityEntity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore CertificateAuthorityEntity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update CertificateAuthorityEntity,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add CertificateBasedAuthConfiguration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete CertificateBasedAuthConfiguration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update CertificateBasedAuthConfiguration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Branding Theme,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Branding Theme,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete Branding Theme,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Branding Theme,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Branding Theme Localization,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Branding Theme Localization,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete Branding Theme Localization,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Branding Theme Localization,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete contact,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add a domain-based partner to cross-tenant access setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add a partner to cross-tenant access setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete a domain-based partner to cross-tenant access setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete partner specific cross-tenant access setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Migrated partner cross-tenant access settings to the scalable model,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Reset the cross-tenant access default setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a domain-based partner to cross-tenant access setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a partner cross-tenant access setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update the company default cross-tenant access setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create a partner cross-tenant identity sync setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete a partner cross-tenant identity sync setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a partner cross-tenant identity sync setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Adding allowed assignable roles,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Updating allowed assignable roles,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add device configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete device configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update device configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add device from DeviceTemplate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add DeviceTemplate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add owner to DeviceTemplate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete DeviceTemplate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add kerberos domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete kerberos domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore kerberos domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update kerberos domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add label,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete label,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update label,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Access approved,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Access removed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Request canceled,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Request created,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Request rejected,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create a MultiTenantOrg,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete MultiTenantOrg,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a MultiTenantOrg,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Reset a multi tenant org identity sync policy template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a multi tenant org identity sync policy template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Reset a multi tenant org partner configuration template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a multi tenant org partner configuration template,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add MultiTenantOrg tenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete MultiTenantOrg tenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete MultiTenantOrg tenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Tenant joining MultiTenantOrg tenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update MultiTenantOrg tenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create OrganizationalUnit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete OrganizationalUnit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update OrganizationalUnit,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create PendingExternalUserProfile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete PendingExternalUserProfile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete PendingExternalUserProfile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add permission grant policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete permission grant policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update permission grant policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add owner to policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove owner from policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove policy credentials,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create PublicKeyInfrastructure,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete PublicKeyInfrastructure,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard Delete PublicKeyInfrastructure,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Initiate PublicKeyInfrastructure,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore PublicKeyInfrastructure,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update PublicKeyInfrastructure,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update authorization policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Test audit log,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add v2 application permissions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Check whether the resource name is available,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create API connector,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Identity Provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create authenticationEventListener,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create authenticationEventsFlow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create custom identity provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create custom policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create customAuthenticationExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create or update a B2C directory resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create or update a B2C directory tenant and resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create or update a CIAM directory tenant and resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create or update a Guest Usages resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create or update localized resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create starter pack,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create user attribute,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create user flow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create v2 application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete API connector,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete B2C Tenant where the caller is an administrator,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete B2C directory resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete CIAM directory resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Guest Usages resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Identity Provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete authenticationEventlistener,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete authenticationEventsFlow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete custom policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete customAuthenticationExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete localized resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete user attribute,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete user flow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete v2 application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete v2 application permission grant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Generate key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get API connector,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get B2C Tenants where the caller is an administrator,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get B2C directory resources in a resource group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get B2C directory resources in a subscription,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get CIAM directory resources in a resource group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get Guest Usages resources,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get Identity Provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get Identity Providers,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get OnAttributeCollectionStartCustomExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get OnAttributeCollectionSubmitCustomExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get OnPageRenderStartCustomExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get active key metadata from policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get age gating configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get authentication flows policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get authenticationEventListener,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get authenticationEventsFlow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get authenticationEventsFlows,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get available output claims,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get custom domains,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get custom identity provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get custom policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get custom policy metadata,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get customAuthenticationExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get customAuthenticationExtensions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get identity provider types,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get list of tenants,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get localized resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get operation status for an async operation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get operations of Microsoft.AzureActiveDirectory resource provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get policy keys,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get supported cultures,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get supported page contracts,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get tenant domains,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get the authenticationEventsPolicy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get user attribute,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get user attributes,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get user flow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get v1 and v2 applications,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get v1 applications,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get v2 application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Move resources,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Retrieve v2 application permissions grants,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Retrieve v2 application service principals,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update API connector,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Identity Provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update OnAttributeCollectionStartCustomExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update OnAttributeCollectionSubmitCustomExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update OnPageRenderStartCustomExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a B2C directory resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a CIAM directory resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update a Guest Usages resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update age gating configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update authentication flows policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update authenticationEventListener,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update authenticationEventsFlow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update authenticationEventsPolicy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update custom identity provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update custom policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update customAuthenticationExtension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update local identity provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update subscription status,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update tenant metadata,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update user attribute,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update user flow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Upload certificate to policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Upload key to policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Upload secret into policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Validate customExtension authenticationConfiguration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Validate move resources,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Verify if tenant is B2C,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create or update a localized resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get B2C Tenant where the caller is an administrator,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get Guest Usages resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get Guest Usages directory resources in a resource group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get Guest Usages directory resources in a subscription,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get operation status of an async operation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update B2C directory resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update CIAM directory resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Guest Usages resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update certificate to policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update secret into policy key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,A self-service sign-up request was completed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,An API was called as part of a user flow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete all available strong authentication devices,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Federate with an identity provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get available strong authentication devices,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Issue a SAML assertion to the application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Issue an access token to the application,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Make phone call to verify phone number,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Register TOTP secret,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remediate user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Send SMS to verify phone number,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Validate Client Credentials,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Verify phone number,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete pre-created device,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Get resources properties of a tenant,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add Windows Hello for Business credential,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Windows Hello for Business credential,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete passwordless phone sign-in credential,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role in PIM completed (timebound),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Approve request - direct role assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,PIM policy removed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove member from role in PIM completed (timebound),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Role definition created,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update role setting in PIM,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add eligible member to role in PIM canceled (renew),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add eligible member to role in PIM canceled (timebound),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add eligible member to role in PIM requested (renew),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role in PIM canceled (permanent),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role in PIM canceled (renew),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role in PIM canceled (timebound),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role in PIM requested (renew),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role request denied (PIM activation),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Cancel request for role removal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Cancel request for role update,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Process request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove eligible member from role in PIM completed (permanent),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove eligible member from role in PIM requested (permanent),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove eligible member from role in PIM requested (timebound),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove member from role in PIM completed (permanent),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove member from role in PIM requested (permanent),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove member from role in PIM requested (timebound),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove permanent eligible role assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Resource updated,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore eligible member from role in PIM completed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore member from role,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore member from role in PIM completed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore permanent direct role assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update eligible member in PIM canceled (extend),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update eligible member in PIM requested (extend),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update member in PIM approved by admin (extend/renew),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update member in PIM canceled (extend),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update member in PIM denied by admin (extend/renew),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update member in PIM requested (extend),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add eligible member to role in PIM canceled (permanent),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add member to role outside of PIM (permanent),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Deactivate PIM alert,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable PIM alert,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable PIM alert,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Onboarded resource from PIM,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Process role update request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Resolve PIM alert,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore permanent eligible role assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Tenant offboarded from PIM,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Triggered PIM alert,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Refresh PIM alert,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update PIM alert setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create custom task extension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete custom task extension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update custom task extension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add task to workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable task,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable task,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove task from workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update task,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add execution conditions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add workflow version,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable workflow schedule,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable workflow schedule,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Hard delete workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,On-demand workflow execution completed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Restore workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Schedule workflow execution completed,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Schedule workflow execution started,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set workflow for on-demand execution,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update execution conditions,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update tenant settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update workflow,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Certificate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Certificate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Certificate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Offboarding Process Started,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Onboarding Process Started,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Adaptive Access Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Enriched Audit Logs Settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Forwarding Options Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Filtering Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Filtering Policy Profile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Remote Network,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Security Provider Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Filtering Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Filtering Policy Profile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Forwarding Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Private Access Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Remote Network,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Security Provider Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Filtering Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Filtering Policy Profile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Filtering Profile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Forwarding Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Forwarding Profile,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Forwarding Rule,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Private Access Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Remote Network,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Security Provider Policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Registration of Security Provider,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add user to feature rollout,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove user from feature rollout,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Dismiss recommendation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Mark recommendation as complete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Postpone recommendation,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update local administrator password,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set device registration policies,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add platform credential,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Passkey (device-bound),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,The role assignment of User Access Administrator has been removed from the user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User has elevated their access to User Access Administrator for their Azure Resources,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Redeem extern user invite,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add Entitlement Management role assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Approval stage completed for access package assignment request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Assign user as external sponsor,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Assign user as internal sponsor,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create access package assignment user update request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create connected organization,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create custom extension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create incompatible access package,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create incompatible group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create resource environment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete access package assignment request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete access package assignment policy for a deleted user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete connected organization,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete custom extension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete incompatible access package,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete incompatible group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Deny access package assignment request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Entitlement Management creates access package assignment request for user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Execute custom extension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Failed access package assignment request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Partially fulfill access package assignment request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove Entitlement Management role assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove user as external sponsor,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove user as internal sponsor,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Schedule a future access package assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update access package,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update access package catalog resource,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update connected organization,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update custom extension,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update request answers by approver,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update tenant setting,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User requests an access package assignment on behalf of service principal,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User requests to remove access package assignment,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add a group to feature rollout,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create rollout policy for feature,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete rollout policy of feature,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Remove a group from feature rollout,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update rollout policy of feature,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User authorization for application access,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable Desktop Sso,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable Desktop Sso for a specific domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable application proxy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable passthrough authentication,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable Desktop Sso,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable Desktop Sso for a specific domain,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable application proxy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable passthrough authentication,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add connector Group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add a Connector to Connector Group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add application SSL certificate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Connector Group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete SSL binding,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Register connector,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update Connector Group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Add provisioning configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete provisioning configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable/pause provisioning configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable/restart provisioning configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable/start provisioning configuration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Quarantine,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update attribute mappings or scope,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update provisioning setting or credentials,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User Provisioning,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Bulk download hardware tokens - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Download registration and reset events - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Download role assignments - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Download service principals - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Download user registration details - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Download users - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Export summary data - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Export summary data new - finished (bulk),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create application collection,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete application collection,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update application collection,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update application collection order,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update preview settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Accept Terms Of Use,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create Terms Of Use,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Decline Terms Of Use,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Consent,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete Terms Of Use,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Edit Terms Of Use,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Publish Terms Of Use,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create authority,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create authorization policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create contract,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create issuance policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete issuance policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Process POST /authorities/:issuerId/didInfo/signingKeys/rotate request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Process POST /authorities/:issuerId/didInfo/signingKeys/synchronizeWithDidDocument request,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Revoke credential,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Rotate signing key,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Tenant onboarding,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Tenant opt-out,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update MyAccount settings,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update authority,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update contract,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update issuance policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update linked domains,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Approval_Act,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Approval_Get,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Approvals_Post,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Approve a pending request to join a group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Cancel a pending request to join a group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Create lifecycle management policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete a pending request to join a group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete lifecycle management policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Device_Create,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Device_Delete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Device_Get,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Device_GetAll,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Features_IsFeatureEnabledAsync,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Features_UpdateFeaturesAsync,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,GroupLifecyclePolicies_addGroup,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,GroupLifecyclePolicies_removeGroup,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_AddMember,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_AddOwner,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_BatchValidateDynamicMembership,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_Create,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_Delete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_Get,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_GetAll,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_GetDynamicMembershipDeviceAttributes,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_GetDynamicMembershipOperators,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_GetExpiryNotificationDate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_GetMembers,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_GetOwners,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_RemoveMember,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_RemoveOwner,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_Restore,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_Update,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Group_ValidateDynamicMembership,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,GroupsODataV4_GetgroupLifecyclePolicies,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Groups_CreateLink,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Groups_Get,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,LcmPolicy_Get,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,LcmPolicy_RenewGroup,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Reject a pending request to join a group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Renew group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Request to join a group,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Set dynamic group properties,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update lifecycle management policy,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User_Create,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User_Delete,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User_Get,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User_GetAll,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User_GetMemberOf,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User_GetOwnedObjects,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Updated ConvergedUXV2 feature value,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Updated MyApps feature value,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Update MyStaff feature value,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Updated SSPRConvergence feature value,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Updated SignInReports feature value,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Disable password writeback for directory,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Enable password writeback for directory,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Blocked from self-service password reset,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Security info saved for self-service password reset,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Unlock user account (self-service),Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User Password Registration,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User Password Reset,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User confirmed unusual sign-in event as legitimate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User reported unusual sign-in event as not legitimate,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,User changed default security info,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Delete external user,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,"Email not sent, user unsubscribed",Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Invitation Email,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Invite external user with reset invitation status,Microsoft.AADIAM,diagnosticSettings,Yes
+identity,AuditLogs,Invite internal user to B2B collaboration,Microsoft.AADIAM,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Create DeviceCompliancePolicy,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Create DeviceCompliancePolicyAssignment,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Patch DeviceCompliancePolicy,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Update Assignment DeviceCompliancePolicy,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Delete DeviceCompliancePolicy,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Delete DeviceCompliancePolicyAssignment,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Create RoleDefinition,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Patch RoleDefinition,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Delete RoleDefinition,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Create RoleAssignment,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Delete RoleAssignment,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Create RoleScopeTag,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Patch RoleScopeTag,Microsoft.Intune,diagnosticSettings,Yes
+intunelogshipping,AuditLogs,Delete RoleScopeTag,Microsoft.Intune,diagnosticSettings,Yes
